@@ -24,3 +24,8 @@
 
 .*~
 .*sw*
+
+.env*
+.env.deploy*
+!.env.sample
+!.env.deploy.sample
