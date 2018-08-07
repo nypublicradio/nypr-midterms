@@ -20,7 +20,11 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    fastboot: {
+      hostWhitelist: [/^localhost:\d+$/].concat(process.env.HOST_WHITELIST ? process.env.HOST_WHITELIST.split(',') : [])
+    },
   };
 
   if (environment === 'development') {
