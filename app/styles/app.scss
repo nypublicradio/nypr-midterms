@@ -8,4 +8,12 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 
 @import "_include-media";
 
+// define some things that the hero sass partial requires
+@import "mixins/ui-compat";
+@import "nypr-ui/hero";
+@import "nypr-ui/button-classes";
+
 @import "base";
+
+@import "components/page-intro";
+@import "components/share-icons";

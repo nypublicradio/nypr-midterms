@@ -1,0 +1,71 @@
+.page-intro {
+  font-weight: 600;
+  text-align: center;
+
+  // ui overrides
+  .page-intro__headline {
+    max-width: 100%;
+  }
+
+  .page-intro__blurb {
+    font-size: 14px;
+    line-height: 1.79;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .page-intro__footer {
+    justify-content: center;
+    margin-bottom: 40px;
+
+    @include media('>=medium') {
+      margin-bottom: auto;
+    }
+
+    > .down-arrow {
+      fill: white;
+    }
+  }
+}
+
+.page-intro__link {
+  text-decoration: none;
+}
+
+.page-intro__link-logo {
+  width: 56px;
+  margin-left: 15px;
+
+  fill: white;
+}
+
+.page-intro__headline h2 {
+  font-size: 42px;
+}
+
+.page-intro__info {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+
+  > a {
+    color: white;
+  }
+}
+
+.intro-share {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+
+  &__label  {
+    margin-right: 10px;
+  }
+
+  .share-icons__email,
+  .share-icons > button {
+    font-size: 22px;
+  }
+}
