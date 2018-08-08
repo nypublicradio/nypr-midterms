@@ -65,6 +65,7 @@
     "ember-truth-helpers": "^2.0.0",
     "eslint-plugin-ember": "^5.0.0",
     "include-media": "^1.4.9",
+    "liquid-fire": "^0.29.5",
     "loader.js": "^4.2.3",
     "normalize.css": "^8.0.0",
     "nypr-ui": "nypublicradio/nypr-ui#fastboot",
