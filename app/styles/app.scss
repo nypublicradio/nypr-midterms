@@ -8,4 +8,8 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 
 @import "_include-media";
 
+@import "nypr-ui/vars";
+@import "nypr-ui/hero";
+@import "nypr-ui/button-classes";
+
 @import "base";
