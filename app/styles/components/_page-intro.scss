@@ -29,15 +29,15 @@
   }
 }
 
-.intro-link {
+.page-intro__link {
   text-decoration: none;
+}
 
-  &__logo {
-    width: 56px;
-    margin-left: 15px;
+.page-intro__link-logo {
+  width: 56px;
+  margin-left: 15px;
 
-    fill: white;
-  }
+  fill: white;
 }
 
 .page-intro__headline h2 {
