@@ -1,0 +1,48 @@
+{{#nypr-ui/hero class="page-intro" gradient=true sticky=true as |hero|}}
+  {{#hero.top as |top|}}
+    {{#top.left}}
+      <a href="https://www.wnyc.org" class="intro-link" target="_blank">
+        {{nypr-svg icon="left-arrow" className="intro-link__arrow"}}
+        {{nypr-svg icon="wnyc-logo" className="intro-link__logo"}}
+      </a>
+    {{/top.left}}
+
+    {{#top.right}}
+      {{#nypr-ui/buttons/red class="intro-donate" tagName="a" href="https://pledge3.wnyc.org" tall=true}}
+        Donate
+      {{/nypr-ui/buttons/red}}
+    {{/top.right}}
+  {{/hero.top}}
+
+  {{hero.image src="https://dummyimage.com/1200"}}
+
+  {{#hero.headline class="page-intro__headline"}}
+    <h2>
+      NYC 2018
+    </h2>
+  {{/hero.headline}}
+
+  {{#hero.blurb class="page-intro__blurb"}}
+    \{{election-countdown}}
+    <p class="header-blurb">
+      You ask and we investigate. Our partnership will help you understand better what is going on during the Midterm elections. We are here to help you stay informed in the next TK days.
+    </p>
+
+    <div class="page-intro__info">
+      <a href="">How does this work?</a>
+    </div>
+
+    <div class="intro-share">
+      <span class="intro-share__label">Share this:</span>
+      {{#share-icons as |share|}}
+        {{share.fb-post}}
+        {{share.tweet text="TKTK Tweet Text" via="WNYC"}}
+        {{share.email}}
+      {{/share-icons}}
+    </div>
+  {{/hero.blurb}}
+
+  {{#hero.footer class="page-intro__footer"}}
+    {{nypr-svg icon="down-arrow" className="down-arrow"}}
+  {{/hero.footer}}
+{{/nypr-ui/hero}}
