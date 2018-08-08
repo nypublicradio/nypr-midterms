@@ -1,0 +1,12 @@
+{{yield (hash
+  tease=(component 'page-section/tease')
+  body=(component 'page-section/body' isOpen=isOpen)
+  toggleOpen=(action toggleOpen)
+  isOpen=isOpen
+)}}
+
+<div class="page-section__footer">
+  <button class="page-section__toggle" {{action toggleOpen}}>
+    {{nypr-svg icon="down-arrow"}}
+  </button>
+</div>
