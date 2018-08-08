@@ -1,0 +1,7 @@
+<button class="share-icons__fb-post" {{action open urlToShare}}>
+  {{#if (has-block)}}
+    {{yield}}
+  {{else}}
+    {{fa-icon 'facebook'}}
+  {{/if}}
+</button>

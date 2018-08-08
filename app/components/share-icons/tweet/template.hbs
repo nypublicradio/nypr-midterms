@@ -1,0 +1,7 @@
+<button class="share-icons__tweet" {{action open urlToShare}}>
+  {{#if (has-block)}}
+    {{yield}}
+  {{else}}
+    {{fa-icon 'twitter'}}
+  {{/if}}
+</button>
