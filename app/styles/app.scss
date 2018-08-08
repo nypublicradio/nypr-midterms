@@ -14,3 +14,6 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 @import "nypr-ui/button-classes";
 
 @import "base";
+
+@import "components/page-intro";
+@import "components/share-icons";
