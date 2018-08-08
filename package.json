@@ -64,6 +64,7 @@
     "ember-moment": "^7.7.0",
     "ember-resolver": "^4.0.0",
     "ember-responsive": "^3.0.0-beta.3",
+    "ember-simple-auth": "^1.6.0",
     "ember-sinon": "^2.2.0",
     "ember-sinon-qunit": "^3.2.0",
     "ember-source": "~3.3.0",
@@ -77,6 +78,7 @@
     "nypr-audio-services": "nypublicradio/nypr-audio-services#fastboot",
     "nypr-publisher-lib": "nypublicradio/nypr-publisher-lib#fastboot",
     "nypr-ui": "nypublicradio/nypr-ui#fastboot",
+    "nypr-publisher-lib": ">=0.3.5",
     "qunit-dom": "^0.6.2"
   },
   "engines": {
