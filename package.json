@@ -66,6 +66,7 @@
     "include-media": "^1.4.9",
     "loader.js": "^4.2.3",
     "normalize.css": "^8.0.0",
+    "nypr-ui": "^0.3.0",
     "qunit-dom": "^0.6.2"
   },
   "engines": {
