@@ -75,19 +75,19 @@ module('Integration | Component | share-icons', function(hooks) {
       {{/share-icons}}
     `);
 
-    assert.dom('a[href="https://www.facebook.com/foo"]').exists('facebook renders');
+    assert.dom('a.facebook').hasAttribute('href', 'https://www.facebook.com/foo', 'facebook renders');
     assert.dom('i.fa-facebook').exists('facebook renders');
-    assert.dom('a[href="https://twitter.com/bar"]').exists('twitter renders');
+    assert.dom('a.twitter').hasAttribute('href', 'https://twitter.com/bar', 'twitter renders');
     assert.dom('i.fa-twitter').exists('twitter renders');
-    assert.dom('a[href="https://twitter.com/bar"]').exists('instagram renders');
+    assert.dom('a.instagram').hasAttribute('href', 'https://www.instagram.com/baz', 'instagram renders');
     assert.dom('i.fa-instagram').exists('instagram renders');
-    assert.dom('a[href="https://twitter.com/bar"]').exists('youtube renders');
+    assert.dom('a.youtube').hasAttribute('href', 'https://www.youtube.com/channel/qux', 'youtube renders');
     assert.dom('i.fa-youtube').exists('youtube renders');
-    assert.dom('a[href="https://twitter.com/bar"]').exists('medium renders');
+    assert.dom('a.medium').hasAttribute('href', 'https://medium.com/@fuz', 'medium renders');
     assert.dom('i.fa-medium').exists('medium renders');
-    assert.dom('a[href="https://twitter.com/bar"]').exists('linkedin renders');
+    assert.dom('a.linkedin').hasAttribute('href', 'https://www.linkedin.com/company/wiz', 'linkedin renders');
     assert.dom('i.fa-linkedin').exists('linkedin renders');
-    assert.dom('a[href="https://twitter.com/bar"]').exists('snap renders');
+    assert.dom('a.snap').hasAttribute('href', 'https://www.snapchat.com/add/wuz', 'snap renders');
     assert.dom('i.fa-snapchat-ghost').exists('snap renders with icon param');
   });
 });
