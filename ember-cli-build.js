@@ -11,7 +11,8 @@ module.exports = function(defaults) {
     },
     babel: {
       plugins: ['transform-object-rest-spread']
-    }
+    },
+    useWaypoints: true
   });
 
   app.import('node_modules/normalize.css/normalize.css');
