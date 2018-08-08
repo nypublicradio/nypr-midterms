@@ -1,0 +1,16 @@
+@mixin btn(
+  $font-family: $font-opensans
+) {
+  font-family: $font-family;
+  appearance: none;
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none; // for links that want to look like buttons
+}
