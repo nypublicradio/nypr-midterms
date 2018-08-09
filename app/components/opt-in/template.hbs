@@ -4,9 +4,8 @@
     type='email'
     fieldname='signupEmail'
     placeholder='your@PrePopulatedEmail.com'
-    value=optinEmail
-    errors=optinEmailValid
-    showError=true
+    value=changeset.email
+    errors=changeset.error.email.validation
   }}
 
   {{nypr-input
@@ -14,13 +13,9 @@
     type='tel'
     fieldname='signupPhoneNumber'
     placeholder='000-000-0000'
-    value=optinPhone
-    errors=optinPhoneValid
-    showError=true
+    value=changeset.phone
+    errors=changeset.error.phone.validation
   }}
-
-  {{optinEmailValid}}
-  {{optinPhoneValid}}
 
   <button>Sign Up</button>
 </form>
