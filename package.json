@@ -70,6 +70,7 @@
     "ember-source": "~3.3.0",
     "ember-test-selectors": "^1.0.0",
     "ember-truth-helpers": "^2.0.0",
+    "ember-validators": "^1.2.0",
     "eslint-plugin-ember": "^5.0.0",
     "include-media": "^1.4.9",
     "liquid-fire": "^0.29.5",

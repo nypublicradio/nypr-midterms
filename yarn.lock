@@ -3715,7 +3715,7 @@ ember-try@^0.2.23:
     rsvp "^3.0.17"
     semver "^5.1.0"
 
-ember-validators@^1.0.0:
+ember-validators@^1.0.0, ember-validators@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/ember-validators/-/ember-validators-1.2.0.tgz#b4bc9aeaf97921d80c41b7dc21acca288d1216ae"
   dependencies:
@@ -7137,7 +7137,7 @@ nypr-publisher-lib@nypublicradio/nypr-publisher-lib#fastboot:
     nypr-django-for-ember nypublicradio/nypr-django-for-ember#fastboot
     nypr-ui nypublicradio/nypr-ui#fastboot
 
-nypr-ui@nypublicradio/nypr-ui#fastboot:
+nypr-ui@>=0.3.0, nypr-ui@nypublicradio/nypr-ui#fastboot:
   version "0.3.1"
   resolved "https://codeload.github.com/nypublicradio/nypr-ui/tar.gz/b9e2fd44a8c6b8aa65900258585d512909f76040"
   dependencies:
