@@ -13,6 +13,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('opt-in');
 });
 
 export default Router;
