@@ -1,1 +1,5 @@
-{{yield}}
+{{#if chunk}}
+  {{{chunk.content}}}
+{{else}}
+  {{yield}}
+{{/if}}
