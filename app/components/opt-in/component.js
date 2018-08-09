@@ -22,5 +22,10 @@ export default Component.extend({
       validations
     );
     set(this, "changeset", this.changeset);
+  },
+  actions: {
+    submitForms() {
+      console.log("Success");
+    }
   }
 });
