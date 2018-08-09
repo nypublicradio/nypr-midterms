@@ -1,0 +1,13 @@
+@import "../mixins/buttons";
+
+.page-section__toggle {
+  @include btn;
+
+  svg {
+    transition: transform 125ms ease;
+  }
+}
+
+.page-section.is-open .page-section__toggle svg {
+  transform: rotate(180deg);
+}
