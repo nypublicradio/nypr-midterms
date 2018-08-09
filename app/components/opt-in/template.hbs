@@ -1,0 +1,42 @@
+<form>
+  {{nypr-input
+    label='Email'
+    type='email'
+    fieldname='signupEmail'
+    placeholder='your@PrePopulatedEmail.com'
+    value=emailChangeset.email
+    errors=emailChangeset.error.email.validation
+    showError=true
+  }}
+
+  {{nypr-input
+    label='Phone Number'
+    type='tel'
+    fieldname='signupPhoneNumber'
+    placeholder='000-000-0000'
+    value=phoneNumberChangeset.phone
+    errors=phoneNumberChangeset.error.phone.validation
+    showError=true
+  }}
+
+  <button>Sign Up</button>
+</form>
+{{!--
+{{#opt-in as |o|}}
+
+  {{#o.newsletter as |newsletter|}}
+    {{#newsletter.successState}}
+    {{/newsletter.successState}}
+  {{/o.newsletter}}
+
+  {{#o.sms as |sms|}}
+    {{#sms.successState}}
+    {{/sms.successState}}
+  {{/o.sms}}
+
+  {{#o.submitButton}}
+  {{/o.submitButton}}
+
+
+{{/opt}}
+--}}
