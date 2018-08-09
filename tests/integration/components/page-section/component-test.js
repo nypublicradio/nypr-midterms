@@ -96,4 +96,39 @@ module('Integration | Component | page-section', function(hooks) {
       assert.dom('.page-section__tease').hasClass('is-open');
       assert.dom('.page-section__body').hasClass('is-open');
   });
+
+  test('it can start open', async function(assert) {
+    await render(hbs`
+      {{#page-section open=true as |section|}}
+        {{#section.tease}}
+          <h2>This is visible</h2>
+          <p>
+            anything can go in here
+          </p>
+        {{/section.tease}}
+
+        {{#section.body}}
+          <p>
+            Already visible!
+          </p>
+        {{/section.body}}
+      {{/page-section}}
+    `);
+
+
+    assert.dom('.page-section__body-wrapper').exists();
+    assert.dom('.page-section__body').hasText('Already visible!');
+
+    assert.dom('.page-section').hasClass('is-open');
+    assert.dom('.page-section__tease').hasClass('is-open');
+    assert.dom('.page-section__body').hasClass('is-open');
+
+    await click('.page-section__toggle');
+
+    assert.dom('.page-section').hasClass('is-closed');
+    assert.dom('.page-section__tease').hasClass('is-closed');
+    assert.dom('.page-section__body').hasClass('is-closed');
+
+    assert.dom('.page-section__body-wrapper').doesNotExist();
+  });
 });
