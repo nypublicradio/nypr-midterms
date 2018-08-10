@@ -1,0 +1,85 @@
+.episode-tease {
+  color: black;
+  text-align: left;
+  background-color: white;
+  padding: 32px 24px;
+  margin-bottom: 24px;
+
+  &__top {
+    display: flex;
+    margin-bottom: 16px;
+  }
+
+  &__left {
+    flex-shrink: 0;
+  }
+
+  &__right {
+    flex: 1;
+    margin-left: 16px;
+  }
+
+  &__title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.43;
+    color: $darkgray;
+  }
+
+  &__link {
+    margin-bottom: 8px;
+
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 1.67;
+      color: $blue;
+    }
+  }
+
+  &__body {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.57;
+  }
+}
+
+.episode-subscribe {
+
+  &__list {
+    margin: -8px;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    border-bottom: 1px solid $gray;
+
+    &:last-child {
+      border: none;
+    }
+
+    svg {
+      margin-right: 8px;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      padding: 16px 24px;
+      display: block;
+    }
+  }
+
+}
+
+.live-box {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 600;
+  border: 2px solid black;
+  padding: 3px 4px;
+  line-height: 0.75;
+}

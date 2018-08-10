@@ -1,0 +1,25 @@
+<div class="episode-subscribe">
+  {{#pill-dropdown as |dropdown|}}
+    {{dropdown.button "Get the Podcast"}}
+
+    {{#dropdown.content}}
+      <ul class="episode-subscribe__list">
+        {{#each links as |link i|}}
+        <li class="episode-subscribe__item">
+          <a
+            data-test-subscribe={{i}}
+            href={{link.href}}
+            target="_blank">
+            {{#if (eq link.title 'via RSS')}}
+              {{fa-icon 'rss'}}
+            {{else}}
+              {{fa-icon 'mobile-alt'}}
+            {{/if}}
+            {{link.title}}
+          </a>
+        </li>
+        {{/each}}
+      </ul>
+    {{/dropdown.content}}
+  {{/pill-dropdown}}
+</div>
