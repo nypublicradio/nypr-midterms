@@ -15,9 +15,9 @@
     ember-source-channel-url "^1.0.1"
     ember-try "^0.2.23"
 
-"@ember-decorators/babel-transforms@^2.0.1":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@ember-decorators/babel-transforms/-/babel-transforms-2.0.2.tgz#f73b4af32bc9aa2253cc8d2e72b984ab85e432db"
+"@ember-decorators/babel-transforms@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@ember-decorators/babel-transforms/-/babel-transforms-0.1.1.tgz#c2be1677192e55ccfeb806002d57e314a0e728bc"
   dependencies:
     babel-plugin-transform-class-properties "^6.24.1"
     babel-plugin-transform-decorators-legacy "^1.3.4"
@@ -38,6 +38,54 @@
     broccoli-funnel "^2.0.1"
     ember-cli-babel "^6.12.0"
     ember-cli-htmlbars-inline-precompile "^1.0.0"
+
+"@fortawesome/ember-fontawesome@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@fortawesome/ember-fontawesome/-/ember-fontawesome-0.1.2.tgz#3b2b40711a87ba998aa03f703f05ad96a6a5994f"
+  dependencies:
+    "@fortawesome/fontawesome-svg-core" "^1.2.0"
+    broccoli-file-creator "^1.1.1"
+    broccoli-funnel "^2.0.1"
+    broccoli-merge-trees "^2.0.0"
+    broccoli-plugin "^1.3.0"
+    broccoli-rollup "^2.0.0"
+    broccoli-source "^1.1.0"
+    broccoli-stew "^1.5.0"
+    camel-case "^3.0.0"
+    ember-ast-helpers "0.3.5"
+    ember-cli-babel "^6.6.0"
+    ember-cli-htmlbars "^2.0.3"
+    ember-get-config "^0.2.4"
+    glob "^7.1.2"
+    rollup-plugin-node-resolve "^3.0.2"
+
+"@fortawesome/fontawesome-common-types@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.2.tgz#7fd64eacf7f64e4d7619d21b0b2f2467f5a70611"
+
+"@fortawesome/fontawesome-svg-core@^1.2.0":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.2.tgz#b431e7efb3e3a1887e596daa6ed0d241d2d1aea5"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.2"
+
+"@fortawesome/free-brands-svg-icons@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.2.0.tgz#1f49c423e704b31c5f36507e7c5cfcba6e5dfc9d"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.2"
+
+"@fortawesome/free-regular-svg-icons@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-regular-svg-icons/-/free-regular-svg-icons-5.2.0.tgz#6e96f19e349ac0d19b6758255c777f7331aeb40c"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.2"
+
+"@fortawesome/free-solid-svg-icons@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.2.0.tgz#b51c1d49278ef538a97c0ce9575a1b54cc1a52dc"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.2"
 
 "@glimmer/compiler@^0.27.0":
   version "0.27.0"
@@ -98,6 +146,24 @@
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@sinonjs/samsam/-/samsam-2.0.0.tgz#9163742ac35c12d3602dece74317643b35db6a80"
 
+"@types/acorn@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@types/acorn/-/acorn-4.0.3.tgz#d1f3e738dde52536f9aad3d3380d14e448820afd"
+  dependencies:
+    "@types/estree" "*"
+
+"@types/estree@*":
+  version "0.0.39"
+  resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
+
+"@types/estree@0.0.38":
+  version "0.0.38"
+  resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.38.tgz#c1be40aa933723c608820a99a373a16d215a1ca2"
+
+"@types/node@^9.6.0":
+  version "9.6.26"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.26.tgz#cd9d021f3e43f16a62e1b1cfa38b00ae4cfbebac"
+
 "@xg-wang/whatwg-fetch@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@xg-wang/whatwg-fetch/-/whatwg-fetch-3.0.0.tgz#f7b222c012a238e7d6e89ed3d72a1e0edb58453d"
@@ -117,6 +183,12 @@ accepts@~1.3.4, accepts@~1.3.5:
     mime-types "~2.1.18"
     negotiator "0.6.1"
 
+acorn-dynamic-import@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/acorn-dynamic-import/-/acorn-dynamic-import-3.0.0.tgz#901ceee4c7faaef7e07ad2a47e890675da50a278"
+  dependencies:
+    acorn "^5.0.0"
+
 acorn-jsx@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-3.0.1.tgz#afdf9488fb1ecefc8348f6fb22f464e32a58b36b"
@@ -133,7 +205,7 @@ acorn@^3.0.4:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-3.3.0.tgz#45e37fb39e8da3f25baee3ff5369e2bb5f22017a"
 
-acorn@^5.0.3, acorn@^5.5.0, acorn@^5.6.0:
+acorn@^5.0.0, acorn@^5.0.3, acorn@^5.5.0, acorn@^5.5.3, acorn@^5.6.0:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.7.1.tgz#f095829297706a7c9776958c0afc8930a9b9d9d8"
 
@@ -1572,6 +1644,22 @@ broccoli-rollup@^1.2.0:
     symlink-or-copy "^1.1.8"
     walk-sync "^0.3.1"
 
+broccoli-rollup@^2.0.0:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/broccoli-rollup/-/broccoli-rollup-2.1.1.tgz#0b77dc4b7560a53e998ea85f3b56772612d4988d"
+  dependencies:
+    "@types/node" "^9.6.0"
+    amd-name-resolver "^1.2.0"
+    broccoli-plugin "^1.2.1"
+    fs-tree-diff "^0.5.2"
+    heimdalljs "^0.2.1"
+    heimdalljs-logger "^0.1.7"
+    magic-string "^0.24.0"
+    node-modules-path "^1.0.1"
+    rollup "^0.57.1"
+    symlink-or-copy "^1.1.8"
+    walk-sync "^0.3.1"
+
 broccoli-sass-source-maps@^2.1.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/broccoli-sass-source-maps/-/broccoli-sass-source-maps-2.2.0.tgz#1f1a0794136152b096188638b59b42b17a4bdc68"
@@ -1758,6 +1846,10 @@ builtin-modules@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-1.1.1.tgz#270f076c5a72c02f5b65a47df94c5fe3a278892f"
 
+builtin-modules@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-2.0.0.tgz#60b7ef5ae6546bd7deefa74b08b62a43a232648e"
+
 builtins@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/builtins/-/builtins-1.0.3.tgz#cb94faeb61c8696451db36534e1422f94f0aee88"
@@ -1815,6 +1907,13 @@ callsite@1.0.0:
 callsites@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/callsites/-/callsites-0.2.0.tgz#afab96262910a7f33c19a5775825c69f34e350ca"
+
+camel-case@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/camel-case/-/camel-case-3.0.0.tgz#ca3c3688a4e9cf3a4cda777dc4dcbc713249cf73"
+  dependencies:
+    no-case "^2.2.0"
+    upper-case "^1.1.1"
 
 camelcase-keys@^2.0.0:
   version "2.1.0"
@@ -2319,6 +2418,12 @@ dashdash@^1.12.0:
 data-uri-to-buffer@1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/data-uri-to-buffer/-/data-uri-to-buffer-1.2.0.tgz#77163ea9c20d8641b4707e8f18abdf9a78f34835"
+
+date-time@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/date-time/-/date-time-2.1.0.tgz#0286d1b4c769633b3ca13e1e62558d2dbdc2eba2"
+  dependencies:
+    time-zone "^1.0.0"
 
 debug@2, debug@2.6.9, debug@^2.1.0, debug@^2.1.1, debug@^2.1.2, debug@^2.1.3, debug@^2.2.0, debug@^2.3.3, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
@@ -3178,12 +3283,12 @@ ember-fetch@^3.3.0:
     node-fetch "^2.0.0-alpha.9"
     whatwg-fetch "^2.0.3"
 
-ember-font-awesome@^4.0.0-rc.3, ember-font-awesome@^4.0.0-rc.4:
-  version "4.0.0-rc.4"
-  resolved "https://registry.yarnpkg.com/ember-font-awesome/-/ember-font-awesome-4.0.0-rc.4.tgz#7d4b7fbb401e21afeb7068cbb42ac8d8a84873f7"
+ember-font-awesome@^4.0.0-rc.3:
+  version "4.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/ember-font-awesome/-/ember-font-awesome-4.0.0-rc.3.tgz#6f63bb5d5a7e605c41fe17455264287fba3b4ce5"
   dependencies:
     "@ember-decorators/argument" "^0.8.13"
-    "@ember-decorators/babel-transforms" "^2.0.1"
+    "@ember-decorators/babel-transforms" "^0.1.1"
     broccoli-filter "^1.2.4"
     broccoli-funnel "^2.0.1"
     chalk "^2.3.0"
@@ -3195,7 +3300,7 @@ ember-font-awesome@^4.0.0-rc.3, ember-font-awesome@^4.0.0-rc.4:
     postcss "^6.0.14"
     sync-disk-cache "^1.3.2"
 
-ember-get-config@^0.2.2, ember-get-config@^0.2.3:
+ember-get-config@^0.2.2, ember-get-config@^0.2.3, ember-get-config@^0.2.4:
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/ember-get-config/-/ember-get-config-0.2.4.tgz#118492a2a03d73e46004ed777928942021fe1ecd"
   dependencies:
@@ -3826,6 +3931,10 @@ esrecurse@^4.1.0:
 estraverse@^4.0.0, estraverse@^4.1.0, estraverse@^4.1.1, estraverse@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-4.2.0.tgz#0dee3fed31fcd469618ce7342099fc1afa0bdb13"
+
+estree-walker@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-0.5.2.tgz#d3850be7529c9580d815600b53126515e146dd39"
 
 esutils@^2.0.2:
   version "2.0.2"
@@ -5184,6 +5293,10 @@ is-glob@^3.1.0:
   dependencies:
     is-extglob "^2.1.0"
 
+is-module@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/is-module/-/is-module-1.0.0.tgz#3258fb69f78c14d5b815d664336b4cffb6441591"
+
 is-number@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-2.1.0.tgz#01fcbbb393463a548f2f466cce16dece49db908f"
@@ -5245,6 +5358,12 @@ is-primitive@^2.0.0:
 is-promise@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/is-promise/-/is-promise-2.1.0.tgz#79a2a9ece7f096e80f36d2b2f3bc16c1ff4bf3fa"
+
+is-reference@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/is-reference/-/is-reference-1.1.0.tgz#50e6ef3f64c361e2c53c0416cdc9420037f2685b"
+  dependencies:
+    "@types/estree" "0.0.38"
 
 is-regex@^1.0.4:
   version "1.0.4"
@@ -5564,6 +5683,10 @@ load-json-file@^1.0.0:
 loader.js@^4.2.3:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/loader.js/-/loader.js-4.7.0.tgz#a1a52902001c83631efde9688b8ab3799325ef1f"
+
+locate-character@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/locate-character/-/locate-character-2.0.5.tgz#f2d2614d49820ecb3c92d80d193b8db755f74c0f"
 
 locate-path@^2.0.0:
   version "2.0.0"
@@ -6004,6 +6127,12 @@ lru-cache@^4.0.1, lru-cache@^4.1.2:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
 
+magic-string@^0.24.0:
+  version "0.24.1"
+  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.24.1.tgz#7e38e5f126cae9f15e71f0cf8e450818ca7d5a8f"
+  dependencies:
+    sourcemap-codec "^1.4.1"
+
 make-dir@^1.0.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-1.3.0.tgz#79c1033b80515bd6d24ec9933e860ca75ee27f0c"
@@ -6147,7 +6276,7 @@ methods@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
 
-micromatch@^2.1.5:
+micromatch@^2.1.5, micromatch@^2.3.11:
   version "2.3.11"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-2.3.11.tgz#86677c97d1720b363431d04d0d15293bd38c1565"
   dependencies:
@@ -6835,6 +6964,10 @@ parse-json@^2.2.0:
   dependencies:
     error-ex "^1.2.0"
 
+parse-ms@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/parse-ms/-/parse-ms-1.0.1.tgz#56346d4749d78f23430ca0c713850aef91aa361d"
+
 parse-passwd@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/parse-passwd/-/parse-passwd-1.0.0.tgz#6d5b934a456993b23d37f40a382d6f1666a8e5c6"
@@ -6985,6 +7118,12 @@ pretender@^1.6.1:
   dependencies:
     fake-xml-http-request "^1.6.0"
     route-recognizer "^0.3.3"
+
+pretty-ms@^3.1.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/pretty-ms/-/pretty-ms-3.2.0.tgz#87a8feaf27fc18414d75441467d411d6e6098a25"
+  dependencies:
+    parse-ms "^1.0.0"
 
 printf@^0.3.0:
   version "0.3.0"
@@ -7384,6 +7523,10 @@ require-main-filename@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/require-main-filename/-/require-main-filename-1.0.1.tgz#97f717b69d48784f5f526a6c5aa8ffdda055a4d1"
 
+require-relative@^0.8.7:
+  version "0.8.7"
+  resolved "https://registry.yarnpkg.com/require-relative/-/require-relative-0.8.7.tgz#7999539fc9e047a37928fa196f8e1563dabd36de"
+
 require-uncached@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/require-uncached/-/require-uncached-1.0.3.tgz#4e0d56d6c9662fd31e43011c4b95aa49955421d3"
@@ -7462,11 +7605,42 @@ rimraf@~2.2.6:
   version "2.2.8"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
 
+rollup-plugin-node-resolve@^3.0.2:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.3.0.tgz#c26d110a36812cbefa7ce117cadcd3439aa1c713"
+  dependencies:
+    builtin-modules "^2.0.0"
+    is-module "^1.0.0"
+    resolve "^1.1.6"
+
+rollup-pluginutils@^2.0.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-2.3.1.tgz#760d185ccc237dedc12d7ae48c6bcd127b4892d0"
+  dependencies:
+    estree-walker "^0.5.2"
+    micromatch "^2.3.11"
+
 rollup@^0.41.4:
   version "0.41.6"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.41.6.tgz#e0d05497877a398c104d816d2733a718a7a94e2a"
   dependencies:
     source-map-support "^0.4.0"
+
+rollup@^0.57.1:
+  version "0.57.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.57.1.tgz#0bb28be6151d253f67cf4a00fea48fb823c74027"
+  dependencies:
+    "@types/acorn" "^4.0.3"
+    acorn "^5.5.3"
+    acorn-dynamic-import "^3.0.0"
+    date-time "^2.1.0"
+    is-reference "^1.1.0"
+    locate-character "^2.0.5"
+    pretty-ms "^3.1.0"
+    require-relative "^0.8.7"
+    rollup-pluginutils "^2.0.1"
+    signal-exit "^3.0.2"
+    sourcemap-codec "^1.4.1"
 
 route-recognizer@^0.2.3:
   version "0.2.10"
@@ -7876,6 +8050,10 @@ source-map@~0.1.x:
   dependencies:
     amdefine ">=0.0.4"
 
+sourcemap-codec@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/sourcemap-codec/-/sourcemap-codec-1.4.1.tgz#c8fd92d91889e902a07aee392bdd2c5863958ba2"
+
 sourcemap-validator@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/sourcemap-validator/-/sourcemap-validator-1.1.0.tgz#00454547d1682186e1498a7208e022e8dfa8738f"
@@ -8238,6 +8416,10 @@ thunkify@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/thunkify/-/thunkify-2.1.2.tgz#faa0e9d230c51acc95ca13a361ac05ca7e04553d"
 
+time-zone@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/time-zone/-/time-zone-1.0.0.tgz#99c5bf55958966af6d06d83bdf3800dc82faec5d"
+
 timed-out@4.0.1, timed-out@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/timed-out/-/timed-out-4.0.1.tgz#f32eacac5a175bea25d7fab565ab3ed8741ef56f"
@@ -8437,6 +8619,10 @@ untildify@^2.1.0:
   resolved "https://registry.yarnpkg.com/untildify/-/untildify-2.1.0.tgz#17eb2807987f76952e9c0485fc311d06a826a2e0"
   dependencies:
     os-homedir "^1.0.0"
+
+upper-case@^1.1.1:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/upper-case/-/upper-case-1.1.3.tgz#f6b4501c2ec4cdd26ba78be7222961de77621598"
 
 uri-js@^4.2.1:
   version "4.2.2"

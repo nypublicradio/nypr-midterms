@@ -17,6 +17,10 @@
     "test": "ember test"
   },
   "devDependencies": {
+    "@fortawesome/ember-fontawesome": "^0.1.2",
+    "@fortawesome/free-brands-svg-icons": "^5.2.0",
+    "@fortawesome/free-regular-svg-icons": "^5.2.0",
+    "@fortawesome/free-solid-svg-icons": "^5.2.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "broccoli-asset-rev": "^2.7.0",
     "ember-basic-dropdown": "^1.0.3",
@@ -54,7 +58,6 @@
     "ember-data": "~3.3.0",
     "ember-export-application-global": "^2.0.0",
     "ember-fetch": "^5.1.1",
-    "ember-font-awesome": "^4.0.0-rc.4",
     "ember-hifi": "nypublicradio/ember-hifi#master",
     "ember-load-initializers": "^1.1.0",
     "ember-maybe-import-regenerator": "^0.1.6",

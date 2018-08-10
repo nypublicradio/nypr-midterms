@@ -65,7 +65,7 @@ module('Integration | Component | share-icons', function(hooks) {
   test('it renders links', async function(assert) {
     await render(hbs`
       {{#share-icons as |icons|}}
-        {{icons.link 'facebook' 'foo'}}
+        {{icons.link 'facebook' 'foo' 'facebook-f'}}
         {{icons.link 'twitter' 'bar'}}
         {{icons.link 'instagram' 'baz'}}
         {{icons.link 'youtube' 'qux'}}
@@ -76,18 +76,18 @@ module('Integration | Component | share-icons', function(hooks) {
     `);
 
     assert.dom('a.facebook').hasAttribute('href', 'https://www.facebook.com/foo', 'facebook renders');
-    assert.dom('i.fa-facebook').exists('facebook renders');
+    assert.dom('svg.fa-facebook-f').exists('facebook renders');
     assert.dom('a.twitter').hasAttribute('href', 'https://twitter.com/bar', 'twitter renders');
-    assert.dom('i.fa-twitter').exists('twitter renders');
+    assert.dom('svg.fa-twitter').exists('twitter renders');
     assert.dom('a.instagram').hasAttribute('href', 'https://www.instagram.com/baz', 'instagram renders');
-    assert.dom('i.fa-instagram').exists('instagram renders');
+    assert.dom('svg.fa-instagram').exists('instagram renders');
     assert.dom('a.youtube').hasAttribute('href', 'https://www.youtube.com/channel/qux', 'youtube renders');
-    assert.dom('i.fa-youtube').exists('youtube renders');
+    assert.dom('svg.fa-youtube').exists('youtube renders');
     assert.dom('a.medium').hasAttribute('href', 'https://medium.com/@fuz', 'medium renders');
-    assert.dom('i.fa-medium').exists('medium renders');
+    assert.dom('svg.fa-medium').exists('medium renders');
     assert.dom('a.linkedin').hasAttribute('href', 'https://www.linkedin.com/company/wiz', 'linkedin renders');
-    assert.dom('i.fa-linkedin').exists('linkedin renders');
+    assert.dom('svg.fa-linkedin').exists('linkedin renders');
     assert.dom('a.snap').hasAttribute('href', 'https://www.snapchat.com/add/wuz', 'snap renders');
-    assert.dom('i.fa-snapchat-ghost').exists('snap renders with icon param');
+    assert.dom('svg.fa-snapchat-ghost').exists('snap renders with icon param');
   });
 });
