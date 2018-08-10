@@ -1,0 +1,85 @@
+@import "../mixins/buttons";
+
+.hearken-section {
+  background-color: #333333;
+  color: #ffffff;
+  font-family: OpenSans;
+  font-size: 14px;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: #ffffff;
+  }
+
+  .hearken-section__wrapper{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+
+  .hearken-section__header {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 28px;
+  }
+
+  .hearken-section__chunk-wrapper {
+
+    > .hearken-section__poll-results-wrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      margin-bottom: 40px;
+
+      > .hearken-section__poll-percentage {
+        margin: 0;
+        display: inline-block;
+        padding-right: 28px;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      > .hearken-section__question-wrapper {
+        display: inline-block;
+        margin: auto 0;
+
+        > .hearken-section__question {
+          font-weight: bold;
+        }
+      }
+    }
+    > .hearken-section__answer-wrapper {
+      text-align: center;
+      padding-bottom: 40px;
+      > div {
+        display: inline-block;
+      }
+      > .hearken-section__answer {
+        font-size: 22px;
+        padding-top: 5px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .hearken-section__view-more {
+    text-align: center;
+    > button {
+      @include btn;
+      font-size: 18px;
+      font-weight: 600 !important;
+      display: block;
+      margin: 10px auto;
+      margin-bottom: 20px;
+      padding: 7px;
+      background-color: #ffffff;
+      border-radius: 0 !important;
+      color: #000000;
+
+    }
+  }
+
+}

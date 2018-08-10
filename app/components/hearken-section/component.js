@@ -5,6 +5,7 @@ import { inject as service } from '@ember/service';
 export default Component.extend({
   store: service(),
   chunk: null,
+  classNames: ['hearken-section'],
 
   init(){
     this._super(...arguments);
