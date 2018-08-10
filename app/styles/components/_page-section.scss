@@ -1,0 +1,43 @@
+@import "../mixins/buttons";
+
+.page-section,
+.page-section__tease {
+  background-color: inherit;
+}
+
+.page-section__tease.gradient {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 24%;
+    background-image: linear-gradient(to bottom, transparent, var(--gradient));
+  }
+}
+
+.page-section__toggle {
+  @include btn;
+  border: solid 2px white;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+
+  svg {
+    transition: transform 125ms ease;
+    fill: currentColor;
+    width: 15px;
+  }
+}
+
+.page-section__footer {
+  display: flex;
+  justify-content: center;
+}
+
+.page-section.is-open .page-section__toggle svg {
+  transform: rotate(180deg);
+}
