@@ -1,5 +1,19 @@
 @import "../mixins/buttons";
 
+.page-section__tease.gradient {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 24%;
+    background-image: linear-gradient(to bottom, transparent, var(--gradient));
+  }
+}
+
 .page-section__toggle {
   @include btn;
 
