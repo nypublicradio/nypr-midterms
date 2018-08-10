@@ -37,7 +37,7 @@ module('Integration | Component | episode-tease', function(hooks) {
     assert.dom('article.episode-tease').exists();
     assert.dom('.episode-tease__title').hasText('This Great Episode');
 
-    let moreLink = assert.dom('.episode-tease__link')
+    let moreLink = assert.dom('.episode-tease__link a')
     moreLink.hasText('See All Episodes');
     moreLink.hasAttribute('href', 'http://moreepisodes.com');
 

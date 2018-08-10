@@ -24,13 +24,15 @@
   }
 
   &__link {
-    display: block;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 12px;
-    line-height: 1.67;
-    color: $blue;
     margin-bottom: 8px;
+
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 1.67;
+      color: $blue;
+    }
   }
 
   &__body {
