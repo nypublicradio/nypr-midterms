@@ -1,0 +1,7 @@
+{{#component button tagName='button' class=(concat 'pill-dropdown__button' (if open ' is-open'))}}
+  {{#if (has-block)}}
+    {{yield}}
+  {{else}}
+    {{text}}
+  {{/if}}
+{{/component}}
