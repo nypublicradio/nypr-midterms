@@ -15,6 +15,7 @@
 
   position: relative;
 
+  // downward blue arrow
   &:after {
     content: '';
     height: 0;
@@ -34,6 +35,8 @@
 }
 
 .pill-dropdown__content {
+
+  // upward facing arrow
   &:after {
     content: '';
     height: 0;
@@ -49,6 +52,7 @@
     border-bottom-color: white;
   }
 
+  // fake element that makes it look like there's a border around the arrow
   &:before {
     content: '';
     height: 20px;
@@ -67,6 +71,7 @@
   }
 }
 
+// need this nested element so the fake arrows can be hidden
 .pill-dropdown__wrapper {
   background: white;
   padding: 8px;
