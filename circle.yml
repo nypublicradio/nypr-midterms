@@ -31,7 +31,7 @@ deploy_fastboot: &deploy_fastboot
     - restore_cache:
         key: deploy-{{ checksum "circle.yml" }}
     - restore_cache:
-        key: fastboot-{{ checksum "fastboot.lock" }}
+        key: fastboot-lock
     - run:
         name: Install Requirements
         command: |
@@ -43,8 +43,16 @@ deploy_fastboot: &deploy_fastboot
     - deploy:
         name: Deploy Fastboot
         command: |
-          if [ ! -f fastboot.lock ]; then # fastboot.js, fastboot deps, or envvars changed; re deploy
-            printf $(md5sum <<<"$(jq .dependencies package.json)$(env | sed -E 's/DEMO_(.*)/\1/g;t;d')") > fastboot.lock
+          UPPER_ENV=$(echo $ENV | tr a-z A-Z)
+          FAST_HASH=$(printf $(md5sum <<<"$(jq .dependencies package.json)$(env | sed -n "s/^${UPPER_ENV}_//p")"))
+
+          if [ ! -d fastboot.lock ] || [ $HASH != $(cat fastboot.lock) ]; then
+            # this is either the first deploy, or
+            # fastboot.js, fastboot deps, or envvars changed; re deploy
+
+            # save hash of fastboot deps to lockfile for future deploys
+            echo $FAST_HASH > fastboot.lock
+
             TAG=${CIRCLE_TAG:-demo}
             source ~/.venv/bin/activate
             nyprsetuptools DockerDeploy --environment=$ENV \
@@ -60,7 +68,7 @@ deploy_fastboot: &deploy_fastboot
                                         --memory-reservation=512
           fi
     - save_cache:
-        key: fastboot-{{ checksum "fastboot.lock" }}
+        key: fastboot-lock
         paths:
           - fastboot.lock
     - save_cache:
