@@ -3216,9 +3216,9 @@ ember-hash-helper-polyfill@^0.2.0:
     ember-cli-babel "^6.8.2"
     ember-cli-version-checker "^2.1.0"
 
-ember-hifi@^1.11.1:
+ember-hifi@^1.11.1, ember-hifi@nypublicradio/ember-hifi#master:
   version "1.15.1"
-  resolved "https://registry.yarnpkg.com/ember-hifi/-/ember-hifi-1.15.1.tgz#7211b8cea45ed3611545d7f1c1a4c184e2182fda"
+  resolved "https://codeload.github.com/nypublicradio/ember-hifi/tar.gz/d337fc2b77901ba2fad07c84c172461d9e18cd44"
   dependencies:
     ember-cli-babel "^6.6.0"
     ember-poll "^1.4.0"
