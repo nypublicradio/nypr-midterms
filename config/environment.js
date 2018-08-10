@@ -25,6 +25,9 @@ module.exports = function(environment) {
     fastboot: {
       hostWhitelist: [/^localhost:\d+$/].concat(process.env.HOST_WHITELIST ? process.env.HOST_WHITELIST.split(',') : [])
     },
+
+    gothamistAPI: process.env.GOTHAMIST_API,
+    publisherAPI: process.env.PUBLISHER_API,
   };
 
   if (environment === 'development') {
