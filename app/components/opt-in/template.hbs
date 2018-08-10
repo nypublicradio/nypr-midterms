@@ -1,38 +1,51 @@
 <h1>Sign Up for Updates</h1>
 <p>Get the latest updates via Email Lorem Ips Lorem Ipsum Dolor</p>
 
-<form {{action 'submitForms' on='submit'}}>
-  {{#if (not emailSuccess)}}
-    {{nypr-input
-      data-test-email-input
-      label='Email'
-      type='email'
-      fieldname='signupEmail'
-      placeholder='your@PrePopulatedEmail.com'
-      value=changeset.email
-      errors=changeset.error.email.validation
-    }}
-  {{/if}}
+{{#if (and emailSuccess (not phoneSuccess))}}
+  Email success text
+{{/if}}
 
-  {{#if (not phoneSuccess)}}
-    {{nypr-input
-      data-test-phone-input
-      label='Phone Number'
-      type='tel'
-      fieldname='signupPhoneNumber'
-      placeholder='000-000-0000'
-      value=changeset.phone
-      errors=changeset.error.phone.validation
-    }}
-  {{/if}}
+{{#if (and phoneSuccess (not emailSuccess))}}
+  Phone success text
+{{/if}}
 
-  <p class="opt-in__legal-checkbox">
-    {{input data-test-legal-checkbox type="checkbox" name="legalChecked" checked=legalChecked}}
-    By submitting your information, you're agreeing to receive communications
-    from New York Public Radio in accordance with our Terms of Use.
-  </p>
+{{#if (and phoneSuccess emailSuccess)}}
+  Both were submitted
+{{/if}}
 
-  <button type="submit" disabled={{isSubmitButtonDisabled}} data-test-submit-button>
-    Sign Up
-  </button>
-</form>
+{{#if (not isFullFormSubmitted)}}
+  <form {{action 'submitForms' on='submit'}}>
+    {{#if (not emailSuccess)}}
+      {{nypr-input
+        data-test-email-input
+        label='Email'
+        fieldname='signupEmail'
+        placeholder='your@PrePopulatedEmail.com'
+        value=changeset.email
+        errors=(or changeset.error.email.validation emailResponseErrors)
+      }}
+    {{/if}}
+
+    {{#if (not phoneSuccess)}}
+      {{nypr-input
+        data-test-phone-input
+        label='Phone Number'
+        type='tel'
+        fieldname='signupPhoneNumber'
+        placeholder='000-000-0000'
+        value=changeset.phone
+        errors=(or changeset.error.phone.validation phoneResponseErrors)
+      }}
+    {{/if}}
+
+    <p class="opt-in__legal-checkbox">
+      {{input data-test-legal-checkbox type="checkbox" name="legalChecked" checked=legalChecked}}
+      By submitting your information, you're agreeing to receive communications
+      from New York Public Radio in accordance with our Terms of Use.
+    </p>
+
+    <button type="submit" disabled={{isSubmitButtonDisabled}} data-test-submit-button>
+      Sign Up
+    </button>
+  </form>
+{{/if}}

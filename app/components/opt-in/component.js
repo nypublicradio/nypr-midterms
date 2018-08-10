@@ -3,6 +3,7 @@ import Component from "@ember/component";
 import config from "ember-get-config";
 import fetch from "fetch";
 import lookupValidator from "ember-changeset-validations";
+import { and } from "@ember/object/computed";
 import { computed } from "@ember/object";
 import { set } from "@ember/object";
 import { task } from "ember-concurrency";
@@ -14,6 +15,9 @@ let validations = {
 };
 
 export default Component.extend({
+  emailResponseErrors: null,
+  phoneResponseErrors: null,
+
   init() {
     this._super(...arguments);
     let obj = {
@@ -38,30 +42,57 @@ export default Component.extend({
       );
     }
   ),
+  isFullFormSubmitted: and("phoneSuccess", "emailSuccess"),
   submitEmail: task(function*(data) {
     let newsletterEndpoint = config.newsletterSignupEndpoint;
     let res = yield fetch(newsletterEndpoint, {
       method: "POST",
       data: JSON.stringify(data)
     });
+
     if (res.status === 200) {
-      this.set('emailSuccess', true);
+      this.set("emailSuccess", true);
+      return;
     }
+
+    let json = yield res.json();
+    if (res.status === 400) {
+      this.set('emailResponseErrors', [json['detail']])
+    }
+
   }),
   submitPhone: task(function*(data) {
     let smsEndpoint = config.smsSignupEndpoint;
-    yield fetch(smsEndpoint, {
+    let res = yield fetch(smsEndpoint, {
       method: "POST",
       data: JSON.stringify(data)
     });
+
+    if (res.status === 200) {
+      this.set("phoneSuccess", true);
+    }
+
+    let json = yield res.json();
+    if (res.status === 400) {
+      this.set('phoneResponseErrors', [json['detail']])
+    }
+
   }),
 
   actions: {
     submitForms() {
-      if (!this.get('changeset.error.email') && this.get('changeset.email')) {
+      if (
+        this.get("changeset.email") &&         // email has been entered
+        !this.get("changeset.error.email") &&  // no errors exist
+        !this.get("emailSuccess")              // not already submitted
+      ) {
         this.get("submitEmail").perform();
       }
-      if (!this.get('changeset.error.phone') && this.get('changeset.phone')) {
+      if (
+        this.get("changeset.phone") &&
+        !this.get("changeset.error.phone") &&
+        !this.get("phoneSuccess")
+      ) {
         this.get("submitPhone").perform();
       }
     }
