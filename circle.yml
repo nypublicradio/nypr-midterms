@@ -5,7 +5,7 @@ defaults: &defaults
         JOBS: 2
 
 node_key: &node_key
-  key: node-deps-{{ checksum "yarn.lock" }}
+  key: node-deps-{{ checksum "yarn.lock" }}-{{ checksum "circle.yml" }}
 
 restore_node: &restore_node
   restore_cache:
@@ -102,6 +102,7 @@ jobs:
           <<: *node_key
           paths:
             - node_modules
+            - /home/circleci/.cache/Cypress
 
   test-static:
     <<: *defaults
