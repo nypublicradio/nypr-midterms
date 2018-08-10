@@ -1,0 +1,24 @@
+{{#page-section as |section|}}
+  {{#section.tease}}
+    <h1 class="listen-section__title">
+      <span>
+        Listen
+      </span>
+    </h1>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+
+    {{#unless section.isOpen}}
+    <div class="listen-section__buttons">
+      <button class="listen-section__button" data-test-open-listen {{action section.toggleOpen}}>Podcasts</button>
+      <button class="listen-section__button" data-test-listen-live {{action listenLive}}>Live Radio</button>
+    </div>
+    {{/unless}}
+  {{/section.tease}}
+
+  {{#section.body}}
+  {{/section.body}}
+
+{{/page-section}}
