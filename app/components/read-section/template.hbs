@@ -1,0 +1,8 @@
+{{#each sorted as |story|}}
+  <strong>{{serialized-list story.producingOrganizations separator='+' key='name'}}</strong>
+  <h2>{{story.title}}</h2>
+  <h3>{{moment-from story.newsdate}}</h3>
+  <p>
+    {{story.tease}}
+  </p>
+{{/each}}
