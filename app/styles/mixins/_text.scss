@@ -1,0 +1,61 @@
+@mixin section-title(
+  $font-size: 24px,
+  $font-family: $font-montserrat,
+  $font-weight: 600,
+  $font-style: oblique,
+  $line-height: 1.33,
+  $color: inherit,
+) {
+  font-size: $font-size;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: $font-style;
+  line-height: $line-height;
+  color: $color;
+
+  text-align: center;
+  margin-bottom: 24px;
+
+  background-color: inherit;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 10px;
+
+    // side stripes
+    background-image: linear-gradient(to bottom,
+      white, white 2px,
+      transparent 2px, transparent 4px,
+      white 4px, white 6px,
+      transparent 6px, transparent 8px,
+      white 8px, white 10px);
+
+  }
+
+  // inner element required to give text a background color that hides the stripes
+  // that run behind the letters
+  span {
+    background-color: inherit;
+    padding: 0 24px;
+    position: relative;
+  }
+}
+
+@mixin section-text(
+  $text-align: center,
+  $font-size: 14px,
+  $line-height: 1.57,
+  $color: white,
+) {
+  text-align: $text-align;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+}

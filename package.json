@@ -55,6 +55,7 @@
     "ember-export-application-global": "^2.0.0",
     "ember-fetch": "^5.1.1",
     "ember-font-awesome": "^4.0.0-rc.4",
+    "ember-hifi": "nypublicradio/ember-hifi#master",
     "ember-load-initializers": "^1.1.0",
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-moment": "^7.7.0",
@@ -69,6 +70,8 @@
     "liquid-fire": "^0.29.5",
     "loader.js": "^4.2.3",
     "normalize.css": "^8.0.0",
+    "nypr-audio-services": "nypublicradio/nypr-audio-services#fastboot",
+    "nypr-publisher-lib": "nypublicradio/nypr-publisher-lib#fastboot",
     "nypr-ui": "nypublicradio/nypr-ui#fastboot",
     "qunit-dom": "^0.6.2"
   },
@@ -78,5 +81,8 @@
   "dependencies": {
     "dotenv": "^6.0.0",
     "nypr-fastboot": "^0.3.0"
+  },
+  "resolutions": {
+    "ember-hifi": "nypublicradio/ember-hifi#master"
   }
 }

@@ -7,3 +7,9 @@
   padding: $padding;
   margin: $magin;
 }
+
+@mixin section-layout(
+  $padding: 40px 16px,
+) {
+  padding: $padding;
+}
