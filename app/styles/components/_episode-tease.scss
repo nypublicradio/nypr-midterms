@@ -1,0 +1,41 @@
+.episode-tease {
+  background-color: white;
+  padding: 32px 24px;
+
+  &__top {
+    display: flex;
+    margin-bottom: 16px;
+  }
+
+  &__left {
+    flex-shrink: 0;
+  }
+
+  &__right {
+    flex: 1;
+    margin-left: 16px;
+  }
+
+  &__title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.43;
+    color: $darkgray;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 1.67;
+    color: $blue;
+    margin-bottom: 8px;
+  }
+
+  &__body {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.57;
+  }
+}
