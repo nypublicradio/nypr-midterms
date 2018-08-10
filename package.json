@@ -69,6 +69,8 @@
     "liquid-fire": "^0.29.5",
     "loader.js": "^4.2.3",
     "normalize.css": "^8.0.0",
+    "nypr-audio-services": "nypublicradio/nypr-audio-services#fastboot",
+    "nypr-publisher-lib": "nypublicradio/nypr-publisher-lib#fastboot",
     "nypr-ui": "nypublicradio/nypr-ui#fastboot",
     "qunit-dom": "^0.6.2"
   },
