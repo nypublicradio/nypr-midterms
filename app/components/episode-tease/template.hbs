@@ -1,1 +1,19 @@
-{{yield}}
+<div class="episode-tease__top">
+  <div class="episode-tease__left">
+    {{listen-button
+      data-test-listen
+      itemPK=audio
+      type='blue-hollow'
+      itemTitle=title
+    }}
+  </div>
+  <div class="episode-tease__right">
+    {{yield (hash
+      title=(component 'episode-tease/title')
+      link=(component 'episode-tease/link')
+      body=(component 'episode-tease/body')
+    )}}
+  </div>
+</div>
+
+{{yield (hash footer=(component 'episode-tease/footer'))}}
