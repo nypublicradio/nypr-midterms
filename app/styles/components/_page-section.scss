@@ -19,6 +19,11 @@
   }
 }
 
+.page-section__tease,
+.page-section__body {
+  margin-bottom: 24px;
+}
+
 .page-section__toggle {
   @include btn;
   border: solid 2px white;
