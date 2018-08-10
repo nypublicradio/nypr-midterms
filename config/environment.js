@@ -6,6 +6,8 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+    newsletterSignupEndpoint: process.env.NEWSLETTER_ENDPOINT || '/newsletter-signup',
+    smsSignupEndpoint: process.env.SMS_ENDPOINT || '/sms-signup',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
