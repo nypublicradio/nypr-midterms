@@ -1,0 +1,34 @@
+@import "../mixins/vars";
+@import "../mixins/text";
+@import "../mixins/layout";
+@import "../mixins/buttons";
+
+.listen-section {
+  @include section-layout;
+
+  @include section-text;
+
+  background-color: $blue;
+
+  &__title {
+    @include section-title;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__button {
+    @include btn;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.93;
+
+    border: 2px solid white;
+    border-radius: 20px;
+
+    flex-basis: 48%;
+  }
+}
