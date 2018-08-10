@@ -113,6 +113,16 @@ jobs:
           name: Test
           command: npx ember test
 
+  test-static-cypress:
+    <<: *defaults
+
+    steps:
+      - checkout
+      - <<: *restore_node
+      - run:
+          name: Test with Cypress
+          command: yarn cy:test
+
   deploy-static-qa:
     <<: *defaults
 
@@ -168,6 +178,9 @@ workflows:
             branches:
               ignore: /master|[A-Za-z-_]+/[A-Za-z-_\d]+/
       - test-static:
+          requires:
+            - build-static
+      - test-static-cypress:
           requires:
             - build-static
 
