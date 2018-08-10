@@ -1,0 +1,10 @@
+{{#basic-dropdown
+  onOpen=(action (mut open) true)
+  onClose=(action (mut open) false)
+  calculatePosition=calculatePosition
+  as |dd|}}
+  {{yield (hash
+    button=(component 'pill-dropdown/button' button=dd.trigger open=open)
+    content=(component 'pill-dropdown/content' content=dd.content)
+  )}}
+{{/basic-dropdown}}
