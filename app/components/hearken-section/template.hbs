@@ -1,0 +1,20 @@
+{{#page-section class="hearken-section__wrapper" as |section|}}
+  {{#section.tease}}
+    <h2 class="hearken-section__header">REAL ANSWERS</h2>
+    {{#if chunk}}
+      <div class="hearken-section__chunk-wrapper">
+        {{{chunk.content}}}
+      </div>
+    {{else}}
+      {{yield}}
+    {{/if}}
+    {{/section.tease}}
+
+    {{#section.body}}
+      <div class="hearken-section__view-more">
+        <button href="">View More Upvoted Content</button>
+        <a href="" class="hearken-section__view-more-explainer"> How does this work? </a>
+      </div>
+    {{/section.body}}
+
+  {{/page-section}}
