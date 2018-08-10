@@ -1,6 +1,6 @@
 @mixin wrapper(
-  $padding: 0 35px,
   $width: 666px,
+  $padding: 0 32px,
   $margin: 0 auto,
 ) {
   max-width: $width;
