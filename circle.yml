@@ -46,7 +46,7 @@ deploy_fastboot: &deploy_fastboot
           UPPER_ENV=$(echo $ENV | tr a-z A-Z)
           FAST_HASH=$(printf $(md5sum <<<"$(jq .dependencies package.json)$(env | sed -n "s/^${UPPER_ENV}_//p")"))
 
-          if [ ! -d fastboot.lock ] || [ $HASH != $(cat fastboot.lock) ]; then
+          if [ ! -d fastboot.lock ] || [ $FAST_HASH != $(cat fastboot.lock) ]; then
             # this is either the first deploy, or
             # fastboot.js, fastboot deps, or envvars changed; re deploy
 
