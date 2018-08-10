@@ -21,11 +21,21 @@
 
 .page-section__toggle {
   @include btn;
+  border: solid 2px white;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
 
   svg {
     transition: transform 125ms ease;
     fill: currentColor;
+    width: 15px;
   }
+}
+
+.page-section__footer {
+  display: flex;
+  justify-content: center;
 }
 
 .page-section.is-open .page-section__toggle svg {
