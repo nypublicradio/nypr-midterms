@@ -1,0 +1,12 @@
+.media-object {
+  display: flex;
+
+  &__media {
+    flex-shrink: 0;
+  }
+
+  &__body {
+    flex: 1;
+    margin-left: 16px;
+  }
+}
