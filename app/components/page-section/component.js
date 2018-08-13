@@ -3,7 +3,7 @@ import { not } from '@ember/object/computed';
 
 export default Component.extend({
   classNames: ['page-section'],
-  classNameBindings: ['isOpen:is-open:is-closed', 'gradient'],
+  classNameBindings: ['isOpen:is-open:is-closed'],
 
   isClosed: not('isOpen'),
 
