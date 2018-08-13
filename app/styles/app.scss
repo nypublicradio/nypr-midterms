@@ -1,5 +1,4 @@
 @import "mixins/fonts";
-@import "mixins/vars";
 
 // extra small < 360px
 $small: 360px;
@@ -13,6 +12,9 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 @import "mixins/ui-compat";
 @import "nypr-ui/hero";
 @import "nypr-ui/button-classes";
+
+// override values defined by ill-scoped `nypr-ui`
+@import "mixins/vars";
 
 @import "base";
 
