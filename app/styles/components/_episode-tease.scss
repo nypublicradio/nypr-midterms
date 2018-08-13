@@ -3,7 +3,6 @@
   text-align: left;
   background-color: white;
   padding: 32px 24px;
-  margin-bottom: 24px;
 
   &__top {
     margin-bottom: 16px;
@@ -14,6 +13,11 @@
     font-weight: 600;
     line-height: 1.43;
     color: $darkgray;
+
+    @include media('>=medium') {
+      font-size: 18px;
+      line-height: 1.5;
+    }
   }
 
   &__link {
@@ -25,6 +29,11 @@
       font-size: 12px;
       line-height: 1.67;
       color: $blue;
+
+      @include media('>=medium') {
+        letter-spacing: 1.7px;
+        line-height: 2.33;
+      }
     }
   }
 

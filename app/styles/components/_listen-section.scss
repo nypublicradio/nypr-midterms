@@ -15,7 +15,6 @@
   &__buttons {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 16px;
   }
 
   &__button {
@@ -28,5 +27,21 @@
     border-radius: 20px;
 
     flex-basis: 48%;
+  }
+
+  &__episodes {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+  }
+
+  &__item {
+    flex-basis: 304px;
+
+    display: flex;
+
+    > * {
+      flex: 1;
+    }
   }
 }

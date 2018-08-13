@@ -1,4 +1,4 @@
-{{#page-section as |section|}}
+{{#page-section open=(media 'isMedium') as |section|}}
   {{#section.tease}}
     <h1 class="listen-section__title">
       <span>
@@ -19,26 +19,32 @@
   {{/section.tease}}
 
   {{#section.body}}
-    {{#episode-tease audio='wnyc-fm939' as |tease|}}
-      {{tease.title "NYPR Midterm Podcast"}}
-      {{tease.link "See All Episodes" "https://www.wnycstudios.org/midterms"}}
+    <div class="listen-section__episodes">
+      <div class="listen-section__item">
+      {{#episode-tease audio='wnyc-fm939' as |tease|}}
+        {{tease.title "NYPR Midterm Podcast"}}
+        {{tease.link "See All Episodes" "https://www.wnycstudios.org/midterms"}}
 
-      {{#tease.body}}
-        Lorem ipsum lorem ipsum
-      {{/tease.body}}
+        {{#tease.body}}
+          Lorem ipsum lorem ipsum
+        {{/tease.body}}
 
-      {{tease.footer links=NEWSROOM_LINKS}}
-    {{/episode-tease}}
+        {{tease.footer links=NEWSROOM_LINKS}}
+      {{/episode-tease}}
+      </div>
 
-    {{#episode-tease audio='wnyc-fm939' as |tease|}}
-      {{tease.title "Listen to our Live coverage"}}
+      <div class="listen-section__item">
+      {{#episode-tease audio='wnyc-fm939' as |tease|}}
+        {{tease.title "Listen to our Live coverage"}}
 
-      {{#tease.body}}
-        <span class="live-box">Live</span> Lorem ipsum lorem ipsum
-      {{/tease.body}}
+        {{#tease.body}}
+          <span class="live-box">Live</span> Lorem ipsum lorem ipsum
+        {{/tease.body}}
 
-      {{tease.footer links=NEWSROOM_LINKS}}
-    {{/episode-tease}}
+        {{tease.footer links=NEWSROOM_LINKS}}
+      {{/episode-tease}}
+      </div>
+    </div>
   {{/section.body}}
 
 {{/page-section}}
