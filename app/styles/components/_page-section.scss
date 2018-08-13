@@ -17,6 +17,10 @@
     height: 24%;
     background-image: linear-gradient(to bottom, transparent, var(--gradient));
   }
+
+  &.is-open:after {
+    display: none;
+  }
 }
 
 .page-section__tease,
