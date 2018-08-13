@@ -14,7 +14,7 @@
 
   {{#section.body}}
     <div class="read-section__stories">
-      {{#each sorted as |story i|}}
+      {{#each (slice 0 4 sorted) as |story i|}}
       <div class="read-story">
         {{story-tease
           data-test-story-tease=i
