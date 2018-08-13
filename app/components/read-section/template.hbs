@@ -17,6 +17,7 @@
       {{#each sorted as |story i|}}
       <div class="read-story">
         {{story-tease
+          data-test-story-tease=i
           showImage=(eq i 0)
           imageUrl=(if (media 'isMedium') story.thumbnailLarge story.thumbnailSmall)
           story=story}}
