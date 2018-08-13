@@ -1,0 +1,51 @@
+.story-tease {
+  text-align: center;
+
+  &__brand {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.83;
+    color: $gray;
+    letter-spacing: 1.7px;
+
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+
+    > a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      transition: 125ms ease color;
+
+      &:hover {
+        color: $gray;
+      }
+    }
+  }
+
+  &.has-image .story-tease__title {
+    margin-bottom: 16px;
+  }
+
+  &__thumb {
+    margin-bottom: 16px;
+  }
+
+
+  &__summary {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.57;
+  }
+
+  &__date {
+    font-size: 12px;
+    line-height: 1.67;
+    color: rgba(black, 0.6);
+  }
+}
