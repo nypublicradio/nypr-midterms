@@ -14,7 +14,7 @@ const SERVICE_MAP = {
 
 const SocialLink = Component.extend({
   tagName: 'a',
-  classNames: ['share-icons__link'],
+  classNames: ['share-icon', 'share-icon__link'],
   classNameBindings: ['service'],
   attributeBindings: ['href', 'target'],
 

@@ -2,26 +2,24 @@
 
 .share-icons {
   display: flex;
+}
 
-  > button,
-  &__email,
-  &__link {
-    @include btn;
-    color: inherit;
-    padding: 8px;
-    text-align: center;
-    font-size: 28px;
+.share-icon {
+  @include btn;
+  color: inherit;
+  padding: 8px;
+  text-align: center;
+  font-size: 28px;
 
-    margin-right: 8px;
+  margin-right: 8px;
 
-    transition: border-color 125ms ease;
+  transition: border-color 125ms ease;
 
-    &:last-child {
-      margin-right: 0;
-    }
+  &:last-child {
+    margin-right: 0;
+  }
 
-    &:hover {
-      border-color: rgba(white, 0.5);
-    }
+  &:hover {
+    border-color: rgba(white, 0.5);
   }
 }

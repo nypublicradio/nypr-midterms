@@ -3,7 +3,7 @@ import { computed } from '@ember/object';
 
 export default Component.extend({
   tagName: 'a',
-  classNames: ['share-icons__email'],
+  classNames: ['share-icon', 'share-icon__email'],
   attributeBindings: ['href', 'target'],
 
   target: '_blank',
