@@ -9,7 +9,7 @@ module('Integration | Component | share-icons/tweet', function(hooks) {
   test('it renders', async function(assert) {
     await render(hbs`{{share-icons/tweet}}`);
 
-    assert.dom('.share-icons__tweet').exists();
+    assert.dom('.share-icon__tweet').exists();
 
     // Template block usage:
     await render(hbs`
@@ -18,6 +18,6 @@ module('Integration | Component | share-icons/tweet', function(hooks) {
       {{/share-icons/tweet}}
     `);
 
-    assert.dom('.share-icons__tweet').hasText('template block text');
+    assert.dom('.share-icon__tweet').hasText('template block text');
   });
 });

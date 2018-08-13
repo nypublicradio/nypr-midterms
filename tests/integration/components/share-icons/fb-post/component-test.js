@@ -9,7 +9,7 @@ module('Integration | Component | share-icons/fb-post', function(hooks) {
   test('it renders', async function(assert) {
     await render(hbs`{{share-icons/fb-post}}`);
 
-    assert.dom('button.share-icons__fb-post').exists();
+    assert.dom('button.share-icon__fb-post').exists();
 
     await render(hbs`
       {{#share-icons/fb-post}}
@@ -17,6 +17,6 @@ module('Integration | Component | share-icons/fb-post', function(hooks) {
       {{/share-icons/fb-post}}
     `);
 
-    assert.dom('button.share-icons__fb-post').hasText('click me');
+    assert.dom('button.share-icon__fb-post').hasText('click me');
   });
 });

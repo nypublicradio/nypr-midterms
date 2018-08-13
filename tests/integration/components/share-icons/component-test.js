@@ -19,7 +19,7 @@ module('Integration | Component | share-icons', function(hooks) {
       {{/share-icons}}
     `);
 
-    await click('.share-icons__fb-post');
+    await click('.share-icon__fb-post');
   });
 
   test('it opens a pop up to twitter', async function() {
@@ -42,7 +42,7 @@ module('Integration | Component | share-icons', function(hooks) {
       {{/share-icons}}
     `);
 
-    await click('.share-icons__tweet');
+    await click('.share-icon__tweet');
   });
 
   test('it renders a mailto: link', async function(assert) {
@@ -59,7 +59,7 @@ module('Integration | Component | share-icons', function(hooks) {
       {{/share-icons}}
     `);
 
-    assert.dom('a.share-icons__email').hasAttribute('href', `mailto:?subject=${SUBJECT}&body=${URL}`);
+    assert.dom('a.share-icon__email').hasAttribute('href', `mailto:?subject=${SUBJECT}&body=${URL}`);
   });
 
   test('it renders links', async function(assert) {

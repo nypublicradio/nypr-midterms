@@ -10,6 +10,6 @@ module('Integration | Component | share-icons/link', function(hooks) {
   test('it renders', async function(assert) {
     await render(hbs`{{share-icons/link}}`);
 
-    assert.dom('.share-icons__link').exists();
+    assert.dom('.share-icon__link').exists();
   });
 });

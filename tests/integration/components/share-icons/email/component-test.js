@@ -13,7 +13,7 @@ module('Integration | Component | share-icons/email', function(hooks) {
     });
     await render(hbs`{{share-icons/email url=url subject=subject}}`);
 
-    assert.dom('.share-icons__email').exists();
-    assert.dom('.share-icons__email').hasAttribute('href', 'mailto:?subject=foo&body=bar');
+    assert.dom('.share-icon__email').exists();
+    assert.dom('.share-icon__email').hasAttribute('href', 'mailto:?subject=foo&body=bar');
   });
 });
