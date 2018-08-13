@@ -15,6 +15,7 @@ let validations = {
 };
 
 export default Component.extend({
+  classNames: ['opt-in'],
   emailResponseErrors: null,
   phoneResponseErrors: null,
 
@@ -50,7 +51,7 @@ export default Component.extend({
       data: JSON.stringify(data)
     });
 
-    if (res.status === 200) {
+    if ([200,201].includes(res.status)) {
       this.set("emailSuccess", true);
       return;
     }
@@ -68,7 +69,7 @@ export default Component.extend({
       data: JSON.stringify(data)
     });
 
-    if (res.status === 200) {
+    if ([200,201].includes(res.status)) {
       this.set("phoneSuccess", true);
     }
 
