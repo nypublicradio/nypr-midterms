@@ -1,12 +1,18 @@
 @mixin btn(
-  $font-family: $font-opensans
+  $font-family: $font-opensans,
+  $border-radius: 0,
+  $background-color: transparent,
+  $padding: 0,
+  $color: inherit,
+  $border: none,
 ) {
   font-family: $font-family;
-  color: inherit;
+  color: $color;
   appearance: none;
-  border: none;
-  padding: 0;
-  background: none;
+  border: $border;
+  border-radius: $border-radius;
+  padding: $padding;
+  background-color: $background-color;
   cursor: pointer;
 
   display: flex;
