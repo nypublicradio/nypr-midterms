@@ -55,12 +55,14 @@ module('Integration | Component | read-section', function(hooks) {
     await render(hbs`{{read-section wnyc=wnyc gothamist=gothamist}}`);
     await click('.read-section .page-section__toggle');
 
-    findAll('.story-tease').reverse().forEach((el, i) => {
+    assert.equal(findAll('.story-tease').length, 4, 'only 4 stories render')
+
+    // starts at 8, and counts down
+    findAll('.story-tease').forEach((el, i) => {
       let title = el.querySelector('.story-tease__title').textContent.trim();
-      assert.equal(title, `${i + 1}: Story`);
-    });
+      assert.equal(title, `${8 - i}: Story`);
+    })
 
     assert.dom('[data-test-story-tease="0"] .story-tease__summary').hasText('Newest');
-    assert.dom('[data-test-story-tease="7"] .story-tease__summary').hasText('Oldest');
   });
 });

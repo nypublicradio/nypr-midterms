@@ -18,7 +18,7 @@ module('Integration | Component | story-tease', function(hooks) {
     };
     this.set('story', STORY);
 
-    await render(hbs`{{story-tease showImage=true imageUrl=story.imageUrl story=story}}`);
+    await render(hbs`{{story-tease featured=true imageUrl=story.imageUrl story=story}}`);
 
     assert.dom('article.story-tease').exists();
     assert.dom('.story-tease__brand').hasText(STORY.producingOrganizations[0].name);
@@ -30,8 +30,9 @@ module('Integration | Component | story-tease', function(hooks) {
 
     await render(hbs`{{story-tease imageUrl=story.imageUrl story=story}}`);
     assert.dom('.story-tease__thumb').doesNotExist('thumbnail is controlled via parameter');
+    assert.dom('.story-tease__summary').doesNotExist('summary is controlled via parameter');
 
-    await render(hbs`{{story-tease showImage=true story=story}}`);
+    await render(hbs`{{story-tease featured=true story=story}}`);
     assert.dom('.story-tease__thumb').doesNotExist('thumbnail is controlled via availability of an imageUrl');
   });
 });
