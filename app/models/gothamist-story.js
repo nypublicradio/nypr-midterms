@@ -4,11 +4,12 @@ import { computed } from '@ember/object';
 import moment from 'moment';
 
 export default DS.Model.extend({
-  imageMain: DS.attr(),
   author: DS.attr('string'),
   authoredOn: DS.attr('string'),
   producingOrganizations: 'Gothamist',
   tease: DS.attr('string'),
+  thumbnailLarge: DS.attr('string'),
+  thumbnailSmall: DS.attr('string'),
   title: DS.attr('string'),
   url: DS.attr('string'),
 
