@@ -5,6 +5,7 @@
   $padding: 0,
   $color: inherit,
   $border: none,
+  $font-size: 14px,
 ) {
   font-family: $font-family;
   color: $color;
@@ -13,13 +14,13 @@
   border-radius: $border-radius;
   padding: $padding;
   background-color: $background-color;
+  font-size: $font-size;
   cursor: pointer;
 
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 14px;
 
   text-decoration: none; // for links that want to look like buttons
 }
