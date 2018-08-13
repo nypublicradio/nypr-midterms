@@ -25,6 +25,9 @@ module.exports = function(environment) {
     fastboot: {
       hostWhitelist: [/^localhost:\d+$/].concat(process.env.HOST_WHITELIST ? process.env.HOST_WHITELIST.split(',') : [])
     },
+
+    gothamistAPI: process.env.GOTHAMIST_API,
+    publisherAPI: process.env.PUBLISHER_API,
   };
 
   if (environment === 'development') {
@@ -33,6 +36,10 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    ENV['ember-cli-mirage'] = {
+      enabled: false
+    };
   }
 
   if (environment === 'test') {

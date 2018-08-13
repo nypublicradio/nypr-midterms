@@ -1,0 +1,34 @@
+{{#page-section gradient=true open=(media 'isMedium') as |section|}}
+
+  {{#section.tease}}
+    <h1 class="read-section__title">
+      <span>
+        Read
+      </span>
+    </h1>
+
+    <p class="read-section__summary">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  {{/section.tease}}
+
+  {{#section.body}}
+    <div class="read-section__stories">
+      {{#each (slice 0 4 sorted) as |story i|}}
+      <div class="read-story">
+        {{story-tease
+          data-test-story-tease=i
+          featured=(eq i 0)
+          imageUrl=(if (media 'isMedium') story.thumbnailLarge story.thumbnailSmall)
+          story=story}}
+      </div>
+      {{/each}}
+    </div>
+
+    <div class="read-section__footer">
+      <a href="https://www.wnyc.org/articles/midterms-2018" class="read-section__more-link" target="_blank">Read More Stories</a>
+    </div>
+  {{/section.body}}
+
+
+{{/page-section}}

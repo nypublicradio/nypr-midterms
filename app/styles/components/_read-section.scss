@@ -1,0 +1,83 @@
+@import "../mixins/text";
+@import "../mixins/layout";
+
+.read-section {
+  @include section-layout;
+
+  background-color: white;
+  --gradient: white;
+
+  &__tease {
+    @include wrapper($width: 787px, $padding: 0);
+  }
+
+  &__title {
+    @include section-title($color: black);
+    margin-bottom: 24px;
+  }
+
+  &__summary {
+    @include section-text($color: black);
+    margin-bottom: 24px;
+
+    @include media('>=medium') {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__footer {
+    margin-bottom: 18px;
+
+    @include media(">=medium") {
+      @include wrapper($width: 220px, $padding: 0);
+    }
+  }
+
+  &__more-link {
+    @include btn(
+      $background-color: $blue,
+      $border-radius: 20px,
+      $color: white,
+      $padding: 8px,
+    )
+
+    transition: 125ms ease opacity;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
+
+.read-section__stories {
+  @include media('>=medium') {
+    @include wrapper($width: 1000px, $padding: 0 15px);
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.read-story {
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid $lightgray;
+
+  &:last-child {
+    border: none;
+  }
+
+  @include media('>=medium') {
+    border: none;
+    flex: 1;
+
+    &:first-child {
+      border-bottom: 1px solid $lightgray;
+      flex-basis: 100%;
+
+      > .story-tease {
+        @include wrapper($width: 787px, $padding: 0);
+      }
+    }
+  }
+}

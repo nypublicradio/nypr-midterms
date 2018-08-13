@@ -1,0 +1,25 @@
+<div class="story-tease__brand">
+  {{serialized-list story.producingOrganizations separator='+' key='name'}}
+</div>
+
+<h1 class="story-tease__title">
+  <a href={{story.url}} target="_blank">
+    {{story.title}}
+  </a>
+</h1>
+
+{{#if (and featured imageUrl)}}
+<div class="story-tease__thumb">
+  <img src={{imageUrl}} />
+</div>
+{{/if}}
+
+{{#if featured}}
+<h2 class="story-tease__summary">
+  {{{story.tease}}}
+</h2>
+{{/if}}
+
+<div class="story-tease__date">
+  Published {{moment-from story.newsdate}}
+</div>

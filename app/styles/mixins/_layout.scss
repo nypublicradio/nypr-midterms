@@ -8,15 +8,10 @@
   margin: $margin;
 }
 
-@mixin section-layout(
-  $padding: 40px 16px,
-) {
-  padding: $padding;
-}
+@mixin section-layout {
+  padding: 40px 16px;
 
-@mixin section-wrapper {
-  @include wrapper(
-    $width: 330px,
-    $padding: 0,
-  )
+  @include media('>=medium') {
+    padding-top: 75px;
+  }
 }
