@@ -1,19 +1,21 @@
-<div class="episode-tease__top">
-  <div class="episode-tease__left">
+{{#media-object class="episode-tease__top" as |mo|}}
+  {{#mo.media}}
     {{listen-button
       data-test-listen
       itemPK=audio
       type='blue-hollow'
       itemTitle=title
     }}
-  </div>
-  <div class="episode-tease__right">
+  {{/mo.media}}
+
+  {{#mo.body}}
     {{yield (hash
       title=(component 'episode-tease/title')
       link=(component 'episode-tease/link')
       body=(component 'episode-tease/body')
     )}}
-  </div>
-</div>
+  {{/mo.body}}
+
+{{/media-object}}
 
 {{yield (hash footer=(component 'episode-tease/footer'))}}
