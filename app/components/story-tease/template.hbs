@@ -8,12 +8,17 @@
   </a>
 </h1>
 
-{{#if (and showImage imageUrl)}}
+{{#if (and featured imageUrl)}}
 <div class="story-tease__thumb">
   <img src={{imageUrl}} />
 </div>
 {{/if}}
-<h2 class="story-tease__summary">{{story.tease}}</h2>
+
+{{#if featured}}
+<h2 class="story-tease__summary">
+  {{{story.tease}}}
+</h2>
+{{/if}}
 
 <div class="story-tease__date">
   Published {{moment-from story.newsdate}}
