@@ -11,7 +11,7 @@ function makeJSONAPI(entry) {
 export default DS.JSONAPISerializer.extend({
   attrs: {
     author: 'author_nickname',
-    tease: 'excerpt_full',
+    tease: 'excerpt_pretty',
     thumbnailLarge: 'thumbnail_640',
     thumbnailSmall: 'thumbnail_300',
     url: 'permalink',
