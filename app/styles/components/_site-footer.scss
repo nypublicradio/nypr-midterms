@@ -1,0 +1,136 @@
+@import "../mixins/layout";
+
+.site-footer {
+  padding: 56px 0 32px;
+  background-color: $offwhite;
+
+  text-align: center;
+
+  &__wrapper {
+    @include wrapper($width: 744px);
+  }
+
+  &__brand {
+    position: relative;
+
+    > img {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -87px;
+      margin: auto;
+
+      max-width: 60px;
+    }
+  }
+
+  &__title {
+    font-family: $font-montserrat;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0;
+    margin-bottom: 16px;
+
+    @include media('>=medium') {
+      text-align: left;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include media('>=medium') {
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__blurb {
+    font-size: 14px;
+    color: rgba(black, 0.6);
+    line-height: 1.57;
+    margin-top: 0;
+    margin-bottom: 32px;
+
+    @include media('>=medium') {
+      flex: 1;
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+
+  &__logos {
+    order: -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 100%;
+    margin-bottom: 24px;
+
+    .gothamist {
+      width: 54px;
+    }
+
+    .wnyc {
+      width: 65px;
+      fill: $red;
+    }
+
+    .studios {
+      width: 61px;
+    }
+
+    @include media('>=medium') {
+      order: 0;
+      flex: 1;
+
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 0;
+
+      .gothamist {
+        width: 38px;
+        margin-right: 32px;
+      }
+
+      .wnyc {
+        width: 34px;
+        margin-right: 32px;
+      }
+
+      .studios {
+        width: 44px;
+      }
+    }
+  }
+}
+
+.site-footer__links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include media('>=medium') {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    > .site-footer__link {
+      padding: 0 10px;
+    }
+  }
+}
+
+.site-footer__link > a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $lightblue;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 2.33;
+  letter-spacing: 1.7px;
+}
