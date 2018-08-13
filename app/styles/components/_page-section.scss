@@ -30,7 +30,7 @@
 
 .page-section__toggle {
   @include btn;
-  border: solid 2px white;
+  border: solid 2px currentColor;
   border-radius: 50%;
   height: 30px;
   width: 30px;

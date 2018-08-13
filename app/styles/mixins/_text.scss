@@ -31,11 +31,11 @@
 
     // side stripes
     background-image: linear-gradient(to bottom,
-      white, white 2px,
+      currentColor, currentColor 2px,
       transparent 2px, transparent 4px,
-      white 4px, white 6px,
+      currentColor 4px, currentColor 6px,
       transparent 6px, transparent 8px,
-      white 8px, white 10px);
+      currentColor 8px, currentColor 10px);
 
   }
 
