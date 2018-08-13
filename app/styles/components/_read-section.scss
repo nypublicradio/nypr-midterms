@@ -1,33 +1,36 @@
 @import "../mixins/text";
 @import "../mixins/layout";
-@import "../mixins/layout";
 
 .read-section {
   @include section-layout;
-  @include section-text($color: black);
 
   background-color: white;
   --gradient: white;
 
-  &__title,
-  &__summary,
-  &__stories,
-  &__footer {
-    @include section-wrapper;
+  &__tease {
+    @include wrapper($width: 787px, $padding: 0);
   }
 
   &__title {
     @include section-title($color: black);
+    margin-bottom: 24px;
   }
 
-  &__title,
-  &__stories,
-  &__footer {
+  &__summary {
+    @include section-text($color: black);
     margin-bottom: 24px;
+
+    @include media('>=medium') {
+      margin-bottom: 64px;
+    }
   }
 
   &__footer {
     margin-bottom: 18px;
+
+    @include media(">=medium") {
+      @include wrapper($width: 220px, $padding: 0);
+    }
   }
 
   &__more-link {
@@ -46,6 +49,15 @@
   }
 }
 
+.read-section__stories {
+  @include media('>=medium') {
+    @include wrapper($width: 1000px, $padding: 0 15px);
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 .read-story {
   padding-bottom: 24px;
   margin-bottom: 24px;
@@ -53,5 +65,19 @@
 
   &:last-child {
     border: none;
+  }
+
+  @include media('>=medium') {
+    border: none;
+    flex: 1;
+
+    &:first-child {
+      border-bottom: 1px solid $lightgray;
+      flex-basis: 100%;
+
+      > .story-tease {
+        @include wrapper($width: 787px, $padding: 0);
+      }
+    }
   }
 }

@@ -41,6 +41,10 @@
     width: 15px;
     height: 8px;
   }
+
+  @include media('>=medium') {
+    display: none;
+  }
 }
 
 .page-section__footer {
