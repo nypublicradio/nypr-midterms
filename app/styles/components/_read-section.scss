@@ -1,0 +1,57 @@
+@import "../mixins/text";
+@import "../mixins/layout";
+@import "../mixins/layout";
+
+.read-section {
+  @include section-layout;
+  @include section-text($color: black);
+
+  background-color: white;
+  --gradient: white;
+
+  &__title,
+  &__summary,
+  &__stories,
+  &__footer {
+    @include section-wrapper;
+  }
+
+  &__title {
+    @include section-title($color: black);
+  }
+
+  &__title,
+  &__stories,
+  &__footer {
+    margin-bottom: 24px;
+  }
+
+  &__footer {
+    margin-bottom: 18px;
+  }
+
+  &__more-link {
+    @include btn(
+      $background-color: $blue,
+      $border-radius: 20px,
+      $color: white,
+      $padding: 8px,
+    )
+
+    transition: 125ms ease opacity;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
+
+.read-story {
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid $lightgray;
+
+  &:last-child {
+    border: none;
+  }
+}

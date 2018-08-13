@@ -1,8 +1,33 @@
-{{#each sorted as |story|}}
-  <strong>{{serialized-list story.producingOrganizations separator='+' key='name'}}</strong>
-  <h2>{{story.title}}</h2>
-  <h3>{{moment-from story.newsdate}}</h3>
-  <p>
-    {{story.tease}}
-  </p>
-{{/each}}
+{{#page-section gradient=true as |section|}}
+
+  {{#section.tease}}
+    <h1 class="read-section__title">
+      <span>
+        Read
+      </span>
+    </h1>
+
+    <p class="read-section__summary">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  {{/section.tease}}
+
+  {{#section.body}}
+    <div class="read-section__stories">
+      {{#each sorted as |story i|}}
+      <div class="read-story">
+        {{story-tease
+          showImage=(eq i 0)
+          imageUrl=(if (media 'isMedium') story.thumbnailLarge story.thumbnailSmall)
+          story=story}}
+      </div>
+      {{/each}}
+    </div>
+
+    <div class="read-section__footer">
+      <a href="https://www.wnyc.org/articles/midterms-2018" class="read-section__more-link" target="_blank">Read More Stories</a>
+    </div>
+  {{/section.body}}
+
+
+{{/page-section}}
