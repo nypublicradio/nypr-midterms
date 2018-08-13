@@ -13,3 +13,10 @@
 ) {
   padding: $padding;
 }
+
+@mixin section-wrapper {
+  @include wrapper(
+    $width: 330px,
+    $padding: 0,
+  )
+}
