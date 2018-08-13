@@ -1,11 +1,9 @@
-@import "../mixins/vars";
 @import "../mixins/text";
 @import "../mixins/layout";
 @import "../mixins/buttons";
 
 .listen-section {
   @include section-layout;
-
   @include section-text;
 
   background-color: $blue;
