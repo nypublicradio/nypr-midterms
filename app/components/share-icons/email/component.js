@@ -7,7 +7,8 @@ export default Component.extend({
   attributeBindings: ['href', 'target'],
 
   target: '_blank',
-  href: computed('url', 'subject', function() {
-    return `mailto:?subject=${this.subject}&body=${this.url}`;
+  href: computed('url', 'subject', 'medium', 'campaign', function() {
+    let url = encodeURIComponent(`${this.url}?utm_medium=${this.medium}&utm_campaign=${this.campaign}`);
+    return `mailto:?subject=${this.subject}&body=${url}`;
   }),
 });

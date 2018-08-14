@@ -9,6 +9,9 @@ export default Component.extend({
 
   classNames: ['share-icons'],
 
+  medium: 'social',
+  campaign: 'midterms',
+
   url: computed('isFastBoot', function() {
     if (this.get('isFastBoot')) {
       let { protocol, host, path } = this.get('fastboot.request').getProperties('protocol', 'host', 'path');
