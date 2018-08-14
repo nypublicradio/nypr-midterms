@@ -82,3 +82,26 @@
   padding: 3px 4px;
   line-height: 0.75;
 }
+
+.episode-listen.listen-button {
+  line-height: 1.5; // align with title
+
+  @include btn-size(26px);
+
+  svg .outer {
+    fill: $gray;
+  }
+
+  .listen-spinner {
+    &:before {
+      width: 10px;
+      height: 10px;
+      border-width: 3px;
+    }
+    &:after {
+      width: 20px;
+      height: 20px;
+      border-width: 3px;
+    }
+  }
+}
