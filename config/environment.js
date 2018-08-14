@@ -28,6 +28,9 @@ module.exports = function(environment) {
 
     gothamistAPI: process.env.GOTHAMIST_API,
     publisherAPI: process.env.PUBLISHER_API,
+
+    // for platform events
+    platformEventsAPI: process.env.PLATFORM_EVENTS_API,
   };
 
   if (environment === 'development') {
