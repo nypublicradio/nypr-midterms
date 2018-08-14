@@ -47,6 +47,21 @@
 
   }
 
+  &:after {
+    content: '★ ★ ★';
+    font-family: $font-opensans;
+    font-size: 24px;
+    font-style: normal;
+    letter-spacing: 3px;
+
+    text-align: center;
+    color: currentColor;
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: -45px;
+  }
+
   // inner element required to give text a background color that hides the stripes
   // that run behind the letters
   span {
