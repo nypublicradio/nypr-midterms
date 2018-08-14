@@ -23,9 +23,12 @@
   }
 }
 
-.page-section__tease,
-.page-section__body.is-open {
+.page-section__tease {
   margin-bottom: 24px;
+}
+
+.page-section__body.is-open {
+  margin-bottom: 32px;
 }
 
 .page-section__toggle {

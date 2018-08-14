@@ -33,12 +33,23 @@
     display: flex;
     justify-content: space-around;
     align-items: stretch;
+
+    flex-wrap: wrap;
   }
 
   &__item {
     flex-basis: 304px;
+    margin-bottom: 24px;
 
     display: flex;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media('>=medium') {
+      margin-bottom: 0;
+    }
 
     > * {
       flex: 1;
