@@ -39,12 +39,12 @@
     {{/if}}
 
     <p class="opt-in__legal-checkbox">
-      {{input data-test-legal-checkbox type="checkbox" name="legalChecked" checked=legalChecked}}
-      By submitting your information, you're agreeing to receive communications
-      from New York Public Radio in accordance with our Terms of Use.
+      {{input data-test-legal-checkbox id="optin_legal" type="checkbox" name="legalChecked" checked=legalChecked}}
+      <label for="optin_legal">By submitting your information, you're agreeing to receive communications
+        from New York Public Radio in accordance with our Terms of Use.</label>
     </p>
 
-    <button type="submit" disabled={{isSubmitButtonDisabled}} data-test-submit-button>
+    <button class="opt-in__submit-button" type="submit" disabled={{isSubmitButtonDisabled}} data-test-submit-button>
       Sign Up
     </button>
   </form>
