@@ -47,7 +47,6 @@ module('Integration | Component | episode-tease', function(hooks) {
     await click('.episode-subscribe button');
 
     assert.dom('.episode-subscribe__list li').exists({count: 2});
-    assert.dom('[data-test-subscribe="0"] .fa-rss').exists('should use an rss icon for rss links');
 
     await click('[data-test-listen]');
   });
