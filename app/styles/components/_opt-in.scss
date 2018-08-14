@@ -25,6 +25,11 @@
     margin: 0 auto;
     max-width: 520px;  // TODO
     width: 90%;
+    justify-content: center;
+  }
+
+  &__formset .svg-inline--fa {
+    width: 25px;
   }
 
   &__form {
@@ -33,9 +38,11 @@
   }
 
   &__email-input input, &__phone-input input {
-    width: 230px;
-    height: 44px;
     border: solid 2px #dddddd;
+    height: 44px;
+    margin: 3px;
+    padding: 10px;
+    width: 230px;
   }
 
   &__submit-button {
