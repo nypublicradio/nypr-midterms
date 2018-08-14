@@ -1,0 +1,30 @@
+@import "../mixins/text";
+@import "../mixins/layout";
+@import "../mixins/buttons";
+
+.opt-in {
+  &__header {
+    @include section-title;
+  }
+
+  &__subheader {
+    text-align: center;
+  }
+
+  &__submit-button {
+    @include btn;
+    @include btn--blue;
+
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    height: 40px;
+    width: 280px;
+  }
+
+  &__legal-checkbox {
+    width: 207px;
+    font-size: 12px;
+    line-height: 1.33;
+  }
+}
