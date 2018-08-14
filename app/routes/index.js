@@ -2,16 +2,18 @@ import Route from '@ember/routing/route';
 import { hash } from 'rsvp';
 
 const PODCAST_FIELDS = 'title,audio,slug,showTitle,show,tease,podcast_links';
+const WNYC_TAG = 'news';
+const GOTHAMIST_TAG = '@wnyc';
 
 export default Route.extend({
   model() {
     return hash({
       gothamist: this.store.query('gothamist-story', {
-        tag: '@wnyc',
+        tag: GOTHAMIST_TAG,
         limit: 4,
       }),
       wnyc: this.store.query('story', {
-        tags: 'news',
+        tags: WNYC_TAG,
         page_size: 4,
         ordering: '-newsdate',
         'fields[story]': 'title,newsdate,producing_organizations,slug,appearances,image_main,url,tease'
