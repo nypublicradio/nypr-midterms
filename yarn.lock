@@ -1638,7 +1638,7 @@ broccoli-plugin@1.1.0:
     rimraf "^2.3.4"
     symlink-or-copy "^1.0.1"
 
-broccoli-plugin@^1.0.0, broccoli-plugin@^1.1.0, broccoli-plugin@^1.2.1, broccoli-plugin@^1.3.0:
+broccoli-plugin@^1.0.0, broccoli-plugin@^1.2.1, broccoli-plugin@^1.3.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/broccoli-plugin/-/broccoli-plugin-1.3.1.tgz#a26315732fb99ed2d9fb58f12a1e14e986b4fabd"
   dependencies:
@@ -1647,7 +1647,7 @@ broccoli-plugin@^1.0.0, broccoli-plugin@^1.1.0, broccoli-plugin@^1.2.1, broccoli
     rimraf "^2.3.4"
     symlink-or-copy "^1.1.8"
 
-broccoli-plugin@^1.2.0:
+broccoli-plugin@^1.1.0, broccoli-plugin@^1.2.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/broccoli-plugin/-/broccoli-plugin-1.3.0.tgz#bee704a8e42da08cb58e513aaa436efb7f0ef1ee"
   dependencies:
@@ -3058,7 +3058,7 @@ ember-cli-mirage@^0.4.7:
     pretender "^1.6.1"
     route-recognizer "^0.2.3"
 
-ember-cli-moment-shim@^3.7.1:
+ember-cli-moment-shim@^3.4.0, ember-cli-moment-shim@^3.7.1:
   version "3.7.1"
   resolved "https://registry.yarnpkg.com/ember-cli-moment-shim/-/ember-cli-moment-shim-3.7.1.tgz#3ad691c5027c1f38a4890fe47d74b5224cc98e32"
   dependencies:
@@ -3443,9 +3443,9 @@ ember-hash-helper-polyfill@^0.2.0:
     ember-cli-babel "^6.8.2"
     ember-cli-version-checker "^2.1.0"
 
-ember-hifi@^1.11.1, ember-hifi@nypublicradio/ember-hifi#master:
+ember-hifi@^1.11.1, ember-hifi@^1.15.1, ember-hifi@nypublicradio/ember-hifi#master:
   version "1.15.1"
-  resolved "https://codeload.github.com/nypublicradio/ember-hifi/tar.gz/d337fc2b77901ba2fad07c84c172461d9e18cd44"
+  resolved "https://codeload.github.com/nypublicradio/ember-hifi/tar.gz/c10eef92a1df80284f062041bfed825fd735e6ab"
   dependencies:
     ember-cli-babel "^6.6.0"
     ember-poll "^1.4.0"
@@ -3519,7 +3519,7 @@ ember-maybe-in-element@^0.1.3:
   dependencies:
     ember-cli-babel "^6.11.0"
 
-ember-moment@^7.7.0:
+ember-moment@^7.4.1, ember-moment@^7.7.0:
   version "7.7.0"
   resolved "https://registry.yarnpkg.com/ember-moment/-/ember-moment-7.7.0.tgz#febf7cc5bfc665c8f1d45fa24e5c7a5f5f91afa5"
   dependencies:
@@ -7100,6 +7100,18 @@ nypr-metrics@nypublicradio/nypr-metrics#fastboot:
   dependencies:
     ember-cli-babel "^6.6.0"
     ember-get-config "^0.2.2"
+
+nypr-player@nypublicradio/nypr-player#fastboot:
+  version "0.3.0"
+  resolved "https://codeload.github.com/nypublicradio/nypr-player/tar.gz/45e7256dd92273854b251e2569e818ea223b809d"
+  dependencies:
+    ember-cli-babel "^6.6.0"
+    ember-cli-htmlbars "^2.0.1"
+    ember-cli-moment-shim "^3.4.0"
+    ember-cli-sass "^7.0.0"
+    ember-hifi "^1.15.1"
+    ember-moment "^7.4.1"
+    nypr-ui nypublicradio/nypr-ui#fastboot
 
 nypr-publisher-lib@nypublicradio/nypr-publisher-lib#fastboot:
   version "0.4.1"
