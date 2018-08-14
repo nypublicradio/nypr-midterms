@@ -6731,7 +6731,7 @@ nypr-metrics@nypublicradio/nypr-metrics#fastboot:
 
 nypr-publisher-lib@nypublicradio/nypr-publisher-lib#fastboot:
   version "0.4.1"
-  resolved "https://codeload.github.com/nypublicradio/nypr-publisher-lib/tar.gz/40c388f1e9595d3e911a0cc4b2609f27a41ce456"
+  resolved "https://codeload.github.com/nypublicradio/nypr-publisher-lib/tar.gz/4502e5f2ae0993351cebd9e69be0508040099aa5"
   dependencies:
     broccoli-funnel "^2.0.1"
     broccoli-merge-trees "^2.0.0"
