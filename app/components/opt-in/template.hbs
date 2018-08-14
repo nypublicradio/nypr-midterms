@@ -15,28 +15,36 @@
 
 {{#if (not isFullFormSubmitted)}}
   <form {{action 'submitForms' on='submit'}}>
-    {{#if (not emailSuccess)}}
-      {{nypr-input
-        data-test-email-input
-        label='Email'
-        fieldname='signupEmail'
-        placeholder='your@PrePopulatedEmail.com'
-        value=changeset.email
-        errors=(or changeset.error.email.validation emailResponseErrors)
-      }}
-    {{/if}}
+    <div class="opt-in__formset">
+      {{#if (not emailSuccess)}}
+        <div class="opt-in__email-form opt-in__form">
+          {{fa-icon "envelope" class="nypr-input-icon"}}
+          {{nypr-input
+          data-test-email-input
+          fieldname='signupEmail'
+          placeholder='your@PrePopulatedEmail.com'
+          value=changeset.email
+          errors=(or changeset.error.email.validation emailResponseErrors)
+          class="opt-in__email-input"
+          }}
+        </div>
+      {{/if}}
 
-    {{#if (not phoneSuccess)}}
-      {{nypr-input
-        data-test-phone-input
-        label='Phone Number'
-        type='tel'
-        fieldname='signupPhoneNumber'
-        placeholder='000-000-0000'
-        value=changeset.phone
-        errors=(or changeset.error.phone.validation phoneResponseErrors)
-      }}
-    {{/if}}
+      {{#if (not phoneSuccess)}}
+        <div class="opt-in__phone-form opt-in__form">
+          {{fa-icon "mobile-alt" class="nypr-input-icon"}}
+          {{nypr-input
+          data-test-phone-input
+          type='tel'
+          fieldname='signupPhoneNumber'
+          placeholder='000-000-0000'
+          value=changeset.phone
+          errors=(or changeset.error.phone.validation phoneResponseErrors)
+          class="opt-in__phone-input"
+          }}
+        </div>
+      {{/if}}
+    </div>
 
     <p class="opt-in__legal-checkbox">
       {{input data-test-legal-checkbox id="optin_legal" type="checkbox" name="legalChecked" checked=legalChecked}}

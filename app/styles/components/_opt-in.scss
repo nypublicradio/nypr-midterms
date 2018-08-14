@@ -11,6 +11,33 @@
     text-align: center;
   }
 
+  &__legal-checkbox {
+    display: flex;
+    font-size: 12px;
+    line-height: 1.33;
+    margin: 0 auto;
+    width: 207px;
+  }
+
+  &__formset {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 520px;  // TODO
+    width: 90%;
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+  }
+
+  &__email-input input, &__phone-input input {
+    width: 230px;
+    height: 44px;
+    border: solid 2px #dddddd;
+  }
+
   &__submit-button {
     @include btn;
     @include btn--blue;
@@ -19,12 +46,7 @@
     font-size: 14px;
     font-weight: 600;
     height: 40px;
+    margin: 0 auto;
     width: 280px;
-  }
-
-  &__legal-checkbox {
-    width: 207px;
-    font-size: 12px;
-    line-height: 1.33;
   }
 }
