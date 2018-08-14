@@ -21,17 +21,32 @@
   {{#section.body}}
     <div class="listen-section__episodes">
       <div class="listen-section__item">
-      {{#episode-tease audio='wnyc-fm939' as |tease|}}
-        {{tease.title "NYPR Midterm Podcast"}}
-        {{tease.link "See All Episodes" "https://www.wnycstudios.org/midterms"}}
+      {{#episode-tease audio=midterms.slug as |tease|}}
+        {{tease.title midterms.title}}
+        {{tease.link "See All Episodes" (concat 'https://www.wnycstudios.org/shows/' midterms.show)}}
 
         {{#tease.body}}
-          Lorem ipsum lorem ipsum
+          {{{midterms.tease}}}
         {{/tease.body}}
 
-        {{tease.footer links=NEWSROOM_LINKS}}
+        {{tease.footer links=midterms.podcastLinks}}
       {{/episode-tease}}
       </div>
+
+      {{#if morePerfect}}
+      <div class="listen-section__item">
+      {{#episode-tease audio=morePerfect.slug as |tease|}}
+        {{tease.title morePerfect.title}}
+        {{tease.link "See All Episodes" (concat 'https://www.wnycstudios.org/shows/' morePerfect.show)}}
+
+        {{#tease.body}}
+          {{{morePerfect.tease}}}
+        {{/tease.body}}
+
+        {{tease.footer links=morePerfect.podcastLinks}}
+      {{/episode-tease}}
+      </div>
+      {{/if}}
 
       <div class="listen-section__item">
       {{#episode-tease audio='wnyc-fm939' as |tease|}}
