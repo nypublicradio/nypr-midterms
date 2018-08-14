@@ -1,0 +1,27 @@
+{{#with (changeset form validations) as |changeset|}}
+  <div class="updates-section__left">
+    {{input
+      data-test-input=name
+      type="text"
+      name=name
+      value=(get changeset name)
+      class=(if (get changeset.error name) 'is-error')
+      onblur=(action validate changeset name)}}
+  </div>
+
+  <div class="updates-section__right">
+    <button type="submit" class="updates-section__submit" data-test-submit {{action 'submit' changeset}}>&rarr;</button>
+  </div>
+
+  <div class="updates-section__bottom">
+  {{#if (get changeset.error name)}}
+    <ul class="labelled-input__errors" data-test-error={{name}}>
+      {{#each (get (get changeset.error name) 'validation') as |message|}}
+      <li>{{message}}</li>
+      {{/each}}
+    </ul>
+  {{/if}}
+  </div>
+
+  {{updates-section/legal-input changeset=changeset}}
+{{/with}}
