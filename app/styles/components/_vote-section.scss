@@ -1,0 +1,56 @@
+@import "../mixins/text";
+@import "../mixins/layout";
+@import "../mixins/buttons";
+
+.vote-section {
+  @include section-layout;
+  @include section-text;
+
+  background-color: $blue;
+  --gradient: #{$blue};
+
+  &__title {
+    @include section-title;
+  }
+}
+
+.vote-tool {
+  text-align: left;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+
+  &__thumb {
+    max-width: 88px;
+  }
+
+  &__title {
+    font-family: $font-montserrat;
+    font-size: 22px;
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.36;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+
+  &__body {
+    > p {
+      margin: 0;
+    }
+  }
+
+  &__footer {
+    padding-top: 16px;
+    flex-basis: 100%;
+  }
+
+  &__link {
+    @include btn(
+      $background-color: white,
+      $padding: 8px,
+      $color: black,
+      $border-radius: 20px
+    );
+    font-weight: 600;
+  }
+}
