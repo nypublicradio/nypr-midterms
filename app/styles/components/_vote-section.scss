@@ -12,6 +12,26 @@
   &__title {
     @include section-title;
   }
+
+  &__blurb {
+    @include wrapper($width: 816px, $padding: 0 16px);
+    @include section-text;
+    margin-bottom: 24px;
+
+    @include media('>=medium') {
+      margin-bottom: 64px;
+    }
+  }
+}
+
+.vote-tools {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &__item {
+    flex-basis: 360px;
+  }
 }
 
 .vote-tool {
@@ -33,9 +53,14 @@
     margin-bottom: 8px;
   }
 
-  &__body {
-    > p {
-      margin: 0;
+  &__summary {
+    font-size: 14px;
+    line-height: 1.57;
+    margin: 0;
+
+    @include media('>=medium') {
+      font-size: 18px;
+      line-height: 1.72;
     }
   }
 

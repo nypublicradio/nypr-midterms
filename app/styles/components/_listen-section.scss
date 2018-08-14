@@ -12,6 +12,16 @@
     @include section-title;
   }
 
+  &__blurb {
+    @include wrapper($width: 816px, $padding: 0 16px);
+    @include section-text;
+    margin-bottom: 24px;
+
+    @include media('>=medium') {
+      margin-bottom: 64px;
+    }
+  }
+
   &__buttons {
     display: flex;
     justify-content: space-between;

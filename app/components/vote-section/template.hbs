@@ -6,30 +6,35 @@
       </span>
     </h1>
 
-    <p>
+    <p class="vote-section__blurb">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </p>
   {{/section.tease}}
 
   {{#section.body}}
 
-    {{#media-object tagName='article' class="vote-tool" as |mo|}}
-      {{#mo.media class="vote-tool__thumb"}}
-        <img src="/assets/images/liberty.png" alt="Statue of Liberty">
-      {{/mo.media}}
+    <div class="vote-tools">
+      <div class="vote-tools__item">
 
-      {{#mo.body class="vote-tool__body"}}
-        <h1 class="vote-tool__title">2018 Voter Guide</h1>
+      {{#media-object tagName='article' class="vote-tool" as |mo|}}
+        {{#mo.media class="vote-tool__thumb"}}
+          <img src="/assets/images/liberty.png" alt="Statue of Liberty">
+        {{/mo.media}}
 
-        <p class="vote-tool__summary">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolor.
-        </p>
-      {{/mo.body}}
+        {{#mo.body class="vote-tool__body"}}
+          <h1 class="vote-tool__title">2018 Voter Guide</h1>
 
-      <div class="vote-tool__footer">
-        <a href="" class="vote-tool__link">View Candidates</a>
+          <p class="vote-tool__summary">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolor.
+          </p>
+        {{/mo.body}}
+
+        <div class="vote-tool__footer">
+          <a href="" class="vote-tool__link">View Candidates</a>
+        </div>
+      {{/media-object}}
       </div>
-    {{/media-object}}
+    </div>
 
   {{/section.body}}
 {{/page-section}}

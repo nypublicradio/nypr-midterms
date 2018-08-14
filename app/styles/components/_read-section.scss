@@ -16,7 +16,8 @@
     margin-bottom: 24px;
   }
 
-  &__summary {
+  &__blurb {
+    @include wrapper($width: 816px, $padding: 0 16px);
     @include section-text($color: black);
     margin-bottom: 24px;
 
