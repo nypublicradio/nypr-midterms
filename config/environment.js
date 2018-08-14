@@ -28,6 +28,10 @@ module.exports = function(environment) {
 
     gothamistAPI: process.env.GOTHAMIST_API,
     publisherAPI: process.env.PUBLISHER_API,
+    optInAPI: process.env.OPT_IN_API,
+
+    mailchimpList: process.env.MAILCHIMP_LIST,
+    mobileCommonsOptInKey: process.env.MOBILE_COMMONS_OPT_IN,
 
     // for platform events
     platformEventsAPI: process.env.PLATFORM_EVENTS_API,
@@ -55,6 +59,16 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
     ENV.APP.autoboot = false;
+
+    ENV.gothamistAPI = 'https://gothamist.com/api';
+    ENV.publisherAPI = 'https://nypr.com/api';
+    ENV.optInAPI = 'https://optin.com/api';
+
+    ENV.mailchimpList = 'list12345';
+    ENV.mobileCommonsOptInKey = 'optin123556'
+
+    // for platform events
+    ENV.platformEventsAPI = 'https://platformevents.com/api';
   }
 
   if (environment === 'production') {
