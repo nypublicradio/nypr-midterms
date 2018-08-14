@@ -5,6 +5,7 @@
   $padding: 0,
   $color: inherit,
   $border: none,
+  $font-size: 14px,
 ) {
   font-family: $font-family;
   color: $color;
@@ -13,6 +14,7 @@
   border-radius: $border-radius;
   padding: $padding;
   background-color: $background-color;
+  font-size: $font-size;
   cursor: pointer;
 
   display: flex;

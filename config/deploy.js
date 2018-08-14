@@ -49,7 +49,10 @@ module.exports = function(deployTarget) {
 
   if (deployTarget.startsWith('qa:')) {
     ENV['s3-index'].prefix = deployTarget.replace('qa:', '');
-    delete ENV['fastboot-app-server-aws']; // qa builds don't deploy to fastboot
+    ENV.pipeline.disabled = {
+      'fastboot-app-server': true,
+      'fastboot-app-server-aws': true,
+    };
   }
 
   return ENV;
