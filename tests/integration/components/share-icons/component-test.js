@@ -8,7 +8,7 @@ module('Integration | Component | share-icons', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it opens a popup to facebook', async function() {
-    const URL = window.location.toString();
+    const URL = encodeURIComponent(`${location}?utm_medium=social&utm_campaign=midterms&utm_source=fb`);
     this.mock(window)
       .expects('open')
       .withArgs(`https://www.facebook.com/sharer.php?u=${URL}`);
@@ -23,7 +23,7 @@ module('Integration | Component | share-icons', function(hooks) {
   });
 
   test('it opens a pop up to twitter', async function() {
-    const URL = window.location.toString();
+    const URL = encodeURIComponent(`${location}?utm_medium=social&utm_campaign=midterms&utm_source=tw`);
     const TEXT = 'bar';
     const VIA = 'baz';
 
@@ -46,7 +46,7 @@ module('Integration | Component | share-icons', function(hooks) {
   });
 
   test('it renders a mailto: link', async function(assert) {
-    const URL = window.location.toString();
+    const URL = encodeURIComponent(`${location}?utm_medium=Email&utm_campaign=midterms`);
     const SUBJECT = 'bar';
 
     this.setProperties({
