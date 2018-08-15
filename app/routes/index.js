@@ -1,11 +1,15 @@
 import Route from '@ember/routing/route';
+import { inject } from '@ember/service';
 import { hash } from 'rsvp';
 
-const PODCAST_FIELDS = 'title,audio,slug,showTitle,show,tease,podcast_links';
+const PODCAST_FIELDS = 'title,audio,slug,headers,show_title,show,tease,podcast_links';
 const WNYC_TAG = 'news';
 const GOTHAMIST_TAG = '@wnyc';
 
 export default Route.extend({
+  hifi: inject(),
+  fastboot: inject(),
+
   model() {
     return hash({
       gothamist: this.store.query('gothamist-story', {
@@ -31,5 +35,25 @@ export default Route.extend({
         'fields[story]': PODCAST_FIELDS,
       }).then(all => all.firstObject),
     });
+  },
+
+  afterModel({ midtermsEpisode }) {
+    if (!this.fastboot.isFastBoot) {
+      let {
+        audio,
+        id
+      } = midtermsEpisode;
+      
+      // until the midterms audio works
+      audio = 'https://www.podtrac.com/pts/redirect.mp3/audio.wnyc.org/bl/bl051914bpod.mp3';
+      this.hifi.load(audio).then(({ sound }) => {
+        this.hifi.set('currentSound', sound);
+        this.hifi.set('currentMetadata', {
+          contentId: id,
+          contentModelType: 'story',
+          contentModel: midtermsEpisode,
+        })
+      });
+    }
   }
 });

@@ -1,0 +1,31 @@
+{{#nypr-player
+  storyTitle=currentStory.title
+  showTitle=currentShow.title
+  isAudiostream=isStream
+  as |content|}}
+  {{#content.for 'trackInfo'}}
+    {{nypr-player-integration/track-info
+      currentAudio    = model
+      currentSound    = sound
+      showTitle       = currentShow.title
+      showUrl         = currentShow.url
+      storyTitle      = currentStory.title
+      storyUrl        = currentStory.url
+      audioId         = currentAudioId
+      isStream        = isStream
+    }}
+  {{/content.for}}
+
+  {{#content.for 'streamInfo'}}
+    {{nypr-player-integration/stream-info
+      streamScheduleUrl = streamScheduleUrl
+      streamPlaylistUrl = streamPlaylistUrl
+      streamUrl         = streamUrl
+      streamName        = streamName
+    }}
+  {{/content.for}}
+
+  {{#content.for 'aux' as |args|}}
+    {{! if we want to show a modal of some kind, we can add a button for it here }}
+  {{/content.for}}
+{{/nypr-player}}

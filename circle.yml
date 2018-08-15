@@ -160,7 +160,7 @@ workflows:
       - build-static:
           filters:
             branches:
-              ignore: master
+              ignore: /master|[A-Za-z-_]+/[A-Za-z-_\d]+/
       - test-static:
           requires:
             - build-static
