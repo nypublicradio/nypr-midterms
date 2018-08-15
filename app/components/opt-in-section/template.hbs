@@ -1,0 +1,65 @@
+<div class="opt-in-section__layout">
+  <div class="opt-in-section__left">
+    <h1 class="opt-in-section__title">
+      <span>
+        Get Updates
+      </span>
+    </h1>
+
+    <p class="opt-in-section__blurb">
+      Get the latest updates.
+    </p>
+
+    <p class="opt-in-section__footer medium-and-up">
+      {{#if (eq step NEWSLETTER)}}
+        <a href="/opt-in">Subscribe to SMS</a>
+      {{else if (eq step SMS)}}
+        <a href="/opt-in">Tell Me More</a>
+      {{/if}}
+    </p>
+  </div>
+
+  <div class="opt-in-section__right">
+    {{#liquid-if (eq step NEWSLETTER) use='crossFade'}}
+      {{opt-in-section/form
+        name='email'
+        placeholder='Email Address'
+        buttonText='Subscribe'
+        validations=EMAIL_VALIDATIONS
+        submit=(action submitEmail)
+        onSuccess=(action (mut step) SMS)}}
+    {{else if (eq step SMS)}}
+      <h2 class="opt-in-section__header">
+        Thanks for Subscribing to the Newsletter
+      </h2>
+
+      <p class="opt-in-section__blurb">
+        Don’t forget you can also get SMS text notifications! Turn them off at any time by texting “STOP” to 7777.
+      </p>
+
+      {{opt-in-section/form
+        name='sms'
+        placeholder='Phone Number'
+        buttonText='Sign Up for SMS'
+        validations=SMS_VALIDATIONS
+        submit=(action submitPhone)
+        onSuccess=(action (mut step) DONE)}}
+    {{else if (eq step DONE)}}
+      <h2 class="opt-in-section__header">
+        Thanks for Subscribing to SMS Alerts
+      </h2>
+
+      <p class="opt-in-section__blurb">
+        Don’t forget you can also get text notifications! Turn them off at any time by texting “STOP” to 7777.
+      </p>
+    {{/liquid-if}}
+
+    <p class="opt-in-section__footer below-medium-only">
+      {{#if (eq step NEWSLETTER)}}
+        <a href="/opt-in">Subscribe to SMS</a>
+      {{else if (eq step SMS)}}
+        <a href="/opt-in">Tell Me More</a>
+      {{/if}}
+    </p>
+  </div>
+</div>
