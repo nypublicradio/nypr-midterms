@@ -25,8 +25,8 @@ export default Component.extend({
       return contentModel.currentShow
     } else {
       return {
-        title: contentModel.showTitle,
-        url: contentModel.heads.brand.url,
+        title: get(contentModel, 'showTitle'),
+        url: get(contentModel, 'headers.brand.url'),
       };
     }
   }),
