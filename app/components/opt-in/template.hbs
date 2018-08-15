@@ -1,17 +1,21 @@
 <h1 class="opt-in__header"><span>Sign Up for Updates</span></h1>
 <p class="opt-in__subheader">Get the latest updates via Email Lorem Ips Lorem Ipsum Dolor</p>
 
-{{#if (and emailSuccess (not phoneSuccess))}}
-  Email success text
-{{/if}}
+<p class="opt-in__success-text">
+  {{#if (and emailSuccess (not phoneSuccess))}}
+    <p><b>Thanks for subscribing to our Newsletter</b></p>
+    <p>Don’t forget you can also get text notifications! Turn them off at any time by texting “STOP” to 7777.</p>
+  {{/if}}
 
-{{#if (and phoneSuccess (not emailSuccess))}}
-  Phone success text
-{{/if}}
+  {{#if (and phoneSuccess (not emailSuccess))}}
+    <p><b>Thanks for signing up to receive SMS messages TODO TODO TODO</b></p>
+    <p>Don’t forget you can also get NEWSLETTER! todo todo todo todo todo todo todo todo todo</p>
+  {{/if}}
 
-{{#if (and phoneSuccess emailSuccess)}}
-  Both were submitted
-{{/if}}
+  {{#if (and phoneSuccess emailSuccess)}}
+    <p class="opt-in__both-success"><b>Thanks for signing up to our STUFF! TODO TODO TODO</b></p>
+  {{/if}}
+</p>
 
 {{#if (not isFullFormSubmitted)}}
   <form {{action 'submitForms' on='submit'}}>
@@ -25,7 +29,7 @@
           placeholder='Email Address'
           value=changeset.email
           errors=(or changeset.error.email.validation emailResponseErrors)
-          class="opt-in__email-input"
+          class=(concat "opt-in__email-input " (if submitEmail.isRunning 'is-loading'))
           }}
         </div>
       {{/if}}
@@ -40,7 +44,7 @@
           placeholder='Phone Number'
           value=changeset.phone
           errors=(or changeset.error.phone.validation phoneResponseErrors)
-          class="opt-in__phone-input"
+          class=(concat "opt-in__phone-input " (if submitPhone.isRunning 'is-loading'))
           }}
         </div>
       {{/if}}
@@ -53,7 +57,11 @@
     </p>
 
     <button class="opt-in__submit-button" type="submit" disabled={{isSubmitButtonDisabled}} data-test-submit-button>
-      Sign Up
+      {{#liquid-if isLoading use='crossFade'}}
+        {{fa-icon icon='spinner' prefix='fas' spin=true}}
+      {{else}}
+        Sign Up
+      {{/liquid-if}}
     </button>
   </form>
 {{/if}}

@@ -3,7 +3,7 @@ import Component from "@ember/component";
 import config from "ember-get-config";
 import fetch from "fetch";
 import lookupValidator from "ember-changeset-validations";
-import { and } from "@ember/object/computed";
+import { and, or } from "@ember/object/computed";
 import { computed } from "@ember/object";
 import { set } from "@ember/object";
 import { task } from "ember-concurrency";
@@ -44,6 +44,7 @@ export default Component.extend({
     }
   ),
   isFullFormSubmitted: and("phoneSuccess", "emailSuccess"),
+  isLoading: or('submitEmail.isRunning', 'submitPhone.isRunning'),
   submitEmail: task(function*(data) {
     let newsletterEndpoint = config.newsletterSignupEndpoint;
     let res = yield fetch(newsletterEndpoint, {

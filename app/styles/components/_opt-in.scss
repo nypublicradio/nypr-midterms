@@ -18,11 +18,32 @@
 
   &__subheader {
     color: $darkgray;
+    display: table;
     font-size: 14px;
     margin: 17px auto;
     text-align: center;
     width: 90%;
 
+    &:after {
+      border-bottom: 4px solid #f00;
+      content: '';
+      display: block;
+      margin-left: calc(50% - 35px);
+      width: 70px;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+
+  }
+
+  &__success-text {
+    @include wrapper;
+
+    text-align: center;
+  }
+
+  &__both-success {
+    margin-bottom: 60px;
   }
 
   &__legal-checkbox {
@@ -64,11 +85,16 @@
 
   &__form {
     display: flex;
-    flex: 0 0 46%;
+    flex: 1 0 46%;
 
     @include media('<medium') {
       flex-grow: 1;
     }
+  }
+
+  &__form .is-loading {
+    opacity: 0.5;
+    pointer-events: none;
   }
 
   &__form .has-error .nypr-input {
