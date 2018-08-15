@@ -20,10 +20,15 @@
     margin-left: auto;
     margin-right: auto;
     width: 207px;
+    color: $darkgray;
   }
 
   &__legal-checkbox label {
     margin-left: 5px;
+
+    & a {
+      color: $darkgray;
+    }
   }
 
   &__formset {
@@ -40,6 +45,13 @@
     flex: 1 1 100%;
   }
 
+  &__form .nypr-input-error {
+    color: $error-red;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: italic;
+  }
+
   &__form .nypr-input-container {
     display: flex;
     flex-wrap: wrap;
@@ -48,6 +60,7 @@
 
   &__formset .svg-inline--fa {
     width: 25px;
+    margin-top: 17px;
   }
 
   &__email-input input, &__phone-input input {
@@ -57,6 +70,7 @@
     padding: 10px;
     display: flex;
     flex-grow: 1;
+    font-size: 14px;
   }
 
   &__submit-button {
