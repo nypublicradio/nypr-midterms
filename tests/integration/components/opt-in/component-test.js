@@ -21,11 +21,11 @@ module("Integration | Component | opt-in", function(hooks) {
     await click("[data-test-legal-checkbox]");
     await click("[data-test-submit-button]");
 
-    assert.dom(".opt-in").includesText("Email success");
+    assert.dom("[data-test-email-success]").exists();
 
     await fillIn("[data-test-phone-input] > input", "212-555-0101");
     await click("[data-test-submit-button]");
 
-    assert.dom(".opt-in").includesText("Both were submitted");
+    assert.dom("[data-test-both-success]").exists();
   });
 });

@@ -3,17 +3,20 @@
 
 <p class="opt-in__success-text">
   {{#if (and emailSuccess (not phoneSuccess))}}
-    <p><b>Thanks for subscribing to our Newsletter</b></p>
+    <p data-test-email-success><b>Thanks for subscribing to our Newsletter</b></p>
     <p>Don’t forget you can also get text notifications! Turn them off at any time by texting “STOP” to 7777.</p>
   {{/if}}
 
   {{#if (and phoneSuccess (not emailSuccess))}}
-    <p><b>Thanks for signing up to receive SMS messages TODO TODO TODO</b></p>
-    <p>Don’t forget you can also get NEWSLETTER! todo todo todo todo todo todo todo todo todo</p>
+    <p data-test-sms-success><b>Thanks for subscribing to SMS Updates</b></p>
+    <p>Don’t forget you can also sign up to get Newsletter updates with the latest and greatest below.</p>
   {{/if}}
 
   {{#if (and phoneSuccess emailSuccess)}}
-    <p class="opt-in__both-success"><b>Thanks for signing up to our STUFF! TODO TODO TODO</b></p>
+    <div class="opt-in__both-success" data-test-both-success>
+      <p><b>Thanks for subscribing to our Newsletter and SMS updates</b></p>
+      <p>If you change your mind,  turn SMS notifications off at any time by texting “STOP” to 7777. </p>
+    </div>
   {{/if}}
 </p>
 
