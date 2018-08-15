@@ -123,6 +123,8 @@ jobs:
       - run:
           name: Test with Cypress
           command: yarn cy:test
+      - store_artifacts:
+          path: /home/circleci/project/cypress/videos
 
   deploy-static-qa:
     <<: *defaults
