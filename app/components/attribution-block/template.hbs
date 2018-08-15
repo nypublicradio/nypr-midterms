@@ -1,0 +1,11 @@
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  <div class="attribution-block__image-container">
+    <img src="http://nypr-midterms.desktop.mikehearn.com/assets/images/logo.png">
+  </div>
+  <div class="attribution-block__text">
+    <p class="attribution-block__title">{{title}}</p>
+    <p class="attribution-block__name">{{name}}</p>
+  </div>
+{{/if}}
