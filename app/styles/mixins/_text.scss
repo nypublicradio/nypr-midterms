@@ -51,19 +51,10 @@
 
   }
 
-  &:after {
-    content: '★ ★ ★';
-    font-family: $font-opensans;
-    font-size: 24px;
-    font-style: normal;
-    letter-spacing: 3px;
-
-    text-align: center;
-    color: currentColor;
-    position: absolute;
-    display: block;
-    width: 100%;
-    top: -45px;
+  @if $stars {
+    &:after {
+      @include stars($top: -45px, $width: 100%);
+    }
   }
 
   // inner element required to give text a background color that hides the stripes
@@ -124,4 +115,36 @@
     font-size: 18px;
     line-height: 1.5;
   }
+}
+
+@mixin stars(
+  $top: auto,
+  $right: auto,
+  $bottom: auto,
+  $left: auto,
+  $margin: 0,
+  $width: auto,
+  $color: currentColor,
+  $font-size: 24px,
+  $letter-spacing: 3px,
+  $text-align: center,
+  $display: block,
+) {
+  content: '★ ★ ★';
+  font-family: $font-opensans;
+  font-size: $font-size;
+  font-style: normal;
+  letter-spacing: $letter-spacing;
+
+  text-align: $text-align;
+  color: $color;
+
+  display: $display;
+  position: absolute;
+  width: $width;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  margin: $margin;
 }
