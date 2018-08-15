@@ -88,8 +88,7 @@
     width: 280px;
 
     &:disabled {
-      color: lighten($blue, 30%);
-      background-color: lighten($blue, 20%);
+      @include btn-disabled;
     }
   }
 }
