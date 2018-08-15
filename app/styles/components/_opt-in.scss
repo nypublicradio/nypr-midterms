@@ -26,24 +26,27 @@
   }
 
   &__legal-checkbox {
+    @include wrapper;
+
     display: flex;
     font-size: 12px;
     line-height: 1.33;
     margin-bottom: 28px;
     margin-left: auto;
     margin-right: auto;
-    width: 207px;
     color: $darkgray;
 
     @include media('>=medium') {
-      width: 522px;
       font-size: 14px;
     }
   }
 
   &__legal-checkbox label {
     margin-left: 5px;
+  }
 
+  &__legal-checkbox input {
+    margin-top: 3px;
   }
 
   &__legal-checkbox a {
@@ -51,17 +54,17 @@
   }
 
   &__formset {
+    @include wrapper;
+
     display: flex;
     flex-wrap: wrap;
-    margin: 0 auto;
-    max-width: 590px;  // TODO
-    width: 90%;
-    justify-content: space-evenly;
+    margin: 0 auto 20px auto;
+    justify-content: space-between;
   }
 
   &__form {
     display: flex;
-    flex: 0 0 45%;
+    flex: 0 0 46%;
 
     @include media('<medium') {
       flex-grow: 1;
@@ -88,6 +91,7 @@
   &__formset .svg-inline--fa {
     width: 25px;
     margin-top: 17px;
+    margin-right: 10px;
   }
 
   &__formset .fa-envelope {
