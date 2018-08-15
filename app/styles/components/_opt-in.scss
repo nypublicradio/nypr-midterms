@@ -74,18 +74,21 @@
     color: $darkgray;
   }
 
-  &__formset {
+  & form {
     @include wrapper;
+  }
 
+  &__formset {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 auto 20px auto;
     justify-content: space-between;
+    margin-bottom: 20px;
   }
 
   &__form {
     display: flex;
     flex: 1 0 46%;
+    margin: 0 10px;
 
     @include media('<medium') {
       flex-grow: 1;
@@ -136,7 +139,7 @@
     margin: 3px;
     padding: 10px;
     display: flex;
-    flex-grow: 1;
+    flex: 1 0 100%;
     font-size: 14px;
   }
 
