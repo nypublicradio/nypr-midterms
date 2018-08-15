@@ -37,3 +37,17 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 @import "components/site-footer";
 
 @import "ember-basic-dropdown";
+
+
+// HELPER CLASSES
+.medium-and-up {
+  @include media('<medium') {
+    display: none;
+  }
+}
+
+.below-medium-only {
+  @include media('>=medium') {
+    display: none;
+  }
+}
