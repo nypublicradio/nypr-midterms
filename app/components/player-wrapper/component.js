@@ -17,7 +17,7 @@ export default Component.extend({
   currentAudioId: reads('dj.currentContentId'),
 
   currentShow: computed('isStream', 'metadata', function() {
-    if (!this.metadata) {
+    if (!this.metadata || !this.metadata.contentModel) {
       return;
     }
     let { isStream, metadata: { contentModel }} = this;
@@ -32,7 +32,7 @@ export default Component.extend({
   }),
 
   currentStory: computed('isStream', 'metadata', function() {
-    if (!this.metadata) {
+    if (!this.metadata || !this.metadata.contentModel) {
       return;
     }
     let { isStream, metadata: { contentModel }} = this;
