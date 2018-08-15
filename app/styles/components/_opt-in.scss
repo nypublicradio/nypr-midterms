@@ -68,6 +68,16 @@
     margin-top: 17px;
   }
 
+  &__formset .fa-envelope {
+    width: 24px;
+    height: 20px;
+  }
+
+  &__formset .fa-mobile-alt {
+    width: 24px;
+    height: 26px;
+  }
+
   &__email-input input, &__phone-input input {
     border: solid 2px #dddddd;
     height: 44px;
@@ -93,6 +103,7 @@
 
     &:disabled {
       @include btn-disabled;
+      pointer-events: none;
     }
   }
 }
