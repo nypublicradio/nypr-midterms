@@ -6,6 +6,9 @@
  * [data-test-legal-checkbox]
  * [data-test-phone-input
  * [data-test-submit-button]
+ * [data-test-newsletter-success]
+ * [data-test-sms-success]
+ * [data-test-both-success]
  *
  */
 
@@ -16,9 +19,9 @@ const PHONE_VALIDATION_ERROR = "Phone must be a valid";
 const EMAIL_RESPONSE_ERROR = "Email response error";
 const PHONE_RESPONSE_ERROR = "Phone response error";
 
-const EMAIL_ONLY_SUCCSS_TEXT = "Email success text";
-const PHONE_ONLY_SUCCSS_TEXT = "Phone success text";
-const BOTH_SUCCESS_TEXT = "Both were submitted";
+const EMAIL_ONLY_SUCCSS_TEXT = "subscribing to our Newsletter";
+const PHONE_ONLY_SUCCSS_TEXT = "subscribing to SMS";
+const BOTH_SUCCESS_TEXT = "Newsletter and SMS updates";
 
 // Endpoints
 const NEWSLETTER_ENDPOINT = "/newsletter-signup";
@@ -92,9 +95,6 @@ describe("Overall testing", function() {
       .should("not.contain", EMAIL_VALIDATION_ERROR)
       .should("contain", PHONE_VALIDATION_ERROR)
   });
-  it("Cannot submit if both phone/email are blank", function() {
-    cy.get("[data-test-submit-button]").should('be.disabled');
-  });
   it("Can submit if user entered only email", function() {
     cy.fillOutEmail()
     cy.checkLegal()
@@ -133,7 +133,10 @@ describe("Overall testing", function() {
     cy.get("[data-test-email-input]").should('exist');
     cy.get("[data-test-legal-checkbox]").should('exist');
   });
-  it("Won't submit without the legal checkbox checked", function() {
+  it("Cannot submit if both phone/email are blank", function() {
+    cy.get("[data-test-submit-button]").should('be.disabled');
+  });
+  it("Cannot submit without the legal checkbox checked", function() {
     cy.fillOutEmail('broke-email');
     cy.fillOutPhone('212-555-0101');
     cy.get("[data-test-submit-button]").should('be.disabled');
@@ -144,13 +147,13 @@ describe("Overall testing", function() {
     cy.submit()
     cy.get('body').should('contain', EMAIL_ONLY_SUCCSS_TEXT)
   });
-  it("Can successfully submit *phone only* and receive success response", function() {
+  it("Receives success response when submitting phone only", function() {
     cy.fillOutPhone()
     cy.checkLegal()
     cy.submit()
     cy.get('body').should('contain', PHONE_ONLY_SUCCSS_TEXT)
   });
-  it("Can successfully submit email/phone and receive success response", function() {
+  it("Receives success response when submitting both phone/email", function() {
     cy.fillOutPhone()
     cy.fillOutEmail()
     cy.checkLegal()
