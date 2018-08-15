@@ -1,4 +1,5 @@
 import Component from '@ember/component';
+import { bind } from '@ember/runloop';
 import { validateFormat } from 'ember-changeset-validations/validators';
 import fetch from 'fetch';
 
@@ -7,12 +8,12 @@ import config from '../../config/environment';
 const LEGAL = () => (key, value) => value === true;
 
 const EMAIL_VALIDATIONS = {
-  email: validateFormat({ type: 'email', allowBlank: true, message: 'Please enter a valid email address.'}),
+  email: validateFormat({ type: 'email', message: 'Please enter a valid email address.'}),
   legal: LEGAL(),
 };
 
 const SMS_VALIDATIONS = {
-  sms: validateFormat({ type: 'phone', allowBlank: true, message: 'Please enter a valid phone number.'}),
+  sms: validateFormat({ type: 'phone', message: 'Please enter a valid phone number.'}),
   legal: LEGAL(),
 };
 
@@ -22,7 +23,7 @@ const DONE = 'done';
 
 export default Component.extend({
   tagName: 'section',
-  classNames: ['update-section'],
+  classNames: ['opt-in-section'],
 
   step: NEWSLETTER,
 
@@ -32,12 +33,20 @@ export default Component.extend({
   EMAIL_VALIDATIONS,
   SMS_VALIDATIONS,
 
+  checkResponse(r) {
+    if (r.status >= 400) {
+      return r.json().then(j => Promise.reject(j));
+    } else {
+      return r.json();
+    }
+  },
+
   submitEmail(email) {
     return fetch(`${config.optInAPI}/mailchimp`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({email, list: config.mailchimpList})
-    }).then(r => r.json())
+    }).then(bind(this, 'checkResponse'));
   },
 
   submitPhone(phoneNumber) {
@@ -45,6 +54,6 @@ export default Component.extend({
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({phoneNumber, optIn: config.mobileCommonsOptInKey})
-    }).then(r => r.json())
+    }).then(bind(this, 'checkResponse'));
   }
 });

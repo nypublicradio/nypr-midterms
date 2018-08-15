@@ -1,6 +1,6 @@
 import { module } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render, fillIn, click } from '@ember/test-helpers';
+import { render, fillIn, click, blur } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import test from 'ember-sinon-qunit/test-support/test';
 
@@ -8,13 +8,13 @@ import config from '../../../../config/environment';
 
 import * as fetch from 'fetch';
 
-module('Integration | Component | updates-section', function(hooks) {
+module('Integration | Component | opt-in-section', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await render(hbs`{{updates-section}}`);
+    await render(hbs`{{opt-in-section}}`);
 
-    assert.dom('section.update-section').exists();
+    assert.dom('section.opt-in-section').exists();
     assert.dom('h1').hasText('Get Updates');
   });
 
@@ -50,7 +50,7 @@ module('Integration | Component | updates-section', function(hooks) {
     fetchStub.withArgs(`${config.optInAPI}/mobile-commons`, SMS_PAYLOAD)
       .resolves({json: () => Promise.resolve(SMS_RESPONSE)});
 
-    await render(hbs`{{updates-section}}`);
+    await render(hbs`{{opt-in-section}}`);
 
     await fillIn('[data-test-input=email]', EMAIL);
     await click('[data-test-legal-input]');
@@ -66,28 +66,27 @@ module('Integration | Component | updates-section', function(hooks) {
   });
 
   test('error states', async function(assert) {
-    await render(hbs`{{updates-section}}`);
+    await render(hbs`{{opt-in-section}}`);
 
     await fillIn('[data-test-input=email]', 'bad@email');
+    await blur('[data-test-input=email]');
 
     assert.dom('[data-test-error=email]').hasText('Please enter a valid email address.');
 
     await fillIn('[data-test-input=email]', 'good@email.com');
-    await click('[data-test-submit]');
 
+    assert.dom('[data-test-submit]').isDisabled('still disabled unless legal is checked');
     assert.dom('[data-test-error=email]').doesNotExist();
-    assert.dom('[data-test-legal-input]').hasClass('is-error');
 
-    await render(hbs`{{updates-section step='sms'}}`);
+    await render(hbs`{{opt-in-section step='sms'}}`);
 
     await fillIn('[data-test-input=sms]', '123');
+    await blur('[data-test-input=sms]');
 
     assert.dom('[data-test-error=sms]').hasText('Please enter a valid phone number.');
 
     await fillIn('[data-test-input=sms]', '5165551212');
-    await click('[data-test-submit]');
-
+    assert.dom('[data-test-submit]').isDisabled('still disabled unless legal is checked');
     assert.dom('[data-test-error=sms]').doesNotExist();
-    assert.dom('[data-test-legal-input]').hasClass('is-error');
   })
 });

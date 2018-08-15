@@ -3,12 +3,11 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | updates-section/legal-input', function(hooks) {
+module('Integration | Component | opt-in-section/form', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    await render(hbs`{{updates-section/legal-input}}`);
-
-    assert.dom('[data-test-legal-input]').exists();
+    await render(hbs`{{opt-in-section/form}}`);
+    assert.dom('.opt-in-form').exists();
   });
 });

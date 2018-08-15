@@ -1,0 +1,48 @@
+{{#if submitError}}
+<p class="opt-in-section__submit-error">
+  {{submitError}}
+</p>
+{{/if}}
+
+<div class="opt-in-form__top">
+  <div class="opt-in-form__left">
+    {{input
+      data-test-input=name
+      placeholder=placeholder
+      type="text"
+      name=name
+      value=(get changeset name)
+      class=(concat
+        'opt-in-form__input'
+        (if (get changeset.error name) ' is-error')
+      )
+      focus-out=(action validate changeset name)}}
+  </div>
+
+  <div class="opt-in-form__right">
+    <button
+      type="submit"
+      class="opt-in-form__submit"
+      data-test-submit
+      disabled={{disableSubmit}}
+      {{action 'submit' changeset}}>
+      {{#if isLoading}}
+        {{fa-icon icon='spinner' prefix='fas' spin=true}}
+      {{else}}
+        &rarr;
+      {{/if}}
+    </button>
+  </div>
+</div>
+
+<div class="opt-in-form__bottom">
+{{#if (get changeset.error name)}}
+  <ul class="opt-in-form__errors" data-test-error={{name}}>
+    {{#each (get (get changeset.error name) 'validation') as |message|}}
+    <li>{{message}}</li>
+    {{/each}}
+  </ul>
+{{/if}}
+</div>
+
+{{opt-in-section/legal-input changeset=changeset}}
