@@ -4,12 +4,25 @@
 @import "../mixins/buttons";
 
 .opt-in {
+  background-color: white;
+  --gradient: white;
+
   &__header {
-    @include section-title;
+    @include section-title($color: black);
+    margin-bottom: 24px;
+
+    @include media('>=medium') {
+      max-width: 430px;
+    }
   }
 
   &__subheader {
+    color: $darkgray;
+    font-size: 14px;
+    margin: 17px auto;
     text-align: center;
+    width: 90%;
+
   }
 
   &__legal-checkbox {
@@ -21,6 +34,11 @@
     margin-right: auto;
     width: 207px;
     color: $darkgray;
+
+    @include media('>=medium') {
+      width: 522px;
+      font-size: 14px;
+    }
   }
 
   &__legal-checkbox label {
@@ -36,14 +54,18 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    max-width: 520px;  // TODO
+    max-width: 590px;  // TODO
     width: 90%;
-    justify-content: center;
+    justify-content: space-evenly;
   }
 
   &__form {
     display: flex;
-    flex: 1 1 100%;
+    flex: 0 0 45%;
+
+    @include media('<medium') {
+      flex-grow: 1;
+    }
   }
 
   &__form .has-error .nypr-input {
