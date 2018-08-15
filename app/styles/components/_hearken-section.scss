@@ -1,85 +1,148 @@
 @import "../mixins/buttons";
+@import "../mixins/vars";
+@import "../mixins/text";
+@import "../mixins/layout";
+@import "../mixins/fonts";
 
 .hearken-section {
-  background-color: #333333;
-  color: #ffffff;
-  font-family: OpenSans;
-  font-size: 14px;
-
-  p {
-    margin: 0;
-  }
-
+  @include section-layout();
+  @include section-text($color: black);
+  background-color: white;
   a {
-    color: #ffffff;
+    text-decoration: none;
   }
 
   .hearken-section__wrapper{
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 30px;
+
   }
 
-  .hearken-section__header {
-    text-align: center;
-    padding: 40px 0;
-    font-size: 28px;
+  &__title {
+    @include section-title();
+    @include mq($medium-and-up){
+      max-width: 460px;
+    }
   }
 
   .hearken-section__chunk-wrapper {
+  }
 
-    > .hearken-section__poll-results-wrapper {
+  &__poll-results-wrapper {
+    @include mq($medium-and-up) {
+      max-width: 750px;
+      padding: 0 100px;
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
       justify-content: center;
-      margin-bottom: 40px;
-
-      > .hearken-section__poll-percentage {
-        margin: 0;
-        display: inline-block;
-        padding-right: 28px;
-        font-size: 28px;
-        font-weight: bold;
-      }
-      > .hearken-section__question-wrapper {
-        display: inline-block;
-        margin: auto 0;
-
-        > .hearken-section__question {
-          font-weight: bold;
-        }
-      }
-    }
-    > .hearken-section__answer-wrapper {
-      text-align: center;
-      padding-bottom: 40px;
-      > div {
-        display: inline-block;
-      }
-      > .hearken-section__answer {
-        font-size: 22px;
-        padding-top: 5px;
-        font-weight: 600;
-      }
+      margin: 35px auto 40px auto;
     }
   }
 
-  .hearken-section__view-more {
-    text-align: center;
-    > button {
-      @include btn;
-      font-size: 18px;
-      font-weight: 600 !important;
-      display: block;
-      margin: 10px auto;
-      margin-bottom: 20px;
-      padding: 7px;
-      background-color: #ffffff;
-      border-radius: 0 !important;
-      color: #000000;
-
+  &__before-stars, &__after-stars {
+    display: inline;
+    color: $warmgray;
+    font-size: 28px;
+    font-weight: 600;
+    font-family: PingFangSC;
+    @include media('>=medium'){
+      display: none;
     }
+  }
+
+  &__poll-percentage {
+    font-size: 28px;
+    font-weight: bold;
+    color: $blue;
+    padding-top: 20px;
+    font-family: $font-montserrat;
+    margin: 10px 10px 20px 10px;
+    @include mq($medium-and-up) {
+      padding-top: 25px;
+      font-size: 40px;
+      margin-right: 30px;
+      flex-basis: 130px;
+      height: 130px;
+      flex-grow:0;
+      flex-shrink: 0;
+    }
+    //the blue circle
+    border: double 7px $blue;
+    border-radius: 50%;
+    height: 96px;
+    width: 96px;
+    display: inline-block;
+  }
+
+  &__question-wrapper {
+    text-align: center;
+    margin: auto 0;
+    @include media('>=medium'){
+      text-align: left;
+    }
+    > p {
+      display: inline;
+    }
+  }
+
+  &__question {
+    font-weight: bold;
+  }
+
+  &__body {
+    .page-section__body-wrapper{
+      display: flex; //when the chunk renders, sometimes it's out of order
+      flex-direction: column;
+    }
+  }
+
+  &__answer-wrapper {
+      order: 1;
+      text-align: center;
+      padding: 30px 0;
+      background-image: url("https://dummyimage.com/1200");
+      font-weight: 600;
+      color: white;
+    }
+
+  &__answer {
+    color: white;
+    font-size: 24px;
+    font-style: italic;
+    @include media('>=medium'){
+      font-size: 28px;
+    }
+  }
+
+  &__answer-intro{
+    margin: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  &__view-more {
+    order: 2;
+    background-color: $offwhite;
+    border: solid 2px $warmgray;
+    border-top: none;
+    text-align: center;
+    padding: 25px 0;
+    > a {
+      color: $blue;
+    }
+  }
+
+  &__button {
+    @include btn($color: white,
+                 $background-color: $red,
+                 $border: solid $red,
+                 $border-radius: 20px,
+                 $padding: 4px 50px);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.93;
+    margin: 0px auto 20px auto;
   }
 
 }

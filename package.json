@@ -76,10 +76,9 @@
     "loader.js": "^4.2.3",
     "normalize.css": "^8.0.0",
     "nypr-audio-services": "nypublicradio/nypr-audio-services#fastboot",
+    "nypr-django-for-ember": "nypublicradio/nypr-django-for-ember#fastboot",
     "nypr-publisher-lib": "nypublicradio/nypr-publisher-lib#fastboot",
     "nypr-ui": "nypublicradio/nypr-ui#fastboot",
-    "nypr-publisher-lib": "nypublicradio/nypr-publisher-lib#fastboot",
-    "nypr-django-for-ember": "nypublicradio/nypr-django-for-ember#fastboot",
     "qunit-dom": "^0.6.2"
   },
   "engines": {

@@ -1,18 +1,19 @@
-{{#page-section class="hearken-section__wrapper" as |section|}}
+{{#page-section class="hearken-section__wrapper" open=(media 'isMedium') as |section|}}
   {{#section.tease}}
-    <h2 class="hearken-section__header">REAL ANSWERS</h2>
-    {{#if chunk}}
+    <h2 class="hearken-section__title"> <span> REAL ANSWERS</span></h2>
+    {{#if chunk1}}
       <div class="hearken-section__chunk-wrapper">
-        {{{chunk.content}}}
+        {{{chunk1.content}}}
       </div>
     {{else}}
       {{yield}}
     {{/if}}
     {{/section.tease}}
 
-    {{#section.body}}
+    {{#section.body class="hearken-section__body"}}
+      {{{chunk2.content}}}
       <div class="hearken-section__view-more">
-        <button href="">View More Upvoted Content</button>
+        <button class="hearken-section__button" href="">View More Upvoted Content</button>
         <a href="" class="hearken-section__view-more-explainer"> How does this work? </a>
       </div>
     {{/section.body}}

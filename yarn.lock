@@ -3479,7 +3479,7 @@ ember-runtime-enumerable-includes-polyfill@^2.0.0:
     ember-cli-babel "^6.9.0"
     ember-cli-version-checker "^2.1.0"
 
-ember-simple-auth@^1.3.0:
+ember-simple-auth@^1.3.0, ember-simple-auth@^1.6.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/ember-simple-auth/-/ember-simple-auth-1.7.0.tgz#80096432e312f22f76cba8f787cbff53b8ada1a0"
   dependencies:
@@ -6698,7 +6698,6 @@ nypr-audio-services@>=0.4.0, nypr-audio-services@nypublicradio/nypr-audio-servic
 
 nypr-django-for-ember@>=0.3.0, nypr-django-for-ember@nypublicradio/nypr-django-for-ember#fastboot:
   version "0.3.1"
-  uid "92fef31cbd7f4766ee6989e864fa3ad76888c87d"
   resolved "https://codeload.github.com/nypublicradio/nypr-django-for-ember/tar.gz/92fef31cbd7f4766ee6989e864fa3ad76888c87d"
   dependencies:
     ember-cli-babel "^6.6.0"
