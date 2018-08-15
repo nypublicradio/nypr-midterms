@@ -157,6 +157,10 @@
     margin-bottom: 54px;
   }
 
+  > .image-container {
+    margin-bottom: 0;
+  }
+  
   > .image-container:before {
     content: '';
     display: block;
