@@ -1,5 +1,6 @@
 @import "../mixins/text";
 @import "../mixins/buttons";
+@import "../mixins/layout";
 
 .opt-in-section {
   @include section-layout;
@@ -7,8 +8,52 @@
 
   background-color: $red;
 
+  &__layout {
+    background-color: inherit;
+
+    @include wrapper($width: 950px, $padding: 0);
+
+    @include media('>=medium') {
+      display: flex;
+      text-align: left;
+    }
+    position: relative;
+
+    &:before,
+    &:after {
+      @include stars(
+        $top: 0,
+        $bottom: 0,
+        $display: flex,
+      );
+      align-items: center;
+    }
+
+    &:after {
+      left: -175px;
+    }
+
+    &:before {
+      right: -175px;
+    }
+  }
+
+  &__left {
+    background-color: inherit;
+    flex: 1;
+  }
+
+  &__right {
+    flex: 1;
+  }
+
   &__title {
-    @include section-title;
+    @include section-title($stars: false);
+
+    @include media('>=medium') {
+      margin-left: 0;
+      margin-bottom: 8px;
+    }
   }
 
   &__header {
@@ -22,6 +67,10 @@
   &__blurb {
     margin-top: 0;
     margin-bottom: 32px;
+
+    @include media('>=medium') {
+      margin-bottom: 16px;
+    }
   }
 
   &__submit-error {
@@ -106,6 +155,15 @@
     &[disabled] {
       opacity: 0.75;
       cursor: default;
+    }
+
+    @include media('>=medium') {
+      width: auto;
+      height: auto;
+      font-size: 14px;
+      line-height: 1.93;
+      border-radius: 20px;
+      padding: 8px 24px;
     }
   }
 
