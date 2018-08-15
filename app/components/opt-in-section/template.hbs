@@ -24,6 +24,7 @@
       {{opt-in-section/form
         name='email'
         placeholder='Email Address'
+        buttonText='Subscribe'
         validations=EMAIL_VALIDATIONS
         submit=(action submitEmail)
         onSuccess=(action (mut step) SMS)}}
@@ -39,6 +40,7 @@
       {{opt-in-section/form
         name='sms'
         placeholder='Phone Number'
+        buttonText='Sign Up for SMS'
         validations=SMS_VALIDATIONS
         submit=(action submitPhone)
         onSuccess=(action (mut step) DONE)}}

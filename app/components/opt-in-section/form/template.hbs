@@ -28,6 +28,8 @@
       {{action 'submit' changeset}}>
       {{#if isLoading}}
         {{fa-icon icon='spinner' prefix='fas' spin=true}}
+      {{else if (media 'isMedium')}}
+        {{buttonText}}
       {{else}}
         &rarr;
       {{/if}}
