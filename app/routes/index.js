@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 import { hash } from 'rsvp';
 
-const PODCAST_FIELDS = 'title,audio,slug,showTitle,show,tease,podcast_links';
+const PODCAST_FIELDS = 'title,audio,slug,headers,show_title,show,tease,podcast_links';
 const WNYC_TAG = 'news';
 const GOTHAMIST_TAG = '@wnyc';
 
