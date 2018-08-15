@@ -46,6 +46,10 @@
     flex: 1 1 100%;
   }
 
+  &__form .has-error .nypr-input {
+    border: solid 2px $error-red;
+  }
+
   &__form .nypr-input-error {
     color: $error-red;
     font-size: 14px;
