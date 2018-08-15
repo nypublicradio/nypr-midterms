@@ -8,7 +8,7 @@
   --gradient: white;
 
   &__header {
-    @include section-title($color: black);
+    @include section-title($color: black, $stripes: false);
     margin-bottom: 24px;
 
     @include media('>=medium') {
