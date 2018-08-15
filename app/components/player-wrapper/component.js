@@ -5,7 +5,7 @@ import { reads } from '@ember/object/computed';
 
 export default Component.extend({
   tagName: '',
-  
+
   hifi: inject(),
   dj:   inject(),
 
@@ -17,7 +17,7 @@ export default Component.extend({
   currentAudioId: reads('dj.currentContentId'),
 
   currentShow: computed('isStream', 'metadata', function() {
-    if (!this.sound) {
+    if (!this.metadata) {
       return;
     }
     let { isStream, metadata: { contentModel }} = this;
@@ -32,7 +32,7 @@ export default Component.extend({
   }),
 
   currentStory: computed('isStream', 'metadata', function() {
-    if (!this.sound) {
+    if (!this.metadata) {
       return;
     }
     let { isStream, metadata: { contentModel }} = this;
