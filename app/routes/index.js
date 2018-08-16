@@ -4,7 +4,7 @@ import { hash } from 'rsvp';
 
 const PODCAST_FIELDS = 'title,audio,slug,headers,show_title,show,tease,podcast_links';
 const WNYC_TAG = 'news';
-const GOTHAMIST_TAG = '@wnyc';
+const GOTHAMIST_TAG = '@midterms2018';
 
 export default Route.extend({
   hifi: inject(),
