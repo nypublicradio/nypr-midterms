@@ -102,7 +102,7 @@ export default Component.extend({
         !this.get("phoneSuccess")
       ) {
         this.get("submitPhone").perform({
-          phoneNumber: this.get("changeset.phone"),
+          phoneNumber: this.get("changeset.phone").replace(/\D/g,''),
           optIn: config.mobileCommonsOptInKey
         });
       }
