@@ -1,3 +1,4 @@
+import config from 'nypr-midterms/config/environment';
 export default function() {
 
   // These comments are here to help you get started. Feel free to delete them.
@@ -23,4 +24,15 @@ export default function() {
 
     http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
   */
+
+  this.urlPrefix = config.publisherAPI;
+
+
+  /*------------------------------------------------------------
+    JSON:API (v3) endpoints
+  --------------------------------------------------------------*/
+  this.get('/v3/chunks/:slug/', ({ chunks }, { params }) => {
+    let { slug } = params;
+    return chunks.where({ slug }).models[0];
+  });
 }
