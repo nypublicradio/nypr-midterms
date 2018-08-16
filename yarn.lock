@@ -5062,7 +5062,13 @@ heimdalljs-logger@^0.1.7, heimdalljs-logger@^0.1.9:
     debug "^2.2.0"
     heimdalljs "^0.2.0"
 
-heimdalljs@^0.2.0, heimdalljs@^0.2.1, heimdalljs@^0.2.3, heimdalljs@^0.2.5:
+heimdalljs@^0.2.0, heimdalljs@^0.2.1, heimdalljs@^0.2.3:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/heimdalljs/-/heimdalljs-0.2.6.tgz#b0eebabc412813aeb9542f9cc622cb58dbdcd9fe"
+  dependencies:
+    rsvp "~3.2.1"
+
+heimdalljs@^0.2.5:
   version "0.2.5"
   resolved "https://registry.yarnpkg.com/heimdalljs/-/heimdalljs-0.2.5.tgz#6aa54308eee793b642cff9cf94781445f37730ac"
   dependencies:
@@ -7111,7 +7117,7 @@ nypr-player@nypublicradio/nypr-player#fastboot:
     ember-cli-sass "^7.0.0"
     ember-hifi "^1.15.1"
     ember-moment "^7.4.1"
-    nypr-ui nypublicradio/nypr-ui#fastboot
+    nypr-ui ">=0.3.0"
 
 nypr-publisher-lib@nypublicradio/nypr-publisher-lib#fastboot:
   version "0.4.1"
@@ -7132,8 +7138,8 @@ nypr-publisher-lib@nypublicradio/nypr-publisher-lib#fastboot:
     nypr-ui nypublicradio/nypr-ui#fastboot
 
 nypr-ui@nypublicradio/nypr-ui#fastboot:
-  version "0.3.0"
-  resolved "https://codeload.github.com/nypublicradio/nypr-ui/tar.gz/8f6875916d9fa4b5c1ef983684ec128a3c137ec6"
+  version "0.3.1"
+  resolved "https://codeload.github.com/nypublicradio/nypr-ui/tar.gz/b06ff5c2c00e518aebe588b59a32978f8a773203"
   dependencies:
     ember-basic-dropdown "0.34.0"
     ember-burger-menu "^3.1.0"
