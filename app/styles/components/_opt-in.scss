@@ -60,14 +60,55 @@
     @include media('>=medium') {
       font-size: 14px;
     }
+
+    // Hide the check by default
+    & input[type="checkbox"] + label::after {
+      content: none;
+    }
+
+    // Display when checked
+    & input[type="checkbox"]:checked + label::after {
+      content: ""
+    }
+
+    // Display when checked
+    & input[type="checkbox"]:focus + label::before {
+      box-shadow: 0px 0px 2px 2px $blue;
+    }
+  }
+
+  &__legal-checkbox input[type="checkbox"] {
+    opacity: 0;
   }
 
   &__legal-checkbox label {
     margin-left: 5px;
-  }
+    position: relative;
 
-  &__legal-checkbox input {
-    margin-top: 3px;
+
+    &::before {
+      border: 2px solid $lightgray;
+      content: "";
+      display: inline-block;
+      height: 16px;
+      position: absolute;
+      top: 3px;
+      width: 16px;
+      left: -20px;
+    }
+
+    &::after {
+      border-bottom: 2px solid $blue;
+      border-left: 2px solid $blue;
+      content: "";
+      display: inline-block;
+      height: 6px;
+      position: absolute;
+      transform: rotate(-45deg);
+      width: 10px;
+      left: -17px;
+      top: 7px;
+    }
   }
 
   &__legal-checkbox a {

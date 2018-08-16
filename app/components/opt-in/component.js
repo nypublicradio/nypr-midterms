@@ -7,11 +7,12 @@ import { and, or } from "@ember/object/computed";
 import { computed } from "@ember/object";
 import { set } from "@ember/object";
 import { task } from "ember-concurrency";
-import { validateFormat } from "ember-changeset-validations/validators";
+import { validateFormat, validatePresence } from "ember-changeset-validations/validators";
 
 let validations = {
   email: validateFormat({ type: "email", allowBlank: true }),
-  phone: validateFormat({ type: "phone", allowBlank: true })
+  phone: validateFormat({ type: "phone", allowBlank: true }),
+  legalChecked: validatePresence(true)
 };
 
 export default Component.extend({
@@ -23,7 +24,8 @@ export default Component.extend({
     this._super(...arguments);
     let obj = {
       email: null,
-      phone: null
+      phone: null,
+      legalChecked: false
     };
     this.changeset = new Changeset(
       obj,
@@ -34,12 +36,11 @@ export default Component.extend({
   },
 
   isSubmitButtonDisabled: computed(
-    "changeset.{email,phone}",
-    "legalChecked",
+    "changeset.{email,phone,legalChecked}",
     function() {
       return !(
         (this.get("changeset.email") || this.get("changeset.phone")) &&
-        this.get("legalChecked")
+        this.get("changeset.legalChecked")
       );
     }
   ),
@@ -75,7 +76,7 @@ export default Component.extend({
     }
 
     let json = yield res.json();
-    if (res.status === 400) {
+    if (res.status >= 400) {
       this.set('phoneResponseErrors', [json['detail']])
     }
 
