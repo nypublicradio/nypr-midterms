@@ -32,6 +32,8 @@ deploy_fastboot: &deploy_fastboot
         key: deploy-{{ checksum "circle.yml" }}
     - restore_cache:
         key: fastboot-lock
+    - restore_cache:
+        key: {{checksum "fastboot-lock"}}
     - run:
         name: Install Requirements
         command: |
@@ -69,6 +71,10 @@ deploy_fastboot: &deploy_fastboot
           fi
     - save_cache:
         key: fastboot-lock
+        paths:
+          - fastboot.lock
+    - save_cache:
+        key: {{checksum "fastboot-lock"}}
         paths:
           - fastboot.lock
     - save_cache:
