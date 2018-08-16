@@ -43,7 +43,7 @@ export default Route.extend({
         audio,
         id
       } = midtermsEpisode;
-      
+
       // until the midterms audio works
       audio = 'https://www.podtrac.com/pts/redirect.mp3/audio.wnyc.org/bl/bl051914bpod.mp3';
       this.hifi.load(audio).then(({ sound }) => {
