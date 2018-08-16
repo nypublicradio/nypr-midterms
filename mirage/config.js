@@ -1,5 +1,6 @@
-export default function() {
+import config from "ember-get-config";
 
+export default function() {
   // These comments are here to help you get started. Feel free to delete them.
 
   /*
@@ -24,22 +25,10 @@ export default function() {
     http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
   */
 
-  const EMAIL = 'email@example.com';
-  const PHONE_NUMBER = '212-555-0101'
-  const OPT_IN_PATH_ID = '12345';
-  const LIST_ID = 'a1b2c3';
+  const EMAIL = "email@example.com";
+  const LIST_ID = "a1b2c3";
 
-  this.post("/newsletter-signup", function() {
+  this.post(config.optInAPI, function() {
     return { email_address: EMAIL, status: "subscribed", list_id: LIST_ID };
   });
-
-  this.post("/sms-signup", function() {
-    return {
-      campaign_id: "1",
-      opt_in_path_id: OPT_IN_PATH_ID,
-      phone_number: PHONE_NUMBER
-    };
-  });
-
 }
-
