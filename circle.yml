@@ -183,9 +183,6 @@ workflows:
       - test-static:
           requires:
             - build-static
-      - test-static-cypress:
-          requires:
-            - build-static
 
   deploy-qa:
     jobs:
