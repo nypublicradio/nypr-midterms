@@ -50,6 +50,7 @@ export default Component.extend({
     let newsletterEndpoint = `${config.optInAPI}/mailchimp`;
     let res = yield fetch(newsletterEndpoint, {
       method: "POST",
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(data)
     });
 
@@ -68,6 +69,7 @@ export default Component.extend({
     let smsEndpoint = `${config.optInAPI}/mobile-commons`;
     let res = yield fetch(smsEndpoint, {
       method: "POST",
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(data)
     });
 
