@@ -33,7 +33,7 @@ deploy_fastboot: &deploy_fastboot
     - restore_cache:
         key: fastboot-lock
     - restore_cache:
-        key: fastboot-lock-{{ checksum "fastboot-lock" }}
+        key: fastboot-lock-{{ checksum "fastboot.lock" }}
     - run:
         name: Install Requirements
         command: |
@@ -74,7 +74,7 @@ deploy_fastboot: &deploy_fastboot
         paths:
           - fastboot.lock
     - save_cache:
-        key: fastboot-lock-{{ checksum "fastboot-lock" }}
+        key: fastboot-lock-{{ checksum "fastboot.lock" }}
         paths:
           - fastboot.lock
     - save_cache:
