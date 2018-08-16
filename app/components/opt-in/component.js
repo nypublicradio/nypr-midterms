@@ -47,10 +47,10 @@ export default Component.extend({
   isFullFormSubmitted: and("phoneSuccess", "emailSuccess"),
   isLoading: or('submitEmail.isRunning', 'submitPhone.isRunning'),
   submitEmail: task(function*(data) {
-    let newsletterEndpoint = config.newsletterSignupEndpoint;
+    let newsletterEndpoint = config.optInAPI;
     let res = yield fetch(newsletterEndpoint, {
       method: "POST",
-      data: JSON.stringify(data)
+      body: JSON.stringify(data)
     });
 
     if ([200,201].includes(res.status)) {
@@ -65,10 +65,10 @@ export default Component.extend({
 
   }),
   submitPhone: task(function*(data) {
-    let smsEndpoint = config.smsSignupEndpoint;
+    let smsEndpoint = config.optInAPI;
     let res = yield fetch(smsEndpoint, {
       method: "POST",
-      data: JSON.stringify(data)
+      body: JSON.stringify(data)
     });
 
     if ([200,201].includes(res.status)) {
@@ -89,14 +89,20 @@ export default Component.extend({
         !this.get("changeset.error.email") &&  // no errors exist
         !this.get("emailSuccess")              // not already submitted
       ) {
-        this.get("submitEmail").perform();
+        this.get("submitEmail").perform({
+          email: this.get("changeset.email"),
+          list: config.mailchimpList
+        });
       }
       if (
         this.get("changeset.phone") &&
         !this.get("changeset.error.phone") &&
         !this.get("phoneSuccess")
       ) {
-        this.get("submitPhone").perform();
+        this.get("submitPhone").perform({
+          phoneNumber: this.get("changeset.phone"),
+          optIn: config.mobileCommonsOptInKey
+        });
       }
     }
   }
