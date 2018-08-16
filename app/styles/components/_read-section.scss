@@ -6,6 +6,7 @@
 
   background-color: white;
   --gradient: white;
+  --transparent-gradient: #{rgba(white, 0)};
 
   &__tease {
     @include wrapper($width: 787px, $padding: 0);

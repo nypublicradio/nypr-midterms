@@ -8,6 +8,7 @@
 
   background-color: $blue;
   --gradient: #{$blue};
+  --transparent-gradient: #{rgba($blue, 0)};
 
   &__title {
     @include section-title;
