@@ -47,7 +47,7 @@ export default Component.extend({
   isFullFormSubmitted: and("phoneSuccess", "emailSuccess"),
   isLoading: or('submitEmail.isRunning', 'submitPhone.isRunning'),
   submitEmail: task(function*(data) {
-    let newsletterEndpoint = config.optInAPI;
+    let newsletterEndpoint = `${config.optInAPI}/mailchimp`;
     let res = yield fetch(newsletterEndpoint, {
       method: "POST",
       body: JSON.stringify(data)
@@ -65,7 +65,7 @@ export default Component.extend({
 
   }),
   submitPhone: task(function*(data) {
-    let smsEndpoint = config.optInAPI;
+    let smsEndpoint = `${config.optInAPI}/mobile-commons`;
     let res = yield fetch(smsEndpoint, {
       method: "POST",
       body: JSON.stringify(data)
