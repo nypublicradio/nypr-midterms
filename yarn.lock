@@ -3895,7 +3895,7 @@ ember-try@^0.2.23:
     rsvp "^3.0.17"
     semver "^5.1.0"
 
-ember-validators@^1.0.0, ember-validators@^1.2.0:
+ember-validators@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/ember-validators/-/ember-validators-1.2.0.tgz#b4bc9aeaf97921d80c41b7dc21acca288d1216ae"
   dependencies:
