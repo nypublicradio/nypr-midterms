@@ -23,6 +23,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.2.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "broccoli-asset-rev": "^2.7.0",
+    "broccoli-sourcemap-concat": "^2.0.2",
     "ember-basic-dropdown": "^1.0.3",
     "ember-cli": "~3.3.0",
     "ember-cli-app-version": "^3.0.0",
@@ -91,5 +92,10 @@
   "resolutions": {
     "ember-hifi": "nypublicradio/ember-hifi#master",
     "nypr-django-for-ember": "nypublicradio/nypr-django-for-ember#fastboot"
+  },
+  "ember-addon": {
+    "paths": [
+      "lib/unobtrusive-loader"
+    ]
   }
 }
