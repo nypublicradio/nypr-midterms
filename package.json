@@ -86,7 +86,7 @@
     "loader.js": "^4.2.3",
     "normalize.css": "^8.0.0",
     "nypr-audio-services": "nypublicradio/nypr-audio-services#fastboot",
-    "nypr-election-countdown": "nypublicradio/nypr-election-countdown#kate/RT-1026",
+    "nypr-election-countdown": "^0.1.0",
     "nypr-player": "nypublicradio/nypr-player#fastboot",
     "nypr-publisher-lib": "nypublicradio/nypr-publisher-lib#fastboot",
     "nypr-ui": "nypublicradio/nypr-ui#fastboot",
