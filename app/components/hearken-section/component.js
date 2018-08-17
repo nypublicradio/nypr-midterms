@@ -1,5 +1,6 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
+import $ from 'jquery';
 
 
 export default Component.extend({
@@ -13,6 +14,9 @@ export default Component.extend({
     this._getChunk(this.get('slug2'), "chunk2");
   },
 
+  didRender(){
+  },
+
   _getChunk(slug, chunkName) {
     this.get('store').findRecord('chunk', slug).then((chunk) => {
 
@@ -23,5 +27,19 @@ export default Component.extend({
 
       this.set(chunkName, chunk);
     })
-  }
+  },
+
+  _loadHearkenScript(){
+    let script = '<script src="https://modules.wearehearken.com/wnyc/embed/1770.js"></script>';
+    let fragment = document.createRange().createContextualFragment(script);
+    let elm = $(".hearken-section__body");
+    if(elm.length > 0){
+      let temp = requirejs;
+      requirejs = undefined;
+      elm[0].appendChild(fragment);
+      requirejs = temp;
+    }
+
+  },
+
 });
