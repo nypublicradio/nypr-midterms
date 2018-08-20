@@ -54,58 +54,6 @@
   padding-bottom: 5px;
 }
 
-.intro-lockup {
-  max-width: 296px;
-  margin: 0 auto 24px;
-
-  @include media('>=medium') {
-    max-width: 416px;
-  }
-
-  &__logo img {
-    display: block;
-    width: 90px;
-
-    @include media('>=medium') {
-      width: 120px;
-    }
-  }
-
-  &__text {
-    margin: 0;
-    text-align: left;
-
-    span {
-      display: block;
-    }
-
-    // 2018
-    span:nth-child(1) {
-      font-size: 16px;
-      line-height: 1.56;
-      font-weight: 600;
-
-      @include media('>=medium') {
-        font-size: 18px;
-        line-height: 1.11;
-      }
-    }
-
-    span:nth-child(2), // Your Voice,
-    span:nth-child(3) { // Your Choice
-      font-family: $font-montserrat;
-      font-size: 30px;
-      line-height: 1.2;
-      font-style: italic;
-
-      @include media('>=medium') {
-        font-size: 45px;
-        line-height: 1.18;
-      }
-    }
-  }
-}
-
 .header-blurb {
   font-size: 16px;
   margin: 0 auto 32px;
@@ -160,7 +108,7 @@
   > .image-container {
     margin-bottom: 0;
   }
-  
+
   > .image-container:before {
     content: '';
     display: block;
@@ -196,10 +144,11 @@
   }
 
   .page-intro__blurb {
-    max-width: 560px;
-    padding: 0 20px;
-    margin-left: auto;
-    margin-right: auto;
+    @include wrapper(
+      $width: 560px,
+      $padding: 0 20px,
+      $margin: 0 auto 25px
+    );
   }
 
   .page-intro__footer {
