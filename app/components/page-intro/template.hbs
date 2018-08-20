@@ -5,11 +5,12 @@
   as |hero|}}
   {{#hero.top as |top|}}
     {{#top.left}}
-      {{#share-icons class="intro-share" as |share|}}
-        {{share.fb-post}}
-        {{share.tweet text="TKTK Tweet Text" via="WNYC"}}
-        {{share.email}}
-      {{/share-icons}}
+      <div class="intro-links">
+        {{scroll-to offset=-100 href="#updates" label="Get Updates"}}
+        {{scroll-to offset=-100 href="#podcasts" label="Podcasts"}}
+        {{scroll-to offset=-100 href="#news" label="News"}}
+        {{scroll-to offset=-100 href="#guide" label="Voter Guide"}}
+      </div>
     {{/top.left}}
 
     {{#top.right}}
