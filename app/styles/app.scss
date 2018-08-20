@@ -8,14 +8,14 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 
 @import "_include-media";
 
-// define some things that the hero sass partial requires
+// override values defined by ill-scoped `nypr-ui`
 @import "mixins/ui-compat";
 @import "nypr-ui/hero";
-@import "nypr-ui/button-classes";
 
+// define some things that the hero sass partial requires
+@import "nypr-ui/button-classes";
 @import "nypr-audio-services/listen-button";
 
-// override values defined by ill-scoped `nypr-ui`
 @import "mixins/vars";
 
 @import "base";
@@ -39,6 +39,7 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 @import "ember-basic-dropdown";
 @import "nypr-player";
 @import "nypr-audio-services/text-crawl";
+@import "nypr-ui/brand-header";
 
 // HELPER CLASSES
 .medium-and-up {

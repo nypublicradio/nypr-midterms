@@ -7137,7 +7137,7 @@ nypr-publisher-lib@nypublicradio/nypr-publisher-lib#fastboot:
     nypr-django-for-ember nypublicradio/nypr-django-for-ember#fastboot
     nypr-ui nypublicradio/nypr-ui#fastboot
 
-nypr-ui@nypublicradio/nypr-ui#fastboot:
+nypr-ui@>=0.3.0, nypr-ui@nypublicradio/nypr-ui#fastboot:
   version "0.3.1"
   resolved "https://codeload.github.com/nypublicradio/nypr-ui/tar.gz/b06ff5c2c00e518aebe588b59a32978f8a773203"
   dependencies:
