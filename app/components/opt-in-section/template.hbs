@@ -1,18 +1,16 @@
 <div class="opt-in-section__layout">
   <div class="opt-in-section__left">
     <h1 class="opt-in-section__title">
-      <span>
-        Get Updates
-      </span>
+      Get Updates
     </h1>
 
     <p class="opt-in-section__blurb">
-      Get the latest updates.
+      Sign up for our comprehensive midterms newsletter for the latest updates in your inbox.
     </p>
 
     <p class="opt-in-section__footer medium-and-up">
       {{#if (eq step NEWSLETTER)}}
-        <a href="/opt-in">Subscribe to SMS</a>
+        <a href="/opt-in">Or sign up for Text Updates</a>
       {{else if (eq step SMS)}}
         <a href="/opt-in">Tell Me More</a>
       {{/if}}
@@ -56,7 +54,7 @@
 
     <p class="opt-in-section__footer below-medium-only">
       {{#if (eq step NEWSLETTER)}}
-        <a href="/opt-in">Subscribe to SMS</a>
+        <a href="/opt-in">Or sign up for Text Updates</a>
       {{else if (eq step SMS)}}
         <a href="/opt-in">Tell Me More</a>
       {{/if}}
