@@ -16,7 +16,10 @@
         <button class="hearken-section__button" href="">View More Upvoted Content</button>
         <a href="" class="hearken-section__view-more-explainer"> How does this work? </a>
       </div>
-      <script src="https://modules.wearehearken.com/wnyc/embed/1770.js"></script>
+      <iframe class="hearken-submission" srcdoc="<script async src='https://modules.wearehearken.com/wnyc/embed/1770.js'></script>" width="100%" height="470px" style="border: none;"></iframe>
+      <iframe class="hearken-answer" srcdoc={{{chunk2.content}}} width="100%" height="470px" style="border: none;"></iframe>
+
+      <script async src="https://modules.wearehearken.com/wnyc/embed/1770.js"></script>
 
     {{/section.body}}
 

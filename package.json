@@ -106,10 +106,5 @@
   "resolutions": {
     "ember-hifi": "nypublicradio/ember-hifi#master",
     "nypr-django-for-ember": "nypublicradio/nypr-django-for-ember#fastboot"
-  },
-  "ember-addon": {
-    "paths": [
-      "lib/unobtrusive-loader"
-    ]
   }
 }

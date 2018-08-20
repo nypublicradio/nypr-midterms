@@ -15,6 +15,15 @@ export default Component.extend({
   },
 
   didRender(){
+    var iframe = $('.hearken-submission')[0];
+    var iframebody = iframe.contentWindow.document.getElementsByTagName('body')[0];
+    if (iframebody.hasChildNodes()){
+      return;
+    }
+    var iframescript = iframe.contentWindow.document.createElement('script');
+    iframescript.type = 'text/javascript';
+    iframescript.src = 'https://modules.wearehearken.com/wnyc/embed/1770.js'; // replace this with your SCRIPT
+    iframebody.appendChild(iframescript);
   },
 
   _getChunk(slug, chunkName) {
