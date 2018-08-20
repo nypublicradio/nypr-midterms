@@ -36,6 +36,8 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 @import "components/read-section";
 @import "components/vote-section";
 @import "components/site-footer";
+@import "components/opt-in";
+@import "components/attribution-block";
 
 @import "ember-basic-dropdown";
 @import "nypr-player";

@@ -24,3 +24,8 @@
 
   text-decoration: none; // for links that want to look like buttons
 }
+
+@mixin btn-disabled {
+  color: lighten($blue, 40%);
+  background-color: lighten($blue, 30%);
+}

@@ -14,17 +14,25 @@
     "build": "ember build",
     "lint:js": "eslint .",
     "start": "ember serve",
-    "test": "ember test"
+    "test": "ember test",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:test": "start-server-and-test start http://localhost:4200 cy:run",
+    "cy:ci:run": "for f in $(circleci tests glob cypress/integration/** | circleci tests split); do cypress run --spec \"$f\"; done;",
+    "cy:ci:test": "start-server-and-test start http://localhost:4200 cy:ci:run"
   },
   "devDependencies": {
     "@fortawesome/ember-fontawesome": "^0.1.2",
     "@fortawesome/free-brands-svg-icons": "^5.2.0",
     "@fortawesome/free-regular-svg-icons": "^5.2.0",
     "@fortawesome/free-solid-svg-icons": "^5.2.0",
+    "@types/ember": "^2.8.32",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "broccoli-asset-rev": "^2.7.0",
+    "cypress": "^3.0.3",
     "ember-basic-dropdown": "^1.0.3",
     "ember-changeset-validations": "^1.2.12",
+    "ember-changeset": "^1.5.0-beta.0",
     "ember-cli": "~3.3.0",
     "ember-cli-app-version": "^3.0.0",
     "ember-cli-autoprefixer": "^0.8.1",
@@ -56,6 +64,7 @@
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^2.0.0",
+    "ember-concurrency": "^0.8.19",
     "ember-data": "~3.3.0",
     "ember-export-application-global": "^2.0.0",
     "ember-fetch": "^5.1.1",
@@ -79,7 +88,8 @@
     "nypr-player": "nypublicradio/nypr-player#fastboot",
     "nypr-publisher-lib": "nypublicradio/nypr-publisher-lib#fastboot",
     "nypr-ui": "nypublicradio/nypr-ui#fastboot",
-    "qunit-dom": "^0.6.2"
+    "qunit-dom": "^0.6.2",
+    "start-server-and-test": "^1.7.0"
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"

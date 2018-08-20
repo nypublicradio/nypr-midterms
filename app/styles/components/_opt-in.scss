@@ -1,0 +1,207 @@
+@import "../mixins/text";
+@import "../mixins/vars";
+@import "../mixins/layout";
+@import "../mixins/buttons";
+
+.opt-in {
+  background-color: white;
+  --gradient: white;
+  --transparent-gradient: #{rgba(white, 0)};
+
+  &__header {
+    @include section-title($color: black, $stripes: false);
+    margin-bottom: 24px;
+
+    @include media('>=medium') {
+      max-width: 430px;
+    }
+  }
+
+  &__subheader {
+    color: $darkgray;
+    display: table;
+    font-size: 14px;
+    margin: 17px auto;
+    text-align: center;
+    width: 90%;
+
+    &:after {
+      border-bottom: 4px solid #f00;
+      content: '';
+      display: block;
+      margin-left: calc(50% - 35px);
+      width: 70px;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+
+  }
+
+  &__success-text {
+    @include wrapper;
+
+    text-align: center;
+  }
+
+  &__both-success {
+    margin-bottom: 60px;
+  }
+
+  &__legal-checkbox {
+    @include wrapper;
+
+    display: flex;
+    font-size: 12px;
+    line-height: 1.33;
+    margin-bottom: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    color: $darkgray;
+
+    @include media('>=medium') {
+      font-size: 14px;
+    }
+
+    // Hide the check by default
+    & input[type="checkbox"] + label::after {
+      content: none;
+    }
+
+    // Display when checked
+    & input[type="checkbox"]:checked + label::after {
+      content: ""
+    }
+
+    // Display when checked
+    & input[type="checkbox"]:focus + label::before {
+      box-shadow: 0px 0px 2px 2px $blue;
+    }
+  }
+
+  &__legal-checkbox input[type="checkbox"] {
+    opacity: 0;
+  }
+
+  &__legal-checkbox label {
+    margin-left: 5px;
+    padding-left: 3px;
+    position: relative;
+
+
+    &::before {
+      border: 2px solid $lightgray;
+      content: "";
+      display: inline-block;
+      height: 16px;
+      position: absolute;
+      top: 3px;
+      width: 16px;
+      left: -20px;
+    }
+
+    &::after {
+      border-bottom: 2px solid $blue;
+      border-left: 2px solid $blue;
+      content: "";
+      display: inline-block;
+      height: 6px;
+      position: absolute;
+      transform: rotate(-45deg);
+      width: 10px;
+      left: -17px;
+      top: 7px;
+    }
+  }
+
+  &__legal-checkbox a {
+    color: $darkgray;
+  }
+
+  & form {
+    @include wrapper;
+  }
+
+  &__formset {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__form {
+    display: flex;
+    flex: 1 0 46%;
+    margin: 0 10px;
+
+    @include media('<medium') {
+      flex-grow: 1;
+    }
+  }
+
+  &__form .is-loading {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &__form .has-error .nypr-input {
+    border: solid 2px $error-red;
+  }
+
+  &__form .nypr-input-error {
+    color: $error-red;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  &__form .nypr-input-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 100%;
+  }
+
+  &__formset .svg-inline--fa {
+    width: 25px;
+    margin-top: 17px;
+    margin-right: 10px;
+  }
+
+  &__formset .fa-envelope {
+    width: 24px;
+    height: 20px;
+  }
+
+  &__formset .fa-mobile-alt {
+    width: 24px;
+    height: 26px;
+  }
+
+  &__email-input input, &__phone-input input {
+    border: solid 2px #dddddd;
+    height: 44px;
+    margin: 3px;
+    padding: 10px;
+    display: flex;
+    flex: 1 0 100%;
+    font-size: 14px;
+  }
+
+  &__submit-button {
+    @include btn;
+    @include btn--blue;
+
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    height: 40px;
+    margin-bottom: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 280px;
+
+    &:disabled {
+      @include btn-disabled;
+      pointer-events: none;
+    }
+  }
+}

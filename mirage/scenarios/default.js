@@ -1,4 +1,8 @@
-export default function(/* server */) {
+export default function(server) {
+
+  if (window.localStorage.shutdownMirage) {
+    server.shutdown();
+  }
 
   /*
     Seed your development database using your factories.

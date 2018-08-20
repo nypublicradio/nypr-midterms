@@ -1,0 +1,36 @@
+@import "../mixins/text";
+@import "../mixins/vars";
+@import "../mixins/layout";
+@import "../mixins/buttons";
+
+.attribution-block {
+  @include wrapper;
+
+  display: flex;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.attribution-block__image-container img {
+  width: 57px;
+  height: 57px;
+  margin-right: 10px;
+  border-radius: 3px;
+}
+
+.attribution-block__text p {
+  padding: 0;
+  margin: 0
+}
+.attribution-block__title {
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  color: rgba(0, 0, 0, 0.6);
+}
+.attribution-block__name {
+  font-size: 15px;
+  color: $azure;
+}
