@@ -10,8 +10,7 @@ export default Component.extend({
 
   init(){
     this._super(...arguments);
-    this._getChunk(this.get('slug1'), "chunk1");
-    this._getChunk(this.get('slug2'), "chunk2");
+    this._getChunk(this.get('slug'), "chunk");
   },
 
   didRender(){
