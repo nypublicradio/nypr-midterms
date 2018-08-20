@@ -1,4 +1,4 @@
-import config from "ember-get-config";
+import config from "../config/environment";
 
 export default function() {
 

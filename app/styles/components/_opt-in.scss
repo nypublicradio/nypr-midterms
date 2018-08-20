@@ -6,6 +6,7 @@
 .opt-in {
   background-color: white;
   --gradient: white;
+  --transparent-gradient: #{rgba(white, 0)};
 
   &__header {
     @include section-title($color: black, $stripes: false);

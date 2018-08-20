@@ -1,9 +1,9 @@
 import Changeset from "ember-changeset";
 import Component from "@ember/component";
-import config from "ember-get-config";
+import config from "../../config/environment";
 import fetch from "fetch";
 import lookupValidator from "ember-changeset-validations";
-import { and, or } from "@ember/object/computed";
+import { and } from "@ember/object/computed";
 import { computed } from "@ember/object";
 import { set } from "@ember/object";
 import { all, task } from "ember-concurrency";
