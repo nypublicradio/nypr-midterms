@@ -30,7 +30,6 @@
   $font-weight: 600,
   $font-style: oblique,
   $color: inherit,
-  $stars: true,
   $stripes: true
 ) {
   font-size: $font-size;
@@ -62,12 +61,6 @@
   @if $stripes {
     &:before {
       @include stripes;
-    }
-  }
-
-  @if $stars {
-    &:after {
-      @include stars($top: -45px, $width: 100%);
     }
   }
 
@@ -129,36 +122,4 @@
     font-size: 18px;
     line-height: 1.5;
   }
-}
-
-@mixin stars(
-  $top: auto,
-  $right: auto,
-  $bottom: auto,
-  $left: auto,
-  $margin: 0,
-  $width: auto,
-  $color: currentColor,
-  $font-size: 24px,
-  $letter-spacing: 3px,
-  $text-align: center,
-  $display: block,
-) {
-  content: '★ ★ ★';
-  font-family: $font-opensans;
-  font-size: $font-size;
-  font-style: normal;
-  letter-spacing: $letter-spacing;
-
-  text-align: $text-align;
-  color: $color;
-
-  display: $display;
-  position: absolute;
-  width: $width;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
-  margin: $margin;
 }

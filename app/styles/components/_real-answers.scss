@@ -6,7 +6,6 @@
 
   &__title {
     @include section-title(
-      $stars: false,
       $stripes: false,
       $font-style: normal,
     );

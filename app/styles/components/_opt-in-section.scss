@@ -19,24 +19,6 @@
       display: flex;
       text-align: left;
     }
-
-    &:before,
-    &:after {
-      @include stars(
-        $top: 0,
-        $bottom: 0,
-        $display: flex,
-      );
-      align-items: center;
-    }
-
-    &:after {
-      left: -175px;
-    }
-
-    &:before {
-      right: -175px;
-    }
   }
 
   &__left {
@@ -49,7 +31,7 @@
   }
 
   &__title {
-    @include section-title($stars: false);
+    @include section-title($stripes: false);
 
     @include media('>=medium') {
       margin-left: 0;
