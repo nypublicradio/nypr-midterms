@@ -1,0 +1,5 @@
+.nypr-brand-header__left .intro-donate {
+  @include media(">=medium") {
+    display: none;
+  }
+}

@@ -27,6 +27,7 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 @import "components/media-object";
 @import "components/story-tease";
 @import "components/episode-tease";
+@import "components/brand-header";
 
 // PAGE SECTIONS
 @import "components/page-intro";
