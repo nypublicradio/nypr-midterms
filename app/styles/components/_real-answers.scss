@@ -1,0 +1,60 @@
+@import "../mixins/text";
+@import "../mixins/buttons";
+
+.real-answers {
+  flex-basis: 100%;
+
+  &__title {
+    @include section-title($stars: false, $stripes: false);
+
+    &:before {
+      @include stripes(
+        $width: 24px,
+        $right: auto,
+        $left: 16px,
+      );
+    }
+
+    &:after {
+      @include stripes(
+        $width: 24px,
+        $left: auto,
+        $right: 16px,
+      );
+    }
+  }
+
+  &__blurb {
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.56;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 24px;
+  }
+
+  &__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid white;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__link {
+    @include btn(
+      $background-color: white,
+      $color: black,
+      $border-radius: 20px,
+      $padding: 8px,
+    );
+  }
+}

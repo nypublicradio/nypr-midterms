@@ -1,3 +1,29 @@
+@mixin stripes(
+  $top: 0,
+  $right: 0,
+  $bottom: 0,
+  $left: 0,
+  $width: 100%,
+) {
+  content: '';
+  position: absolute;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+  width: $width;
+  margin: auto;
+  height: 10px;
+
+  // side stripes
+  background-image: linear-gradient(to bottom,
+    currentColor, currentColor 2px,
+    transparent 2px, transparent 4px,
+    currentColor 4px, currentColor 6px,
+    transparent 6px, transparent 8px,
+    currentColor 8px, currentColor 10px);
+}
+
 @mixin section-title(
   $font-size: 24px,
   $font-family: $font-montserrat,
@@ -5,6 +31,7 @@
   $font-style: oblique,
   $color: inherit,
   $stars: true,
+  $stripes: true
 ) {
   font-size: $font-size;
   font-family: $font-family;
@@ -32,24 +59,10 @@
     line-height: 1.29;
   }
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    height: 10px;
-
-    // side stripes
-    background-image: linear-gradient(to bottom,
-      currentColor, currentColor 2px,
-      transparent 2px, transparent 4px,
-      currentColor 4px, currentColor 6px,
-      transparent 6px, transparent 8px,
-      currentColor 8px, currentColor 10px);
-
+  @if $stripes {
+    &:before {
+      @include stripes;
+    }
   }
 
   @if $stars {
