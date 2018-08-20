@@ -60,7 +60,7 @@
     </p>
 
     <button class="opt-in__submit-button" type="submit" disabled={{isSubmitButtonDisabled}} data-test-submit-button>
-      {{#liquid-if isLoading use='crossFade'}}
+      {{#liquid-if (or submitEmail.isRunning submitPhone.isRunning) use='crossFade'}}
         {{fa-icon icon='spinner' prefix='fas' spin=true}}
       {{else}}
         Sign Up

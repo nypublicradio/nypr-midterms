@@ -6,9 +6,14 @@ import lookupValidator from "ember-changeset-validations";
 import { and, or } from "@ember/object/computed";
 import { computed } from "@ember/object";
 import { set } from "@ember/object";
-import { task } from "ember-concurrency";
-import { validateFormat, validatePresence } from "ember-changeset-validations/validators";
+import { all, task } from "ember-concurrency";
+import {
+  validateFormat,
+  validatePresence
+} from "ember-changeset-validations/validators";
 
+let newsletterEndpoint = `${config.optInAPI}/mailchimp`;
+let smsEndpoint = `${config.optInAPI}/mobile-commons`;
 let validations = {
   email: validateFormat({ type: "email", allowBlank: true }),
   phone: validateFormat({ type: "phone", allowBlank: true }),
@@ -16,19 +21,18 @@ let validations = {
 };
 
 export default Component.extend({
-  classNames: ['opt-in'],
+  classNames: ["opt-in"],
   emailResponseErrors: null,
   phoneResponseErrors: null,
 
   init() {
     this._super(...arguments);
-    let obj = {
-      email: null,
-      phone: null,
-      legalChecked: false
-    };
     this.changeset = new Changeset(
-      obj,
+      {
+        email: null,
+        phone: null,
+        legalChecked: false
+      },
       lookupValidator(validations),
       validations
     );
@@ -45,67 +49,81 @@ export default Component.extend({
     }
   ),
   isFullFormSubmitted: and("phoneSuccess", "emailSuccess"),
-  isLoading: or('submitEmail.isRunning', 'submitPhone.isRunning'),
   submitEmail: task(function*(data) {
-    let newsletterEndpoint = `${config.optInAPI}/mailchimp`;
-    let res = yield fetch(newsletterEndpoint, {
+    return yield fetch(newsletterEndpoint, {
       method: "POST",
-      headers: {'Content-Type': 'application/json'},
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
-    });
-
-    if ([200,201].includes(res.status)) {
-      this.set("emailSuccess", true);
-      return;
-    }
-
-    let json = yield res.json();
-    if (res.status === 400) {
-      this.set('emailResponseErrors', [json['detail']])
-    }
-
+    })
+      .then(res => {
+        // Success response
+        if (res.status === 200 || res.status === 201) {
+          return ["emailSuccess", true];
+        }
+        // Error response
+        if (res.status >= 400) {
+          return res
+            .json()
+            .then(json => ["emailResponseErrors", [json.detail]]);
+        }
+      })
+      .catch(e => {
+        return e;
+      });
   }),
   submitPhone: task(function*(data) {
-    let smsEndpoint = `${config.optInAPI}/mobile-commons`;
-    let res = yield fetch(smsEndpoint, {
+    return yield fetch(smsEndpoint, {
       method: "POST",
-      headers: {'Content-Type': 'application/json'},
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
-    });
-
-    if ([200,201].includes(res.status)) {
-      this.set("phoneSuccess", true);
-    }
-
-    let json = yield res.json();
-    if (res.status >= 400) {
-      this.set('phoneResponseErrors', [json['detail']])
-    }
-
+    })
+      .then(res => {
+        // Success response
+        if (res.status === 200 || res.status === 201) {
+          return ["phoneSuccess", true];
+        }
+        // Error response
+        if (res.status >= 400) {
+          return res
+            .json()
+            .then(json => ["phoneResponseErrors", [json.detail]]);
+        }
+      })
+      .catch(e => {
+        return e;
+      });
   }),
 
   actions: {
     submitForms() {
+      let childTasks = [];
       if (
-        this.get("changeset.email") &&         // email has been entered
-        !this.get("changeset.error.email") &&  // no errors exist
-        !this.get("emailSuccess")              // not already submitted
+        this.get("changeset.email") && // email has been entered
+        !this.get("changeset.error.email") && // no errors exist
+        !this.get("emailSuccess") // not already submitted
       ) {
-        this.get("submitEmail").perform({
-          email: this.get("changeset.email"),
-          list: config.mailchimpList
-        });
+        childTasks.push(
+          this.get("submitEmail").perform({
+            email: this.get("changeset.email"),
+            list: config.mailchimpList
+          })
+        );
       }
       if (
         this.get("changeset.phone") &&
         !this.get("changeset.error.phone") &&
         !this.get("phoneSuccess")
       ) {
-        this.get("submitPhone").perform({
-          phoneNumber: this.get("changeset.phone").replace(/\D/g,''),
-          optIn: config.mobileCommonsOptInKey
-        });
+        childTasks.push(
+          this.get("submitPhone").perform({
+            phoneNumber: this.get("changeset.phone").replace(/\D/g, ""),
+            optIn: config.mobileCommonsOptInKey
+          })
+        );
       }
+      all(childTasks).then(completedJobs => {
+        completedJobs.forEach(values => this.set(...values));
+      });
     }
   }
 });
