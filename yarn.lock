@@ -7109,7 +7109,7 @@ nypr-metrics@nypublicradio/nypr-metrics#fastboot:
 
 nypr-player@nypublicradio/nypr-player#fastboot:
   version "0.3.0"
-  resolved "https://codeload.github.com/nypublicradio/nypr-player/tar.gz/45e7256dd92273854b251e2569e818ea223b809d"
+  resolved "https://codeload.github.com/nypublicradio/nypr-player/tar.gz/49171bdf2182841760ec7e288770d3702b614dc8"
   dependencies:
     ember-cli-babel "^6.6.0"
     ember-cli-htmlbars "^2.0.1"
@@ -7117,7 +7117,7 @@ nypr-player@nypublicradio/nypr-player#fastboot:
     ember-cli-sass "^7.0.0"
     ember-hifi "^1.15.1"
     ember-moment "^7.4.1"
-    nypr-ui ">=0.3.0"
+    nypr-ui nypublicradio/nypr-ui#fastboot
 
 nypr-publisher-lib@nypublicradio/nypr-publisher-lib#fastboot:
   version "0.4.1"
@@ -7137,9 +7137,9 @@ nypr-publisher-lib@nypublicradio/nypr-publisher-lib#fastboot:
     nypr-django-for-ember nypublicradio/nypr-django-for-ember#fastboot
     nypr-ui nypublicradio/nypr-ui#fastboot
 
-nypr-ui@>=0.3.0, nypr-ui@nypublicradio/nypr-ui#fastboot:
+nypr-ui@nypublicradio/nypr-ui#fastboot:
   version "0.3.1"
-  resolved "https://codeload.github.com/nypublicradio/nypr-ui/tar.gz/b06ff5c2c00e518aebe588b59a32978f8a773203"
+  resolved "https://codeload.github.com/nypublicradio/nypr-ui/tar.gz/b9e2fd44a8c6b8aa65900258585d512909f76040"
   dependencies:
     ember-basic-dropdown "0.34.0"
     ember-burger-menu "^3.1.0"
