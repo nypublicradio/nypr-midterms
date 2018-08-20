@@ -5,7 +5,11 @@
   flex-basis: 100%;
 
   &__title {
-    @include section-title($stars: false, $stripes: false);
+    @include section-title(
+      $stars: false,
+      $stripes: false,
+      $font-style: normal,
+    );
 
     &:before {
       @include stripes(
@@ -30,13 +34,18 @@
     line-height: 1.56;
     font-weight: 600;
     margin: 0;
-    margin-bottom: 24px;
+    margin-bottom: 40px;
   }
 
   &__items {
     margin: 0;
     padding: 0;
     list-style: none;
+
+    @include media('>=medium') {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__item {
@@ -47,6 +56,24 @@
     &:last-child {
       border-bottom: none;
     }
+
+    .media-object__media {
+      flex-basis: 52px;
+    }
+
+    @include media('>=medium') {
+      border: none;
+      flex-basis: 31%;
+
+      .media-object {
+        flex-wrap: wrap;
+      }
+
+      .media-object__media {
+        flex-basis: 100%;
+        margin-bottom: 16px;
+      }
+    }
   }
 
   &__link {
@@ -56,5 +83,30 @@
       $border-radius: 20px,
       $padding: 8px,
     );
+  }
+}
+
+.real-answers {
+  .thumbs,
+  .telescope {
+    fill: white;
+  }
+
+  .thumbs {
+    width: 52px;
+  }
+
+  .telescope {
+    width: 37px;
+  }
+
+  @include media('>=medium') {
+    .thumbs {
+      width: 123px;
+    }
+
+    .telescope {
+      width: 96px;
+    }
   }
 }
