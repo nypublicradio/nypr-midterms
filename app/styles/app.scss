@@ -30,6 +30,7 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 
 // PAGE SECTIONS
 @import "components/page-intro";
+@import "components/intro-lockup";
 @import "components/opt-in-section";
 @import "components/listen-section";
 @import "components/read-section";

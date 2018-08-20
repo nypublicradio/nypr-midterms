@@ -1,0 +1,98 @@
+.intro-lockup {
+  max-width: 296px;
+  margin: 0 auto 24px;
+
+  @include media('>=medium') {
+    max-width: 632px;
+  }
+
+  > .media-object {
+    margin-bottom: 8px;
+
+    @include media('>=medium') {
+      margin-bottom: 0;
+    }
+  }
+
+  &__logo {
+    margin-right: 8px;
+
+    img {
+      display: block;
+      width: 90px;
+    }
+
+    @include media('>=medium') {
+      margin-right: 24px;
+
+      img {
+        width: 173px;
+      }
+    }
+  }
+
+  &__text {
+    margin: 0;
+    text-align: left;
+
+    display: flex;
+    align-items: center;
+    flex-flow: wrap;
+
+    span {
+      display: block;
+      line-height: 1.15;
+      font-family: $font-montserrat;
+      font-size: 40px;
+
+      @include media('>=medium') {
+        line-height: 0.97;
+        font-size: 65px;
+        margin-left: -5px; // align with sub head
+      }
+    }
+
+    // NYC
+    span:nth-child(1) {
+      font-weight: 300;
+
+      @include media('>=medium') {
+        font-weight: 500;
+      }
+    }
+
+    // Midterms
+    span:nth-child(2) {
+      font-weight: 600;
+    }
+  }
+
+  &__subhead {
+    margin: 0;
+    opacity: 0.6;
+    font-family: $font-opensans;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.83;
+    letter-spacing: 1.7px;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+}
+
+.intro-lockup__text > .intro-lockup__subhead {
+  display: none;
+  text-align: left;
+
+  @include media('>=medium') {
+    display: block;
+  }
+}
+
+.intro-lockup__footer {
+  text-align: center;
+
+  @include media('>=medium') {
+    display: none;
+  }
+}
