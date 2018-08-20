@@ -49,80 +49,58 @@ export default Component.extend({
     }
   ),
   isFullFormSubmitted: and("phoneSuccess", "emailSuccess"),
-  submitEmail: task(function*(data) {
-    return yield fetch(newsletterEndpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    })
-      .then(res => {
-        // Success response
-        if (res.status === 200 || res.status === 201) {
-          return ["emailSuccess", true];
-        }
-        // Error response
-        if (res.status >= 400) {
-          return res
-            .json()
-            .then(json => ["emailResponseErrors", [json.detail]]);
-        }
+  submitField: task(function*(fieldName, endpoint, data) {
+    if (
+      this.get(`changeset.${fieldName}`) && // email has been entered
+      !this.get(`changeset.error.${fieldName}`) && // no errors exist
+      !this.get(`${fieldName}Success`) // not already submitted
+    ) {
+      return yield fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
       })
-      .catch(e => {
-        return e;
-      });
-  }),
-  submitPhone: task(function*(data) {
-    return yield fetch(smsEndpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    })
-      .then(res => {
-        // Success response
-        if (res.status === 200 || res.status === 201) {
-          return ["phoneSuccess", true];
-        }
-        // Error response
-        if (res.status >= 400) {
-          return res
-            .json()
-            .then(json => ["phoneResponseErrors", [json.detail]]);
-        }
-      })
-      .catch(e => {
-        return e;
-      });
+        .then(res => {
+          // Success response
+          if (res.status === 200 || res.status === 201) {
+            return [`${fieldName}Success`, true];
+          }
+          // Error response
+          if (res.status >= 400) {
+            return res
+              .json()
+              .then(json => [`${fieldName}ResponseErrors`, [json.detail]]);
+          }
+        })
+        .catch(e => {
+          return e;
+        });
+    }
   }),
 
   actions: {
     submitForms() {
       let childTasks = [];
-      if (
-        this.get("changeset.email") && // email has been entered
-        !this.get("changeset.error.email") && // no errors exist
-        !this.get("emailSuccess") // not already submitted
-      ) {
-        childTasks.push(
-          this.get("submitEmail").perform({
-            email: this.get("changeset.email"),
-            list: config.mailchimpList
-          })
-        );
-      }
-      if (
-        this.get("changeset.phone") &&
-        !this.get("changeset.error.phone") &&
-        !this.get("phoneSuccess")
-      ) {
-        childTasks.push(
-          this.get("submitPhone").perform({
-            phoneNumber: this.get("changeset.phone").replace(/\D/g, ""),
-            optIn: config.mobileCommonsOptInKey
-          })
-        );
-      }
+
+      childTasks.push(
+        this.get("submitField").perform("email", newsletterEndpoint, {
+          email: this.get("changeset.email"),
+          list: config.mailchimpList
+        })
+      );
+      childTasks.push(
+        this.get("submitField").perform("phone", smsEndpoint, {
+          phoneNumber: (this.get("changeset.phone") || "").replace(/\D/g, ""),
+          optIn: config.mobileCommonsOptInKey
+        })
+      );
+
       all(childTasks).then(completedJobs => {
-        completedJobs.forEach(values => this.set(...values));
+        if (completedJobs) {
+          completedJobs.forEach(
+            values => (values ? this.set(...values) : null)
+          );
+        }
       });
     }
   }
