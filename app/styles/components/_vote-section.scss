@@ -4,14 +4,18 @@
 
 .vote-section {
   @include section-layout;
-  @include section-text;
+  @include section-text($color: black);
 
-  background-color: $blue;
-  --gradient: #{$blue};
-  --transparent-gradient: #{rgba($blue, 0)};
+  background-color: white;
+  --gradient: white;
+  --transparent-gradient: #{rgba(white, 0)};
 
   &__title {
     @include section-title;
+
+    @include media('>=medium') {
+      max-width: 350px;
+    }
   }
 
   &__blurb {
@@ -46,11 +50,9 @@
 
   &__title {
     font-family: $font-montserrat;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
-    font-style: italic;
-    line-height: 1.36;
-    color: #ffffff;
+    line-height: 1.5;
     margin-bottom: 8px;
   }
 
@@ -72,9 +74,9 @@
 
   &__link {
     @include btn(
-      $background-color: white,
+      $background-color: $blue,
       $padding: 8px,
-      $color: black,
+      $color: white,
       $border-radius: 20px
     );
     font-weight: 600;

@@ -5,10 +5,7 @@
   flex-basis: 100%;
 
   &__title {
-    @include section-title(
-      $stripes: false,
-      $font-style: normal,
-    );
+    @include section-title;
 
     &:before {
       @include stripes(

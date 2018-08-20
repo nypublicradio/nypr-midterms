@@ -7,9 +7,15 @@
   @include section-text;
 
   background-color: $blue;
+  --gradient: #{$blue};
+  --transparent-gradient: #{rgba($blue, 0)};
 
   &__title {
     @include section-title;
+
+    @include media('>=medium') {
+      max-width: 350px;
+    }
   }
 
   &__blurb {
@@ -41,7 +47,7 @@
 
   &__episodes {
     @include wrapper($width: 1000px, $padding: 0);
-    
+
     display: flex;
     justify-content: space-around;
     align-items: stretch;

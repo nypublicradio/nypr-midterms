@@ -1,20 +1,20 @@
-{{#page-section open=(media 'isMedium') as |section|}}
+{{#page-section gradient=true open=(media 'isMedium') as |section|}}
   {{#section.tease}}
     <h1 class="listen-section__title">
-      <span>
-        Listen
-      </span>
+      Related Listening
     </h1>
 
-    <p class="listen-section__blurb">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-
     {{#unless section.isOpen}}
-    <div class="listen-section__buttons">
-      <button class="listen-section__button" data-test-open-listen {{action section.toggleOpen}}>Podcasts</button>
-      <button class="listen-section__button" data-test-listen-live {{action listenLive}}>Live Radio</button>
-    </div>
+      {{#episode-tease audio=midterms.slug as |tease|}}
+        {{tease.title midterms.showTitle}}
+        {{tease.link midterms.title (concat 'https://www.wnycstudios.org/shows/' midterms.show)}}
+
+        {{#tease.body}}
+          {{{midterms.tease}}}
+        {{/tease.body}}
+
+        {{tease.footer links=midterms.podcastLinks}}
+      {{/episode-tease}}
     {{/unless}}
   {{/section.tease}}
 
@@ -22,8 +22,8 @@
     <div class="listen-section__episodes">
       <div class="listen-section__item">
       {{#episode-tease audio=midterms.slug as |tease|}}
-        {{tease.title midterms.title}}
-        {{tease.link "See All Episodes" (concat 'https://www.wnycstudios.org/shows/' midterms.show)}}
+        {{tease.title midterms.showTItle}}
+        {{tease.link midterms.title (concat 'https://www.wnycstudios.org/shows/' midterms.show)}}
 
         {{#tease.body}}
           {{{midterms.tease}}}
@@ -36,8 +36,8 @@
       {{#if morePerfect}}
       <div class="listen-section__item">
       {{#episode-tease audio=morePerfect.slug as |tease|}}
-        {{tease.title morePerfect.title}}
-        {{tease.link "See All Episodes" (concat 'https://www.wnycstudios.org/shows/' morePerfect.show)}}
+        {{tease.title morePerfect.showTitle}}
+        {{tease.link morePerfect.title (concat 'https://www.wnycstudios.org/shows/' morePerfect.show)}}
 
         {{#tease.body}}
           {{{morePerfect.tease}}}

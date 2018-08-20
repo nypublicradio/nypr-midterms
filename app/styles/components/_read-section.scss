@@ -13,8 +13,12 @@
   }
 
   &__title {
-    @include section-title($color: black);
-    margin-bottom: 24px;
+    @include section-title(
+      $color: black,
+    );
+
+    max-width: 400px;
+    margin: 0 auto 24px;
   }
 
   &__blurb {
@@ -65,7 +69,7 @@
   margin-bottom: 24px;
   border-bottom: 1px solid $lightgray;
 
-  &:last-child {
+  &:not(&--lead):last-child {
     border: none;
   }
 
@@ -73,7 +77,7 @@
     border: none;
     flex: 1;
 
-    &:first-child {
+    &--lead {
       border-bottom: 1px solid $lightgray;
       flex-basis: 100%;
 

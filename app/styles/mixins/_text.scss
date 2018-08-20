@@ -3,7 +3,7 @@
   $right: 0,
   $bottom: 0,
   $left: 0,
-  $width: 100%,
+  $width: 25px,
 ) {
   content: '';
   position: absolute;
@@ -30,7 +30,7 @@
   $font-weight: 600,
   $font-style: normal,
   $color: inherit,
-  $stripes: true
+  $stripes: true,
 ) {
   font-size: $font-size;
   font-family: $font-family;
@@ -50,26 +50,29 @@
   background-color: inherit;
   position: relative;
 
+  @if $stripes {
+    &:before {
+      @include stripes(
+        $right: auto,
+        $left: -15px,
+      );
+    }
+
+    &:after {
+      @include stripes(
+        $left: auto,
+        $right: -15px,
+      );
+    }
+
+  }
+
   @include media('>=medium') {
     font-size: 28px;
-    max-width: 300px;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.29;
-  }
-
-  @if $stripes {
-    &:before {
-      @include stripes;
-    }
-  }
-
-  // inner element required to give text a background color that hides the stripes
-  // that run behind the letters
-  span {
-    background-color: inherit;
-    padding: 0 24px;
-    position: relative;
   }
 }
 
