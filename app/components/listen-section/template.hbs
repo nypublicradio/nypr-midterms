@@ -22,7 +22,7 @@
     <div class="listen-section__episodes">
       <div class="listen-section__item">
       {{#episode-tease audio=midterms.slug as |tease|}}
-        {{tease.title midterms.showTItle}}
+        {{tease.title midterms.showTitle}}
         {{tease.link midterms.title (concat 'https://www.wnycstudios.org/shows/' midterms.show)}}
 
         {{#tease.body}}
