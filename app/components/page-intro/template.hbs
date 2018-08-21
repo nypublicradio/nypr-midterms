@@ -34,19 +34,7 @@
   {{/hero.top}}
 
   {{#hero.headline}}
-    {{#media-object class="intro-lockup" as |mo|}}
-      {{#mo.media class="intro-lockup__logo"}}
-        <img src="/assets/images/logo.png" >
-      {{/mo.media}}
-
-      {{#mo.body class="intro-lockup__text"}}
-        <h1>
-          <span>2018</span>
-          <span>Your Voice,</span>
-          <span>Your Choice</span>
-        </h1>
-      {{/mo.body}}
-    {{/media-object}}
+    {{page-intro/lockup}}
   {{/hero.headline}}
 
   {{#hero.blurb class="page-intro__blurb"}}
