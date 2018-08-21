@@ -5,7 +5,6 @@ import $ from 'jquery';
 
 export default Component.extend({
   store: service(),
-  chunk: null,
   classNames: ['hearken-section'],
 
   init(){
@@ -13,16 +12,14 @@ export default Component.extend({
     this._getChunk(this.get('slug'), "chunk");
   },
 
-  didRender(){
-    var iframe = $('.hearken-submission')[0];
-    var iframebody = iframe.contentWindow.document.getElementsByTagName('body')[0];
-    if (iframebody.hasChildNodes()){
+  _renderHearkenScript(){
+    var div = $('.hearken-section__chunk-wrapper')[0];
+    if (div.hasChildNodes() || !this.get('chunk')){
       return;
+    } else {
+      let fragment = document.createRange().createContextualFragment(this.get('chunk').content);
+      div.appendChild(fragment);
     }
-    var iframescript = iframe.contentWindow.document.createElement('script');
-    iframescript.type = 'text/javascript';
-    iframescript.src = 'https://modules.wearehearken.com/wnyc/embed/1770.js'; // replace this with your SCRIPT
-    iframebody.appendChild(iframescript);
   },
 
   _getChunk(slug, chunkName) {
@@ -34,20 +31,7 @@ export default Component.extend({
       if (this.isDestroyed) { return; }
 
       this.set(chunkName, chunk);
+      this._renderHearkenScript();
     })
   },
-
-  _loadHearkenScript(){
-    let script = '<script src="https://modules.wearehearken.com/wnyc/embed/1770.js"></script>';
-    let fragment = document.createRange().createContextualFragment(script);
-    let elm = $(".hearken-section__body");
-    if(elm.length > 0){
-      let temp = requirejs;
-      requirejs = undefined;
-      elm[0].appendChild(fragment);
-      requirejs = temp;
-    }
-
-  },
-
 });
