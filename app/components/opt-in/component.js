@@ -81,6 +81,7 @@ export default Component.extend({
   actions: {
     submitForms() {
       let childTasks = [];
+      this.set('isLoading', true);
 
       childTasks.push(
         this.get("submitField").perform("email", newsletterEndpoint, {
@@ -96,6 +97,7 @@ export default Component.extend({
       );
 
       all(childTasks).then(completedJobs => {
+        this.set('isLoading', false);
         if (completedJobs) {
           completedJobs.forEach(
             values => (values ? this.set(...values) : null)
