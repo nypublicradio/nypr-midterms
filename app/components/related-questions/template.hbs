@@ -1,0 +1,13 @@
+<h2 class="hearken-related-questions__title">
+    More of your qeustions answered
+</h2>
+  <div class="hearken-related-questions__questions">
+    {{#each (slice 0 4 sorted) as |question i|}}
+      <div class="hearken-related-questions__question">
+        {{story-tease
+          data-test-story-tease=i
+          featured=true
+          story=question}}
+      </div>
+    {{/each}}
+  </div>
