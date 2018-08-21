@@ -30,6 +30,8 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 @import "components/episode-tease";
 @import "components/brand-header";
 @import "components/election-countdown";
+@import "components/q-and-a";
+@import "components/related-questions";
 
 // PAGE SECTIONS
 @import "components/page-intro";
