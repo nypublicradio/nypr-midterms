@@ -1,6 +1,10 @@
 import DS from 'ember-data';
 
 function makeJSONAPI(entry) {
+  // gothamist images are served insecure :(
+  entry.thumbnail_300 = entry.thumbnail_300.replace(/^http:/, 'https:');
+  entry.thumbnail_640 = entry.thumbnail_640.replace(/^http:/, 'https:');
+
   return {
     type: 'gothamist-story',
     id: entry.id,
