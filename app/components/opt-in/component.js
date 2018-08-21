@@ -49,6 +49,15 @@ export default Component.extend({
     }
   ),
   isFullFormSubmitted: and("phoneSuccess", "emailSuccess"),
+  signUpButtonText: computed("phoneSuccess", "emailSuccess", function() {
+    if (this.get("phoneSuccess") && !this.get("emailSuccess")) {
+      return "Subscribe to the Newsletter";
+    }
+    if (!this.get("phoneSuccess") && this.get("emailSuccess")) {
+      return "Sign Up for SMS";
+    }
+    return "Sign Up";
+  }),
   submitField: task(function*(fieldName, endpoint, data) {
     if (
       this.get(`changeset.${fieldName}`) && // email has been entered
@@ -98,6 +107,7 @@ export default Component.extend({
 
       all(childTasks).then(completedJobs => {
         this.set('isLoading', false);
+        this.set('changeset.legalChecked', false);
         if (completedJobs) {
           completedJobs.forEach(
             values => (values ? this.set(...values) : null)
