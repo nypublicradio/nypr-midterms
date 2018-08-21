@@ -4,6 +4,6 @@
     "ember-addon"
   ],
   "ember-addon": {
-    "before": "ember-cli-uglify",
+    "before": "ember-cli-uglify"
   }
 }
