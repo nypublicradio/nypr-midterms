@@ -24,6 +24,7 @@ module("Integration | Component | opt-in", function(hooks) {
     assert.dom("[data-test-email-success]").exists();
 
     await fillIn("[data-test-phone-input] > input", "212-555-0101");
+    await click("[data-test-legal-checkbox]");
     await click("[data-test-submit-button]");
 
     assert.dom("[data-test-both-success]").exists();
