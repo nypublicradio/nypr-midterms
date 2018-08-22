@@ -18,6 +18,9 @@ module('Integration | Component | hash-link', function(hooks) {
     };
 
     this.mock(window.history).expects('replaceState').withArgs(null, null, '#foo');
+    this.stub(document, 'querySelector')
+      .withArgs('#foo').returns(true);
+    document.querySelector.callThrough();
 
     this.setProperties({
       router: ROUTER,

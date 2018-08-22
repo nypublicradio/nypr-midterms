@@ -38,11 +38,14 @@ export default Component.extend({
   navigate() {
     let transition = this.router.transitionTo(this.route);
     if (this.hash) {
+      let hash = `#${this.hash}`;
       let options = {...this.options};
       transition.finally(() => {
         schedule('afterRender', () => {
-          this.scroller.scrollVertical(`#${this.hash}`, options)
-            .then(bind(this, 'complete'));
+          if (document.querySelector(hash)) {
+            this.scroller.scrollVertical(hash, options)
+              .then(bind(this, 'complete'));
+          }
         })
       });
     }
