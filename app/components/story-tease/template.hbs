@@ -1,27 +1,28 @@
-<div class="story-tease__brand">
-  {{serialized-list story.producingOrganizations separator='+' key='name'}}
-</div>
+{{#if (has-block)}}
 
-<h1 class="story-tease__title">
-  <a href={{story.url}} target="_blank">
-    {{story.title}}
-  </a>
-</h1>
+  {{yield (hash
+    orgs=(component 'story-tease/brand' orgs=story.producingOrganizations)
+    title=(component 'story-tease/title' url=story.url title=story.title)
+    image=(component 'story-tease/image' url=story.url src=imageUrl)
+    summary=(component 'story-tease/summary' summary=story.tease)
+    footer=(component 'story-tease/footer')
+    relativeDate=(moment-from story.newsdate)
+  )}}
 
-{{#if (and featured imageUrl)}}
-<div class="story-tease__thumb">
-  <a href={{story.url}} target="_blank">
-    <img src={{imageUrl}} />
-  </a>
-</div>
+{{else}}
+  {{story-tease/brand orgs=story.producingOrganizations fallback=story.showTitle}}
+
+  {{story-tease/title url=story.url title=story.title}}
+
+  {{#if (and featured imageUrl)}}
+    {{story-tease/image url=story.url src=imageUrl}}
+  {{/if}}
+
+  {{#if featured}}
+    {{story-tease/summary summary=story.tease}}
+  {{/if}}
+
+  <div class="story-tease__date">
+    Published {{moment-from story.newsdate}}
+  </div>
 {{/if}}
-
-{{#if featured}}
-<h2 class="story-tease__summary">
-  {{{story.tease}}}
-</h2>
-{{/if}}
-
-<div class="story-tease__date">
-  Published {{moment-from story.newsdate}}
-</div>
