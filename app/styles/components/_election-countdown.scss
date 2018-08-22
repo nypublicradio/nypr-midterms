@@ -1,3 +1,7 @@
 .election-countdown {
   margin-bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  z-index: 1;
 }
