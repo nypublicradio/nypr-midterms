@@ -7436,8 +7436,8 @@ nypr-audio-services@nypublicradio/nypr-audio-services#fastboot:
     nypr-ui nypublicradio/nypr-ui#fastboot
 
 nypr-countdown@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/nypr-countdown/-/nypr-countdown-0.1.0.tgz#c1586bd3f8700472dbc9573d79f4846028014434"
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/nypr-countdown/-/nypr-countdown-0.1.1.tgz#dedbcf4be4318e19862cf3921b88ba870e6f2492"
   dependencies:
     ember-cli-babel "^6.6.0"
     ember-cli-htmlbars "^2.0.1"
@@ -7451,9 +7451,9 @@ nypr-django-for-ember@nypublicradio/nypr-django-for-ember#fastboot:
     ember-cli-htmlbars "^2.0.1"
     ember-wormhole "^0.5.2"
 
-nypr-election-countdown@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/nypr-election-countdown/-/nypr-election-countdown-0.1.0.tgz#cc188f333f973828773515ef50b2327f4c40b85c"
+nypr-election-countdown@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/nypr-election-countdown/-/nypr-election-countdown-0.1.1.tgz#7b6ed254d409ccb1b9f8dd99070d7405c29366d4"
   dependencies:
     ember-cli-babel "^6.6.0"
     ember-cli-htmlbars "^2.0.1"
