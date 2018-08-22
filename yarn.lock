@@ -3850,7 +3850,7 @@ ember-scroll-to-mirror@^0.6.5:
     ember-cli-babel "^6.3.0"
     ember-cli-htmlbars "^2.0.1"
 
-ember-simple-auth@^1.3.0:
+ember-simple-auth@^1.3.0, ember-simple-auth@^1.6.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/ember-simple-auth/-/ember-simple-auth-1.7.0.tgz#80096432e312f22f76cba8f787cbff53b8ada1a0"
   dependencies:

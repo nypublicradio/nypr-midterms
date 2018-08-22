@@ -40,14 +40,10 @@
     background-color:inherit;
     padding-top: 20px;
 
-
     &-title {
       background-color:inherit;
       @include section-title($color: white, $font-style: normal);
       margin: 0 50px;
-      &:after{
-        display: none;
-      }
       @include media('>=medium'){
         display: none;
       }
@@ -64,15 +60,19 @@
     }
     &-title3 {
       @include section-title($color: white, $font-style: normal);
-      &:after{
-        display: none;
-      }
       @include media('<=medium'){
         display: none;
       }
-
     }
+  }
 
+  &__chunk-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include media('>=medium'){
+      flex-direction: row;
+    }
   }
 
   &__question-intro, &__answer-intro {
@@ -91,6 +91,9 @@
   &__down-arrow {
     fill: white;
     margin-bottom: 30px;
+    @include media('>=medium'){
+      transform: rotate(-0.25turn);
+    }
   }
 
   &__answer {
