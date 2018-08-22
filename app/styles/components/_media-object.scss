@@ -1,6 +1,30 @@
 .media-object {
   display: flex;
 
+  &.vertical--center {
+    align-items: center;
+  }
+
+  &.vertical--top {
+    align-items: flex-start;
+  }
+
+  &.vertical--bottom {
+    align-items: flex-end;
+  }
+
+  &.horizontal--left {
+    justify-content: flex-start;
+  }
+
+  &.horizontal--center {
+    justify-content: center;
+  }
+
+  &.horizontal--right {
+    justify-content: flex-end;
+  }
+
   &__media {
     flex-shrink: 0;
     margin-right: 16px;
