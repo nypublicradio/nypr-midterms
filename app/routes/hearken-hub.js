@@ -9,6 +9,7 @@ export default Route.extend({
   store: service(),
   classNames: ['hearken-route'],
 
+
   model() {
     return hash({
       gothamist: this.store.query('gothamist-story', {
