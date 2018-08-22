@@ -3,36 +3,16 @@
   gradient=true
   sticky=true
   as |hero|}}
-  {{#hero.top as |top|}}
-    {{#top.left}}
-      <div class="intro-links">
-        {{scroll-to offset=-100 href="#updates" label="Get Updates"}}
-        {{scroll-to offset=-100 href="#podcasts" label="Podcasts"}}
-        {{scroll-to offset=-100 href="#news" label="News"}}
-        {{scroll-to offset=-100 href="#guide" label="Voter Guide"}}
-      </div>
-    {{/top.left}}
-
-    {{#top.right}}
-      <div class="intro-share">
-        <span class="intro-share__label">Share</span>
-        {{#share-icons as |share|}}
-          {{share.fb-post}}
-          {{share.tweet text="TKTK Tweet Text" via="WNYC"}}
-          {{share.email}}
-        {{/share-icons}}
-      </div>
-      {{#nypr-ui/buttons/red
-        class="intro-donate gtm__click-tracking"
-        data-action='Donate'
-        data-label='[midterms]'
-        tagName="a"
-        tall=true
-        href="https://pledge3.wnyc.org/donate/midterms-2018/onestep/?ref=button-donate-header"}}
-        Donate
-      {{/nypr-ui/buttons/red}}
-    {{/top.right}}
-  {{/hero.top}}
+  {{#hero.footer class="page-intro__footer"}}
+    <div class="intro-share">
+      <span class="intro-share__label">Share</span>
+      {{#share-icons as |share|}}
+        {{share.fb-post}}
+        {{share.tweet text="TKTK Tweet Text" via="WNYC"}}
+        {{share.email}}
+      {{/share-icons}}
+    </div>
+  {{/hero.footer}}
 
   {{#hero.headline}}
     {{page-intro/lockup}}
@@ -42,7 +22,16 @@
     {{election-countdown unit='days' to='2018-11-06T00:00:00.000-05:00'}}
   {{/hero.blurb}}
 
-  {{#hero.footer class="page-intro__footer"}}
-    {{page-intro/real-answers}}
-  {{/hero.footer}}
+  {{#hero.top as |top|}}
+    {{#top.left}}
+      <div class="intro-links">
+        {{scroll-to offset=-100 href="#updates" label="Get Updates"}}
+        {{scroll-to offset=-100 href="#podcasts" label="Podcasts"}}
+        {{scroll-to offset=-100 href="#news" label="News"}}
+        {{scroll-to offset=-100 href="#guide" label="Voter Guide"}}
+      </div>
+    {{/top.left}}
+  {{/hero.top}}
 {{/nypr-ui/hero}}
+
+{{page-intro/real-answers}}

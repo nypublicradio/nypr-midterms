@@ -1,45 +1,47 @@
-<h1 class="real-answers__title">
-  Real Answers
-</h1>
+<div class="real-answers__wrapper">
+  <h1 class="real-answers__title">
+    Real Answers
+  </h1>
 
-<p class="real-answers__blurb">
-  The Midterms are scary. We are here to help. Ask us a question that we can investigate or browse questions submitted by other New Yorkers like you.
-</p>
+  <p class="real-answers__blurb">
+    The Midterms are scary. We are here to help. Ask us a question that we can investigate or browse questions submitted by other New Yorkers like you.
+  </p>
 
-<ul class="real-answers__items">
-  <li class="real-answers__item">
-  {{#media-object as |mo|}}
-    {{#mo.media}}
-    {{/mo.media}}
-    {{#mo.body}}
-      <a href="" class="real-answers__link">
-        Ask Us a Question
-      </a>
-    {{/mo.body}}
-  {{/media-object}}
-  </li>
-  <li class="real-answers__item">
-  {{#media-object as |mo|}}
-    {{#mo.media}}
-      {{nypr-svg icon="thumbs"}}
-    {{/mo.media}}
-    {{#mo.body}}
-      <a href="" class="real-answers__link">
-        Vote on Your Submissions
-      </a>
-    {{/mo.body}}
-  {{/media-object}}
-  </li>
-  <li class="real-answers__item">
-  {{#media-object as |mo|}}
-    {{#mo.media}}
-      {{nypr-svg icon="telescope"}}
-    {{/mo.media}}
-    {{#mo.body}}
-      <a href="" class="real-answers__link">
-        Browse newsroom Answers
-      </a>
-    {{/mo.body}}
-  {{/media-object}}
-  </li>
-</ul>
+  <ul class="real-answers__items">
+    <li class="real-answers__item">
+    {{#media-object as |mo|}}
+      {{#mo.media}}
+      {{/mo.media}}
+      {{#mo.body}}
+        <a href="" class="real-answers__link">
+          Ask Us a Question
+        </a>
+      {{/mo.body}}
+    {{/media-object}}
+    </li>
+    <li class="real-answers__item">
+    {{#media-object as |mo|}}
+      {{#mo.media}}
+        {{nypr-svg icon="thumbs"}}
+      {{/mo.media}}
+      {{#mo.body}}
+        <a href="" class="real-answers__link">
+          Vote on Your Submissions
+        </a>
+      {{/mo.body}}
+    {{/media-object}}
+    </li>
+    <li class="real-answers__item">
+    {{#media-object as |mo|}}
+      {{#mo.media}}
+        {{nypr-svg icon="telescope"}}
+      {{/mo.media}}
+      {{#mo.body}}
+        <a href="" class="real-answers__link">
+          Browse newsroom Answers
+        </a>
+      {{/mo.body}}
+    {{/media-object}}
+    </li>
+  </ul>
+</div>

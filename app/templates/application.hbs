@@ -3,6 +3,7 @@
 {{#nypr-ui/brand-header as |brands|}}
   {{#brands.header as |header|}}
     {{#header.left as |left|}}
+
       {{#nypr-ui/buttons/red
         class="intro-donate gtm__click-tracking"
         data-action='Donate'
@@ -12,11 +13,23 @@
         href="https://pledge3.wnyc.org/donate/midterms-2018/onestep/?ref=button-donate-header"}}
         Donate
       {{/nypr-ui/buttons/red}}
+
       {{left.logos}}
     {{/header.left}}
 
     {{#header.right as |right|}}
       {{right.button}}
+
+      {{#nypr-ui/buttons/red
+        class="intro-donate gtm__click-tracking"
+        data-action='Donate'
+        data-label='[midterms]'
+        tagName="a"
+        tall=true
+        href="https://pledge3.wnyc.org/donate/midterms-2018/onestep/?ref=button-donate-header"}}
+        Donate
+      {{/nypr-ui/buttons/red}}
+
     {{/header.right}}
   {{/brands.header}}
 {{/nypr-ui/brand-header}}

@@ -2,7 +2,17 @@
 @import "../mixins/buttons";
 
 .real-answers {
-  flex-basis: 100%;
+  padding: 24px;
+  background-color: $blue;
+  color: white;
+  text-align: center;
+
+  &__wrapper {
+    @include wrapper(
+      $width: 912px,
+      $padding: 0,
+    );
+  }
 
   &__title {
     @include section-title;

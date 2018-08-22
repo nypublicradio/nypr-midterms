@@ -12,6 +12,20 @@
 
   flex-basis: 100%;
 
+  border-top: 1px solid white;
+
+  max-width: 1016px;
+  padding-top: 16px;
+  margin: 0 auto 16px;
+
+  @include media(">=420px") {
+    justify-content: center;
+
+    > a {
+      padding: 0 13px;
+    }
+  }
+
   > a {
     color: white;
     text-decoration: none;
@@ -20,7 +34,7 @@
     font-weight: 600;
 
     @include media(">=medium") {
-      padding: 0 16px;
+      padding: 0 20px;
     }
   }
 }
@@ -46,10 +60,6 @@
 
   .share-icon__fb-post {
     font-size: 14px;
-  }
-
-  @include media('>=medium') {
-    margin-right: 24px;
   }
 }
 
@@ -103,28 +113,18 @@
   }
 
   .hero-top {
-    height: 44px;
+    display: block;
+    height: auto;
     padding-bottom: 0;
-    margin-bottom: 54px;
+    margin-bottom: 8px;
 
-    &__left {
-      flex-basis: 100%;
-
-      @include media('>=medium') {
-        flex-basis: auto;
-      }
-    }
-
-    &__right {
-      display: none;
-
-      @include media(">=medium") {
-        display: flex;
-      }
+    &:before {
+      content: none;
     }
   }
 
   > .image-container {
+    padding-bottom: 16px;
     margin-bottom: 0;
     min-height: 0;
   }
@@ -172,12 +172,8 @@
   }
 
   .page-intro__footer {
-    @include wrapper(
-      $width: 850px,
-      $padding: 0,
-      $margin: 0 auto 24px
-    )
-    justify-content: center;
+    padding-top: 16px;
+    justify-content: flex-end;
 
     @include media('>=medium') {
       margin-bottom: auto;
@@ -191,10 +187,6 @@
       height: 60px;
       padding-top: 0;
       padding-bottom: 0;
-
-      @include media(">=medium") {
-        align-items: flex-start;
-      }
     }
 
     .hero-headline {
@@ -202,16 +194,15 @@
     }
 
     .hero-top {
+      height: auto;
       margin: 0;
       flex-basis: 100%;
+    }
 
-      @include media(">=medium") {
-        height: 44px;
-
-        > .hero-top__right {
-          display: flex;
-        }
-      }
+    .intro-links {
+      border: none;
+      padding: 0;
+      margin-bottom: 0;
     }
   }
 }
