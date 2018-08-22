@@ -92,12 +92,6 @@
   }
 }
 
-.page-intro__footer {
-  > .down-arrow {
-    fill: white;
-  }
-}
-
 // nypr-ui overrides
 .page-intro {
   .hero-headline {
@@ -132,6 +126,7 @@
 
   > .image-container {
     margin-bottom: 0;
+    min-height: 0;
   }
 
   > .image-container:before {
@@ -172,13 +167,17 @@
     @include wrapper(
       $width: 560px,
       $padding: 0 20px,
-      $margin: 0 auto 25px
+      $margin: 0 auto 24px
     );
   }
 
   .page-intro__footer {
+    @include wrapper(
+      $width: 850px,
+      $padding: 0,
+      $margin: 0 auto 24px
+    )
     justify-content: center;
-    margin-bottom: 24px;
 
     @include media('>=medium') {
       margin-bottom: auto;
