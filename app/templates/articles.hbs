@@ -1,0 +1,47 @@
+<section class="articles-page">
+  <h1 class="articles-title">Latest Updates</h1>
+
+  {{#with stories.firstObject as |story|}}
+  <div class="article-featured">
+    {{story-tease
+      data-test-story-tease=0
+      featured=true
+      imageUrl=(if (media 'isMedium') story.thumbnailLarge story.thumbnailSmall)
+      story=story
+    }}
+  </div>
+  {{/with}}
+
+  <div class="articles-list">
+  {{#each (slice 1 stories.length stories) as |story|}}
+    <div class="articles-list__item">
+    {{#story-tease alignment='left' story=story as |tease|}}
+      {{#media-object valign='c' as |mo|}}
+
+        {{#if (and story.thumbnailLarge (media 'isMedium'))}}
+          {{#mo.media}}
+            {{tease.image
+              round=true
+              src=story.thumbnailLarge}}
+          {{/mo.media}}
+        {{/if}}
+
+        {{#mo.body}}
+          {{tease.orgs fallback=story.showTitle}}
+          {{tease.title}}
+          {{tease.summary}}
+
+          {{#tease.footer}}
+            <span class="story-tease__date">{{moment-format story.newsdate 'MMM DD, YYYY'}}</span>
+            {{#if story.author}}
+              <span class="story-tease__dot">•</span><span class="story-tease__author">{{story.author}}</span>
+            {{/if}}
+          {{/tease.footer}}
+        {{/mo.body}}
+
+      {{/media-object}}
+    {{/story-tease}}
+    </div>
+  {{/each}}
+  </div>
+</section>
