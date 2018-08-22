@@ -14,7 +14,7 @@ export default Route.extend({
     return hash({
       gothamist: this.store.query('gothamist-story', {
         tag: GOTHAMIST_TAG,
-        limit: 4,
+        count: 4,
       }),
       wnyc: this.store.query('story', {
         tags: WNYC_TAG,
