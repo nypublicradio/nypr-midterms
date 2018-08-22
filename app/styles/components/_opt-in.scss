@@ -205,3 +205,21 @@
     }
   }
 }
+
+// Page intro component on opt-in route
+.opt-in__page-intro {
+  margin-bottom: 30px;
+  min-height: 65px;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+}
+
+.opt-in__page-intro .image-container {
+  min-height: 0;
+  padding-bottom: 0;
+}
+
+.opt-in__page-intro .hero-top {
+  margin-bottom: 0px;
+}

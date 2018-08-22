@@ -24,8 +24,8 @@ const PHONE_ONLY_SUCCSS_TEXT = "subscribing to SMS";
 const BOTH_SUCCESS_TEXT = "Newsletter and SMS updates";
 
 // Endpoints
-const NEWSLETTER_ENDPOINT = "/newsletter-signup";
-const SMS_ENDPOINT = "/sms-signup";
+const NEWSLETTER_ENDPOINT = "/opt-in/v1/subscribe/mailchimp";
+const SMS_ENDPOINT = "/opt-in/v1/subscribe/mobile-commons";
 
 // Custom commands
 Cypress.Commands.add("shutdownMirage", () => {
@@ -55,6 +55,7 @@ Cypress.Commands.add("checkLegal", () => {
 // Tests
 describe("Overall testing", function() {
   beforeEach(() => {
+    cy.viewport(1024, 600);
     cy.shutdownMirage();
     cy.server()
     cy.route({
@@ -78,6 +79,9 @@ describe("Overall testing", function() {
     cy.visit("/opt-in");
     cy.wait(100);
   });
+  afterEach(() => {
+    // cy.screenshot();
+  })
 
   // Passing tests
   it("Email validates when user leaves field (e.g. on blur)", function() {
@@ -268,6 +272,7 @@ describe("Overall testing", function() {
     cy.checkLegal()
     cy.submit()
     cy.fillOutPhone()
+    cy.checkLegal()
     cy.submit()
     cy.get('body').should('contain', BOTH_SUCCESS_TEXT)
   });
@@ -276,8 +281,35 @@ describe("Overall testing", function() {
     cy.checkLegal()
     cy.submit()
     cy.fillOutEmail()
+    cy.checkLegal()
     cy.submit()
     cy.get('body').should('contain', BOTH_SUCCESS_TEXT)
+  });
+  it("Can fire both email/phone and only return when both are completed/failed", function() {
+    cy.fillOutPhone()
+    cy.checkLegal()
+    cy.fillOutEmail()
+    cy.route({
+      url: SMS_ENDPOINT,
+      method: 'POST',
+      delay: 1000,
+      response: {
+        campaign_id: "1",
+        opt_in_path_id: "12345",
+        phone_number: "212-555-0101"
+      }
+    }).as('submitPhone');
+    cy.submit()
+    cy.wait('@submitEmail');
+    cy.get('body').should('not.contain', EMAIL_ONLY_SUCCSS_TEXT)
+    cy.wait('@submitPhone');
+    cy.get('body').should('contain', BOTH_SUCCESS_TEXT)
+  });
+  it("Not submitting does not uncheck the button", function() {
+    cy.fillOutEmail("fakeemail")
+    cy.checkLegal()
+    cy.submit()
+    cy.get("[data-test-legal-checkbox]").siblings('input').should('be.checked');
   });
 });
 

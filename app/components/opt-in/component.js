@@ -72,6 +72,7 @@ export default Component.extend({
         .then(res => {
           // Success response
           if (res.status === 200 || res.status === 201) {
+            this.set("changeset.legalChecked", false);
             return [`${fieldName}Success`, true];
           }
           // Error response
@@ -90,7 +91,7 @@ export default Component.extend({
   actions: {
     submitForms() {
       let childTasks = [];
-      this.set('isLoading', true);
+      this.set("isLoading", true);
 
       childTasks.push(
         this.get("submitField").perform("email", newsletterEndpoint, {
@@ -106,13 +107,8 @@ export default Component.extend({
       );
 
       all(childTasks).then(completedJobs => {
-        this.set('isLoading', false);
-        this.set('changeset.legalChecked', false);
-        if (completedJobs) {
-          completedJobs.forEach(
-            values => (values ? this.set(...values) : null)
-          );
-        }
+        this.set("isLoading", false);
+        completedJobs.forEach(values => (values ? this.set(...values) : null));
       });
     }
   }
