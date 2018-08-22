@@ -58,3 +58,8 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
     display: none;
   }
 }
+
+// allow fixed position player to appear inside liquid fire container
+.player-wrapper {
+  transform: none;
+}
