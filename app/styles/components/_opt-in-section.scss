@@ -157,6 +157,12 @@
       line-height: 1.93;
       border-radius: 20px;
       padding: 8px 24px;
+
+      .is-loading & {
+        height: 46px;
+        width: 46px;
+        border-radius: 50%;
+      }
     }
   }
 
