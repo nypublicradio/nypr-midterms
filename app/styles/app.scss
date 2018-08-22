@@ -28,6 +28,7 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 @import "components/story-tease";
 @import "components/episode-tease";
 @import "components/brand-header";
+@import "components/election-countdown";
 
 // PAGE SECTIONS
 @import "components/page-intro";
@@ -41,6 +42,7 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 @import "components/opt-in";
 @import "components/attribution-block";
 
+@import "election-countdown";
 @import "ember-basic-dropdown";
 @import "nypr-player";
 @import "nypr-audio-services/text-crawl";

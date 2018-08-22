@@ -33,6 +33,10 @@ module.exports = function(environment) {
     mailchimpList: process.env.MAILCHIMP_LIST,
     mobileCommonsOptInKey: process.env.MOBILE_COMMONS_OPT_IN,
 
+    moment: {
+      includeTimezone: 'all'
+    },
+
     // for platform events
     platformEventsAPI: process.env.PLATFORM_EVENTS_API,
   };

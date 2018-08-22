@@ -3646,6 +3646,12 @@ ember-inflector@^2.0.0:
   dependencies:
     ember-cli-babel "^6.0.0"
 
+ember-inflector@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/ember-inflector/-/ember-inflector-3.0.0.tgz#7e1ee8aaa0fa773ba0905d8b7c0786354d890ee1"
+  dependencies:
+    ember-cli-babel "^6.6.0"
+
 ember-jquery-legacy@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ember-jquery-legacy/-/ember-jquery-legacy-1.0.0.tgz#2a2a29109385dfabe4c626a3ac8d1dd3c6a4b9a3"
@@ -7098,13 +7104,13 @@ mktemp@~0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/mktemp/-/mktemp-0.4.0.tgz#6d0515611c8a8c84e484aa2000129b98e981ff0b"
 
-moment-timezone@^0.5.13:
+moment-timezone@^0.5.13, moment-timezone@^0.5.20:
   version "0.5.21"
   resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.21.tgz#3cba247d84492174dbf71de2a9848fa13207b845"
   dependencies:
     moment ">= 2.9.0"
 
-moment@2.x.x, "moment@>= 2.9.0", moment@^2.18.0, moment@^2.19.3:
+moment@2.x.x, "moment@>= 2.9.0", moment@^2.18.0, moment@^2.19.3, moment@^2.22.2:
   version "2.22.2"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
 
@@ -7429,6 +7435,14 @@ nypr-audio-services@nypublicradio/nypr-audio-services#fastboot:
     nypr-metrics nypublicradio/nypr-metrics#fastboot
     nypr-ui nypublicradio/nypr-ui#fastboot
 
+nypr-countdown@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/nypr-countdown/-/nypr-countdown-0.1.0.tgz#c1586bd3f8700472dbc9573d79f4846028014434"
+  dependencies:
+    ember-cli-babel "^6.6.0"
+    ember-cli-htmlbars "^2.0.1"
+    ember-inflector "^3.0.0"
+
 nypr-django-for-ember@nypublicradio/nypr-django-for-ember#fastboot:
   version "0.3.1"
   resolved "https://codeload.github.com/nypublicradio/nypr-django-for-ember/tar.gz/92fef31cbd7f4766ee6989e864fa3ad76888c87d"
@@ -7436,6 +7450,16 @@ nypr-django-for-ember@nypublicradio/nypr-django-for-ember#fastboot:
     ember-cli-babel "^6.6.0"
     ember-cli-htmlbars "^2.0.1"
     ember-wormhole "^0.5.2"
+
+nypr-election-countdown@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/nypr-election-countdown/-/nypr-election-countdown-0.1.0.tgz#cc188f333f973828773515ef50b2327f4c40b85c"
+  dependencies:
+    ember-cli-babel "^6.6.0"
+    ember-cli-htmlbars "^2.0.1"
+    moment "^2.22.2"
+    moment-timezone "^0.5.20"
+    nypr-countdown "^0.1.0"
 
 nypr-fastboot@^0.3.0:
   version "0.3.0"
