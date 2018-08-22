@@ -10,7 +10,9 @@
 
 {{#if (and featured imageUrl)}}
 <div class="story-tease__thumb">
-  <img src={{imageUrl}} />
+  <a href={{story.url}} target="_blank">
+    <img src={{imageUrl}} />
+  </a>
 </div>
 {{/if}}
 
