@@ -1,6 +1,5 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
-import $ from 'jquery';
 
 
 export default Component.extend({
@@ -16,7 +15,7 @@ export default Component.extend({
   },
 
   _renderHearkenScript(){
-    var div = $('.hearken-section__chunk-wrapper')[0];
+    var div = document.querySelector('.hearken-section__chunk-wrapper');
     if (div.hasChildNodes() || !this.get('chunk')){
       return;
     } else {
