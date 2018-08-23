@@ -171,6 +171,19 @@ jobs:
       ENV: prod
     <<: *deploy_fastboot
 
+  calendar-demo:
+    <<: *defaults
+    steps:
+      - checkout
+      - <<: *restore_node
+      - run: AWS_BUCKET=$DEMO_AWS_BUCKET yarn run nypr-election-countdown
+
+  calendar-prod:
+    <<: *defaults
+    steps:
+      - checkout
+      - <<: *restore_node
+      - run: AWS_BUCKET=$PROD_AWS_BUCKET yarn run nypr-election-countdown
 
 workflows:
   version: 2
@@ -190,6 +203,9 @@ workflows:
           filters:
             branches:
               only: /[A-Za-z-_]+/[A-Za-z-_\d]+/
+      - calendar-demo:
+          requires:
+            - build-static
       - test-static:
           requires:
             - build-static
@@ -207,6 +223,9 @@ workflows:
           filters:
             branches:
               only: master
+      - calendar-demo:
+          requires:
+            - build-static
       - test-static:
           requires:
             - build-static
@@ -225,6 +244,9 @@ workflows:
               ignore: /.*/
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+/
+      - calendar-prod:
+          requires:
+            - build-static
       - test-static:
           filters:
             tags:
