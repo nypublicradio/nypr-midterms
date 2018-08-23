@@ -24,13 +24,17 @@
 
   {{#hero.top as |top|}}
     {{#top.left}}
-      <div class="intro-links">
-        {{link-to 'Get Updates' 'opt-in'}}
-        {{link-to 'Ask a Reporter' 'hearken-hub'}}
-        {{link-to 'News' 'articles'}}
-        {{hash-link route='index' hash='podcasts' options=(hash offset=-100) label="Podcasts"}}
-        {{hash-link route='index' hash='guide' options=(hash offset=-100) label="Voter Tools"}}
-      </div>
+      {{#nav-links links=links as |link|}}
+        {{#unless link.hash}}
+          {{link-to link.text link.route}}
+        {{else}}
+          {{hash-link
+            route=link.route
+            hash=link.hash
+            label=link.text
+            options=(hash offset=-100)}}
+        {{/unless}}
+      {{/nav-links}}
     {{/top.left}}
   {{/hero.top}}
 {{/nypr-ui/hero}}
