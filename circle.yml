@@ -176,14 +176,14 @@ jobs:
     steps:
       - checkout
       - <<: *restore_node
-      - run: AWS_BUCKET=$DEMO_AWS_BUCKET npm run nypr-election-countdown
+      - run: AWS_BUCKET=$DEMO_AWS_BUCKET yarn run nypr-election-countdown
 
   calendar-prod:
     <<: *defaults
     steps:
       - checkout
       - <<: *restore_node
-      - run: AWS_BUCKET=$PROD_AWS_BUCKET npm run nypr-election-countdown
+      - run: AWS_BUCKET=$PROD_AWS_BUCKET yarn run nypr-election-countdown
 
 workflows:
   version: 2
