@@ -4,6 +4,8 @@
 @import "../mixins/buttons";
 
 .opt-in {
+  padding-top: 48px;
+
   background-color: white;
   --gradient: white;
   --transparent-gradient: #{rgba(white, 0)};
