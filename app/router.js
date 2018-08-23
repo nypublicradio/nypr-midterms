@@ -14,8 +14,8 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('opt-in');
-  this.route('articles');
-  this.route('hearken-hub');
+  this.route('articles', {path: 'news'});
+  this.route('hearken-hub', {path: 'ask-a-reporter'});
 });
 
 export default Router;
