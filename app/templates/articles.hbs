@@ -1,0 +1,22 @@
+<section class="articles-page">
+  <h1 class="articles-title">Latest Updates</h1>
+
+  {{#with stories.firstObject as |story|}}
+  <div class="article-featured">
+    {{story-tease
+      data-test-story-tease=0
+      featured=true
+      imageUrl=(if (media 'isMedium') story.thumbnailLarge story.thumbnailSmall)
+      story=story
+    }}
+  </div>
+  {{/with}}
+
+  <div class="articles-list">
+  {{#each (slice 1 stories.length stories) as |story|}}
+    <div class="articles-list__item">
+      {{story-media-tease story=story}}
+    </div>
+  {{/each}}
+  </div>
+</section>

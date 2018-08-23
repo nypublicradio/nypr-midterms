@@ -31,4 +31,24 @@ module('Integration | Component | media-object', function(hooks) {
     assert.dom('.media-object__media').exists();
     assert.dom('.media-object__body').exists();
   });
+
+  test('alignments', async function(assert) {
+    await render(hbs`{{media-object valign='c'}}`);
+    assert.dom('.media-object.vertical--center').exists();
+
+    await render(hbs`{{media-object valign='t'}}`);
+    assert.dom('.media-object.vertical--top').exists();
+
+    await render(hbs`{{media-object valign='b'}}`);
+    assert.dom('.media-object.vertical--bottom').exists();
+
+    await render(hbs`{{media-object halign='c'}}`);
+    assert.dom('.media-object.horizontal--center').exists();
+
+    await render(hbs`{{media-object halign='l'}}`);
+    assert.dom('.media-object.horizontal--left').exists();
+
+    await render(hbs`{{media-object halign='r'}}`);
+    assert.dom('.media-object.horizontal--right').exists();
+  });
 });

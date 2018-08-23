@@ -1,9 +1,9 @@
 import { helper } from '@ember/component/helper';
 import { isArray } from '@ember/array';
 
-export function serializedList([ list ], {separator = ', ', and = true, key}) {
+export function serializedList([ list ], {separator = ', ', and = true, fallback = '', key}) {
   if (!isArray(list)) {
-    return list;
+    return list || fallback;
   }
   if (typeof key === 'string') {
     let plucked = list.mapBy(key);
@@ -13,8 +13,10 @@ export function serializedList([ list ], {separator = ', ', and = true, key}) {
     }
   }
 
-  if (list.length <= 1) {
+  if (list.length <= 1 && !fallback) {
     return list;
+  } else if (fallback) {
+    return fallback;
   }
 
   let rest = list.slice(0, -1);

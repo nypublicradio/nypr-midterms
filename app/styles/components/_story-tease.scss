@@ -1,6 +1,10 @@
 .story-tease {
   text-align: center;
 
+  &.left {
+    text-align: left;
+  }
+
   &__brand {
     font-size: 12px;
     font-weight: 600;
@@ -43,13 +47,26 @@
 
   &__thumb {
     margin-bottom: 16px;
+
+    &.round {
+      border-radius: 7px;
+      overflow: hidden;
+    }
+
+    .story-tease.left & {
+      margin-bottom: 0;
+      max-width: 200px;
+      margin-right: 20px
+    }
   }
 
 
   &__summary {
+    color: $darkgray;
     font-weight: normal;
     font-size: 14px;
     line-height: 1.57;
+    margin: 0;
 
     @include media('>=medium') {
       font-size: 18px;
@@ -64,5 +81,10 @@
     @include media('>=medium') {
       font-size: 14px;
     }
+  }
+
+  &__dot {
+    margin-left: 4px;
+    margin-right: 4px;
   }
 }
