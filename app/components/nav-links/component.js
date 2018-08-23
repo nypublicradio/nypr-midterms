@@ -1,6 +1,6 @@
 import Component from '@ember/component';
 import { inject } from '@ember/service';
-import { scheduleOnce, bind, throttle } from '@ember/runloop';
+import { scheduleOnce, bind } from '@ember/runloop';
 
 export default Component.extend({
   router: inject(),
@@ -21,10 +21,7 @@ export default Component.extend({
     let router = this.get('router');
     let defaultIndex = links.indexOf(links.find(link => router.isActive(link.route)));
     this.set('activeTabIndex', defaultIndex === -1 ? 0 : defaultIndex);
-  },
 
-  didRender() {
-    throttle(this, 'scroll', 10);
   },
 
   didInsertElement() {
@@ -37,13 +34,6 @@ export default Component.extend({
 
   willDestroyElement() {
    window.removeEventListener('resize', this.get('boundResizeHandler'));
-  },
-
-  scroll() {
-    if (this.get('activeTabIndex') !== 0) {
-      let y =  this.element.offsetTop - (this.element.offsetHeight + 100);
-      window.scrollTo(0, y);
-    }
   },
 
   handleResize() {
