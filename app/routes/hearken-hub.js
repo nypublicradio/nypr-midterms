@@ -15,17 +15,17 @@ export default Route.extend({
   },
 
 
-  model({page = 1}) {
+  model({page}) {
     return hash({
       gothamist: this.store.query('gothamist-story', {
         tag: GOTHAMIST_QUESTION_TAG,
         limit: 5,
-        page
+        page: page || 1
       }),
       wnyc: this.store.query('story', {
         tags: WNYC_QUESTION_TAG,
         page_size: 5,
-        page,
+        page: page || 1,
         ordering: '-newsdate',
         'fields[story]': 'title,newsdate,producing_organizations,slug,appearances,image_main,url,tease'
       })
