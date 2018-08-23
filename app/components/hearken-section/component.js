@@ -5,11 +5,14 @@ import $ from 'jquery';
 
 export default Component.extend({
   store: service(),
+  fastboot: service(),
   classNames: ['hearken-section'],
 
   init(){
     this._super(...arguments);
-    this._getChunk(this.get('slug'), "chunk");
+    if (!this.fastboot.isFastBoot) {
+      this._getChunk(this.get('slug'), "chunk");
+    }
   },
 
   _renderHearkenScript(){
