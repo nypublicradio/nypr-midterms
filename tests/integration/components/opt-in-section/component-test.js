@@ -15,7 +15,7 @@ module('Integration | Component | opt-in-section', function(hooks) {
     await render(hbs`{{opt-in-section}}`);
 
     assert.dom('section.opt-in-section').exists();
-    assert.dom('h1').hasText('Get Updates');
+    assert.dom('h1').hasText('DON\'T MISS A BEAT');
   });
 
   test('subscribing', async function(assert) {
