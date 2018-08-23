@@ -31,3 +31,5 @@
 .env.deploy*
 !.env.sample
 !.env.deploy.sample
+
+midterms.ics

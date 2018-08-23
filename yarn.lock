@@ -679,6 +679,20 @@ aws-sdk@^2.1.48, aws-sdk@^2.252.1, aws-sdk@^2.279.1, aws-sdk@^2.3.4, aws-sdk@^2.
     uuid "3.1.0"
     xml2js "0.4.19"
 
+aws-sdk@^2.257.1:
+  version "2.299.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.299.0.tgz#9c12f924f1e28d22899816e112dcb722c4bccf30"
+  dependencies:
+    buffer "4.9.1"
+    events "1.1.1"
+    ieee754 "1.1.8"
+    jmespath "0.15.0"
+    querystring "0.2.0"
+    sax "1.2.1"
+    url "0.10.3"
+    uuid "3.1.0"
+    xml2js "0.4.19"
+
 aws-sign2@~0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.6.0.tgz#14342dd38dbcc94d0e5b87d763cd63612c0e794f"
@@ -5448,6 +5462,10 @@ husky@^0.14.3:
     normalize-path "^1.0.0"
     strip-indent "^2.0.0"
 
+ical-generator@^0.2.10:
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/ical-generator/-/ical-generator-0.2.10.tgz#f3d91201411c63b26985b7c59bd5ed91801084ef"
+
 iconv-lite@0.4.19:
   version "0.4.19"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.19.tgz#f7468f60135f5e5dad3399c0a81be9a1603a082b"
@@ -7451,12 +7469,14 @@ nypr-django-for-ember@nypublicradio/nypr-django-for-ember#fastboot:
     ember-cli-htmlbars "^2.0.1"
     ember-wormhole "^0.5.2"
 
-nypr-election-countdown@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/nypr-election-countdown/-/nypr-election-countdown-0.1.1.tgz#7b6ed254d409ccb1b9f8dd99070d7405c29366d4"
+nypr-election-countdown@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/nypr-election-countdown/-/nypr-election-countdown-0.1.2.tgz#ed95cade4fdd4d234036b447330b65ecc9a371c8"
   dependencies:
+    aws-sdk "^2.257.1"
     ember-cli-babel "^6.6.0"
     ember-cli-htmlbars "^2.0.1"
+    ical-generator "^0.2.10"
     moment "^2.22.2"
     moment-timezone "^0.5.20"
     nypr-countdown "^0.1.0"
