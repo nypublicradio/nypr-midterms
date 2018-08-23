@@ -9,8 +9,10 @@ module('Integration | Component | page-intro', function(hooks) {
 
   test('it renders', async function(assert) {
     let router = this.owner.lookup('service:router');
-    this.stub(router, 'urlFor').returns('');
     
+    this.stub(router, 'urlFor').returns('');
+    this.stub(router, 'isActive').returns(true);
+
     await render(hbs`{{page-intro}}`);
 
     assert.dom('.page-intro').exists();

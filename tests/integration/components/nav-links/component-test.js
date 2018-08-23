@@ -5,7 +5,7 @@ import hbs from 'htmlbars-inline-precompile';
 
 module('Integration | Component | nav-links', function(hooks) {
   setupRenderingTest(hooks);
-  
+
   hooks.beforeEach(function() {
     const router = this.owner.get('router');
     router.setupRouter();
@@ -14,10 +14,10 @@ module('Integration | Component | nav-links', function(hooks) {
   test('it renders', async function(assert) {
     this.set('links', [{
       text: 'Foo',
-      slug: 'foo'
+      route: 'foo'
     }, {
       text: 'Bar',
-      slug: 'bar'
+      route: 'bar'
     }]);
     await render(hbs`
       {{#nav-links links=links as |link|}}
