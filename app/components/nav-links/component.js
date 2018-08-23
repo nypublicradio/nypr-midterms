@@ -14,7 +14,7 @@ export default Component.extend({
   didReceiveAttrs() {
     this._super(...arguments);
     let links = this.get('links');
-    if (!links) {
+    if (!links || typeof FastBoot !== 'undefined') {
       return;
     }
 
