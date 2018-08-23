@@ -59,6 +59,10 @@
     margin-bottom: 24px;
     border-bottom: 1px solid white;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
     &:last-child {
       border-bottom: none;
     }
@@ -89,30 +93,46 @@
       $border-radius: 20px,
       $padding: 8px,
     );
+
+    font-weight: 600;
+    font-size: 12px;
+
+    @include media(">=400px") {
+      font-size: 14px;
+    }
   }
 }
 
 .real-answers {
   .thumbs,
-  .telescope {
+  .dialog,
+  .light-bulbs {
     fill: white;
+  }
+
+  .dialog {
+    width: 50px;
   }
 
   .thumbs {
     width: 52px;
   }
 
-  .telescope {
-    width: 37px;
+  .light-bulbs {
+    width: 64px;
   }
 
   @include media('>=medium') {
-    .thumbs {
-      width: 123px;
+    .dialog {
+      width: 101px;
     }
 
-    .telescope {
-      width: 96px;
+    .thumbs {
+      width: 86px;
+    }
+
+    .light-bulbs {
+      width: 105px;
     }
   }
 }
