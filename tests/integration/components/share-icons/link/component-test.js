@@ -8,7 +8,7 @@ module('Integration | Component | share-icons/link', function(hooks) {
 
   // see tests/integration/components/share-icons/component-test.js for usage
   test('it renders', async function(assert) {
-    await render(hbs`{{share-icons/link}}`);
+    await render(hbs`{{share-icons/link icon='facebook'}}`);
 
     assert.dom('.share-icon__link').exists();
   });

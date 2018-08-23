@@ -15,10 +15,6 @@ module('Integration | Component | q-and-a', function(hooks) {
     this.chunk1 = chunk1;
   });
 
-  hooks.afterEach(function() {
-      server.shutdown();
-  });
-
 
   test('it renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');

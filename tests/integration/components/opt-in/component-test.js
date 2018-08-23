@@ -1,15 +1,12 @@
 import { module, test } from "qunit";
 import { setupRenderingTest } from "ember-qunit";
 import { render, fillIn, click } from "@ember/test-helpers";
-import { startMirage } from "nypr-midterms/initializers/ember-cli-mirage";
+import setupMirage from 'ember-cli-mirage/test-support/setup-mirage';
 import hbs from "htmlbars-inline-precompile";
 
 module("Integration | Component | opt-in", function(hooks) {
   setupRenderingTest(hooks);
-
-  hooks.beforeEach(function() {
-    this.server = startMirage();
-  });
+  setupMirage(hooks);
 
   test("it renders", async function(assert) {
     await render(hbs`{{opt-in}}`);

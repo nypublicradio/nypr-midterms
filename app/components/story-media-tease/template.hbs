@@ -15,9 +15,14 @@
       {{tease.summary}}
 
       {{#tease.footer}}
-        <span class="story-tease__date">{{moment-format story.newsdate 'MMM DD, YYYY'}}</span>
+        {{#if story.newsdate}}
+          <span class="story-tease__date">{{moment-format story.newsdate 'MMM DD, YYYY'}}</span>
+        {{/if}}
+        {{#if (and story.newsdate story.author)}}
+          <span class="story-tease__dot">•</span>
+        {{/if}}
         {{#if story.author}}
-          <span class="story-tease__dot">•</span><span class="story-tease__author">{{story.author}}</span>
+          <span class="story-tease__author">{{story.author}}</span>
         {{/if}}
       {{/tease.footer}}
     {{/mo.body}}
