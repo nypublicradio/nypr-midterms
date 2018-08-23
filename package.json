@@ -92,7 +92,8 @@
     "nypr-publisher-lib": "nypublicradio/nypr-publisher-lib#fastboot",
     "nypr-ui": "nypublicradio/nypr-ui#fastboot",
     "qunit-dom": "^0.6.2",
-    "start-server-and-test": "^1.7.0"
+    "start-server-and-test": "^1.7.0",
+    "nypr-django-for-ember": "nypublicradio/nypr-django-for-ember#fastboot"
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"
@@ -105,5 +106,9 @@
     "ember-hifi": "nypublicradio/ember-hifi#master",
     "nypr-django-for-ember": "nypublicradio/nypr-django-for-ember#fastboot"
   },
-  "ember-addon": {}
+  "ember-addon": {
+    "paths": [
+      "lib/unobtrusive-loader"
+    ]
+  }
 }
