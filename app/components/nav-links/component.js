@@ -19,9 +19,13 @@ export default Component.extend({
     }
 
     let router = this.get('router');
-    let defaultIndex = links.indexOf(links.find(link => router.isActive(link.route)));
-    this.set('activeTabIndex', defaultIndex === -1 ? 0 : defaultIndex);
-
+    let defaultIndex;
+    if (location.hash) {
+      defaultIndex = links.indexOf(links.find(link => link.hash === location.hash.slice(1) && router.isActive(link.route)));
+    } else {
+      defaultIndex = links.indexOf(links.filter(link => !link.hash).find(link => router.isActive(link.route)));
+    }
+    this.set('activeTabIndex', defaultIndex === -1 ? null : defaultIndex);
   },
 
   didInsertElement() {
