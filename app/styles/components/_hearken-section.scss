@@ -4,26 +4,32 @@
 @import "../mixins/layout";
 
 .hearken-section {
-  @include section-layout;
   @include section-text($color: black);
-  background-color: white;
+
+  padding: 40px 16px 0;
+  margin: 0 auto 16px;
+  max-width: 800px;
+
   a {
     text-decoration: none;
   }
-  max-width: 800px;
-  margin: 0 auto;
 
-  &__submission-wrapper, &__chunk-wrapper {
-      border: solid 2px $lightgray;
-      margin-bottom: 66px;
-      align-self: flex-start;
-      flex-basis: 48%;
+  &__chunk-wrapper {
+    margin-bottom: 72px;
+    border: solid 2px $lightgray;
+  }
+
+  &__submission-wrapper, &__list-wrapper {
+    margin-bottom: 66px;
+    align-self: flex-start;
+    flex-basis: 48%;
   }
 
   &__flex-wrapper{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     @include media('>=medium'){
       flex-direction: row;
     }
@@ -68,24 +74,34 @@
   }
 
   .hearken-section__list-wrapper {
+    position: relative;
+
     .header--text {
+      position: absolute !important;
+      bottom: 100% !important;
+
       color: $gray !important;
       font-size: 12px !important;
       text-align: left !important;
       text-transform: uppercase !important;
       font-weight: bold !important;
       letter-spacing: 1.7px !important;
-      padding-left: 0px !important;
+      padding: 0 0 8px 0 !important;
     }
 
     .embed-content-container {
       border: solid 1px $lightgray !important;
-      padding: 20px 0px 0px 0px !important;
+      padding: 0 !important;
+    }
+
+    .section-header-group {
+      display: none !important;
     }
 
     .question {
-      padding: 30px 15px !important;
+      padding: 16px 15px !important;
       border-bottom: solid 1px $lightgray !important;
+
       &:last-child {
         border-bottom: none !important;
       }
@@ -102,6 +118,26 @@
         font-size: 12px !important;
         color: $gray !important;
       }
+    }
+  }
+}
+
+.hearken-section__submission-wrapper {
+  border: solid 2px $lightgray;
+
+  .hearken-embed {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      background-color: $red;
+      height: 4px;
+      width: 69px;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
     }
   }
 }

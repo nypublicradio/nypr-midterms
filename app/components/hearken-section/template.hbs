@@ -1,13 +1,19 @@
-<div id="hearken-section__wrapper"> <!--needed to allow overwriting hearken styles-->
+{{!-- needed to allow overwriting hearken styles --}}
+<div id="hearken-section__wrapper">
+
+  {{!--
+    hearken-section__chunk-wrapper is a wrapper that gets a script added to it once a chunk is loaded.
+  --}}
+  <div class="hearken-section__chunk-wrapper"></div>
+
   <div class="hearken-section__flex-wrapper">
-    <div class="hearken-section__chunk-wrapper"></div>
-    <!-- hearken-section__chunk-wrapper is a wrapper that gets a script
-    added to it once a chunk is loaded. -->
     {{#unless testing}}
-    <div class="hearken-section__submission-wrapper"> <script async src="https://modules.wearehearken.com/wnyc/embed/1770.js"></script></div>
+      <div class="hearken-section__list-wrapper"> <script async src="https://modules.wearehearken.com/wnyc/embed/1823.js"></script></div>
     {{/unless}}
+
+    {{#unless testing}}
+      <div class="hearken-section__submission-wrapper"> <script async src="https://modules.wearehearken.com/wnyc/embed/1770.js"></script></div>
+    {{/unless}}
+
   </div>
-  {{#unless testing}}
-  <div class="hearken-section__list-wrapper"> <script async src="https://modules.wearehearken.com/wnyc/embed/1823.js"></script></div>
-  {{/unless}}
 </div>
