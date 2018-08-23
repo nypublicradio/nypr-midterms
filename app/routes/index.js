@@ -38,7 +38,7 @@ export default Route.extend({
   },
 
   afterModel({ midtermsEpisode }) {
-    if (!this.fastboot.isFastBoot) {
+    if (!this.fastboot.isFastBoot && midtermsEpisode) {
       let {
         audio,
         id
