@@ -2,7 +2,6 @@
 @import "../mixins/vars";
 @import "../mixins/text";
 @import "../mixins/layout";
-@import "../mixins/fonts";
 
 .hearken-q-and-a {
   @include section-layout();
