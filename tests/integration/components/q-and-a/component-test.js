@@ -23,7 +23,7 @@ module('Integration | Component | q-and-a', function(hooks) {
   test('it renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
-    await render(hbs`{{hearken-section slug='midterms-hearken-chunk-1'}}`);
+    await render(hbs`{{q-and-a slug='midterms-hearken-chunk-1'}}`);
     assert.equal(findAll('.foo1').length, 1);
   });
 });
