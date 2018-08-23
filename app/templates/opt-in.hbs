@@ -1,39 +1,3 @@
-{{#nypr-ui/hero
-  class="page-intro"
-  gradient=true
-  sticky=true
-  as |hero|}}
-  {{#hero.footer class="page-intro__footer"}}
-    <div class="intro-share">
-      <span class="intro-share__label">Share</span>
-      {{#share-icons as |share|}}
-        {{share.fb-post}}
-        {{share.tweet text="TKTK Tweet Text" via="WNYC"}}
-        {{share.email}}
-      {{/share-icons}}
-    </div>
-  {{/hero.footer}}
-
-  {{#hero.headline}}
-    {{page-intro/lockup}}
-  {{/hero.headline}}
-
-  {{#hero.blurb class="page-intro__blurb"}}
-    {{election-countdown unit='days' to='2018-11-06T00:00:00.000-05:00'}}
-  {{/hero.blurb}}
-
-  {{#hero.top as |top|}}
-    {{#top.left}}
-      <div class="intro-links">
-        {{hash-link route='index' hash="updates" label="Get Updates" options=(hash offset=-100)}}
-        {{hash-link route='index' hash="podcasts" label="Podcasts" options=(hash offset=-100)}}
-        {{hash-link route='index' hash="news" label="News" options=(hash offset=-100)}}
-        {{hash-link route='index' hash="guide" label="Voter Guide" options=(hash offset=-100)}}
-      </div>
-    {{/top.left}}
-  {{/hero.top}}
-{{/nypr-ui/hero}}
-
 {{opt-in}}
 
 {{site-footer}}

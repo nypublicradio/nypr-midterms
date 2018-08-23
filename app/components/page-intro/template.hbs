@@ -26,12 +26,10 @@
     {{#top.left}}
       <div class="intro-links">
         {{link-to 'Get Updates' 'articles'}}
-        {{scroll-to offset=-100 href="#podcasts" label="Podcasts"}}
-        {{scroll-to offset=-100 href="#news" label="News"}}
-        {{scroll-to offset=-100 href="#guide" label="Voter Guide"}}
+        {{hash-link route='index' hash='podcasts' options=(hash offset=-100) label="Podcasts"}}
+        {{hash-link route='index' hash='news' options=(hash offset=-100) label="News"}}
+        {{hash-link route='index' hash='guide' options=(hash offset=-100) label="Voter Guide"}}
       </div>
     {{/top.left}}
   {{/hero.top}}
 {{/nypr-ui/hero}}
-
-{{page-intro/real-answers}}
