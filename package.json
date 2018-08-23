@@ -86,12 +86,14 @@
     "loader.js": "^4.2.3",
     "normalize.css": "^8.0.0",
     "nypr-audio-services": "nypublicradio/nypr-audio-services#fastboot",
+    "nypr-django-for-ember": "nypublicradio/nypr-django-for-ember#fastboot",
     "nypr-election-countdown": "^0.1.0",
     "nypr-player": "nypublicradio/nypr-player#fastboot",
     "nypr-publisher-lib": "nypublicradio/nypr-publisher-lib#fastboot",
     "nypr-ui": "nypublicradio/nypr-ui#fastboot",
     "qunit-dom": "^0.6.2",
-    "start-server-and-test": "^1.7.0"
+    "start-server-and-test": "^1.7.0",
+    "nypr-django-for-ember": "nypublicradio/nypr-django-for-ember#fastboot"
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"
@@ -101,6 +103,12 @@
     "nypr-fastboot": "^0.3.0"
   },
   "resolutions": {
-    "ember-hifi": "nypublicradio/ember-hifi#master"
+    "ember-hifi": "nypublicradio/ember-hifi#master",
+    "nypr-django-for-ember": "nypublicradio/nypr-django-for-ember#fastboot"
+  },
+  "ember-addon": {
+    "paths": [
+      "lib/unobtrusive-loader"
+    ]
   }
 }

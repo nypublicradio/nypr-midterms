@@ -43,5 +43,15 @@ export default function() {
     };
   });
 
-}
+  this.urlPrefix = config.publisherAPI;
 
+
+  /*------------------------------------------------------------
+    JSON:API (v3) endpoints
+  --------------------------------------------------------------*/
+  this.get('/v3/chunks/:slug/', ({ chunks }, { params }) => {
+    let { slug } = params;
+    return chunks.where({ slug }).models[0];
+  });
+
+}

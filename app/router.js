@@ -15,6 +15,7 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('opt-in');
   this.route('articles');
+  this.route('hearken-hub');
 });
 
 export default Router;

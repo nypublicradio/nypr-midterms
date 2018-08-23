@@ -1,0 +1,118 @@
+@import "../mixins/buttons";
+@import "../mixins/vars";
+@import "../mixins/text";
+@import "../mixins/layout";
+
+.hearken-q-and-a {
+  @include section-layout();
+  @include section-text($color: white);
+  background-color: $blue;
+  padding-top: 40px;
+  padding-bottom: 60px;
+
+  a {
+    @include section-text($color: white);
+  }
+
+  &__title {
+    font-size: 28px;
+    font-family: $font-montserrat;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    @include media('>=medium'){
+      font-size: 45px;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    margin: 0 auto 40px auto;
+    @include media('>=medium'){
+      font-size: 18px;
+      max-width: 530px;
+    }
+  }
+
+  &__producer-block {
+    border: solid 2px #ffffff;
+    background-color:inherit;
+    padding-top: 20px;
+
+    &-title {
+      background-color:inherit;
+      @include section-title($color: white, $font-style: normal);
+      margin: 0 50px;
+      @include media('>=medium'){
+        display: none;
+      }
+    }
+    &-title2 {
+      @include section-title($color: white, $font-style: normal);
+      margin: 0 0 30px 0;
+      &:after, &:before{
+        display: none;
+      }
+      @include media('>=medium'){
+        display: none;
+      }
+    }
+    &-title3 {
+      @include section-title($color: white, $font-style: normal);
+      @include media('<=medium'){
+        display: none;
+      }
+    }
+  }
+
+  &__chunk-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include media('>=medium'){
+      flex-direction: row;
+    }
+  }
+
+  &__question-intro, &__answer-intro {
+    @include subsubsection-title($color: white)
+    margin-bottom: 0;
+  }
+
+  &__question{
+    @include subsection-title($font-family: $font-opensans,
+                              $font-size: 22px,
+                              $font-style: normal,
+                              $color: white);
+    margin-top: 0;
+  }
+
+  &__down-arrow {
+    fill: white;
+    margin-bottom: 30px;
+    @include media('>=medium'){
+      transform: rotate(-0.25turn);
+    }
+  }
+
+  &__answer {
+    @include subsection-title($font-family: $font-opensans,
+                              $font-size: 18px,
+                              $font-style: normal,
+                              $color: white,
+                              $font-weight: bold);
+    margin-top: 0;
+  }
+
+  &__button {
+    @include btn($color: black,
+                 $background-color: white,
+                 $border-radius: 20px,
+                 $padding: 10px 0);
+    font-weight: 600;
+    margin: 0 auto;
+    max-width: 280px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}

@@ -23,12 +23,14 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 // COMPONENTS
 @import "components/share-icons";
 @import "components/page-section";
+@import "components/hearken-section";
 @import "components/pill-dropdown";
 @import "components/media-object";
 @import "components/story-tease";
 @import "components/episode-tease";
 @import "components/brand-header";
 @import "components/election-countdown";
+@import "components/q-and-a";
 
 // PAGE SECTIONS
 @import "components/page-intro";
