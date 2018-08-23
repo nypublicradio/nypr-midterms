@@ -1,0 +1,16 @@
+{{#liquid-bind activeTabIndex as |currentIndex|}}
+<ul class="nav-links__list">
+  {{#each links as |link index|}}
+    <li class="{{if (eq index currentIndex) 'is-active '}}nav-links__list-item" {{action 'moveBar' index link.route preventDefault=false}}>
+      {{#if (has-block)}}
+        {{yield link}}
+      {{else}}
+        {{link-to link.text link.route}}
+      {{/if}}
+      {{#if (eq index currentIndex)}}
+        <div class="nav-bar"></div>
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>
+{{/liquid-bind}}
