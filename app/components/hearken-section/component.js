@@ -7,6 +7,8 @@ export default Component.extend({
   fastboot: service(),
   classNames: ['hearken-section'],
 
+  testing: window.runningTests,
+
   init(){
     this._super(...arguments);
     if (!this.fastboot.isFastBoot) {
