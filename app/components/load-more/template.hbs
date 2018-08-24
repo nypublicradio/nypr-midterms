@@ -1,0 +1,11 @@
+{{yield (hash
+    data=sortedItems
+    hasMore=hasMore
+    hasLoaded=hasLoaded
+  )}}
+
+  {{#if hasMore}}
+    <a class="load-more__button" data-action={{dataAction}} data-label={{dataLabel}} disabled={{not hasLoaded}} {{action 'fetchData'}}>
+      Load More
+    </a>
+  {{/if}}
