@@ -1,13 +1,48 @@
+@import "../mixins/buttons";
 @import "../mixins/layout";
 
 .episode-tease {
   color: black;
-  text-align: left;
   background-color: white;
-  padding: 32px 24px;
 
   &__top {
-    margin-bottom: 16px;
+    height: 111px;
+    position: relative;
+
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &:after {
+      content: '';
+      z-index: 0;
+      background-image: linear-gradient(265deg, rgba(0, 0, 0, 0.69), rgba(0, 0, 0, 0.6));
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    z-index: 1;
+
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+
+    width: 80px;
+    height: 80px;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    margin: auto;
+  }
+
+
+  &__bottom {
+    padding: 40px 24px 24px;
+
   }
 
   &__title {
@@ -15,6 +50,7 @@
     font-weight: 600;
     line-height: 1.43;
     color: $darkgray;
+    margin-bottom: 16px;
 
     @include media('>=medium') {
       font-size: 18px;
@@ -23,26 +59,42 @@
   }
 
   &__link {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    line-height: 1.67;
+    font-size: 12px;
+
+    &.no-margin {
+      margin: 0;
+    }
 
     a {
       text-decoration: none;
-      text-transform: uppercase;
-      font-size: 12px;
-      line-height: 1.67;
       color: $blue;
+    }
 
-      @include media('>=medium') {
-        letter-spacing: 1.7px;
-        line-height: 2.33;
-      }
+    button {
+      @include btn(
+        $color: $blue,
+      );
+      text-transform: uppercase;
+      margin: 0 auto;
+    }
+
+    @include media('>=medium') {
+      letter-spacing: 1.7px;
+      line-height: 2.33;
     }
   }
 
   &__body {
-    margin: 0;
+    margin-bottom: 16px;
     font-size: 14px;
     line-height: 1.57;
+
+    > p {
+      margin: 0;
+    }
   }
 }
 

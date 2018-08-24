@@ -1,5 +1,5 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-  classNames: ['episode-tease__body']
+  classNames: ['episode-tease__logo'],
 });

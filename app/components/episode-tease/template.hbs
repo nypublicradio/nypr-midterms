@@ -1,22 +1,27 @@
-{{#media-object class="episode-tease__top" as |mo|}}
-  {{#mo.media}}
-    {{listen-button
-      data-test-listen
-      class="episode-listen"
-      itemPK=audio
-      type='blue-hollow'
-      itemTitle=title
-    }}
-  {{/mo.media}}
+{{#if (has-block)}}
+  {{yield (hash
+    top=(component 'episode-tease/top')
+    bottom=(component 'episode-tease/bottom')
+    logo=(component 'episode-tease/logo')
+    title=(component 'episode-tease/title')
+    body=(component 'episode-tease/body')
+    link=(component 'episode-tease/link')
+    footer=(component 'episode-tease/footer')
+  )}}
+{{else}}
+  {{#episode-tease/top bg=(image-template show.image.template 238 111 'c')}}
+    {{episode-tease/logo image=(image-template show.image.template 80 80 'c') height=80 width=80}}
+  {{/episode-tease/top}}
 
-  {{#mo.body}}
-    {{yield (hash
-      title=(component 'episode-tease/title')
-      link=(component 'episode-tease/link')
-      body=(component 'episode-tease/body')
-    )}}
-  {{/mo.body}}
+  {{#episode-tease/bottom}}
+    {{episode-tease/title show.title}}
 
-{{/media-object}}
+    {{#episode-tease/body}}
+      {{{show.tease}}}
+    {{/episode-tease/body}}
 
-{{yield (hash footer=(component 'episode-tease/footer'))}}
+    {{episode-tease/link "Listen to the Latest Episode" show.url}}
+
+    {{episode-tease/footer links=show.podcastLinks}}
+  {{/episode-tease/bottom}}
+{{/if}}

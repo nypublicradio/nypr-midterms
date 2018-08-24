@@ -1,7 +1,17 @@
-<a href={{href}} target="_blank">
-  {{#if (has-block)}}
-    {{yield}}
-  {{else}}
-    {{text}}
-  {{/if}}
-</a>
+{{#if onClick}}
+  <button {{action onClick}}>
+    {{#if (has-block)}}
+      {{yield}}
+    {{else}}
+      {{text}}
+    {{/if}}
+  </button>
+{{else}}
+  <a href={{href}} target="_blank">
+    {{#if (has-block)}}
+      {{yield}}
+    {{else}}
+      {{text}}
+    {{/if}}
+  </a>
+{{/if}}
