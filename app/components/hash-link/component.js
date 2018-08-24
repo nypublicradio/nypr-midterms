@@ -24,18 +24,16 @@ export default Component.extend({
     }
   }),
 
-  complete() {
+  updateHash() {
     if (window.history) {
       window.history.replaceState(null, null, `#${this.hash}`);
     } else {
       window.location.hash = this.hash;
     }
-    if (this.options.complete) {
-      this.options.complete();
-    }
   },
 
-  navigate() {
+  navigate(e) {
+    e.preventDefault();
     let transition = this.router.transitionTo(this.route);
     if (this.hash) {
       let hash = `#${this.hash}`;
@@ -43,8 +41,8 @@ export default Component.extend({
       transition.finally(() => {
         schedule('afterRender', () => {
           if (document.querySelector(hash)) {
+            this.updateHash();
             this.scroller.scrollVertical(hash, options)
-              .then(bind(this, 'complete'));
           }
         })
       });
