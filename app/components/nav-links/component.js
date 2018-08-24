@@ -13,12 +13,12 @@ export default Component.extend({
 
   didReceiveAttrs() {
     this._super(...arguments);
-    let links = this.get('links');
+    let links = this.links;
     if (!links || typeof FastBoot !== 'undefined') {
       return;
     }
 
-    let router = this.get('router');
+    let router = this.router;
     let defaultIndex;
     if (location.hash) {
       defaultIndex = links.indexOf(links.find(link => link.hash === location.hash.slice(1) && router.isActive(link.route)));
@@ -33,11 +33,11 @@ export default Component.extend({
 
     // so we can explicitly remove this at destroy-time
     this.set('boundResizeHandler', bind(this, 'handleResize'));
-    window.addEventListener('resize', this.get('boundResizeHandler'), false);
+    window.addEventListener('resize', this.boundResizeHandler, false);
   },
 
   willDestroyElement() {
-   window.removeEventListener('resize', this.get('boundResizeHandler'));
+   window.removeEventListener('resize', this.boundResizeHandler);
   },
 
   handleResize() {
