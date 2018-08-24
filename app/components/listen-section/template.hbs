@@ -5,56 +5,35 @@
     </h1>
 
     {{#unless section.isOpen}}
-      {{#episode-tease audio=midterms.slug as |tease|}}
-        {{tease.title midterms.showTitle}}
-        {{tease.link midterms.title (concat 'https://www.wnycstudios.org/shows/' midterms.show)}}
-
-        {{#tease.body}}
-          {{{midterms.tease}}}
-        {{/tease.body}}
-
-        {{tease.footer links=midterms.podcastLinks}}
-      {{/episode-tease}}
+      {{episode-tease show=politicsBrief}}
     {{/unless}}
   {{/section.tease}}
 
   {{#section.body}}
     <div class="listen-section__episodes">
       <div class="listen-section__item">
-      {{#episode-tease audio=midterms.slug as |tease|}}
-        {{tease.title midterms.showTitle}}
-        {{tease.link midterms.title (concat 'https://www.wnycstudios.org/shows/' midterms.show)}}
-
-        {{#tease.body}}
-          {{{midterms.tease}}}
-        {{/tease.body}}
-
-        {{tease.footer links=midterms.podcastLinks}}
-      {{/episode-tease}}
+        {{episode-tease show=politicsBrief}}
       </div>
 
-      {{#if morePerfect}}
       <div class="listen-section__item">
-      {{#episode-tease audio=morePerfect.slug as |tease|}}
-        {{tease.title morePerfect.showTitle}}
-        {{tease.link morePerfect.title (concat 'https://www.wnycstudios.org/shows/' morePerfect.show)}}
-
-        {{#tease.body}}
-          {{{morePerfect.tease}}}
-        {{/tease.body}}
-
-        {{tease.footer links=morePerfect.podcastLinks}}
-      {{/episode-tease}}
+        {{episode-tease show=morePerfect}}
       </div>
-      {{/if}}
 
       <div class="listen-section__item">
-      {{#episode-tease data-test-live-stream audio='wnyc-fm939' as |tease|}}
-        {{tease.title "Listen to our Live coverage"}}
+      {{#episode-tease data-test-live-stream as |tease|}}
+        {{#tease.top bg='/assets/images/wnyc-logo.png'}}
+          {{tease.logo image='/assets/images/wnyc-logo.png'}}
+        {{/tease.top}}
 
-        {{#tease.body}}
-          <span class="live-box">Live</span> Lorem ipsum lorem ipsum
-        {{/tease.body}}
+        {{#tease.bottom}}
+          {{tease.title "Listen to our Live coverage"}}
+          {{#tease.body}}
+            <span class="live-box">Live</span> Lorem ipsum lorem ipsum
+          {{/tease.body}}
+
+          {{tease.link "Listen Live" noMargin=true onClick=(action listenLive)}}
+        {{/tease.bottom}}
+
       {{/episode-tease}}
       </div>
     </div>
