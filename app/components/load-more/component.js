@@ -4,10 +4,12 @@ import { observer } from '@ember/object';
 import { sort } from '@ember/object/computed';
 import moment from 'moment';
 import { inject as service } from '@ember/service';
+import $ from 'jquery';
 
 export default Component.extend({
   store: service(),
   classNames: ['load-more'],
+  elementId: 'load-more-anchor',
 
   hasLoadedWNYC: false,
   hasLoadedGoth: false,
@@ -44,6 +46,13 @@ export default Component.extend({
     set(this, 'wNYCItems', []);
     set(this, 'gothItems', []);
     this.send('fetchData');
+  },
+
+  didRender() {
+    let e = $('.load-more');
+    if(e.length > 0) {
+      e[0].scrollIntoView();
+    }
   },
 
 
