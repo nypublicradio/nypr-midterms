@@ -8,7 +8,7 @@ export default Component.extend({
     let style = {
       left,
       width,
-      top: top +  window.pageYOffset + height + 16,
+      top: top +  window.pageYOffset + height,
     };
 
     return { style };
