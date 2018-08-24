@@ -15,6 +15,9 @@ export default function() {
     if (this.oldElement) {
       this.oldElement.hide();
     }
+    if (!this.newElement) {
+      return;
+    }
     return animate(this.newElement.find('.is-active'), 'scroll', {
       axis: 'x',
       container: this.newView.$('.nav-links__list'),
