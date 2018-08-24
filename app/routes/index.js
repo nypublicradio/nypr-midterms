@@ -2,7 +2,6 @@ import Route from '@ember/routing/route';
 import { inject } from '@ember/service';
 import { hash } from 'rsvp';
 
-const PODCAST_FIELDS = 'title,audio,slug,headers,show_title,show,tease,podcast_links';
 const WNYC_TAG = 'midterms2018';
 const GOTHAMIST_TAG = '@midterms2018';
 
@@ -22,18 +21,8 @@ export default Route.extend({
         ordering: '-newsdate',
         'fields[story]': 'title,newsdate,producing_organizations,slug,appearances,image_main,url,tease'
       }),
-      midtermsEpisode: this.store.query('story', {
-        show: 'midterms',
-        page_size: 1,
-        ordering: '-newsdate',
-        'fields[story]': PODCAST_FIELDS,
-      }).then(all => all.firstObject),
-      morePerfectEpisode: this.store.query('story', {
-        show: 'radiolabmoreperfect',
-        page_size: 1,
-        ordering: '-newsdate',
-        'fields[story]': PODCAST_FIELDS,
-      }).then(all => all.firstObject),
+      politicsBrief: this.store.findRecord('show', 'politicsbrief'),
+      morePerfect: this.store.findRecord('show', 'radiolabmoreperfect'),
     });
   },
 });
