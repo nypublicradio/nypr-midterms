@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 import { inject } from '@ember/service';
 import { computed } from '@ember/object';
-import { schedule, bind } from '@ember/runloop';
+import { schedule } from '@ember/runloop';
 
 export default Component.extend({
   tagName: '',
