@@ -28,6 +28,7 @@ export default Component.extend({
     //set(this, 'items', sortedResults.toArray());
   }),
   sortedItems: sort('items', function(a, b) {
+    console.log(a.newsdate, b.newsdate);
     return moment(b.newsdate) - moment(a.newsdate);
   }),
 
