@@ -16,7 +16,7 @@ const LINKS = [{
 }, {
   route: 'index',
   hash: 'podcasts',
-  text: 'Podasts',
+  text: 'Podcasts',
 }, {
   route: 'index',
   hash: 'guide',
