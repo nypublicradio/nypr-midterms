@@ -31,7 +31,7 @@
             <span class="live-box">Live</span> Lorem ipsum lorem ipsum
           {{/tease.body}}
 
-          {{tease.link "Listen Live" noMargin=true onClick=(action listenLive)}}
+          {{tease.link "Listen Live" noMargin=true onClick=(action listenLive) data-test-selector="live"}}
         {{/tease.bottom}}
 
       {{/episode-tease}}

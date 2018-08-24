@@ -20,6 +20,6 @@ module('Integration | Component | listen-section', function(hooks) {
     await render(hbs`{{listen-section}}`);
     await click('[data-test-open-section]');
 
-    await click('[data-test-live-stream] [data-test-listen]');
+    await click('[data-test-selector="live"] button');
   });
 });
