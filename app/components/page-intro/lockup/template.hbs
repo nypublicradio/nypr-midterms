@@ -1,6 +1,8 @@
 {{#media-object as |mo|}}
   {{#mo.media class="intro-lockup__logo"}}
-    <img src="/assets/images/logo.png" >
+    {{#link-to 'index'}}
+      <img src="/assets/images/logo.png" >
+    {{/link-to}}
   {{/mo.media}}
 
   {{#mo.body class="intro-lockup__text"}}

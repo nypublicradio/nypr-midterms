@@ -11,6 +11,17 @@ export default Component.extend({
   classNames: ['nav-links'],
   classNameBindings: ['xScrollable'],
 
+  init() {
+    this._super(...arguments);
+    this.router._router.on('didTransition', () => {
+      scheduleOnce('afterRender', () => {
+        if (this.router.currentRouteName === 'index' && !location.hash) {
+          this.set('activeTabIndex', 0);
+        }
+      });
+    });
+  },
+
   didReceiveAttrs() {
     this._super(...arguments);
     let links = this.links;

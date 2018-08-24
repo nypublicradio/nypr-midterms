@@ -1,6 +1,10 @@
 import Component from '@ember/component';
 
 const LINKS = [{
+  route: 'index',
+  text: 'All',
+  hash: 'top',
+}, {
   route: 'opt-in',
   text: 'Get Updates',
 }, {
