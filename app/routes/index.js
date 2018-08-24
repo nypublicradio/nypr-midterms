@@ -36,24 +36,4 @@ export default Route.extend({
       }).then(all => all.firstObject),
     });
   },
-
-  afterModel({ midtermsEpisode }) {
-    if (!this.fastboot.isFastBoot && midtermsEpisode) {
-      let {
-        audio,
-        id
-      } = midtermsEpisode;
-
-      if (audio) {
-        this.hifi.load(audio).then(({ sound }) => {
-          this.hifi.set('currentSound', sound);
-          this.hifi.set('currentMetadata', {
-            contentId: id,
-            contentModelType: 'story',
-            contentModel: midtermsEpisode,
-          })
-        });
-      }
-    }
-  }
 });
