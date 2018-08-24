@@ -25,7 +25,7 @@ module('Integration | Component | nav-links', function(hooks) {
       {{/nav-links}}
     `);
 
-    await click('.nav-links__list-item:nth-child(2)');
-    assert.dom('.nav-links__list-item:nth-child(2) > .nav-bar').exists('nav bar moves to second spot');
+    await click('[data-test-nav-link="1"]');
+    assert.dom('[data-test-nav-link="1"] > .nav-bar').exists('nav bar moves to second spot');
   });
 });
