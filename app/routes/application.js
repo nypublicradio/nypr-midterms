@@ -19,8 +19,8 @@ export default Route.extend({
               event: 'Page View'
             });
           }
+          window.scrollTo(0, 0);
         });
-        window.scrollTo(0, 0);
       }
     }
   }
