@@ -7,14 +7,6 @@
     <p class="opt-in-section__blurb">
       We filter out the noise to give you the essential local and national 411 on politics today.
     </p>
-
-    <p class="opt-in-section__footer medium-and-up">
-      {{#if (eq step NEWSLETTER)}}
-        <a href="/opt-in">Or sign up for Text Updates</a>
-      {{else if (eq step SMS)}}
-        <a href="/opt-in">Tell Me More</a>
-      {{/if}}
-    </p>
   </div>
 
   <div class="opt-in-section__right">
@@ -51,13 +43,5 @@
         You will begin to receive updates soon.
       </p>
     {{/liquid-if}}
-
-    <p class="opt-in-section__footer below-medium-only">
-      {{#if (eq step NEWSLETTER)}}
-        <a href="/opt-in">Or sign up for Text Updates</a>
-      {{else if (eq step SMS)}}
-        <a href="/opt-in">Tell Me More</a>
-      {{/if}}
-    </p>
   </div>
 </div>
