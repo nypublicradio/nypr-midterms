@@ -1,5 +1,11 @@
 @import "../mixins/buttons";
 
+.page-section {
+  max-width: 1060px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .page-section,
 .page-section__tease {
   background-color: inherit;

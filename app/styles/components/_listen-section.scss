@@ -50,8 +50,6 @@
   }
 
   &__episodes {
-    @include wrapper($width: 1000px, $padding: 0);
-
     display: flex;
     justify-content: space-around;
     align-items: stretch;
