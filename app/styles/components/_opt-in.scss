@@ -66,7 +66,11 @@
   }
 
   &__both-success {
+    @include wrapper;
+    @include body-text;
+
     margin-bottom: 60px;
+    text-align: center;
   }
 
   &__legal-checkbox {
