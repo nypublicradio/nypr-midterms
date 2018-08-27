@@ -13,7 +13,7 @@
     flex-wrap: wrap;
 
     @include media(">=medium") {
-      max-width: none;
+      max-width: 1048px;
     }
   }
 
