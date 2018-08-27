@@ -6,14 +6,17 @@ const WNYC_QUESTION_TAG = 'news';
 const GOTHAMIST_QUESTION_TAG = '@wnyc';
 
 export default Route.extend({
+  titleToken: "Ask a Reporter",
+
   store: service(),
+
   classNames: ['hearken-route'],
+
   queryParams: {
     page: {
       refreshModel: true
     }
   },
-
 
   model({page}) {
     return hash({

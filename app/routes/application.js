@@ -8,8 +8,7 @@ export default Route.extend({
   head: inject('head-data'),
 
   title(tokens) {
-    tokens.unshift('WNYC + Gothamist');
-    tokens.unshift('Your Voice Your Choice 2018');
+    tokens.unshift('2018 Elections');
     return tokens.join(' | ');
   },
 
