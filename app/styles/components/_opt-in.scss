@@ -39,7 +39,8 @@
 
   &__header {
     @include section-title($color: black, $stripes: false);
-    margin-bottom: 24px;
+    margin-bottom: 0;
+    flex-direction: column;
 
     @include media('>=medium') {
       max-width: 430px;
@@ -149,7 +150,7 @@
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 30px;
-    padding: 22px 32px 32px 32px;
+    padding: 10px 32px 32px 32px;
   }
 
   &__email-formset {
@@ -162,6 +163,7 @@
 
   &__form {
     display: flex;
+    margin-top: 10px;
     width: 100%;
     justify-content: center;
   }

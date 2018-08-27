@@ -1,20 +1,22 @@
 <h1 class="opt-in__header"><span>Sign Up for Updates</span></h1>
 
-<p class="opt-in__success-text">
-  {{#if (and emailSuccess (not phoneSuccess))}}
+{{#if (and emailSuccess (not phoneSuccess))}}
+  <div class="opt-in__success-text" data-test-email-success>
     {{{COPY.EMAIL_SUCCESS}}}
-  {{/if}}
+  </div>
+{{/if}}
 
-  {{#if (and phoneSuccess (not emailSuccess))}}
+{{#if (and phoneSuccess (not emailSuccess))}}
+  <div class="opt-in__success-text" data-test-phone-success>
     {{{COPY.PHONE_SUCCESS}}}
-  {{/if}}
+  </div>
+{{/if}}
 
-  {{#if (and phoneSuccess emailSuccess)}}
-    <div class="opt-in__both-success" data-test-both-success>
-      {{{COPY.BOTH_SUCCESS}}}
-    </div>
-  {{/if}}
-</p>
+{{#if (and phoneSuccess emailSuccess)}}
+  <div class="opt-in__both-success" data-test-both-success>
+    {{{COPY.BOTH_SUCCESS}}}
+  </div>
+{{/if}}
 
 {{#if (not isFullFormSubmitted)}}
   <form {{action 'submitForms' on='submit'}}>
