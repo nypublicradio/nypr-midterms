@@ -157,5 +157,13 @@
       right: 0;
       margin: auto;
     }
+
+    .button-container button {
+      transition: opacity 125ms ease !important;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
   }
 }

@@ -55,8 +55,14 @@
   text-decoration: none;
   font-size: 14px;
 
+  transition: opacity 125ms ease;
+
   &:focus {
     outline: none;
+  }
+
+  &:hover {
+    opacity: 0.6;
   }
 }
 

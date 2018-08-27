@@ -164,6 +164,12 @@
   font-weight: 600;
   line-height: 2.33;
   letter-spacing: 1.7px;
+
+  transition: opacity 125ms ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
 }
 
 .footer-share {

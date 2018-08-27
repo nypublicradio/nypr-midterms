@@ -26,6 +26,12 @@
 
   max-width: 340px;
   margin: 0 auto;
+
+  transition: opacity 125ms ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
 }
 
 @mixin btn-disabled {

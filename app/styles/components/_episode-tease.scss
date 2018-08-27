@@ -76,6 +76,12 @@
     a {
       text-decoration: none;
       color: $blue;
+
+      transition: opacity 125ms ease;
+
+      &:hover {
+        opacity: 0.6;
+      }
     }
 
     button {
