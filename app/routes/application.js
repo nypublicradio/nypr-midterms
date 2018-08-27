@@ -5,6 +5,7 @@ import { inject } from '@ember/service';
 export default Route.extend({
   moment:   inject(),
   fastboot: inject(),
+  head: inject('head-data'),
 
   title(tokens) {
     tokens.unshift('WNYC + Gothamist');
@@ -14,6 +15,19 @@ export default Route.extend({
 
   beforeModel() {
     this.moment.setTimeZone('America/New_York');
+  },
+
+  afterModel() {
+    let url;
+
+    if (this.fastboot.isFastBoot) {
+      let { protocol, host, path } = this.fastboot.request;
+      url = `${protocol}//${host}${path}`;
+    } else {
+      url = window.location.toString();
+    }
+
+    this.head.set('url', url);
   },
 
   actions: {
