@@ -4,6 +4,8 @@
 .episode-tease {
   color: black;
   background-color: white;
+  display: flex;
+  flex-direction: column;
 
   &__top {
     height: 111px;
@@ -41,8 +43,11 @@
 
 
   &__bottom {
+    flex: 1;
     padding: 40px 24px 24px;
 
+    display: flex;
+    flex-direction: column;
   }
 
   &__title {
@@ -95,6 +100,10 @@
     > p {
       margin: 0;
     }
+  }
+
+  &__footer {
+    margin-top: auto;
   }
 }
 
