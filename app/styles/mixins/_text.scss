@@ -32,6 +32,9 @@
   $color: inherit,
   $stripes: true,
 ) {
+  display: flex;
+  justify-content: center;
+
   font-size: $font-size;
   font-family: $font-family;
   font-weight: $font-weight;
@@ -47,21 +50,21 @@
   margin-top: 0;
   margin-bottom: 24px;
 
-  background-color: inherit;
-  position: relative;
-
   @if $stripes {
-    &:before {
+    span {
+      position: relative;
+    }
+    span:before {
       @include stripes(
         $right: auto,
-        $left: -15px,
+        $left: -40px,
       );
     }
 
-    &:after {
+    span:after {
       @include stripes(
         $left: auto,
-        $right: -15px,
+        $right: -40px,
       );
     }
 
