@@ -44,6 +44,16 @@
   flex-wrap: wrap;
   margin-bottom: 24px;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include media('>=medium') {
+    &:last-child {
+      margin-bottom: 24px; // everything gets a margin to deal with in between media queries
+    }
+  }
+
   &__thumb {
     max-width: 88px;
   }

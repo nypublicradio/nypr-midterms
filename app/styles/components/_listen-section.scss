@@ -10,6 +10,10 @@
   --gradient: #{$blue};
   --transparent-gradient: #{rgba($blue, 0)};
 
+  @include media(">=medium") {
+    padding-bottom: 8px; // compensate for added margins on listen section items
+  }
+
   &__title {
     @include section-title;
 
@@ -66,7 +70,9 @@
     }
 
     @include media('>=medium') {
-      margin-bottom: 0;
+      &:last-child {
+        margin-bottom: 24px; // everything gets a margin to deal with in between media queries
+      }
     }
 
     > * {
