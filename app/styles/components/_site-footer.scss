@@ -1,4 +1,5 @@
 @import "../mixins/layout";
+@import "../mixins/buttons";
 
 .site-footer {
   padding: 56px 0 132px; // compensate for the player
@@ -7,10 +8,38 @@
   text-align: center;
 
   &__wrapper {
-    @include wrapper($width: 744px);
+    @include wrapper($width: 400px);
+    display: flex;
+    flex-wrap: wrap;
+
+    @include media(">=medium") {
+      max-width: none;
+    }
+  }
+
+  &__top {
+    flex-basis: 100%;
+
+    @include media('>=medium') {
+      flex: 2;
+      margin-right: 40px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+
+  &__bottom {
+    flex-basis: 100%;
+
+    @include media(">=medium") {
+      flex: 1;
+    }
   }
 
   &__brand {
+    flex-basis: 100%;
     position: relative;
 
     > img {
@@ -38,33 +67,19 @@
     }
   }
 
-  &__top {
-    display: flex;
-    flex-wrap: wrap;
-
-    @include media('>=medium') {
-      justify-content: space-between;
-      flex-wrap: nowrap;
-      margin-bottom: 32px;
-    }
-  }
-
   &__blurb {
     font-size: 14px;
-    color: rgba(black, 0.6);
+    color: rgba(0, 0, 0, 0.6);
     line-height: 1.57;
     margin-top: 0;
     margin-bottom: 32px;
 
     @include media('>=medium') {
-      flex: 1;
       text-align: left;
-      margin-bottom: 0;
     }
   }
 
   &__logos {
-    order: -1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -85,11 +100,7 @@
     }
 
     @include media('>=medium') {
-      order: 0;
-      flex: 1;
-
-      justify-content: flex-end;
-      margin-bottom: 0;
+      margin-bottom: 16px;
 
       .gothamist {
         width: 38px;
@@ -108,7 +119,22 @@
   }
 }
 
+.site-footer__donate {
+  margin-bottom: 32px;
+}
+
+.site-footer__donate-link {
+  @include btn(
+    $color: white,
+    $background-color: $red,
+    $border-radius: 20px,
+    $padding: 8px,
+  );
+  font-weight: 600;
+}
+
 .site-footer__links {
+  flex-basis: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -132,4 +158,44 @@
   font-weight: 600;
   line-height: 2.33;
   letter-spacing: 1.7px;
+}
+
+.footer-share {
+  flex-basis: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
+
+  font-size: 14px;
+
+  @include media(">=medium") {
+    justify-content: flex-start;
+    flex-basis: auto;
+  }
+
+  .share-icons {
+    flex-basis: 120px;
+    justify-content: space-between;
+  }
+
+  .share-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    border-radius: 50%;
+    border: solid 1px $lightgray;
+    padding: 0;
+  }
+
+  .share-icon__fb-post {
+    font-size: 14px;
+  }
+
+  &__label  {
+    font-size: 14px;
+    color: $gray;
+    margin-right: 16px;
+  }
 }
