@@ -39,6 +39,9 @@ module.exports = function(environment) {
 
     // for platform events
     platformEventsAPI: process.env.PLATFORM_EVENTS_API,
+
+    // for utm_source value
+    siteSlug: 'midtermshub',
   };
 
   if (environment === 'development') {
