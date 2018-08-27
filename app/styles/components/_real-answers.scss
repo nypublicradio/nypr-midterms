@@ -16,22 +16,6 @@
 
   &__title {
     @include section-title;
-
-    &:before {
-      @include stripes(
-        $width: 24px,
-        $right: auto,
-        $left: 16px,
-      );
-    }
-
-    &:after {
-      @include stripes(
-        $width: 24px,
-        $left: auto,
-        $right: 16px,
-      );
-    }
   }
 
   &__blurb {
