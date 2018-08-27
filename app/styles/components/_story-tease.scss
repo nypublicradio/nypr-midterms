@@ -80,6 +80,10 @@
 
     @include media('>=medium') {
       font-size: 14px;
+
+      .story-tease.no-image.is-featured & {
+        margin-bottom: 40px;
+      }
     }
   }
 
