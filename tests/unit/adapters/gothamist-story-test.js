@@ -18,13 +18,14 @@ module('Unit | Adapter | gothamist story', function(hooks) {
   test('it requests the gothamist endpoint for stories for a query', function() {
     const QUERY = {
       tag: 'foo',
-      count: 2
+      count: 2,
+      page: 1
     };
 
     this.mock(fetch)
       .expects('default')
       .once()
-      .withArgs(`${config.gothamistAPI}?index=gothamist&tag=${QUERY.tag}&count=${QUERY.count}`)
+      .withArgs(`${config.gothamistAPI}?index=gothamist&tag=${QUERY.tag}&count=${QUERY.count}&page=${QUERY.page}`)
       .resolves({ json: () => Promise.resolve(['foo', 'bar', 'baz']) });
 
     let adapter = this.owner.lookup('adapter:gothamist-story');

@@ -25,10 +25,8 @@ export default Component.extend({
   }),
   setItems: observer('hasLoaded', function() {
     set(this, 'items', get(this, 'wNYCItems').concat(get(this, 'gothItems')));
-    //set(this, 'items', sortedResults.toArray());
   }),
   sortedItems: sort('items', function(a, b) {
-    console.log(a.newsdate, b.newsdate);
     return moment(b.newsdate) - moment(a.newsdate);
   }),
 

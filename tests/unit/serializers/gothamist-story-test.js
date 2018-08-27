@@ -55,7 +55,9 @@ module('Unit | Serializer | gothamist story', function(hooks) {
       "author_nickname": "Jen Chung",
     }];
 
-    let response = serializer.normalizeQueryResponse(store, null, GOTH_STORIES);
+    const GOTH_TOTAL_ENTRIES = 3
+
+    let response = serializer.normalizeQueryResponse(store, null, [GOTH_STORIES, GOTH_TOTAL_ENTRIES]);
     let [ story ] = response.data;
 
     assert.equal(response.data.length, 3, 'should serialize 3 stories');

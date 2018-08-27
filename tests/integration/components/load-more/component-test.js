@@ -1,84 +1,102 @@
-import { module, test } from 'qunit';
+import { module } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { render, click } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
-import EmberObject from '@ember/object';
+import test from 'ember-sinon-qunit/test-support/test';
+
 
 
 module('Integration | Component | load-more', function(hooks) {
   setupRenderingTest(hooks);
 
-  let fakeResponse = EmberObject.create({
-    data: [1,2,3],
-    meta: {
-      pagination: {
-        count: 15
-      }
-    },
-    toArray() {
-      return this.data;
-    }
-  });
-
-  let gothTag = '@goth';
-  let wNYCTag = 'wnyc';
-  let storyObject1 = { newsdate: "20180823142058"}
-  let storyObject2 = { newsdate: "20180823162434"}
-
-  let store = {
-      findRecord: this.mock()
-        .withArgs('gothamist-story', {
-          tag: gothTag,
-          pageSize: 5,
-          page: 1
-        })
-        .resolves({
-          data: [storyObject1, storyObject2, storyObject1, storyObject2, storyObject1]
-        })
-        .withArgs('gothamist-story', )
-    };
-
   test('it renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`{{load-more}}`);
+      let gothTag = '@goth';
+      let wNYCTag = 'wnyc';
+      let storyObject3 = { newsdate: "20180823103815"};
+      let storyObject1 = { newsdate: "20180823142058"};
+      let storyObject2 = { newsdate: "20180823162434"};
+      let gothQuery1 = {
+        tag: gothTag,
+        count: 5,
+        page: 1
+      }
+      let gothQuery2 = {
+        tag: gothTag,
+        count: 5,
+        page: 2,
+      }
+      let wNYCQuery1 = {
+        tags: wNYCTag,
+        page_size: 5,
+        page: 1,
+        ordering: '-newsdate',
+        'fields[story]': 'title,newsdate,producing_organizations,slug,appearances,image_main,url,tease'
+      }
 
-    assert.equal(this.element.textContent.trim(), '');
+      let store = {
+        query: this.stub()
+          .withArgs('gothamist-story', gothQuery1)
+          .resolves({
+          data: [storyObject1, storyObject1, storyObject1, storyObject1, storyObject1],
+            meta: {
+              total_entries: 10
+            },
+            toArray() {
+              return this.data;
+            }
+          }
+      )};
+      store.query.withArgs('gothamist-story', gothQuery2)
+        .resolves({
+          data: [storyObject2, storyObject2, storyObject2, storyObject2, storyObject2],
+          meta: {
+            total_entries: 10
+          },
+          toArray() {
+            return this.data;
+          }
+        }
+      );
+      store.query.withArgs('story', wNYCQuery1)
+        .resolves({
+          data: [storyObject3, storyObject3, storyObject3, storyObject3, storyObject3],
+          meta: {
+            pagination: {
+              count: 5
+            }
+          },
+          toArray() {
+            return this.data;
+          }
+        }
+      );
 
-    // Template block usage:
-    await render(hbs`
-      {{#load-more}}
-        template block text
-      {{/load-more}}
-    `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
-  });
-
-  test('it calls fetch upon load with proper params', async function(assert) {
-    let done = assert.async();
-    let callCount = 0;
-
-    this.set('fetch', ({pageSize, page}) => {
-      callCount = callCount + 1;
-      assert.equal(pageSize, 12, "page size should be 12");
-      assert.equal(page, 1, "page should be 1");
-
-      return RSVP.Promise.resolve(fakeResponse).finally(() => {
-        done();
-      });
+    this.setProperties({
+      gothTag: gothTag,
+      wNYCTag: wNYCTag,
+      store: store,
     });
 
-    await render(hbs`
-      {{#data-loader fetch=(action fetch) as |results|}}
-        <div class="results">
-          {{#each results.data as |n|}}{{n}}{{/each}}
-        </div>
-      {{/data-loader}}
-    `);
+    await render(hbs`{{load-more gothTag=gothTag wNYCTag=wNYCTag store=store}}`);
+    assert.ok(store.query.calledTwice, 'two queries');
+    assert.ok(store.query.calledWith('gothamist-story', gothQuery1), 'called with goth query');
+    assert.ok(store.query.calledWith('story', wNYCQuery1), 'called with wnyc query');
+    assert.dom('.load-more__button').hasText('Load More');
 
-    assert.equal(callCount, 1, "fetch was called");
-    assert.equal(find('.results').textContent.trim(), "123");
+    await click('.load-more__button');
+    // three queries should be made here: two goth and one wnyc. the load component should have
+    // calculated from the meta.pagination.count that there are no more wnyc stories.
+    assert.ok(store.query.calledThrice, 'three total queries');
+    assert.ok(store.query.calledWith('gothamist-story', gothQuery2), 'called with goth query 2');
+
+    // all stories have been loaded
+    assert.dom('.load-more__button').doesNotExist();
+
+
+
   });
 });
