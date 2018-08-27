@@ -5,11 +5,11 @@ const LINKS = [{
   text: 'Main',
   hash: 'top',
 }, {
-  route: 'opt-in',
-  text: 'Newsletter',
-}, {
   route: 'hearken-hub',
   text: 'Ask a Reporter',
+}, {
+  route: 'opt-in',
+  text: 'Newsletter',
 }, {
   route: 'articles',
   text: 'News'
