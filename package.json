@@ -92,8 +92,7 @@
     "nypr-publisher-lib": "nypublicradio/nypr-publisher-lib#fastboot",
     "nypr-ui": "nypublicradio/nypr-ui#fastboot",
     "qunit-dom": "^0.6.2",
-    "start-server-and-test": "^1.7.0",
-    "nypr-django-for-ember": "nypublicradio/nypr-django-for-ember#fastboot"
+    "start-server-and-test": "^1.7.0"
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"

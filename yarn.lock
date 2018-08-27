@@ -680,8 +680,8 @@ aws-sdk@^2.1.48, aws-sdk@^2.252.1, aws-sdk@^2.279.1, aws-sdk@^2.3.4, aws-sdk@^2.
     xml2js "0.4.19"
 
 aws-sdk@^2.257.1:
-  version "2.299.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.299.0.tgz#9c12f924f1e28d22899816e112dcb722c4bccf30"
+  version "2.302.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.302.0.tgz#f659c441b43db4e95e68e9392865e23507a788d2"
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -7470,10 +7470,11 @@ nypr-django-for-ember@nypublicradio/nypr-django-for-ember#fastboot:
     ember-wormhole "^0.5.2"
 
 nypr-election-countdown@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/nypr-election-countdown/-/nypr-election-countdown-0.1.2.tgz#ed95cade4fdd4d234036b447330b65ecc9a371c8"
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/nypr-election-countdown/-/nypr-election-countdown-0.1.4.tgz#901e708b136ef03c9df03bf42df4f4a0ac04dbfd"
   dependencies:
     aws-sdk "^2.257.1"
+    dotenv "^6.0.0"
     ember-cli-babel "^6.6.0"
     ember-cli-htmlbars "^2.0.1"
     ical-generator "^0.2.10"
@@ -7512,8 +7513,8 @@ nypr-player@nypublicradio/nypr-player#fastboot:
     nypr-ui nypublicradio/nypr-ui#fastboot
 
 nypr-publisher-lib@nypublicradio/nypr-publisher-lib#fastboot:
-  version "0.4.1"
-  resolved "https://codeload.github.com/nypublicradio/nypr-publisher-lib/tar.gz/cb34d02ea0ba63bda5558ecc19cd2e4ea789ba80"
+  version "0.4.2"
+  resolved "https://codeload.github.com/nypublicradio/nypr-publisher-lib/tar.gz/b53ca5ec5f7dd300b398b6012a982c842c3e5bc7"
   dependencies:
     broccoli-funnel "^2.0.1"
     broccoli-merge-trees "^2.0.0"
@@ -7531,7 +7532,7 @@ nypr-publisher-lib@nypublicradio/nypr-publisher-lib#fastboot:
 
 nypr-ui@nypublicradio/nypr-ui#fastboot:
   version "0.3.1"
-  resolved "https://codeload.github.com/nypublicradio/nypr-ui/tar.gz/b9e2fd44a8c6b8aa65900258585d512909f76040"
+  resolved "https://codeload.github.com/nypublicradio/nypr-ui/tar.gz/dbb3e7f98423410e5a216b3de37e5aeb5c1d2b32"
   dependencies:
     ember-basic-dropdown "0.34.0"
     ember-burger-menu "^3.1.0"
