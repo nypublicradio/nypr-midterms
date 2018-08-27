@@ -3,6 +3,11 @@
 
   &.vertical--center {
     align-items: center;
+
+    .media-object__media {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &.vertical--top {

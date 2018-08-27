@@ -2,7 +2,7 @@
 @import "../mixins/buttons";
 
 .real-answers {
-  padding: 24px;
+  @include section-layout;
   background-color: $blue;
   color: white;
   text-align: center;
@@ -69,6 +69,8 @@
 
     &:last-child {
       border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
     }
 
     .media-object__media {
@@ -78,6 +80,8 @@
     @include media('>=medium') {
       border: none;
       flex-basis: 31%;
+      padding-bottom: 0;
+      margin-bottom: 0;
 
       .media-object {
         flex-wrap: wrap;
@@ -85,7 +89,9 @@
 
       .media-object__media {
         flex-basis: 100%;
+        margin-right: 0;
         margin-bottom: 16px;
+        justify-content: center;
       }
     }
   }

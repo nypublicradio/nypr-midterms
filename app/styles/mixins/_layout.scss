@@ -10,8 +10,4 @@
 
 @mixin section-layout {
   padding: 64px 32px;
-
-  @include media('>=medium') {
-    padding-top: 75px;
-  }
 }

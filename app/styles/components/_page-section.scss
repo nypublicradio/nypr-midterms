@@ -29,6 +29,10 @@
 
 .page-section__body.is-open {
   margin-bottom: 32px;
+
+  @include media(">=medium") {
+    margin-bottom: 0;
+  }
 }
 
 .page-section__toggle {

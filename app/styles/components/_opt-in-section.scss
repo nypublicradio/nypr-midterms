@@ -57,7 +57,7 @@
     margin-bottom: 32px;
 
     @include media('>=medium') {
-      margin-bottom: 16px;
+      margin-bottom: 0;
       font-size: 18px;
     }
   }
@@ -85,10 +85,6 @@
 
 .opt-in-form {
   text-align: left;
-
-  &.email {
-    margin-bottom: 24px;
-  }
 
   &__top {
     flex-basis: 100%;
