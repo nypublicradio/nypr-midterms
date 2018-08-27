@@ -15,8 +15,12 @@ export default Component.extend({
     this._super(...arguments);
     this.router._router.on('didTransition', () => {
       scheduleOnce('afterRender', () => {
-        if (this.router.currentRouteName === 'index' && !location.hash) {
+        let currentRoute = this.router.currentRouteName;
+        if (currentRoute === 'index' && !location.hash) {
           this.set('activeTabIndex', 0);
+        } else if (this.links) {
+          let index = this.findLinkIndex();
+          this.set('activeTabIndex', index);
         }
       });
     });
@@ -29,14 +33,8 @@ export default Component.extend({
       return;
     }
 
-    let router = this.router;
-    let defaultIndex;
-    if (location.hash) {
-      defaultIndex = links.indexOf(links.find(link => link.hash === location.hash.slice(1) && router.isActive(link.route)));
-    } else {
-      defaultIndex = links.indexOf(links.filter(link => !link.hash).find(link => router.isActive(link.route)));
-    }
-    this.set('activeTabIndex', defaultIndex === -1 ? 0 : defaultIndex);
+    let index = this.findLinkIndex();
+    this.set('activeTabIndex', index === -1 ? 0 : index);
   },
 
   didInsertElement() {
@@ -72,6 +70,12 @@ export default Component.extend({
     }
   },
 
+  findLinkIndex() {
+    let { router, links } = this;
+    if (location.hash) {
+      return links.indexOf(links.find(link => link.hash === location.hash.slice(1) && router.isActive(link.route)));
+    } else {
+      return links.indexOf(links.filter(link => !link.hash).find(link => router.isActive(link.route)));
     }
   },
 
