@@ -36,7 +36,7 @@ export default Component.extend({
     } else {
       defaultIndex = links.indexOf(links.filter(link => !link.hash).find(link => router.isActive(link.route)));
     }
-    this.set('activeTabIndex', defaultIndex === -1 ? null : defaultIndex);
+    this.set('activeTabIndex', defaultIndex === -1 ? 0 : defaultIndex);
   },
 
   didInsertElement() {
