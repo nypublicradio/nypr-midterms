@@ -7532,7 +7532,7 @@ nypr-publisher-lib@nypublicradio/nypr-publisher-lib#fastboot:
 
 nypr-ui@nypublicradio/nypr-ui#fastboot:
   version "0.3.1"
-  resolved "https://codeload.github.com/nypublicradio/nypr-ui/tar.gz/dbb3e7f98423410e5a216b3de37e5aeb5c1d2b32"
+  resolved "https://codeload.github.com/nypublicradio/nypr-ui/tar.gz/bbbe0d6786a48648e9ed216c3ed13b6df84a622d"
   dependencies:
     ember-basic-dropdown "0.34.0"
     ember-burger-menu "^3.1.0"
