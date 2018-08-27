@@ -23,6 +23,9 @@
   text-align: center;
 
   text-decoration: none; // for links that want to look like buttons
+
+  max-width: 340px;
+  margin: 0 auto;
 }
 
 @mixin btn-disabled {
