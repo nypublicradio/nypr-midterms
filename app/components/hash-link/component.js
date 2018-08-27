@@ -39,9 +39,9 @@ export default Component.extend({
       let hash = `#${this.hash}`;
       let options = {...this.options};
       transition.finally(() => {
+        this.updateHash();
         schedule('afterRender', () => {
           if (document.querySelector(hash)) {
-            this.updateHash();
             this.scroller.scrollVertical(hash, options)
           }
         })
