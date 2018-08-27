@@ -22,7 +22,7 @@
 
     @include media('>=medium') {
       flex: 2;
-      margin-right: 40px;
+      margin-right: 128px;
 
       display: flex;
       flex-direction: column;
@@ -34,7 +34,7 @@
     flex-basis: 100%;
 
     @include media(">=medium") {
-      flex: 1;
+      flex-basis: 270px;
     }
   }
 
@@ -81,7 +81,7 @@
 
   &__logos {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-basis: 100%;
     margin-bottom: 24px;
@@ -103,18 +103,24 @@
       margin-bottom: 16px;
 
       .gothamist {
-        width: 38px;
-        margin-right: 32px;
+        width: 54px;
       }
 
       .wnyc {
-        width: 34px;
-        margin-right: 32px;
+        width: 61px;
       }
 
       .studios {
-        width: 44px;
+        width: 61px;
       }
+    }
+  }
+
+  &__logo {
+    margin-right: 48px;
+
+    &:last-child {
+      margin-right: 0;
     }
   }
 }
