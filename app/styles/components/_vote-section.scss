@@ -16,10 +16,6 @@
 
   &__title {
     @include section-title;
-
-    @include media('>=medium') {
-      max-width: 350px;
-    }
   }
 
   &__blurb {

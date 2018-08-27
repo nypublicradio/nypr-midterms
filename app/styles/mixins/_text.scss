@@ -47,10 +47,15 @@
   }
 
   text-align: center;
-  margin-top: 0;
-  margin-bottom: 24px;
+  margin: 0 auto 24px;
 
   @if $stripes {
+    max-width: 225px;
+
+    @include media(">=425px") {
+      max-width: 600px;
+    }
+
     span {
       position: relative;
     }

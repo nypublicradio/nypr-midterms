@@ -10,4 +10,10 @@
 
 @mixin section-layout {
   padding: 64px 32px;
+
+  overflow: hidden;
+
+  @include media(">=400px") {
+    overflow: visible;
+  }
 }
