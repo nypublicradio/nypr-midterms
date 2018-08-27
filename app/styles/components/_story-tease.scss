@@ -38,11 +38,6 @@
 
   &.is-featured .story-tease__title {
     margin-bottom: 16px;
-
-    @include media('>=medium') {
-      font-size: 28px;
-      line-height: 1.29;
-    }
   }
 
   &__thumb {
