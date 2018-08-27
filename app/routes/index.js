@@ -5,9 +5,12 @@ import { hash } from 'rsvp';
 const WNYC_TAG = 'midterms2018';
 const GOTHAMIST_TAG = '@midterms2018';
 
+const META_DESCRIPTION = "Essential election coverage from WNYC + Gothamist";
+
 export default Route.extend({
   hifi: inject(),
   fastboot: inject(),
+  head: inject('head-data'),
 
   model() {
     return hash({
@@ -24,5 +27,9 @@ export default Route.extend({
       politicsBrief: this.store.findRecord('show', 'politicsbrief'),
       morePerfect: this.store.findRecord('show', 'radiolabmoreperfect'),
     });
+  },
+
+  afterModel() {
+    this.get('head').set('descriptoin', META_DESCRIPTION);
   },
 });
