@@ -7469,9 +7469,9 @@ nypr-django-for-ember@nypublicradio/nypr-django-for-ember#fastboot:
     ember-cli-htmlbars "^2.0.1"
     ember-wormhole "^0.5.2"
 
-nypr-election-countdown@^0.1.2:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/nypr-election-countdown/-/nypr-election-countdown-0.1.4.tgz#901e708b136ef03c9df03bf42df4f4a0ac04dbfd"
+nypr-election-countdown@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/nypr-election-countdown/-/nypr-election-countdown-0.1.5.tgz#3eca597c0ab061860a2f5f8ad7953484eb548b75"
   dependencies:
     aws-sdk "^2.257.1"
     dotenv "^6.0.0"
@@ -7481,6 +7481,7 @@ nypr-election-countdown@^0.1.2:
     moment "^2.22.2"
     moment-timezone "^0.5.20"
     nypr-countdown "^0.1.0"
+    nypr-publisher-lib ">=0.4.2"
 
 nypr-fastboot@^0.3.0:
   version "0.3.0"
@@ -7512,7 +7513,7 @@ nypr-player@nypublicradio/nypr-player#fastboot:
     ember-moment "^7.4.1"
     nypr-ui nypublicradio/nypr-ui#fastboot
 
-nypr-publisher-lib@nypublicradio/nypr-publisher-lib#fastboot:
+nypr-publisher-lib@>=0.4.2, nypr-publisher-lib@nypublicradio/nypr-publisher-lib#fastboot:
   version "0.4.2"
   resolved "https://codeload.github.com/nypublicradio/nypr-publisher-lib/tar.gz/b53ca5ec5f7dd300b398b6012a982c842c3e5bc7"
   dependencies:
