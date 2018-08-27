@@ -72,11 +72,10 @@ export default Component.extend({
     }
   },
 
-  actions: {
-    moveBar(index, route) {
-      if (route) {
-        this.set('activeTabIndex', index);
-      }
     }
+  },
+
+  moveBar(index) {
+    this.set('activeTabIndex', index);
   }
 });

@@ -35,6 +35,9 @@ export default Component.extend({
   navigate(e) {
     e.preventDefault();
     let transition = this.router.transitionTo(this.route);
+    if (this.onClick) {
+      this.onClick(...arguments)
+    }
     if (this.hash) {
       let hash = `#${this.hash}`;
       let options = {...this.options};

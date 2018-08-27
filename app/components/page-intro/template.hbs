@@ -24,14 +24,15 @@
 
   {{#hero.top as |top|}}
     {{#top.left}}
-      {{#nav-links links=links as |link|}}
-        {{#unless link.hash}}
-          {{link-to link.text link.route}}
+      {{#nav-links links=links as |nav i|}}
+        {{#unless nav.link.hash}}
+          {{link-to nav.link.text nav.link.route}}
         {{else}}
           {{hash-link
-            route=link.route
-            hash=link.hash
-            label=link.text
+            route=nav.link.route
+            hash=nav.link.hash
+            label=nav.link.text
+            onClick=(action nav.moveBar i)
             options=(hash offset=-100)}}
         {{/unless}}
       {{/nav-links}}
