@@ -10,6 +10,10 @@
   --gradient: white;
   --transparent-gradient: #{rgba(white, 0)};
 
+  @include media(">=medium") {
+    padding-bottom: 40px; // compensate for added margins on listen section items
+  }
+
   &__title {
     @include section-title;
 
