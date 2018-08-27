@@ -20,12 +20,13 @@
   }
 
   &__submission-wrapper, &__list-wrapper {
-    margin-bottom: 66px;
+    margin-bottom: 45px;
 
     @include media(">=medium") {
       margin: 0;
       align-self: stretch;
       flex-basis: 48%;
+      margin-bottom: 66px;
     }
   }
 
@@ -84,7 +85,7 @@
     padding-bottom: 10px !important;
     font-size: 14px !important;
     font-family: $font-opensans !important;
-    margin: 0 auto !important;
+    margin: 30px auto 10px auto !important;
     max-width: 280px !important;
     width: 100% !important;
   }
@@ -96,7 +97,7 @@
   .checkbox__text p {
     font-family: $font-opensans !important;
     color: black !important;
-    font-size:14px !important;
+    font-size: 14px !important;
   }
 
   .section-header-group__section-header {
@@ -111,6 +112,11 @@
 
   .hearken-section__list-wrapper {
     position: relative;
+    margin-left: 15px;
+
+    @include media('>=medium'){
+      margin-left: 0px;
+    }
 
     [id*=hearken-embed] {
       height: 100%;
