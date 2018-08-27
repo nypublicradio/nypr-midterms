@@ -30,4 +30,8 @@ export default Component.extend({
     this._super(...arguments);
     this.set('links', LINKS);
   },
+
+  offset() {
+    return -this.element.clientHeight;
+  }
 });
