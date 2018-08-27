@@ -5,7 +5,7 @@
     </h1>
 
     <p class="opt-in-section__blurb">
-      Sign up for our comprehensive midterms newsletter for the latest updates in your inbox.
+      We filter out the noise to give you the essential local and national 411 on politics today.
     </p>
 
     <p class="opt-in-section__footer medium-and-up">
@@ -28,11 +28,11 @@
         onSuccess=(action (mut step) SMS)}}
     {{else if (eq step SMS)}}
       <h2 class="opt-in-section__header">
-        Thanks for Subscribing to the Newsletter
+        You're in! Thanks for subscribing to the <strong>Politics Brief.</strong>
       </h2>
 
       <p class="opt-in-section__blurb">
-        Don’t forget you can also get SMS text notifications! Turn them off at any time by texting “STOP” to 7777.
+        You can also join <strong>Count Me In</strong>, a service from WNYC, for reminders and updates sent directly to your mobile device to make sure your voice is heard this election season. Message and data rates may apply.
       </p>
 
       {{opt-in-section/form
@@ -44,11 +44,11 @@
         onSuccess=(action (mut step) DONE)}}
     {{else if (eq step DONE)}}
       <h2 class="opt-in-section__header">
-        Thanks for Subscribing to SMS Alerts
+        Awesome! You're on the list!
       </h2>
 
       <p class="opt-in-section__blurb">
-        Don’t forget you can also get text notifications! Turn them off at any time by texting “STOP” to 7777.
+        You will begin to receive updates soon.
       </p>
     {{/liquid-if}}
 
