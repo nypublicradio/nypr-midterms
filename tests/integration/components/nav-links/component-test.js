@@ -20,12 +20,14 @@ module('Integration | Component | nav-links', function(hooks) {
       route: 'bar'
     }]);
     await render(hbs`
-      {{#nav-links links=links as |link|}}
-        {{link.text}}
+      {{#nav-links links=links as |nav i|}}
+        <button {{action nav.moveBar i}}>
+          {{nav.link.text}}
+        </button>
       {{/nav-links}}
     `);
 
-    await click('[data-test-nav-link="1"]');
-    assert.dom('[data-test-nav-link="1"] > .nav-bar').exists('nav bar moves to second spot');
+    await click('[data-test-nav-link="1"] button');
+    assert.dom('[data-test-nav-link="1"] .nav-bar').exists('nav bar moves to second spot');
   });
 });
