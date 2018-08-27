@@ -30,10 +30,6 @@ deploy_fastboot: &deploy_fastboot
     - setup_remote_docker
     - restore_cache:
         key: deploy-{{ checksum "circle.yml" }}
-    - restore_cache:
-        key: fastboot-lock
-    - restore_cache:
-        key: fastboot-lock-{{ checksum "fastboot.lock" }}
     - run:
         name: Install Requirements
         command: |
@@ -45,38 +41,19 @@ deploy_fastboot: &deploy_fastboot
     - deploy:
         name: Deploy Fastboot
         command: |
-          UPPER_ENV=$(echo $ENV | tr a-z A-Z)
-          FAST_HASH=$(printf $(md5sum <<<"$(jq .dependencies package.json)$(env | sed -n "s/^${UPPER_ENV}_//p")"))
-
-          if [ ! -d fastboot.lock ] || [ $FAST_HASH != $(cat fastboot.lock) ]; then
-            # this is either the first deploy, or
-            # fastboot.js, fastboot deps, or envvars changed; re deploy
-
-            # save hash of fastboot deps to lockfile for future deploys
-            echo $FAST_HASH > fastboot.lock
-
-            TAG=${CIRCLE_TAG:-demo}
-            source ~/.venv/bin/activate
-            nyprsetuptools DockerDeploy --environment=$ENV \
-                                        --ecs-cluster=fastboot \
-                                        --ecr-repository=nypr-midterms \
-                                        --tag=$TAG \
-                                        --wait=300 \
-                                        --fargate \
-                                        --execution-role=nypr-midterms-$ENV \
-                                        --task-role=nypr-midterms-$ENV \
-                                        --ports=3000 \
-                                        --cpu=256 \
-                                        --memory-reservation=512
-          fi
-    - save_cache:
-        key: fastboot-lock
-        paths:
-          - fastboot.lock
-    - save_cache:
-        key: fastboot-lock-{{ checksum "fastboot.lock" }}
-        paths:
-          - fastboot.lock
+          TAG=${CIRCLE_TAG:-demo}
+          source ~/.venv/bin/activate
+          nyprsetuptools DockerDeploy --environment=$ENV \
+                                      --ecs-cluster=fastboot \
+                                      --ecr-repository=nypr-midterms \
+                                      --tag=$TAG \
+                                      --wait=300 \
+                                      --fargate \
+                                      --execution-role=nypr-midterms-$ENV \
+                                      --task-role=nypr-midterms-$ENV \
+                                      --ports=3000 \
+                                      --cpu=256 \
+                                      --memory-reservation=512
     - save_cache:
         key: deploy-{{ checksum "circle.yml" }}
         paths:
