@@ -21,8 +21,12 @@
 
   &__submission-wrapper, &__list-wrapper {
     margin-bottom: 66px;
-    align-self: flex-start;
-    flex-basis: 48%;
+
+    @include media(">=medium") {
+      margin: 0;
+      align-self: stretch;
+      flex-basis: 48%;
+    }
   }
 
   &__flex-wrapper{
@@ -76,6 +80,19 @@
   .hearken-section__list-wrapper {
     position: relative;
 
+    [id*=hearken-embed] {
+      height: 100%;
+
+      > div {
+        height: 100%;
+      }
+    }
+
+    .hearken-embed.cleanslate {
+      display: flex !important;
+      flex-direction: column;
+    }
+
     .header--text {
       position: absolute !important;
       bottom: 100% !important;
@@ -90,6 +107,7 @@
     }
 
     .embed-content-container {
+      flex: 1;
       border: solid 1px $lightgray !important;
       padding: 0 !important;
     }
