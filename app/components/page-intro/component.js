@@ -2,11 +2,11 @@ import Component from '@ember/component';
 
 const LINKS = [{
   route: 'index',
-  text: 'All',
+  text: 'Main',
   hash: 'top',
 }, {
   route: 'opt-in',
-  text: 'Get Updates',
+  text: 'Newsletter',
 }, {
   route: 'hearken-hub',
   text: 'Ask a Reporter',
