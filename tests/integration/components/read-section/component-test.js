@@ -53,7 +53,6 @@ module('Integration | Component | read-section', function(hooks) {
     });
 
     await render(hbs`{{read-section wnyc=wnyc gothamist=gothamist}}`);
-    await click('.read-section .page-section__toggle');
 
     assert.equal(findAll('.story-tease').length, 4, 'only 4 stories render')
 

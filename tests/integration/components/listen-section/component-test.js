@@ -18,7 +18,6 @@ module('Integration | Component | listen-section', function(hooks) {
     this.mock(dj).expects('play').withArgs('wnyc-fm939').resolves();
 
     await render(hbs`{{listen-section}}`);
-    await click('[data-test-open-section]');
 
     await click('[data-test-selector="live"] button');
   });
