@@ -124,6 +124,8 @@
 
   &__item {
     text-align: center;
+    margin-bottom: 16px;
+
     a {
       text-decoration: none;
       color: black;
@@ -131,7 +133,7 @@
 
       font-size: 14px;
       font-weight: 600;
-      line-height: 2.21;
+      line-height: 1.5;
       color: $lightblue;
     }
   }
