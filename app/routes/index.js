@@ -31,6 +31,6 @@ export default Route.extend({
   },
 
   afterModel() {
-    this.get('head').set('descriptoin', META_DESCRIPTION);
+    this.head.set('description', META_DESCRIPTION);
   },
 });
