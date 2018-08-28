@@ -57,7 +57,7 @@ module('Unit | Serializer | gothamist story', function(hooks) {
 
     const GOTH_TOTAL_ENTRIES = 3
 
-    let response = serializer.normalizeQueryResponse(store, null, [GOTH_STORIES, GOTH_TOTAL_ENTRIES]);
+    let response = serializer.normalizeQueryResponse(store, null, {entries: GOTH_STORIES, total_entries: GOTH_TOTAL_ENTRIES});
     let [ story ] = response.data;
 
     assert.equal(response.data.length, 3, 'should serialize 3 stories');

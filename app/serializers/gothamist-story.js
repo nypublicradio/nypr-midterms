@@ -23,7 +23,7 @@ export default DS.JSONAPISerializer.extend({
 
   keyForAttribute: key => key.decamelize(),
 
-  normalizeQueryResponse(store, modelClass, payload, ...rest) {
-    return this._super(store, modelClass, { data: payload[0].map(makeJSONAPI), meta: {total_entries: payload[1] }}, ...rest);
+  normalizeQueryResponse(store, modelClass, {entries, total_entries}, ...rest) {
+    return this._super(store, modelClass, { data: entries.map(makeJSONAPI), meta: {total_entries}}, ...rest);
   }
 });
