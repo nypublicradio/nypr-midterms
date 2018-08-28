@@ -4,9 +4,17 @@
   {{!--
     hearken-section__chunk-wrapper is a wrapper that gets a script added to it once a chunk is loaded.
   --}}
-  <div class="hearken-section__chunk-wrapper"></div>
+  <div class="hearken-section__chunk-wrapper" id="vote">
+    <h3 class="hearken-section__header">
+      {{nypr-svg icon="thumbs"}}
+      <span>
+        Vote on Your Submissions
+      </span>
+    </h3>
+    <div id="hearken-chunk"></div>
+  </div>
 
-  <div class="hearken-section__flex-wrapper">
+  <div class="hearken-section__flex-wrapper" id="ask">
     {{#unless testing}}
       <div class="hearken-section__submission-wrapper"> <script async src="https://modules.wearehearken.com/wnyc/embed/1770.js"></script></div>
     {{/unless}}

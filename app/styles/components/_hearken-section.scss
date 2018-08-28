@@ -39,6 +39,7 @@
     border: solid 2px $lightgray;
     padding: 30px 15px 10px 0px;
     position: relative;
+
     &:after {
       content: '';
       position: absolute;
@@ -87,15 +88,137 @@
 
   // styling the voting module
   .hearken-section__chunk-wrapper {
-    .question--voteable {
-      display: flex !important;
-      font-family: $font-opensans !important;
-    }
-    .vote-icon svg {
-      height: 30px;
-      width: 30px;
+    padding-top: 40px;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      background-color: $red;
+      height: 4px;
+      width: 69px;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
     }
 
+    .thumbs {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 8px;
+    }
+
+    .hearken-section__header {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      font-size: 24px;
+      margin-bottom: 24px;
+
+      span {
+        text-align: center;
+        flex-basis: 100%;
+      }
+    }
+
+    #hearken-chunk {
+      background-color: white !important;
+
+      .embed-content-container,
+      .section-header-group,
+      .section-header-group__section-subheader,
+      .bar-graphs-container,
+      .hearken-badge {
+        background-color: white !important;
+      }
+
+      .section-header-group__section-subheader {
+        font-size: 22px !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        line-height: 1.36 !important;
+      }
+
+      .question--voteable {
+        width: 100% !important;
+        padding: 24px !important;
+        margin-top: 0 !important;
+        margin-bottom: 16px !important;
+        display: flex !important;
+        align-items: center;
+
+        font-family: $font-opensans !important;
+
+        border: solid 2px $offwhite !important;
+        transition: border-color 125ms ease !important;
+
+        .vote-icon {
+          margin-right: 6px !important;
+          width: 30px !important;
+
+          display: flex !important;
+          align-items: center;
+          justify-content: flex-end;
+
+          svg {
+            transition: flex-basis 125ms ease !important;
+            flex-basis: 20px;
+          }
+        }
+
+        .votable-question-details {
+          width: auto !important;
+          flex: 1;
+        }
+
+        .question__question-text {
+          line-height: 1.57 !important;
+          font-size: 14px !important;
+        }
+
+        .question__question-asker {
+          font-size: 12px !important;
+        }
+
+        &:hover {
+          border-color: $lightgray !important;
+          background-color: white !important;
+
+
+          .vote-icon svg {
+            flex-basis: 30px !important;
+          }
+
+          .question__question-text {
+            color: black !important;
+          }
+
+          .question__question-asker {
+            color: $gray !important;
+          }
+
+          .vote-icon__checkmark {
+            stroke: white !important;
+          }
+
+          .vote-icon__circle {
+            fill: $blue !important;
+          }
+        }
+      }
+
+      @include media(">=medium") {
+        .section-header-group {
+          margin-bottom: 25px !important;
+        }
+
+        .question--voteable .question__question-text {
+          font-size: 18px !important;
+        }
+      }
+    }
   }
 
   // styling the submission form

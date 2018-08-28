@@ -17,7 +17,7 @@ export default Component.extend({
   },
 
   _renderHearkenScript(){
-    var div = document.querySelector('.hearken-section__chunk-wrapper');
+    var div = document.querySelector('#hearken-chunk');
     if (div.hasChildNodes() || !this.get('chunk')){
       return;
     } else {
