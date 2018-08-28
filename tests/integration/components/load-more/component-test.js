@@ -46,6 +46,7 @@ module('Integration | Component | load-more', function(hooks) {
 
     let storeStub = this.stub(store, 'query')
         .withArgs('gothamist-story', gothQuery1).resolves({
+    let store = this.owner.lookup('service:store');
         data: [storyObject1, storyObject1, storyObject1, storyObject1, storyObject1,
                storyObject1, storyObject1, storyObject1, storyObject1, storyObject1],
           meta: {
