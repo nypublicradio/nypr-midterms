@@ -4,8 +4,9 @@
     {{#if (and story.thumbnailLarge (media 'isMedium'))}}
       {{#mo.media}}
         {{tease.image
+          width=288
           round=true
-          src=story.thumbnailLarge}}
+          src=story.thumbnailSmall}}
       {{/mo.media}}
     {{/if}}
 
