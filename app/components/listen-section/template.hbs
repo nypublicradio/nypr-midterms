@@ -1,4 +1,4 @@
-{{#page-section gradient=true open=(media 'isMedium') as |section|}}
+{{#page-section gradient=true open=true as |section|}}
   {{#section.tease}}
     <h1 class="listen-section__title" id="podcasts">
       <span>
@@ -6,13 +6,6 @@
       </span>
     </h1>
 
-    {{#unless section.isOpen}}
-    <div class="listen-section__episodes">
-      <div class="listen-section__item">
-        {{episode-tease show=politicsBrief}}
-      </div>
-    </div>
-    {{/unless}}
   {{/section.tease}}
 
   {{#section.body}}

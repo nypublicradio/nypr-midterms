@@ -29,8 +29,6 @@
   }
 
   &__footer {
-    margin-bottom: 18px;
-
     @include media(">=medium") {
       @include wrapper($width: 220px, $padding: 0);
     }

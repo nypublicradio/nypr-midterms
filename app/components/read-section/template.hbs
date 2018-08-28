@@ -1,4 +1,4 @@
-{{#page-section gradient=true open=(media 'isMedium') as |section|}}
+{{#page-section gradient=true open=true as |section|}}
 
   {{#section.tease}}
     <h1 class="read-section__title" id="news">
@@ -6,17 +6,6 @@
         Election News and Analysis
       </span>
     </h1>
-
-    {{#with sorted.firstObject as |story|}}
-    <div class="read-story read-story--lead">
-      {{story-tease
-        data-test-story-tease=0
-        featured=true
-        imageUrl=(if (media 'isMedium') story.thumbnailLarge story.thumbnailSmall)
-        story=story
-      }}
-    </div>
-    {{/with}}
   {{/section.tease}}
 
   {{#section.body}}

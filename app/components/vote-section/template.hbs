@@ -1,34 +1,10 @@
-{{#page-section gradient=true open=(media 'isMedium') as |section|}}
+{{#page-section gradient=true open=true as |section|}}
   {{#section.tease}}
     <h1 class="vote-section__title" id="guide">
       <span>
         Voter Tools
       </span>
     </h1>
-
-    {{#unless section.isOpen}}
-      <div class="vote-tools">
-        <div class="vote-tools__item">
-        {{#media-object tagName='article' class="vote-tool" as |mo|}}
-          {{#mo.media class="vote-tool__thumb"}}
-            <img src="/assets/images/liberty.png" alt="Statue of Liberty">
-          {{/mo.media}}
-
-          {{#mo.body class="vote-tool__body"}}
-            <h1 class="vote-tool__title">2018 Voter Guide</h1>
-
-            <p class="vote-tool__summary">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolor.
-            </p>
-          {{/mo.body}}
-
-          <div class="vote-tool__footer">
-            <a href="" class="vote-tool__link">Go to the Guide</a>
-          </div>
-        {{/media-object}}
-        </div>
-      </div>
-    {{/unless}}
   {{/section.tease}}
 
   {{#section.body}}
