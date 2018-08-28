@@ -5,7 +5,7 @@ export default Component.extend({
 
   urlToShare() {
     let url = encodeURIComponent(`${location}?utm_medium=${this.medium}&utm_campaign=${this.campaign}`);
-    return `mailto:?subject=${this.subject}&body=${url}`;
+    return `mailto:?subject=${this.subject || document.title}&body=${url}`;
   },
 
   popup() {
