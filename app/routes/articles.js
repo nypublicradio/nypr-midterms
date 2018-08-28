@@ -1,9 +1,14 @@
 import Route from '@ember/routing/route';
+import { inject } from '@ember/service';
 import { hash } from 'rsvp';
 
+const META_DESCRIPTION = "Essential local and national politics coverage from WNYC + Gothamist.";
+
 export default Route.extend({
-  titleToken: "News and Analysis",
-  
+  titleToken: "Election News and Analysis",
+
+  head: inject('head-data'),
+
   queryParams: {
     page: {
       refreshModel: true
@@ -22,6 +27,10 @@ export default Route.extend({
         'fields[story]': 'title,newsdate,producing_organizations,appearances,image_main,url,tease,slug,url,headers,show_title'
       })
     });
+  },
+
+  afterModel() {
+    this.head.set('description', META_DESCRIPTION);
   },
 
   setupController(controller, model) {
