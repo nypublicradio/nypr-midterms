@@ -111,7 +111,6 @@ module('Integration | Component | load-more', function(hooks) {
     // need to load more.
     assert.ok(storeStub.calledThrice, 'three total queries');
     assert.ok(storeStub.calledWith('gothamist-story', gothQuery2), 'called with goth query 2');
-    console.log('here');
 
     await click('.load-more__button');
     // four queries should be made. The component should know it needs more stories from both

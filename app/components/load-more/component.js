@@ -13,14 +13,10 @@ export default Component.extend({
   hasMoreWNYC: true,
   hasMoreGoth: true,
   hasMore: computed('hasMoreWNYC', 'hasMoreGoth', function() {
-    console.log(get(this, 'hasMoreWNYC'), get(this, 'hasMoreGoth'));
     return get(this, 'hasMoreWNYC') || get(this, 'hasMoreGoth');
   }),
   hasLoadedChanged: observer('hasLoadedWNYC', 'hasLoadedGoth', function() {
     set(this, 'hasLoaded', get(this, 'hasLoadedWNYC') && get(this, 'hasLoadedGoth'));
-  }),
-  hasMoreChanged: observer('hasMoreWNYC', 'hasMoreGoth', function() {
-    //set(this, 'hasMore', get(this, 'hasMoreWNYC') || get(this, 'hasMoreGoth'));
   }),
   setItems: observer('hasLoaded', function() {
     // get all the unshown items, add the two lists together and sort by publish date.
@@ -91,7 +87,6 @@ export default Component.extend({
       if(this.get('hasMoreGoth') &&
         ((this.get('gothItems').length - this.get('gothCairn')) < 10)){
         this.set('hasLoadedGoth', false);
-        console.log(this.get('gothItems'), 'loading goth')
         this.store.query('gothamist-story', {
           tag: this.get('gothTag'),
           count: pageSize,
@@ -105,7 +100,6 @@ export default Component.extend({
       if(get(this, 'hasMoreWNYC') &&
         ((this.get('wNYCItems').length - this.get('wNYCCairn')) < 10)){
         this.set('hasLoadedWNYC', false);
-        console.log(this.get('wNYCItems'), 'loading wnyc')
         this.store.query('story', {
           tags: this.get('wNYCTag'),
           page_size: pageSize,
@@ -122,7 +116,6 @@ export default Component.extend({
 
     processResultsWNYC(results) {
       get(this, 'wNYCItems').pushObjects(results.toArray());
-      console.log(results, get(this, 'wNYCItems.length'))
       this.set('hasMoreWNYC', (get(results, 'meta.pagination.count') > get(this, 'wNYCItems.length')));
       if (this.get('hasMoreWNYC')) {
         this.incrementProperty('pageWNYC');
