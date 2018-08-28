@@ -51,23 +51,46 @@
     align-items: stretch;
 
     flex-wrap: wrap;
+
+    display: grid;
+    grid-template-columns: 304px;
+    column-gap: 24px;
+    row-gap: 24px;
+
+    max-width: 640px;
+    margin: 0 auto;
+
+    @include media(">=medium") {
+      grid-template-columns: repeat(2, 304px);
+
+      &:before {
+        order: 1;
+        content: '';
+        background-color: rgba(black, 0.08);
+      }
+    }
+
+    @include media(">=large") {
+      grid-template-columns: repeat(3, 304px);
+      max-width: 960px;
+
+      &:after {
+        order: 2;
+        content: '';
+        background-color: rgba(black, 0.08);
+      }
+    }
   }
 
   &__item {
     flex-basis: 304px;
-    margin-bottom: 24px;
     min-height: 367px;
 
     display: flex;
+    order: 0;
 
     &:last-child {
       margin-bottom: 0;
-    }
-
-    @include media('>=medium') {
-      &:last-child {
-        margin-bottom: 24px; // everything gets a margin to deal with in between media queries
-      }
     }
 
     > * {
