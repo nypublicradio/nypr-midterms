@@ -7470,8 +7470,8 @@ nypr-django-for-ember@nypublicradio/nypr-django-for-ember#fastboot:
     ember-wormhole "^0.5.2"
 
 nypr-election-countdown@^0.1.5:
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/nypr-election-countdown/-/nypr-election-countdown-0.1.7.tgz#746c20a302db9371844e84546bf41c38265690e1"
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/nypr-election-countdown/-/nypr-election-countdown-0.1.8.tgz#1a3a5785134b739192f2f55048b251cbdd4aa496"
   dependencies:
     aws-sdk "^2.257.1"
     dotenv "^6.0.0"
