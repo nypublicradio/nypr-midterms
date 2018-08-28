@@ -116,7 +116,7 @@ module('Integration | Component | load-more', function(hooks) {
     // four queries should be made. The component should know it needs more stories from both
     // wnyc and goth, but there are no more goth stories (this is known from the meta info),
     // so it only loads from wnyc.
-    assert.ok(storeStub.callCount(4), 'four total queries');
+    assert.equal(storeStub.callCount, 4, 'four total queries');
     assert.ok(storeStub.calledWith('story', wNYCQuery2), 'called with wnyc query');
 
     // all stories have been loaded
