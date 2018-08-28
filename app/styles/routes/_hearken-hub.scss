@@ -38,11 +38,35 @@
 
 }
 
+
+svg {
+  fill: $darkgray;
+}
+
 .load-more {
-  @include wrapper($width: 800px);
+  @include wrapper($width: 800px, $padding: 0 24px);
   margin-bottom: 100px;
 }
 
 .articles-list {
   margin-bottom: 30px;
+
+  &__header.media-object {
+    flex-direction: column;
+    border-bottom: solid 1px $lightgray;
+    padding-bottom: 24px;
+  }
+
+  .light-bulbs {
+    margin-bottom: 24px;
+    width: 68px;
+    height: 49px;
+  }
+
+  &__title {
+    font-family: $font-montserrat;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 600;
+  }
 }

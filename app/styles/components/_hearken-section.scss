@@ -20,7 +20,7 @@
   }
 
   &__submission-wrapper, &__list-wrapper {
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 
     @include media(">=medium") {
       margin: 0;
@@ -68,8 +68,8 @@
   }
 
   .header--text{
-    font-family: $font-opensans !important;
-    font-weight: bold !important;
+    font-family: $font-montserrat !important;
+    font-weight: 600 !important;
   }
 
   .section-header-group__section-header {
@@ -222,6 +222,14 @@
   }
 
   // styling the submission form
+  .hearken-section__submission-wrapper {
+    .dialog {
+      margin-top: 8px;
+      width: 59px;
+      height: 50px;
+    }
+  }
+
   .text-input--long, .text-input__input {
     border:solid 2px $lightgray !important;
     &::placeholder {
@@ -290,6 +298,10 @@
 
     .section-header-group {
       display: none !important;
+    }
+
+    .question-list {
+      max-height: 570px !important;
     }
 
     .question {
