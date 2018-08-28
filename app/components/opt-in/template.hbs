@@ -1,29 +1,28 @@
 <h1 class="opt-in__header"><span>Sign Up for Updates</span></h1>
-<p class="opt-in__subheader">Get the latest updates via Email Lorem Ips Lorem Ipsum Dolor</p>
 
-<p class="opt-in__success-text">
-  {{#if (and emailSuccess (not phoneSuccess))}}
-    <p data-test-email-success><b>Thanks for subscribing to our Newsletter</b></p>
-    <p>Don’t forget you can also get text notifications! Turn them off at any time by texting “STOP” to 7777.</p>
-  {{/if}}
+{{#if (and emailSuccess (not phoneSuccess))}}
+  <div class="opt-in__success-text" data-test-email-success>
+    {{{COPY.EMAIL_SUCCESS}}}
+  </div>
+{{/if}}
 
-  {{#if (and phoneSuccess (not emailSuccess))}}
-    <p data-test-sms-success><b>Thanks for subscribing to SMS Updates</b></p>
-    <p>Don’t forget you can also sign up to get Newsletter updates with the latest and greatest below.</p>
-  {{/if}}
+{{#if (and phoneSuccess (not emailSuccess))}}
+  <div class="opt-in__success-text" data-test-phone-success>
+    {{{COPY.PHONE_SUCCESS}}}
+  </div>
+{{/if}}
 
-  {{#if (and phoneSuccess emailSuccess)}}
-    <div class="opt-in__both-success" data-test-both-success>
-      <p><b>Thanks for subscribing to our Newsletter and SMS updates</b></p>
-      <p>If you change your mind,  turn SMS notifications off at any time by texting “STOP” to 7777. </p>
-    </div>
-  {{/if}}
-</p>
+{{#if (and phoneSuccess emailSuccess)}}
+  <div class="opt-in__both-success" data-test-both-success>
+    {{{COPY.BOTH_SUCCESS}}}
+  </div>
+{{/if}}
 
 {{#if (not isFullFormSubmitted)}}
   <form {{action 'submitForms' on='submit'}}>
-    <div class="opt-in__formset">
+    <div class="opt-in__formset opt-in__email-formset {{if (or emailSuccess phoneSuccess) 'half-submitted'}}">
       {{#if (not emailSuccess)}}
+        {{{if (not phoneSuccess) COPY.EMAIL }}}
         <div class="opt-in__email-form opt-in__form">
           {{fa-icon "envelope" class="nypr-input-icon"}}
           {{nypr-input
@@ -36,8 +35,11 @@
           }}
         </div>
       {{/if}}
+    </div>
 
+    <div class="opt-in__formset opt-in__phone-formset {{if (or emailSuccess phoneSuccess) 'half-submitted'}}">
       {{#if (not phoneSuccess)}}
+        {{{if (not emailSuccess) COPY.PHONE }}}
         <div class="opt-in__phone-form opt-in__form">
           {{fa-icon "mobile-alt" class="nypr-input-icon"}}
           {{nypr-input

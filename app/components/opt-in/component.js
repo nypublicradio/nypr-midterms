@@ -12,6 +12,38 @@ import {
   validatePresence
 } from "ember-changeset-validations/validators";
 
+const COPY = {
+  EMAIL: `
+    <p>It’s election season, and WNYC and Gothamist are teaming up to offer
+    essential news and analysis in our new newsletter, the <b>Politics
+    Brief</b>.</p>
+    <p>Sign up to receive the <b>Politics Brief</b> a few times a week by
+    entering your email below.</p>`,
+  PHONE: `
+    <p>Join <b>Count Me In</b>, where we’ll guide you through a short series of
+      suggestions and reminders for key dates and actions to make sure your
+      voice is heard this election season.</p>
+    <p>Add your phone number and get:</p>
+    <ul>
+      <li>Timely reminders</li>
+      <li>Help with voter registration</li>
+      <li>Information on your polling place</li>
+      <li>Easy ways to make sure your friends and family to vote</li>
+    </ul>`,
+  EMAIL_SUCCESS: `
+    <p>You’re in! Thanks for subscribing to the <b>Politics Brief</b>.</p>
+    <p>You can also join <b>Count Me In</b>, a service from WNYC, for reminders
+    and updates sent directly to your mobile device to make sure your voice is
+    heard this election season. Message and data rates may apply.</p>`,
+  PHONE_SUCCESS: `
+    <p>Awesome! You’re on the list!</p>
+    <p>You can also sign up to receive The Politics Brief a few times a week by
+    entering your email below</p>`,
+  BOTH_SUCCESS: `
+    <p>Thanks for signing up!</p>
+    <p>You will begin to receive updates soon.</p>`
+};
+
 let newsletterEndpoint = `${config.optInAPI}/mailchimp`;
 let smsEndpoint = `${config.optInAPI}/mobile-commons`;
 let validations = {
@@ -24,6 +56,8 @@ export default Component.extend({
   classNames: ["opt-in"],
   emailResponseErrors: null,
   phoneResponseErrors: null,
+
+  COPY,
 
   init() {
     this._super(...arguments);
