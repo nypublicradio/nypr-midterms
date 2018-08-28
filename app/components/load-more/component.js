@@ -27,7 +27,7 @@ export default Component.extend({
       let gothUnshown = this.get('gothItems').slice(this.get('gothCairn'));
       let unshown =  wNYCUnshown.concat(gothUnshown).sort((a, b) => moment(b.newsdate) - moment(a.newsdate));
       this.get('items').pushObjects(unshown.toArray().slice(0, this.get('pageSize')));
-      this.adjustCairns(this.get('items'), wNYCUnshown, gothUnshown);
+      this.adjustCairns(this.get('items').lastObject, wNYCUnshown, gothUnshown);
     }
   }),
 
@@ -51,8 +51,7 @@ export default Component.extend({
   },
 
 
-  adjustCairns(items, wNYCUnshown, gothUnshown){
-    let lastStory = items[this.get('pageSize') * this.get('page') - 1];
+  adjustCairns(lastStory, wNYCUnshown, gothUnshown){
     // gets the lists of WNYC and Goth stories that were just loaded and which
     // are among the 10 most recently published (meaning they will be shown on the page).
     // Then take the length of the list and add it to the cairn counters to keep track
