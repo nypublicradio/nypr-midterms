@@ -1,5 +1,7 @@
-{{#if (has-block)}}
-  {{yield}}
-{{else}}
-  {{fa-icon 'envelope' prefix='fas'}}
-{{/if}}
+<button class="share-icon share-icon__email" {{action popup}}>
+  {{#if (has-block)}}
+    {{yield}}
+  {{else}}
+    {{fa-icon 'envelope' prefix='fas'}}
+  {{/if}}
+</button>

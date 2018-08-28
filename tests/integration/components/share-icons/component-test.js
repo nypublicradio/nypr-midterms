@@ -45,9 +45,13 @@ module('Integration | Component | share-icons', function(hooks) {
     await click('.share-icon__tweet');
   });
 
-  test('it renders a mailto: link', async function(assert) {
+  test('it renders a mailto: link', async function() {
     const URL = encodeURIComponent(`${location}?utm_medium=Email&utm_campaign=midterms`);
     const SUBJECT = 'bar';
+
+    this.mock(window)
+      .expects('open')
+      .withArgs(`mailto:?subject=${SUBJECT}&body=${URL}`);
 
     this.setProperties({
       subject: SUBJECT,
@@ -59,7 +63,7 @@ module('Integration | Component | share-icons', function(hooks) {
       {{/share-icons}}
     `);
 
-    assert.dom('a.share-icon__email').hasAttribute('href', `mailto:?subject=${SUBJECT}&body=${URL}`);
+    await click('.share-icon__email');
   });
 
   test('it renders links', async function(assert) {

@@ -1,6 +1,6 @@
 {{yield (hash
   tweet=(component 'share-icons/tweet' open=(action 'openShare') medium=medium campaign=campaign)
   fb-post=(component 'share-icons/fb-post' open=(action 'openShare') medium=medium campaign=campaign)
-  email=(component 'share-icons/email' medium='Email' campaign=campaign)
+  email=(component 'share-icons/email' open=(action 'openShare') medium='Email' campaign=campaign)
   link=(component 'share-icons/link')
 )}}

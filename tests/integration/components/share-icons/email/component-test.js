@@ -7,14 +7,17 @@ module('Integration | Component | share-icons/email', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    const URL = encodeURIComponent(`${location}?utm_medium=Email&utm_campaign=midterms`);
-    this.setProperties({
-      subject: 'foo',
-      url: location,
-    });
-    await render(hbs`{{share-icons/email url=url subject=subject campaign='midterms' medium='Email'}}`);
+    await render(hbs`{{share-icons/email}}`);
 
     assert.dom('.share-icon__email').exists();
-    assert.dom('.share-icon__email').hasAttribute('href', `mailto:?subject=foo&body=${URL}`);
+
+    // Template block usage:
+    await render(hbs`
+      {{#share-icons/email}}
+        template block text
+      {{/share-icons/email}}
+    `);
+
+    assert.dom('.share-icon__email').hasText('template block text');
   });
 });
