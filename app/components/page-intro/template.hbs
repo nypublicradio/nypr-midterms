@@ -1,7 +1,7 @@
 {{#nypr-ui/hero
   class="page-intro"
   gradient=true
-  sticky=true
+  sticky=showNav
   offset=offset
   as |hero|}}
   {{#hero.footer class="page-intro__footer"}}
@@ -19,10 +19,11 @@
     {{page-intro/lockup}}
   {{/hero.headline}}
 
-  <div class="election-countdown-wrapper">
+  <div class="election-countdown-wrapper {{unless showNav 'countdown--nudge'}}">
     {{election-countdown unit='days' to='2018-11-06T00:00:00.000-05:00'}}
   </div>
 
+  {{#if showNav}}
   {{#hero.top as |top|}}
     {{#top.left}}
       {{#nav-links links=links as |nav i|}}
@@ -39,4 +40,5 @@
       {{/nav-links}}
     {{/top.left}}
   {{/hero.top}}
+  {{/if}}
 {{/nypr-ui/hero}}
