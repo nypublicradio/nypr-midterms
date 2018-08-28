@@ -19,9 +19,9 @@
         submit=(action submitEmail)
         onSuccess=(action (mut step) SMS)}}
     {{else if (eq step SMS)}}
-      <h2 class="opt-in-section__header">
+      <p class="opt-in-section__header">
         You're in! Thanks for subscribing to the <strong>Politics Brief.</strong>
-      </h2>
+      </p>
 
       <p class="opt-in-section__blurb">
         You can also join <strong>Count Me In</strong>, a service from WNYC, for reminders and updates sent directly to your mobile device to make sure your voice is heard this election season. Message and data rates may apply.
@@ -35,9 +35,9 @@
         submit=(action submitPhone)
         onSuccess=(action (mut step) DONE)}}
     {{else if (eq step DONE)}}
-      <h2 class="opt-in-section__header">
+      <p class="opt-in-section__header">
         Awesome! You're on the list!
-      </h2>
+      </p>
 
       <p class="opt-in-section__blurb">
         You will begin to receive updates soon.
