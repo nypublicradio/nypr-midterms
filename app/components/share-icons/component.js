@@ -1,5 +1,4 @@
 import Component from '@ember/component';
-import { computed } from '@ember/object';
 import { inject } from '@ember/service';
 import { reads } from '@ember/object/computed';
 
@@ -11,15 +10,6 @@ export default Component.extend({
 
   medium: 'social',
   campaign: 'midterms',
-
-  url: computed('isFastBoot', function() {
-    if (this.get('isFastBoot')) {
-      let { protocol, host, path } = this.get('fastboot.request').getProperties('protocol', 'host', 'path');
-      return `${protocol}//${host}${path}`;
-    } else {
-      return window.location.toString();
-    }
-  }),
 
   getPopupPosition() {
     const dualScreenLeft = screen.availLeft;
