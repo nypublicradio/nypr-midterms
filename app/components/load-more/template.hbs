@@ -5,11 +5,13 @@
   )}}
 
   {{#if hasMore}}
-    <a class="load-more__button"
-       data-action={{dataAction}}
-       data-label={{dataLabel}}
+    <button class="load-more__button {{unless hasLoaded 'is-loading'}}"
        disabled={{not hasLoaded}}
        {{action 'fetchData'}}>
-      Load More
-    </a>
+      {{#unless hasLoaded}}
+        {{fa-icon icon='spinner' prefix='fas' spin=true}}
+      {{else}}
+        Load More
+      {{/unless}}
+    </button>
   {{/if}}
