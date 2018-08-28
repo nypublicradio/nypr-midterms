@@ -7,7 +7,7 @@
   @include section-text($color: black);
 
   padding: 40px 16px 0;
-  margin: 0 auto 60px auto;
+  margin: 0 auto 60px;
   max-width: 800px;
 
   a {
@@ -26,7 +26,7 @@
       margin: 0;
       align-self: stretch;
       flex-basis: 48%;
-      margin-bottom: 66px;
+      margin-bottom: 30px;
     }
   }
 
