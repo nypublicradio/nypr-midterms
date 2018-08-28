@@ -37,3 +37,12 @@
   }
 
 }
+
+.load-more {
+  @include wrapper($width: 800px);
+  margin-bottom: 100px;
+}
+
+.articles-list {
+  margin-bottom: 30px;
+}

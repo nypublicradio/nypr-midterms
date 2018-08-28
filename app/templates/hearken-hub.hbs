@@ -10,8 +10,16 @@
 
 {{hearken-section slug="midterms-hearken-chunk-2"}}
 
+{{#load-more gothTag="@wnyc" wNYCTag="news" as |results|}}
+  <div class="articles-list">
+    {{#each results.data as |story|}}
+    <div class="articles-list__item">
+      {{story-media-tease story=story}}
+    </div>
+    {{/each}}
+  </div>
+{{/load-more}}
+
 {{opt-in-section}}
 
 {{site-footer}}
-
-{{outlet}}

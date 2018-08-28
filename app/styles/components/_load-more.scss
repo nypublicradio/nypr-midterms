@@ -1,0 +1,21 @@
+@import "../mixins/buttons";
+@import "../mixins/vars";
+@import "../mixins/text";
+@import "../mixins/layout";
+
+.load-more {
+  &__button{
+    @include btn($background-color: $blue,
+                 $border-radius: 20px,
+                 $color: white,
+                 $padding: 8px 0);
+    max-width: 250px;
+    margin: 0 auto;
+    width: 100%;
+    line-height: 24px;
+
+    &.is-loading {
+      font-size: 24px;
+    }
+  }
+}

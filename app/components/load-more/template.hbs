@@ -1,0 +1,17 @@
+{{yield (hash
+    data=items
+    hasMore=hasMore
+    hasLoaded=hasLoaded
+  )}}
+
+  {{#if hasMore}}
+    <button class="load-more__button {{unless hasLoaded 'is-loading'}}"
+       disabled={{not hasLoaded}}
+       {{action 'fetchData'}}>
+      {{#unless hasLoaded}}
+        {{fa-icon icon='spinner' prefix='fas' spin=true}}
+      {{else}}
+        Load More
+      {{/unless}}
+    </button>
+  {{/if}}
