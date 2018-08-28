@@ -12,7 +12,7 @@ module("Integration | Component | opt-in", function(hooks) {
     await render(hbs`{{opt-in}}`);
 
     assert.dom(".opt-in").exists();
-    assert.dom(".opt-in").includesText("Sign Up for Updates");
+    assert.dom(".opt-in").includesText("Get Updates");
 
     await fillIn("[data-test-email-input] > input", "test@example.com");
     await click("[data-test-legal-checkbox]");
