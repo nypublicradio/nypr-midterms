@@ -1,5 +1,11 @@
+header.nypr-brand-header {
+  @include media(">800px", "<=884px") {
+    padding: 0 8px;
+  }
+}
+
 .nypr-brand-header__left .intro-donate {
-  @include media('>=800px') {
+  @include media('>800px') {
     display: none;
   }
 }
@@ -8,7 +14,7 @@
   justify-content: flex-end;
 
   .intro-donate {
-    @include media('<800px') {
+    @include media('<=800px') {
       display: none;
     }
   }
