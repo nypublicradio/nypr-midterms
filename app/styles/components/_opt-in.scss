@@ -147,6 +147,24 @@
     }
   }
 
+  &__formset ul {
+    text-align: left;
+    max-width: 80%;
+    margin: 10px auto 20px;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__formset li {
+    padding-left: 1em;
+    text-indent: -.7em;
+  }
+
+  &__formset li::before {
+    content: "• ";
+    color: red; /* or whatever color you prefer */
+  }
+
   &__formset {
     @include body-text;
 
@@ -155,6 +173,11 @@
     justify-content: space-between;
     margin-bottom: 30px;
     padding: 10px 32px 32px 32px;
+    text-align: center;
+
+    @include media("<medium") {
+      padding: 10px 20px 32px;
+    }
   }
 
   &__email-formset {
