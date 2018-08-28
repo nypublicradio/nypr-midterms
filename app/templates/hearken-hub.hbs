@@ -12,6 +12,14 @@
 
 {{#load-more gothTag="@hearken" wNYCTag="hearken" as |results|}}
   <div class="articles-list" id="browse">
+    {{#media-object class="articles-list__header" valign='c' as |mo|}}
+      {{#mo.media}}
+        {{nypr-svg icon="light-bulbs"}}
+      {{/mo.media}}
+      {{#mo.body}}
+        <h2 class="articles-list__title">Browse Newsroom Answers</h2>
+      {{/mo.body}}
+    {{/media-object}}
     {{#each results.data as |story|}}
     <div class="articles-list__item">
       {{story-media-tease story=story}}
