@@ -105,7 +105,7 @@ export default Component.extend({
           page_size: pageSize,
           page: pageWNYC,
           ordering: '-newsdate',
-          'fields[story]': 'title,newsdate,producing_organizations,slug,appearances,image_main,url,tease'
+          'fields[story]': 'title,newsdate,producing_organizations,appearances,image_main,url,tease,slug,url,headers,show_title'
         }).then(results => {
           return this.send('processResultsWNYC', results);
         }).finally(() => {

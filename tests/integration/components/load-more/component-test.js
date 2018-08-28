@@ -33,14 +33,14 @@ module('Integration | Component | load-more', function(hooks) {
         page_size: 10,
         page: 1,
         ordering: '-newsdate',
-        'fields[story]': 'title,newsdate,producing_organizations,slug,appearances,image_main,url,tease'
+        'fields[story]': 'title,newsdate,producing_organizations,appearances,image_main,url,tease,slug,url,headers,show_title'
       };
       let wNYCQuery2 = {
         tags: wNYCTag,
         page_size: 10,
         page: 2,
         ordering: '-newsdate',
-        'fields[story]': 'title,newsdate,producing_organizations,slug,appearances,image_main,url,tease'
+        'fields[story]': 'title,newsdate,producing_organizations,appearances,image_main,url,tease,slug,url,headers,show_title'
       };
 
 
