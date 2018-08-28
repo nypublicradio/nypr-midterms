@@ -28,7 +28,7 @@ const COPY = {
       <li>Timely reminders</li>
       <li>Help with voter registration</li>
       <li>Information on your polling place</li>
-      <li>Easy ways to make sure your friends and family to vote</li>
+      <li>Easy ways to make sure your friends and family vote</li>
     </ul>`,
   EMAIL_SUCCESS: `
     <p>You’re in! Thanks for subscribing to the <b>Politics Brief</b>.</p>
