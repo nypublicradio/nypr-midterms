@@ -46,6 +46,7 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 @import "components/attribution-block";
 
 @import "routes/articles";
+@import "routes/hearken-hub";
 
 @import "election-countdown";
 @import "ember-basic-dropdown";

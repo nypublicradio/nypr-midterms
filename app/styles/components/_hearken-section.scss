@@ -6,8 +6,8 @@
 .hearken-section {
   @include section-text($color: black);
 
-  padding: 40px 16px 0;
-  margin: 0 auto 16px;
+  padding: 10px 16px 0;
+  margin: 0 auto 60px;
   max-width: 800px;
 
   a {
@@ -20,19 +20,36 @@
   }
 
   &__submission-wrapper, &__list-wrapper {
-    margin-bottom: 66px;
+    margin-bottom: 45px;
 
     @include media(">=medium") {
       margin: 0;
       align-self: stretch;
       flex-basis: 48%;
+      margin-bottom: 30px;
     }
   }
 
   &__flex-wrapper{
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    border: solid 2px $lightgray;
+    padding: 30px 15px 10px 0px;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      background-color: $red;
+      height: 4px;
+      width: 69px;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
 
     @include media('>=medium'){
       flex-direction: row;
@@ -41,9 +58,10 @@
 
 }
 
-
+// hearken module styles
 .hearken-section #hearken-section__wrapper {
 
+  // general hearken styles
   .embed-content-container{
     padding: 0px 25px 0px 25px!important;
   }
@@ -53,10 +71,38 @@
     font-weight: bold !important;
   }
 
+  .section-header-group__section-header {
+    font-family: $font-opensans !important;
+    color: black !important;
+    font-weight: bold !important;
+  }
+  .section-header-group__section-subheader {
+    font-family: $font-opensans !important;
+    color: black !important;
+  }
+
+  .hearken-badge {
+    text-align: center !important;
+  }
+
+  // styling the voting module
+  .hearken-section__chunk-wrapper {
+    .question--voteable {
+      display: flex !important;
+      font-family: $font-opensans !important;
+    }
+    .vote-icon svg {
+      height: 30px;
+      width: 30px;
+    }
+
+  }
+
+  // styling the submission form
   .text-input--long, .text-input__input {
     border:solid 2px $lightgray !important;
     &::placeholder {
-      font-family: $font-opensans;
+      font-family: $font-opensans !important;
       color: black !important;
       font-size: 14px;
     }
@@ -68,17 +114,25 @@
     padding-bottom: 10px !important;
     font-size: 14px !important;
     font-family: $font-opensans !important;
-    margin: 0 auto !important;
+    margin: 30px auto 10px auto !important;
     max-width: 280px !important;
     width: 100% !important;
   }
 
-  .hearken-badge{
-    text-align: center !important;
+  .checkbox__text p {
+    font-family: $font-opensans !important;
+    color: black !important;
+    font-size: 14px !important;
   }
 
+  // styling the question list
   .hearken-section__list-wrapper {
     position: relative;
+    margin-left: 15px;
+
+    @include media('>=medium'){
+      margin-left: 0px;
+    }
 
     [id*=hearken-embed] {
       height: 100%;
@@ -94,7 +148,6 @@
     }
 
     .header--text {
-      position: absolute !important;
       bottom: 100% !important;
 
       color: $gray !important;
@@ -135,34 +188,6 @@
         font-family: $font-opensans !important;
         font-size: 12px !important;
         color: $gray !important;
-      }
-    }
-  }
-}
-
-.hearken-section__submission-wrapper {
-  border: solid 2px $lightgray;
-
-  .hearken-embed {
-    position: relative;
-
-    &:after {
-      content: '';
-      position: absolute;
-      background-color: $red;
-      height: 4px;
-      width: 69px;
-      top: 0;
-      left: 0;
-      right: 0;
-      margin: auto;
-    }
-
-    .button-container button {
-      transition: opacity 125ms ease !important;
-
-      &:hover {
-        opacity: 0.6;
       }
     }
   }
