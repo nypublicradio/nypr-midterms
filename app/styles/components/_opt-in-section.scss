@@ -38,6 +38,7 @@
     text-transform: uppercase;
 
     @include media('>=medium') {
+      justify-content: left;
       text-align: left;
       margin-left: 0;
       margin-bottom: 8px;
