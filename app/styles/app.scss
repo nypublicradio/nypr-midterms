@@ -49,7 +49,7 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 @import "routes/hearken-hub";
 @import "routes/missing";
 
-@import "election-countdown";
+@import "election-countdown/election-countdown-module";
 @import "components/election-countdown";
 @import "ember-basic-dropdown";
 @import "nypr-player";
