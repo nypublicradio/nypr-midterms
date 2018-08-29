@@ -52,9 +52,13 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 @import "election-countdown";
 @import "components/election-countdown";
 @import "ember-basic-dropdown";
-@import "nypr-player";
 @import "nypr-audio-services/text-crawl";
 @import "nypr-ui/brand-header";
+@import "nypr-ui/popup-menu";
+@import "nypr-ui/share-button";
+
+@import "player-integration";
+@import "nypr-player";
 
 // HELPER CLASSES
 .medium-and-up {

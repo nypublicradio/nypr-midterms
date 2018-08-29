@@ -15,6 +15,31 @@
         audioId         = currentAudioId
         isStream        = isStream
       }}
+      {{#unless hifi.isLoading}} {{! only show the share button when the audio has loaded}}
+        {{#with (hash
+            data=model.shareMetadata
+            title=currentStory.title
+            showTitle=(or currentShow.title 'NPR Article'))
+          as |meta|}}
+          {{#nypr-share-button
+            text="SHARE"
+            shareUrl=meta.data.shareUrl
+            shareText=meta.data.shareText
+            data-action='Share from Player'
+            as |share|}}
+            {{share.button
+              type='Facebook'
+              data-label=(concat meta.title ' | ' meta.showTitle ' | Facebook')}}
+            {{share.button
+              type='Twitter'
+              via='WNYC'
+              data-label=(concat meta.title ' | ' meta.showTitle ' | Twitter')}}
+            {{share.button
+              type='Email'
+              data-label=(concat meta.title ' | ' meta.showTitle ' | Email')}}
+          {{/nypr-share-button}}
+        {{/with}}
+      {{/unless}}
     {{/content.for}}
 
     {{#content.for 'streamInfo'}}

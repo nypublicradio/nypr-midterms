@@ -95,6 +95,10 @@
     @include media('>=medium') {
       letter-spacing: 1.7px;
       line-height: 2.33;
+
+      button {
+        letter-spacing: 1.7px;
+      }
     }
   }
 
