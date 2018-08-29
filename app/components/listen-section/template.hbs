@@ -18,7 +18,7 @@
         {{episode-tease show=morePerfect}}
       </div>
 
-      <div class="listen-section__item">
+      <div class="listen-section__item live-radio">
       {{#episode-tease data-test-live-stream as |tease|}}
         {{#tease.top bg='/assets/images/wnyc-logo.png'}}
           {{tease.logo image='/assets/images/wnyc-logo.png'}}
@@ -27,7 +27,10 @@
         {{#tease.bottom}}
           {{tease.title "Listen to our Live coverage"}}
           {{#tease.body}}
-            <span class="live-box">Live</span> {{stream.currentShow.showTitle}}
+            <span class="live-box">Live</span> <span class="live-radio__show-title">{{stream.currentShow.showTitle}}</span>
+            {{#if stream.currentShow.episodeTitle}}
+              <p class="live-radio__episode-title">{{stream.currentShow.episodeTitle}}</p>
+            {{/if}}
           {{/tease.body}}
 
           {{tease.link "Listen Live" noMargin=true onClick=(action listenLive) data-test-selector="live"}}
