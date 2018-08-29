@@ -8,6 +8,9 @@ module('Integration | Component | listen-section', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
+    let store = this.owner.lookup('service:store');
+    this.mock(store).expects('findRecord').withArgs('stream','wnyc-fm939').resolves();
+
     await render(hbs`{{listen-section}}`);
 
     assert.dom('.listen-section').exists();
@@ -16,6 +19,8 @@ module('Integration | Component | listen-section', function(hooks) {
   test('it plays the wnyc live stream', async function() {
     let dj = this.owner.lookup('service:dj');
     this.mock(dj).expects('play').withArgs('wnyc-fm939').resolves();
+    let store = this.owner.lookup('service:store');
+    this.mock(store).expects('findRecord').withArgs('stream','wnyc-fm939').resolves();
 
     await render(hbs`{{listen-section}}`);
 
