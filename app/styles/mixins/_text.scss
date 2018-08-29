@@ -37,7 +37,7 @@
     }
 
     &:after {
-      border-bottom: 4px solid #f00;
+      border-bottom: 4px solid $red;
       content: '';
       display: block;
       margin-left: calc(50% - 35px);
