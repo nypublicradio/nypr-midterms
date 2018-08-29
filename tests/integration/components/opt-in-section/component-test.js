@@ -53,11 +53,9 @@ module('Integration | Component | opt-in-section', function(hooks) {
     await render(hbs`{{opt-in-section}}`);
 
     await fillIn('[data-test-input=email]', EMAIL);
-    await click('[data-test-legal-input]');
     await click('[data-test-submit]');
 
     await fillIn('[data-test-input=sms]', PHONE);
-    await click('[data-test-legal-input]');
     await click('[data-test-submit]');
 
     assert.ok(fetchStub.calledTwice, 'two POSTs');
@@ -75,7 +73,7 @@ module('Integration | Component | opt-in-section', function(hooks) {
 
     await fillIn('[data-test-input=email]', 'good@email.com');
 
-    assert.dom('[data-test-submit]').isDisabled('still disabled unless legal is checked');
+    assert.dom('[data-test-submit]').isNotDisabled('still disabled unless legal is checked');
     assert.dom('[data-test-error=email]').doesNotExist();
 
     await render(hbs`{{opt-in-section step='sms'}}`);
@@ -86,7 +84,7 @@ module('Integration | Component | opt-in-section', function(hooks) {
     assert.dom('[data-test-error=sms]').hasText('Please enter a valid phone number.');
 
     await fillIn('[data-test-input=sms]', '5165551212');
-    assert.dom('[data-test-submit]').isDisabled('still disabled unless legal is checked');
+    assert.dom('[data-test-submit]').isNotDisabled('still disabled unless legal is checked');
     assert.dom('[data-test-error=sms]').doesNotExist();
   })
 });

@@ -15,7 +15,7 @@ export default Component.extend({
 
   init() {
     this._super(...arguments);
-    this.set('form', {});
+    this.set('form', {legal: true});
     this.set('changeset', new Changeset(this.form, lookupValidator(this.validations), this.validations, {skipValidate: true}));
   },
 

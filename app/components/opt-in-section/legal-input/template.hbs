@@ -2,7 +2,8 @@
   data-test-legal-input
   id={{concat elementId "-legal-input"}}
   type="checkbox"
-  onchange={{action (mut changeset.legal) value="target.checked"}} />
+  onchange={{action (mut changeset.legal) value="target.checked"}}
+  checked={{changeset.legal}}/>
 
 <label
   for={{concat elementId "-legal-input"}}
