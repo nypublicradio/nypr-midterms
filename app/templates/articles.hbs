@@ -8,6 +8,9 @@
       featured=true
       imageUrl=(if (media 'isMedium') story.thumbnailLarge story.thumbnailSmall)
       story=story
+      medium='partnersite'
+      source='midtermshub'
+      campaign='electionnews'
     }}
   </div>
   {{/with}}
@@ -15,7 +18,12 @@
   <div class="articles-list">
   {{#each (slice 1 stories.length stories) as |story|}}
     <div class="articles-list__item">
-      {{story-media-tease story=story}}
+      {{story-media-tease
+        medium='partnersite'
+        source='midtermshub'
+        campaign='electionnews'
+        story=story
+      }}
     </div>
   {{/each}}
   </div>
