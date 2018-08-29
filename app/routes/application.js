@@ -19,15 +19,23 @@ export default Route.extend({
 
   afterModel() {
     let url;
+    let protocol;
+    let host;
 
     if (this.fastboot.isFastBoot) {
-      let { protocol, host, path } = this.fastboot.request;
+      { protocol, host } = this.fastboot.request;
+      let { path } = this.fastboot.request;
       url = `${protocol}//${host}${path}`;
     } else {
+      { protocol, host } = window.location;
       url = window.location.toString();
     }
 
-    this.head.set('url', url);
+    this.head.setProperties({
+      url,
+      protocol,
+      host,
+    });
   },
 
   actions: {
