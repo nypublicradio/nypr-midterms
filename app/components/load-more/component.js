@@ -27,7 +27,7 @@ export default Component.extend({
       let gothUnshown = this.get('gothItems').slice(this.get('gothCairn'));
       let unshown =  wNYCUnshown.concat(gothUnshown).sort((a, b) => moment(b.newsdate) - moment(a.newsdate));
       this.get('items').pushObjects(unshown.toArray().slice(0, this.get('pageSize')));
-      this.adjustCairns(this.get('items').lastObject, wNYCUnshown, gothUnshown);
+      this.adjustCairns(this.get('items.lastObject'), wNYCUnshown, gothUnshown);
     }
   }),
 
