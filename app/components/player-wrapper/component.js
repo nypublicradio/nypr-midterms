@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 import { inject } from '@ember/service';
 import { computed, get } from '@ember/object';
-import { reads } from '@ember/object/computed';
+import { reads, equal } from '@ember/object/computed';
 
 export default Component.extend({
   tagName: '',
@@ -9,12 +9,13 @@ export default Component.extend({
   hifi: inject(),
   dj:   inject(),
 
-  isStream: reads('hifi.isStream'),
   metadata: reads('hifi.currentMetadata'),
 
   sound:          reads('dj.currentSound'),
   model:          reads('dj.currentContentModel'),
   currentAudioId: reads('dj.currentContentId'),
+
+  isStream: equal('model.audioType', 'livestream'),
 
   currentShow: computed('isStream', 'metadata', function() {
     if (!this.metadata || !this.metadata.contentModel) {
