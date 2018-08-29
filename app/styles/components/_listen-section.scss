@@ -97,4 +97,28 @@
       flex: 1;
     }
   }
+
+  .live-radio {
+
+    &__show-title {
+      font-weight: 600;
+      font-style: italic;
+      padding-left: 8px;
+    }
+
+    &__episode-title {
+      margin-top: 24px;
+    }
+
+    .episode-tease__link button {
+      @include media('>=medium'){
+        letter-spacing: 1.7px;
+        line-height: 2.33;
+      }
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      line-height: 1.67;
+      font-size: 12px;
+    }
+  }
 }
