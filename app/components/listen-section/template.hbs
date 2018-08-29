@@ -27,7 +27,7 @@
         {{#tease.bottom}}
           {{tease.title "Listen to our Live coverage"}}
           {{#tease.body}}
-            <span class="live-box">Live</span> Lorem ipsum lorem ipsum
+            <span class="live-box">Live</span> {{stream.currentShow.showTitle}}
           {{/tease.body}}
 
           {{tease.link "Listen Live" noMargin=true onClick=(action listenLive) data-test-selector="live"}}

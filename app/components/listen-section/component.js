@@ -23,11 +23,19 @@ const NEWSROOM_LINKS = [{
 
 export default Component.extend({
   NEWSROOM_LINKS,
-  
+  store: inject(),
   dj: inject(),
+  fastboot: inject(),
 
   tagName: 'section',
   classNames: ['listen-section'],
+
+  init() {
+    if(!this.get('fastboot.isFastBoot')){
+      this.store.findRecord('stream', 'wnyc-fm939').then(stream => this.set('stream', stream));
+    }
+    this._super(...arguments);
+  },
 
   listenLive() {
     this.dj.play('wnyc-fm939');
