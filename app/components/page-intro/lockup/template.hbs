@@ -1,8 +1,12 @@
 {{#media-object as |mo|}}
   {{#mo.media class="intro-lockup__logo"}}
-    {{#link-to 'index'}}
-      <img src="/assets/images/logo.png" >
-    {{/link-to}}
+    {{#if showNav}}
+      {{#link-to 'index'}}
+        <img src="/assets/images/logo.png" />
+      {{/link-to}}
+    {{else}}
+      <img src="/assets/images/logo.png" />
+    {{/if}}
   {{/mo.media}}
 
   {{#mo.body class="intro-lockup__text"}}
