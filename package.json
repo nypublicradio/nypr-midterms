@@ -99,7 +99,7 @@
   },
   "dependencies": {
     "dotenv": "^6.0.0",
-    "nypr-fastboot": "^0.3.0"
+    "nypr-fastboot": "nypublicradio/nypr-fastboot#content-type"
   },
   "resolutions": {
     "ember-hifi": "nypublicradio/ember-hifi#master",
