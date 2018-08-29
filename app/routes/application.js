@@ -23,11 +23,11 @@ export default Route.extend({
     let host;
 
     if (this.fastboot.isFastBoot) {
-      { protocol, host } = this.fastboot.request;
+      ({ protocol, host } = this.fastboot.request);
       let { path } = this.fastboot.request;
       url = `${protocol}//${host}${path}`;
     } else {
-      { protocol, host } = window.location;
+      ({ protocol, host } = window.location);
       url = window.location.toString();
     }
 
