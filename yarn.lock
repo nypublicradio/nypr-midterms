@@ -7485,7 +7485,7 @@ nypr-election-countdown@^0.1.5:
 
 nypr-fastboot@nypublicradio/nypr-fastboot#content-type:
   version "0.3.0"
-  resolved "https://codeload.github.com/nypublicradio/nypr-fastboot/tar.gz/66ae70219676c665f9b3ba0fc6d81bba60f6dacb"
+  resolved "https://codeload.github.com/nypublicradio/nypr-fastboot/tar.gz/9e7dfc8017f580564b6857085810635a1c54fb57"
   dependencies:
     aws-sdk "^2.279.1"
     eslint "^5.2.0"
