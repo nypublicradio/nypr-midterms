@@ -57,9 +57,6 @@ export default Component.extend({
     // Then take the length of the list and add it to the cairn counters to keep track
     // of how many wnyc and goth stories are being shown currently. This allows the
     // component to load more stories from wnyc or goth only if needed.
-    if (!lastStory) {
-      return;
-    }
     let wNYCShown = wNYCUnshown.filter(item => moment(item.newsdate).isSameOrAfter(lastStory.newsdate));
     let gothShown = gothUnshown.filter(item => moment(item.newsdate).isSameOrAfter(lastStory.newsdate));
     if (wNYCShown) this.set('wNYCCairn', this.get('wNYCCairn') + wNYCShown.length);
