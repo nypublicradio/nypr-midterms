@@ -65,7 +65,7 @@ export default Component.extend({
       {
         email: null,
         phone: null,
-        legalChecked: false
+        legalChecked: true
       },
       lookupValidator(validations),
       validations
@@ -106,7 +106,6 @@ export default Component.extend({
         .then(res => {
           // Success response
           if (res.status === 200 || res.status === 201) {
-            this.set("changeset.legalChecked", false);
             return [`${fieldName}Success`, true];
           }
           // Error response
