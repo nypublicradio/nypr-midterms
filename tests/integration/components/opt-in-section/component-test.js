@@ -73,7 +73,7 @@ module('Integration | Component | opt-in-section', function(hooks) {
 
     await fillIn('[data-test-input=email]', 'good@email.com');
 
-    assert.dom('[data-test-submit]').isNotDisabled('still disabled unless legal is checked');
+    assert.dom('[data-test-submit]').isNotDisabled('with legal pre-checked, submit button is not disabled');
     assert.dom('[data-test-error=email]').doesNotExist();
 
     await render(hbs`{{opt-in-section step='sms'}}`);
@@ -84,7 +84,7 @@ module('Integration | Component | opt-in-section', function(hooks) {
     assert.dom('[data-test-error=sms]').hasText('Please enter a valid phone number.');
 
     await fillIn('[data-test-input=sms]', '5165551212');
-    assert.dom('[data-test-submit]').isNotDisabled('still disabled unless legal is checked');
+    assert.dom('[data-test-submit]').isNotDisabled('with legal pre-checked, submit button is not disabled');
     assert.dom('[data-test-error=sms]').doesNotExist();
   })
 });
