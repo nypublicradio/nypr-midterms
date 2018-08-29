@@ -47,6 +47,7 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 
 @import "routes/articles";
 @import "routes/hearken-hub";
+@import "routes/missing";
 
 @import "election-countdown";
 @import "components/election-countdown";
