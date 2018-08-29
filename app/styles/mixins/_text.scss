@@ -24,6 +24,30 @@
     currentColor 8px, currentColor 10px);
 }
 
+@mixin page-title {
+    @include section-title($color: black, $stripes: false);
+
+    flex-direction: column;
+    font-size: 28px;
+    margin-bottom: 0;
+
+    @include media('>=medium') {
+      max-width: 430px;
+      font-size: 45px;
+    }
+
+    &:after {
+      border-bottom: 4px solid #f00;
+      content: '';
+      display: block;
+      margin-left: calc(50% - 35px);
+      width: 70px;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+
+}
+
 @mixin section-title(
   $font-size: 24px,
   $font-family: $font-montserrat,
