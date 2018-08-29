@@ -12,6 +12,9 @@ module.exports = function(defaults) {
     babel: {
       plugins: ['transform-object-rest-spread']
     },
+    'ember-cli-babel': {
+      includePolyfill: true
+    },
     useWaypoints: true
   });
 
