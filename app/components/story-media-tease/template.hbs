@@ -1,7 +1,7 @@
 {{#story-tease alignment='left' story=story medium=medium source=source campaign=campaign as |tease|}}
   {{#media-object valign='c' as |mo|}}
 
-    {{#if (and story.thumbnailLarge (media 'isMedium'))}}
+    {{#if (and story.thumbnailSmall (media 'isMedium'))}}
       {{#mo.media}}
         {{tease.image
           width=288
