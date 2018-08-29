@@ -9,6 +9,7 @@ export default Route.extend({
 
   title(tokens) {
     tokens.unshift('2018 Elections');
+    tokens.push('WNYC + Gothamist');
     return tokens.join(' | ');
   },
 

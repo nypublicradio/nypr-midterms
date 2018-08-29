@@ -13,8 +13,6 @@ export default Route.extend({
   fastboot: inject(),
   head: inject('head-data'),
 
-  titleToken: "WNYC + Gothamist",
-
   model() {
     return hash({
       gothamist: this.store.query('gothamist-story', {
