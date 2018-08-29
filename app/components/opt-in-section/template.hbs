@@ -13,7 +13,8 @@
     {{#liquid-if (eq step NEWSLETTER) use='crossFade'}}
       {{opt-in-section/form
         name='email'
-        placeholder='Email Address'
+        type='email'
+        placeholder='you@email.com'
         buttonText='Subscribe'
         validations=EMAIL_VALIDATIONS
         submit=(action submitEmail)
@@ -29,7 +30,8 @@
 
       {{opt-in-section/form
         name='sms'
-        placeholder='Phone Number'
+        type='tel'
+        placeholder='1234567890'
         buttonText='Sign Up for SMS'
         validations=SMS_VALIDATIONS
         submit=(action submitPhone)

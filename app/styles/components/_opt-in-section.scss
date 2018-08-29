@@ -119,6 +119,7 @@
   }
 
   &__input {
+    appearance: none;
     width: 100%;
     border-radius: 0;
     border: 2px solid white;
@@ -128,7 +129,8 @@
     line-height: 18px;
 
     &::placeholder {
-      color: black;
+      color: $gray;
+      font-style: oblique;
     }
 
     &.is-error {

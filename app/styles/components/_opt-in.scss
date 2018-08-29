@@ -172,6 +172,12 @@
     background-color: rgba(223, 223, 223, 0.4);
   }
 
+  &__email-form,
+  &__phone-form {
+    display: flex;
+    align-items: center;
+  }
+
   &__form {
     display: flex;
     margin-top: 10px;
@@ -198,9 +204,8 @@
   }
 
   &__formset svg {
-    width: 25px;
-    margin-right: 10px;
-    margin-top: 8px;
+    margin-right: 8px;
+    flex-basis: 25px;
   }
 
   &__formset .fa-envelope {
@@ -222,10 +227,17 @@
   &__email-input input, &__phone-input input {
     @include body-text;
 
+    appearance: none;
+    border-radius: 0;
     border: solid 2px #dddddd;
     height: 44px;
     padding: 10px;
     flex: 0 1 350px;
+
+    &::placeholder {
+      font-style: oblique;
+      color: $gray;
+    }
   }
 
   &__submit-button {

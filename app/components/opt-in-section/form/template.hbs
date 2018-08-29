@@ -9,7 +9,7 @@
     {{input
       data-test-input=name
       placeholder=placeholder
-      type="text"
+      type=(or type 'text')
       name=name
       value=(get changeset name)
       class=(concat

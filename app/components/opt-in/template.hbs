@@ -28,7 +28,7 @@
           {{nypr-input
           data-test-email-input
           fieldname='signupEmail'
-          placeholder='Email Address'
+          placeholder='you@example.com'
           value=changeset.email
           errors=(or changeset.error.email.validation emailResponseErrors)
           class=(concat "opt-in__email-input " (if submitEmail.isRunning 'is-loading'))
@@ -46,7 +46,7 @@
           data-test-phone-input
           type='tel'
           fieldname='signupPhoneNumber'
-          placeholder='Phone Number'
+          placeholder='1234567890'
           value=changeset.phone
           errors=(or changeset.error.phone.validation phoneResponseErrors)
           class=(concat "opt-in__phone-input " (if submitPhone.isRunning 'is-loading'))
