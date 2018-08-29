@@ -5,7 +5,7 @@ WORKDIR /code
 
 COPY package.json ./
 COPY yarn.lock ./
-RUN yarn
+RUN yarn install --production
 
 COPY . ./
 
