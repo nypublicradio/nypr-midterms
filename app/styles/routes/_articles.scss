@@ -12,6 +12,8 @@
 
 .articles-title {
   @include page-title;
+
+  max-width: none !important;
 }
 
 .article-featured {
