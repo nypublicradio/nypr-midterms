@@ -11,15 +11,7 @@
 }
 
 .articles-title {
-  color: $darkgray;
-  font-size: 28px;
-  line-height: 1.29;
-  text-align: center;
-  margin-bottom: 48px;
-
-  @include media(">=medium") {
-    font-size: 45px;
-  }
+  @include page-title;
 }
 
 .article-featured {

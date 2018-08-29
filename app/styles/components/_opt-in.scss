@@ -38,23 +38,7 @@
   }
 
   &__header {
-    @include section-title($color: black, $stripes: false);
-    margin-bottom: 0;
-    flex-direction: column;
-
-    @include media('>=medium') {
-      max-width: 430px;
-    }
-
-    &:after {
-      border-bottom: 4px solid #f00;
-      content: '';
-      display: block;
-      margin-left: calc(50% - 35px);
-      width: 70px;
-      margin-top: 25px;
-      margin-bottom: 15px;
-    }
+    @include page-title;
   }
 
   &__success-text {

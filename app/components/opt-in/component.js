@@ -17,8 +17,8 @@ const COPY = {
     <p>It’s election season, and WNYC and Gothamist are teaming up to offer
     essential news and analysis in our new newsletter, the <b>Politics
     Brief</b>.</p>
-    <p>Sign up to receive the <b>Politics Brief</b> a few times a week by
-    entering your email below.</p>`,
+    <p>Sign up to receive the <b>Politics Brief</b> by entering your email
+    below.</p>`,
   PHONE: `
     <p>Join <b>Count Me In</b>, where we’ll guide you through a short series of
       suggestions and reminders for key dates and actions to make sure your
@@ -37,8 +37,8 @@ const COPY = {
     heard this election season. Message and data rates may apply.</p>`,
   PHONE_SUCCESS: `
     <p>Awesome! You’re on the list!</p>
-    <p>You can also sign up to receive The Politics Brief a few times a week by
-    entering your email below</p>`,
+    <p>You can also sign up to receive The Politics Brief by entering your
+    email below</p>`,
   BOTH_SUCCESS: `
     <p>Thanks for signing up!</p>
     <p>You will begin to receive updates soon.</p>`
