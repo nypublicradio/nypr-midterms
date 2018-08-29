@@ -5,7 +5,7 @@ export function addQuery([ url ], params = {}) {
     return '';
   }
   let q = Object.keys(params)
-    .filter(k => params[k])
+    .filter(key => params[key])
     .map(key => `${key}=${params[key]}`);
   if (q.length) {
     return `${url}?${q.join('&')}`;

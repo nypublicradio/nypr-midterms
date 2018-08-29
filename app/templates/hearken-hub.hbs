@@ -20,7 +20,11 @@
     {{/media-object}}
     {{#each results.data as |story|}}
     <div class="articles-list__item">
-      {{story-media-tease story=story}}
+      {{story-media-tease
+        medium='partnersite'
+        source='midtermshub'
+        campaign='askareporter'
+        story=story}}
     </div>
     {{/each}}
   </div>
