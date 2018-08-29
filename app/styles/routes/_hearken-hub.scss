@@ -16,7 +16,6 @@
   &__description {
     font-size: 14px;
     margin: 0 auto 20px;
-    font-weight: 600;
     @include media('>=medium'){
       font-size: 16px;
       max-width: 530px;
