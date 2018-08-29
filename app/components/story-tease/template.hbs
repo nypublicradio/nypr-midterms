@@ -2,8 +2,12 @@
 
   {{yield (hash
     orgs=(component 'story-tease/brand' orgs=story.producingOrganizations)
-    title=(component 'story-tease/title' url=story.url title=story.title)
-    image=(component 'story-tease/image' url=story.url src=imageUrl)
+    title=(component 'story-tease/title'
+      url=(add-query story.url medium=medium source=source campaign=campaign)
+      title=story.title)
+    image=(component 'story-tease/image'
+      url=(add-query story.url medium=medium source=source campaign=campaign)
+      src=imageUrl)
     summary=(component 'story-tease/summary' summary=story.tease)
     footer=(component 'story-tease/footer')
     relativeDate=(moment-from story.newsdate)
@@ -12,10 +16,14 @@
 {{else}}
   {{story-tease/brand orgs=story.producingOrganizations fallback=story.showTitle}}
 
-  {{story-tease/title url=story.url title=story.title}}
+  {{story-tease/title
+    url=(add-query story.url medium=medium source=source campaign=campaign)
+    title=story.title}}
 
   {{#if (and featured imageUrl)}}
-    {{story-tease/image url=story.url src=imageUrl}}
+    {{story-tease/image
+      url=(add-query story.url medium=medium source=source campaign=campaign)
+      src=imageUrl}}
   {{/if}}
 
   {{#if featured}}
