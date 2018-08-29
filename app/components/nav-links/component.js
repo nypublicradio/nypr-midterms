@@ -51,7 +51,8 @@ export default Component.extend({
 
   handleResize() {
     let el = this.element;
-    let elPadding = parseInt(getComputedStyle(el).paddingRight, 10) + parseInt(getComputedStyle(el).paddingLeft, 10);
+    let linkWrapper = el.querySelector('.nav-links__list');
+    let elPadding = parseInt(getComputedStyle(linkWrapper).paddingRight, 10) + parseInt(getComputedStyle(linkWrapper).paddingLeft, 10);
     let elContent = this.element.scrollWidth - elPadding;
 
     try {
