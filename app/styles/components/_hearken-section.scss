@@ -3,6 +3,15 @@
 @import "../mixins/text";
 @import "../mixins/layout";
 
+// help with anchor link navigation
+#hearken-chunk {
+  min-height: 426px;
+}
+
+#ask {
+  min-height: 732px;
+}
+
 .hearken-section {
   @include section-text($color: black);
 
