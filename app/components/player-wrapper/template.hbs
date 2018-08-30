@@ -43,39 +43,12 @@
     {{/content.for}}
 
     {{#content.for 'streamInfo'}}
-      <!-- this html matches the html in nypr-audio-services nypr-player-integration
-           component, with one change: it allows the all streams link to open in a new tag. -->
-      <span class="nypr-player-stream-info-station-info">
-        LIVE NOW on <a href={{streamScheduleUrl}}
-        target={{if (is-external streamScheduleUrl) '_blank'}}
-        rel={{if (is-external streamScheduleUrl) 'noopener'}}
-        class="gtm__click-tracking"
-        data-action='Click Through to Schedule'
-        data-label='player'>{{streamName}}</a>
-      </span>
-      <span class="nypr-player-stream-info-station-links">
-        <a href={{streamScheduleUrl}}
-          title='Schedule'
-          target={{if (is-external streamScheduleUrl) '_blank'}}
-          rel={{if (is-external streamScheduleUrl) 'noopener'}}
-          class="gtm__click-tracking"
-          data-action='Click Through to Schedule'
-          data-label='player'>SCHEDULE</a>
-        {{#if streamPlaylistUrl}}
-        <a href={{streamPlaylistUrl}}
-          title='Music Playlist'
-          class="gtm__click-tracking"
-          data-action='Click Through to Music Playlist'
-          data-label='player'>MUSIC PLAYLIST</a>
-        {{/if}}
-        <a href="https://www.wnyc.org/streams"
-          title='All Live Streams'
-          class="gtm__click-tracking"
-          data-action='Click Through to All Streams'
-          data-label='player'
-          target='_blank'
-          rel='noopener'>ALL STREAMS</a>
-      </span>
+      {{nypr-player-integration/stream-info
+        streamScheduleUrl = streamScheduleUrl
+        streamPlaylistUrl = streamPlaylistUrl
+        streamUrl         = streamUrl
+        streamName        = streamName
+      }}
     {{/content.for}}
 
     {{#content.for 'aux' as |args|}}
