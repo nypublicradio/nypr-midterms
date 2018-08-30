@@ -4,8 +4,8 @@
 @import "../mixins/layout";
 
 // help with anchor link navigation
-#hearken-chunk {
-  min-height: 426px;
+#vote {
+  min-height: 560px;
 }
 
 #ask {
@@ -26,6 +26,13 @@
   &__chunk-wrapper {
     margin-bottom: 72px;
     border: solid 2px $lightgray;
+  }
+
+  &__loading {
+    font-size: 32px;
+    height: 100%;
+    margin: 220px auto 0;// center vertically 
+    color: $lightgray;
   }
 
   &__submission-wrapper, &__list-wrapper {
