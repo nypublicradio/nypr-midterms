@@ -7,7 +7,11 @@
     <span>Our Latest Question</span>
   </h2>
   <div class="hearken-q-and-a__chunk-wrapper">
-    {{{chunk.content}}}
+    {{#if chunk}}
+      {{{chunk.content}}}
+    {{else}}
+      {{fa-icon class="hearken-q-and-a__loading" icon='spinner' prefix='fas' spin=true}}
+    {{/if}}
   </div>
 </div>
 
