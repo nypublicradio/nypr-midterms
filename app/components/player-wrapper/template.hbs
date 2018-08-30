@@ -43,6 +43,8 @@
     {{/content.for}}
 
     {{#content.for 'streamInfo'}}
+      <!-- this html matches the html in nypr-audio-services nypr-player-integration
+           component, with one change: it allows the all streams link to open in a new tag. -->
       <span class="nypr-player-stream-info-station-info">
         LIVE NOW on <a href={{streamScheduleUrl}}
         target={{if (is-external streamScheduleUrl) '_blank'}}
