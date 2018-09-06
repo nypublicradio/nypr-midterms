@@ -18,7 +18,11 @@ const LINKS = [{
   route: 'index',
   hash: 'podcasts',
   text: 'Podcasts',
-}];
+}, {
+  route: 'voter-guide',
+  text: 'Voter Guide'
+}
+];
 
 export default Component.extend({
   tagName: '',

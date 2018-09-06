@@ -91,6 +91,7 @@
     "nypr-player": "nypublicradio/nypr-player#fastboot",
     "nypr-publisher-lib": "nypublicradio/nypr-publisher-lib#fastboot",
     "nypr-ui": "nypublicradio/nypr-ui#fastboot",
+    "pym.js": "^1.3.2",
     "qunit-dom": "^0.6.2",
     "start-server-and-test": "^1.7.0"
   },

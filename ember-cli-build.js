@@ -19,6 +19,14 @@ module.exports = function(defaults) {
   });
 
   app.import('node_modules/normalize.css/normalize.css');
+  app.import({
+    development: 'node_modules/pym.js/dist/pym.v1.js',
+    production: 'node_modules/pym.js/dist/pym.v1.min.js',
+  }, {
+    using: [
+      {transformation: 'amd', as: 'pym'}
+    ]
+  });
 
   return app.toTree();
 };
