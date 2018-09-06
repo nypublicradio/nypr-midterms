@@ -18,6 +18,7 @@ Router.map(function() {
   this.route('hearken-hub', {path: 'ask-a-reporter'});
 
   this.route('missing', {path: '*'});
+  this.route('voter-guide');
 });
 
 export default Router;

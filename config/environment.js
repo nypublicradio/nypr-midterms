@@ -33,6 +33,8 @@ module.exports = function(environment) {
     mailchimpList: process.env.MAILCHIMP_LIST,
     mobileCommonsOptInKey: process.env.MOBILE_COMMONS_OPT_IN,
 
+    voterGuideIframe: "https://project.wnyc.org/ny-primary-sept-2018/",
+
     moment: {
       includeTimezone: 'all'
     },
@@ -53,6 +55,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
+    ENV.voterGuideIframe = "http://staging.project.wnyc.org/ny-primary-sept-2018/";
     ENV['ember-cli-mirage'] = {
       enabled: false
     };
