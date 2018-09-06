@@ -41,7 +41,7 @@
 
   }
 
-  &__question-intro, &__answer-intro {
+  &__question-intro, &__answer-intro, &__question-asker {
     @include subsubsection-title($color: white)
     margin-bottom: 0;
   }
@@ -51,7 +51,7 @@
                               $font-size: 28px,
                               $font-style: normal,
                               $color: white);
-    margin-top: 8px;
+    margin: 8px auto;
   }
 
   &__question-wrapper,
@@ -65,7 +65,7 @@
 
   &__down-arrow {
     fill: white;
-    margin-bottom: 30px;
+    margin: 20px auto 20px auto;
     order: 2;
     @include media('>=medium'){
       transform: rotate(-0.25turn);
