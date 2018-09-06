@@ -1,9 +1,11 @@
 import Component from '@ember/component';
-import pym from "pym";
 import config from "../../config/environment";
+import pym from "pym";
+import { reads } from '@ember/object/computed';
 
 export default Component.extend({
+  voterGuideIframe: config.voterGuideIframe,
   didInsertElement() {
-    new pym.Parent("pym_voter_guide", "http://staging.project.wnyc.org/ny-primary-sept-2018/");
+    new pym.Parent("pym_voter_guide", this.voterGuideIframe);
   }
 });
