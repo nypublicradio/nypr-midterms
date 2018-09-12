@@ -215,6 +215,9 @@ workflows:
       - calendar-prod:
           requires:
             - build-static
+          filters:
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+/
       - test-static:
           filters:
             tags:
