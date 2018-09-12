@@ -34,6 +34,7 @@ module.exports = function(environment) {
     mobileCommonsOptInKey: process.env.MOBILE_COMMONS_OPT_IN,
 
     voterGuideIframe: "https://project.wnyc.org/ny-primary-sept-2018/",
+    resultsIframe: "https://project.wnyc.org/ny-state-primary-2018-results/",
 
     moment: {
       includeTimezone: 'all'
