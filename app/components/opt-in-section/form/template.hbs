@@ -22,7 +22,9 @@
   <div class="opt-in-form__right">
     <button
       type="submit"
-      class="opt-in-form__submit"
+      class="opt-in-form__submit {{if (eq name 'email') 'gtm__click-tracking'}}"
+      data-action={{if (eq name 'email') 'Newsletter Sign Up Button'}}
+      data-label="2018 Elections Hub"
       data-test-submit
       disabled={{disableSubmit}}
       {{action 'submit' changeset}}>

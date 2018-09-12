@@ -61,7 +61,13 @@
         from New York Public Radio in accordance with our <a href="https://www.wnyc.org/terms/" target="_blank">Terms of Use</a>.</label>
     </p>
 
-    <button class="opt-in__submit-button" type="submit" disabled={{isSubmitButtonDisabled}} data-test-submit-button>
+    <button
+      class="opt-in__submit-button {{if (and changeset.email (not emailSuccess)) 'gtm__click-tracking'}}"
+      data-action={{if changeset.email 'Newsletter Sign Up Button'}}
+      data-label="2018 Elections Hub"
+      type="submit"
+      disabled={{isSubmitButtonDisabled}}
+      data-test-submit-button>
       {{#liquid-if isLoading use='crossFade'}}
         {{fa-icon icon='spinner' prefix='fas' spin=true}}
       {{else}}
