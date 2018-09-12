@@ -7469,15 +7469,20 @@ nypr-django-for-ember@nypublicradio/nypr-django-for-ember#fastboot:
     ember-cli-htmlbars "^2.0.1"
     ember-wormhole "^0.5.2"
 
-nypr-election-countdown@^0.1.5:
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/nypr-election-countdown/-/nypr-election-countdown-0.1.8.tgz#1a3a5785134b739192f2f55048b251cbdd4aa496"
+nypr-election-countdown@nypublicradio/nypr-election-countdown#master:
+  version "0.2.5"
+  resolved "https://codeload.github.com/nypublicradio/nypr-election-countdown/tar.gz/72af96463a88ee7eef2eaa43c4128b957b024557"
   dependencies:
+    "@fortawesome/ember-fontawesome" "^0.1.2"
+    "@fortawesome/free-brands-svg-icons" "^5.2.0"
+    "@fortawesome/free-regular-svg-icons" "^5.2.0"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
     aws-sdk "^2.257.1"
     dotenv "^6.0.0"
     ember-cli-babel "^6.6.0"
     ember-cli-htmlbars "^2.0.1"
     ical-generator "^0.2.10"
+    include-media "^1.4.9"
     moment "^2.22.2"
     moment-timezone "^0.5.20"
     nypr-countdown "^0.1.0"
