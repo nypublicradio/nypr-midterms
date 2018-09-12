@@ -3,10 +3,10 @@
   {{yield (hash
     orgs=(component 'story-tease/brand' orgs=story.producingOrganizations)
     title=(component 'story-tease/title'
-      url=(add-query story.url medium=medium source=source campaign=campaign)
+      url=(add-query story.url utm_medium=medium utm_source=source utm_campaign=campaign)
       title=story.title)
     image=(component 'story-tease/image'
-      url=(add-query story.url medium=medium source=source campaign=campaign)
+      url=(add-query story.url utm_medium=medium utm_source=source utm_campaign=campaign)
       src=imageUrl)
     summary=(component 'story-tease/summary' summary=story.tease)
     footer=(component 'story-tease/footer')
@@ -17,12 +17,12 @@
   {{story-tease/brand orgs=story.producingOrganizations fallback=story.showTitle}}
 
   {{story-tease/title
-    url=(add-query story.url medium=medium source=source campaign=campaign)
+    url=(add-query story.url utm_medium=medium utm_source=source utm_campaign=campaign)
     title=story.title}}
 
   {{#if (and featured imageUrl)}}
     {{story-tease/image
-      url=(add-query story.url medium=medium source=source campaign=campaign)
+      url=(add-query story.url utm_medium=medium utm_source=source utm_campaign=campaign)
       src=imageUrl}}
   {{/if}}
 
