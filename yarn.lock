@@ -7435,6 +7435,24 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
+nypr-audio-services@>=0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/nypr-audio-services/-/nypr-audio-services-0.5.0.tgz#4f38153310b9dfb94c5edf37eb3a936677149365"
+  dependencies:
+    ember-cli-babel "^6.6.0"
+    ember-cli-htmlbars "^2.0.1"
+    ember-cli-htmlbars-inline-precompile "^1.0.0"
+    ember-cli-sass "^7.0.0"
+    ember-diff-attrs "^0.2.1"
+    ember-fetch "^3.3.0"
+    ember-get-config "^0.2.2"
+    ember-hifi "^1.11.1"
+    ember-responsive "^3.0.0-beta.3"
+    ember-simple-auth "^1.3.0"
+    liquid-fire "^0.29.1"
+    nypr-metrics "^0.5.0"
+    nypr-ui "^0.4.0"
+
 nypr-audio-services@nypublicradio/nypr-audio-services#fastboot:
   version "0.4.0"
   resolved "https://codeload.github.com/nypublicradio/nypr-audio-services/tar.gz/740413da67b6a31aebcdebaa593bcbd3cc827ea7"
@@ -7460,6 +7478,14 @@ nypr-countdown@^0.1.0:
     ember-cli-babel "^6.6.0"
     ember-cli-htmlbars "^2.0.1"
     ember-inflector "^3.0.0"
+
+nypr-django-for-ember@>=0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/nypr-django-for-ember/-/nypr-django-for-ember-0.4.0.tgz#26c29b564f1a7939af69bad9ead2260b65fe70cd"
+  dependencies:
+    ember-cli-babel "^6.6.0"
+    ember-cli-htmlbars "^2.0.1"
+    ember-wormhole "^0.5.2"
 
 nypr-django-for-ember@nypublicradio/nypr-django-for-ember#fastboot:
   version "0.3.1"
@@ -7494,6 +7520,13 @@ nypr-fastboot@nypublicradio/nypr-fastboot#content-type:
     fastboot-s3-notifier "^0.1.2"
     raven "^2.6.3"
 
+nypr-metrics@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/nypr-metrics/-/nypr-metrics-0.5.0.tgz#d02452234002a023aee82319416cc4c32c50dc64"
+  dependencies:
+    ember-cli-babel "^6.6.0"
+    ember-get-config "^0.2.2"
+
 nypr-metrics@nypublicradio/nypr-metrics#fastboot:
   version "0.4.0"
   resolved "https://codeload.github.com/nypublicradio/nypr-metrics/tar.gz/effa9b3010ae96078cebd4784c443f8d8b306c51"
@@ -7501,9 +7534,9 @@ nypr-metrics@nypublicradio/nypr-metrics#fastboot:
     ember-cli-babel "^6.6.0"
     ember-get-config "^0.2.2"
 
-nypr-player@nypublicradio/nypr-player#fastboot:
-  version "0.3.0"
-  resolved "https://codeload.github.com/nypublicradio/nypr-player/tar.gz/49171bdf2182841760ec7e288770d3702b614dc8"
+nypr-player@>=0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/nypr-player/-/nypr-player-0.4.0.tgz#10d573fcdd2bb37c681204c9d1548fe9d34b2407"
   dependencies:
     ember-cli-babel "^6.6.0"
     ember-cli-htmlbars "^2.0.1"
@@ -7511,7 +7544,7 @@ nypr-player@nypublicradio/nypr-player#fastboot:
     ember-cli-sass "^7.0.0"
     ember-hifi "^1.15.1"
     ember-moment "^7.4.1"
-    nypr-ui nypublicradio/nypr-ui#fastboot
+    nypr-ui "^0.4.0"
 
 nypr-publisher-lib@>=0.4.2, nypr-publisher-lib@nypublicradio/nypr-publisher-lib#fastboot:
   version "0.4.2"
@@ -7530,6 +7563,24 @@ nypr-publisher-lib@>=0.4.2, nypr-publisher-lib@nypublicradio/nypr-publisher-lib#
     nypr-audio-services nypublicradio/nypr-audio-services#fastboot
     nypr-django-for-ember nypublicradio/nypr-django-for-ember#fastboot
     nypr-ui nypublicradio/nypr-ui#fastboot
+
+nypr-ui@>=0.4.0, nypr-ui@^0.4.0:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/nypr-ui/-/nypr-ui-0.4.1.tgz#d121ea922525c574a20e93d7794bccbfd0da74a1"
+  dependencies:
+    ember-basic-dropdown "0.34.0"
+    ember-burger-menu "^3.1.0"
+    ember-cli-babel "^6.8.0"
+    ember-cli-htmlbars "^2.0.1"
+    ember-cli-htmlbars-inline-precompile "^1.0.0"
+    ember-cli-sass "^7.1.7"
+    ember-click-outside "0.1.11"
+    ember-composable-helpers "2.0.3"
+    ember-cookies "^0.3.0"
+    ember-holygrail-layout "^0.3.0"
+    ember-power-select "^1.9.2"
+    ivy-tabs "^3.3.0"
+    waypoints "^4.0.1"
 
 nypr-ui@nypublicradio/nypr-ui#fastboot:
   version "0.3.1"
