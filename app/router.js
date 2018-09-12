@@ -17,8 +17,10 @@ Router.map(function() {
   this.route('articles', {path: 'news'});
   this.route('hearken-hub', {path: 'ask-a-reporter'});
 
-  this.route('missing', {path: '*'});
   this.route('voter-guide');
+  this.route('results');
+  
+  this.route('missing', {path: '*'});
 });
 
 export default Router;

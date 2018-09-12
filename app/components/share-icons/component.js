@@ -9,7 +9,7 @@ export default Component.extend({
   classNames: ['share-icons'],
 
   medium: 'social',
-  campaign: 'midterms',
+  campaign: 'mt18',
 
   getPopupPosition() {
     const dualScreenLeft = screen.availLeft;
