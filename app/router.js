@@ -18,8 +18,8 @@ Router.map(function() {
   this.route('hearken-hub', {path: 'ask-a-reporter'});
 
   this.route('voter-guide');
-  this.route('results');
-  
+  this.route('primary-results');
+
   this.route('missing', {path: '*'});
 });
 
