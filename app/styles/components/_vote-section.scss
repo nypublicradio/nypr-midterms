@@ -31,11 +31,23 @@
 
 .vote-tools {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto 36px auto;
+  max-width: 960px;
 
   &__item {
     flex-basis: 360px;
+    margin-bottom: 50px;
+
+    @include media(">=medium") {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item:last-child {
+    flex-basis: 340px;
+    margin-bottom: 0;
   }
 }
 
@@ -43,19 +55,24 @@
   text-align: left;
   flex-wrap: wrap;
   margin-bottom: 24px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  @include media('>=medium') {
-    &:last-child {
-      margin-bottom: 24px; // everything gets a margin to deal with in between media queries
-    }
-  }
+  display: grid;
+  height: 100%;
+  grid-template:
+    "logo body" 1fr
+    "footer footer" auto;
 
   &__thumb {
     max-width: 88px;
+    grid-area: logo;
+  }
+
+  &__thumb svg {
+    width: 88px;
+    height: 88px;
+  }
+
+  &__body {
+    grid-area: body;
   }
 
   &__title {
@@ -78,8 +95,8 @@
   }
 
   &__footer {
-    padding-top: 16px;
     flex-basis: 100%;
+    grid-area: footer;
   }
 
   &__link {
