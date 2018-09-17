@@ -13,6 +13,26 @@
       <div class="vote-tools__item">
       {{#media-object tagName='article' class="vote-tool" as |mo|}}
         {{#mo.media class="vote-tool__thumb"}}
+          {{nypr-svg icon="calendar"}}
+        {{/mo.media}}
+
+        {{#mo.body class="vote-tool__body"}}
+          <h1 class="vote-tool__title">Important Dates</h1>
+
+          <p class="vote-tool__summary">
+            <ul>
+              <li>NJ Voter Registration Deadline: <a href="https://elections.wnyc.org/assets/calendars/nj-deadline.ics" download>Oct. 16, 2018</a></li>
+              <li>NY Voter Registration Deadline: <a href="https://elections.wnyc.org/assets/calendars/ny-deadline.ics" download>Oct. 12, 2018</a></li>
+              <li>General Election Day: <a href="https://elections.wnyc.org/assets/calendars/general.ics" download>Nov. 6, 2018</a></li>
+            </ul>
+          </p>
+        {{/mo.body}}
+      {{/media-object}}
+      </div>
+
+      <div class="vote-tools__item">
+      {{#media-object tagName='article' class="vote-tool" as |mo|}}
+        {{#mo.media class="vote-tool__thumb"}}
           {{nypr-svg icon="election-guide"}}
         {{/mo.media}}
 
