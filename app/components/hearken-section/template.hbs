@@ -2,15 +2,19 @@
 <div id="hearken-section__wrapper">
 
   {{!--
-    hearken-section__chunk-wrapper is a wrapper that gets a script added to it once a chunk is loaded.
+    hearken-chunk is a wrapper that gets a script added to it once a chunk is loaded.
   --}}
   <div class="hearken-section__chunk-wrapper" id="vote">
+    {{#unless hasLoaded}}
+      {{fa-icon class="hearken-section__loading" icon='spinner' prefix='fas' spin=true}}
+    {{else}}
     <h3 class="hearken-section__header">
       {{nypr-svg icon="thumbs"}}
       <span>
         Vote on Questions
       </span>
     </h3>
+    {{/unless}}
     <div id="hearken-chunk"></div>
   </div>
 

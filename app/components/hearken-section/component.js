@@ -21,6 +21,7 @@ export default Component.extend({
     if (div.hasChildNodes() || !this.get('chunk')){
       return;
     } else {
+      this.set('hasLoaded', true);
       let fragment = document.createRange().createContextualFragment(this.get('chunk').content);
       div.appendChild(fragment);
     }
