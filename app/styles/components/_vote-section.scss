@@ -32,12 +32,11 @@
 .vote-tools {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 0 auto 36px auto;
-  max-width: 960px;
+  justify-content: space-between;
+  margin-bottom: 36px;
 
   &__item {
-    flex-basis: 360px;
+    flex-basis: 320px;
     margin-bottom: 50px;
 
     @include media(">=medium") {
@@ -69,6 +68,8 @@
   &__thumb svg {
     width: 88px;
     height: 88px;
+
+    fill: $blue;
   }
 
   &__body {
@@ -91,6 +92,11 @@
     @include media('>=medium') {
       font-size: 18px;
       line-height: 1.72;
+    }
+
+    ul {
+      padding-left: 16px;
+      margin: 0;
     }
   }
 
