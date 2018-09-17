@@ -22,6 +22,8 @@
 
     {{episode-tease/link "Listen to the Latest Episode" show.url}}
 
-    {{episode-tease/footer links=show.podcastLinks}}
+    {{#if show.podcastLinks}}
+      {{episode-tease/footer links=show.podcastLinks}}
+    {{/if}}
   {{/episode-tease/bottom}}
 {{/if}}
