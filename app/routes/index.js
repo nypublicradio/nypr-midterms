@@ -28,6 +28,7 @@ export default Route.extend({
       politicsBrief: this.store.findRecord('show', 'politicsbrief'),
       morePerfect: this.store.findRecord('show', 'radiolabmoreperfect'),
       americaLine: this.store.findRecord('show', 'america-line'),
+      usAnxiety: this.store.findRecord('show', 'anxiety'),
     });
   },
 
