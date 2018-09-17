@@ -19,22 +19,8 @@
       </div>
 
       <div class="listen-section__item">
-        {{#episode-tease as |tease|}}
-          {{#tease.top bg=(image-template americaLine.image.template 238 111 'c')}}
-            {{tease.logo image=(image-template americaLine.image.template 160 160 'c') height=80 width=80}}
-          {{/tease.top}}
+        {{episode-tease show=morePerfect}}
 
-          {{#tease.bottom}}
-            {{tease.title americaLine.title}}
-
-            {{#tease.body}}
-              {{{americaLine.tease}}}
-            {{/tease.body}}
-
-            {{tease.link "Listen to the Latest Episode" americaLine.url}}
-
-          {{/tease.bottom}}
-        {{/episode-tease}}
       </div>
 
       <div class="listen-section__item live-radio">
