@@ -29,10 +29,15 @@ export default Route.extend({
       morePerfect: this.store.findRecord('show', 'radiolabmoreperfect'),
       americaLine: this.store.findRecord('show', 'america-line'),
       usAnxiety: this.store.findRecord('show', 'anxiety'),
+      thirtyIssues: this.store.findRecord('channel', 'series/30-issues-30-days').then(series => {
+        series.set('image', series.logoImage);
+        return series;
+      }),
     });
   },
 
   afterModel() {
     this.head.set('description', META_DESCRIPTION);
   },
+
 });
