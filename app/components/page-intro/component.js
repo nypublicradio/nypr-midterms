@@ -19,8 +19,9 @@ const LINKS = [{
   hash: 'podcasts',
   text: 'Podcasts',
 }, {
-  route: 'primary-results',
-  text: 'Primary Results'
+  route: 'index',
+  hash: 'tools',
+  text: 'Voter Tools'
 }];
 
 export default Component.extend({
