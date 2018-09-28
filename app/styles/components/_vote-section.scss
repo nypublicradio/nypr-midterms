@@ -32,14 +32,24 @@
 .vote-tools {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 36px;
+  justify-content: center;
+
+  max-width: 800px;
+  margin: 0 auto 36px;
+
+  @include media(">=medium") {
+    max-width: none;
+  }
 
   &__item {
     flex-basis: 320px;
     margin-bottom: 50px;
 
     @include media(">=medium") {
+      margin: 0 16px 24px;
+    }
+
+    @include media(">=1140px") {
       margin-bottom: 0;
     }
   }
@@ -70,6 +80,11 @@
     height: 88px;
 
     fill: $blue;
+  }
+
+  &__thumb .calendar {
+    width: 84px;
+    height: 84px;
   }
 
   &__body {
