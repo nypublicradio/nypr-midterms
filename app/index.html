@@ -30,6 +30,33 @@
     <script src="{{rootURL}}assets/vendor.js"></script>
     <script src="{{rootURL}}assets/nypr-midterms.js"></script>
 
+    <!-- Google DFP -->
+    <script>
+      var gptadslots = [];
+      (function(){
+        var useSSL = 'https:' == document.location.protocol;
+        var src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+        document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+      })();
+    </script>
+    <script>
+      //Adslot 1 declaration
+      gptadslots.push(googletag.defineSlot('/6483581/wnyc_elections_splash', [[1,1]], 'div-gpt-ad-1136161-1')
+        .addService(googletag.pubads()));
+
+      googletag.pubads().enableSyncRendering();
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    </script>
+
+    <div id='div-gpt-ad-1136161-1'>
+      <script>
+        googletag.display('div-gpt-ad-1136161-1');
+      </script>
+    </div>
+    <!-- End Google DFP -->
+
+
     {{content-for "body-footer"}}
   </body>
 </html>
