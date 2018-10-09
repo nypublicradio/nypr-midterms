@@ -5,7 +5,7 @@ import config from '../config/environment';
 const META_DESCRIPTION = "WNYC, Gotham Gazette and City Limits analyze key races in this year’s New York State primary election";
 
 export default Route.extend({
-  titleToken: "Primary Voter Guide",
+  titleToken: "2018 General Election Voter Guide",
 
   head: service('head-data'),
 
