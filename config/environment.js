@@ -85,7 +85,7 @@ module.exports = function(environment) {
 
   if (process.env.DEPLOY_TARGET === 'prod') {
     ENV.voterGuideIframe = "https://project.wnyc.org/voter-guide-embed/?partner=wnyc";
-    ENV.primaryResultsIframe = "https://project.wnyc.org/ny-state-primary-2018-results/",
+    ENV.primaryResultsIframe = "https://project.wnyc.org/ny-state-primary-2018-results/";
   }
 
   return ENV;
