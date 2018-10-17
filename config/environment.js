@@ -33,8 +33,8 @@ module.exports = function(environment) {
     mailchimpList: process.env.MAILCHIMP_LIST,
     mobileCommonsOptInKey: process.env.MOBILE_COMMONS_OPT_IN,
 
-    voterGuideIframe: "https://project.wnyc.org/ny-primary-sept-2018/",
-    resultsIframe: "https://project.wnyc.org/ny-state-primary-2018-results/",
+    voterGuideIframe: "https://staging.project.wnyc.org/voter-guide-embed/?partner=wnyc",
+    primaryResultsIframe: "https://staging.project.wnyc.org/ny-state-primary-2018-results/",
 
     moment: {
       includeTimezone: 'all'
@@ -56,7 +56,6 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
-    ENV.voterGuideIframe = "http://staging.project.wnyc.org/ny-primary-sept-2018/";
     ENV['ember-cli-mirage'] = {
       enabled: false
     };
@@ -84,8 +83,9 @@ module.exports = function(environment) {
     ENV.platformEventsAPI = 'https://platformevents.com/api';
   }
 
-  if (environment === 'production') {
-    // here you can enable a production-specific feature
+  if (process.env.DEPLOY_TARGET === 'prod') {
+    ENV.voterGuideIframe = "https://project.wnyc.org/voter-guide-embed/?partner=wnyc";
+    ENV.primaryResultsIframe = "https://project.wnyc.org/ny-state-primary-2018-results/";
   }
 
   return ENV;

@@ -15,6 +15,6 @@ export default Route.extend({
 
   setupController(controller, model) {
     this._super(controller, model);
-    controller.set('resultsIframe', config.resultsIframe);
+    controller.set('primaryResultsIframe', config.primaryResultsIframe);
   },
 });
