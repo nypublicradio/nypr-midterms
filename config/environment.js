@@ -34,7 +34,7 @@ module.exports = function(environment) {
     mobileCommonsOptInKey: process.env.MOBILE_COMMONS_OPT_IN,
 
     voterGuideIframe: "https://staging.project.wnyc.org/voter-guide-embed/?partner=wnyc",
-    resultsIframe: "https://staging.project.wnyc.org/general-2018/",
+    primaryResultsIframe: "https://staging.project.wnyc.org/ny-state-primary-2018-results/",
 
     moment: {
       includeTimezone: 'all'
@@ -85,7 +85,7 @@ module.exports = function(environment) {
 
   if (process.env.DEPLOY_TARGET === 'prod') {
     ENV.voterGuideIframe = "https://project.wnyc.org/voter-guide-embed/?partner=wnyc";
-    ENV.resultsIframe = "https://project.wnyc.org/general-2018/";
+    ENV.primaryResultsIframe = "https://project.wnyc.org/ny-state-primary-2018-results/",
   }
 
   return ENV;
