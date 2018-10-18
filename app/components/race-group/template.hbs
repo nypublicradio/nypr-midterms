@@ -1,0 +1,11 @@
+<h3 class="race-group__title">{{group.title}}</h3>
+
+{{race-key}}
+
+<div class="race-group__races">
+  {{#each group.races as |race i|}}
+    {{#liquid-bind race.totalVotes}}
+      {{race-detail race=race}}
+    {{/liquid-bind}}
+  {{/each}}
+</div>
