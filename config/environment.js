@@ -36,6 +36,9 @@ module.exports = function(environment) {
     voterGuideIframe: "https://staging.project.wnyc.org/voter-guide-embed/?partner=wnyc",
     primaryResultsIframe: "https://staging.project.wnyc.org/ny-state-primary-2018-results/",
 
+    njResults: process.env.NJ_RESULTS,
+    nyResults: process.env.NY_RESULTS,
+
     moment: {
       includeTimezone: 'all'
     },
