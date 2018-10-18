@@ -1,0 +1,21 @@
+{{#if allClosed}}
+  <p class="last-updated__line">
+    Results as of {{moment-format mostRecent 'h:mm a z'}}
+  </p>
+{{/if}}
+
+{{#if (not nj.pollsClosed)}}
+  <p class="last-updated__line">
+    New Jersey polls close at 8 p.m.
+  </p>
+{{else if (not ny.pollsClosed)}}
+  <p class="last-updated__line">
+    Results as of {{moment-format ny.lastUpdated 'h:mm a z'}}
+  </p>
+{{/if}}
+
+{{#if (not ny.pollsClosed)}}
+  <p class="last-updated__line">
+    New York polls close at 9 p.m.
+  </p>
+{{/if}}
