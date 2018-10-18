@@ -21,6 +21,9 @@ Router.map(function() {
   this.route('primary-results');
 
   this.route('missing', {path: '*'});
+
+  this.route('results', function() {
+  });
 });
 
 export default Router;
