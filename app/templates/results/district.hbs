@@ -1,0 +1,16 @@
+{{#race-detail race=model as |race|}}
+  {{race.title}}
+  <p>
+    {{link-to 'Back to All Races' 'results'}}
+  </p>
+
+  {{#race.subhead as |subhead|}}
+    {{subhead.precincts}}
+    &nbsp;•&nbsp;
+    {{last-updated ny=ny nj=nj}}
+  {{/race.subhead}}
+
+  {{race.candidates}}
+{{/race-detail}}
+
+{{race-key}}

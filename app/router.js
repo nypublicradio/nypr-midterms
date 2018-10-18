@@ -23,6 +23,7 @@ Router.map(function() {
   this.route('missing', {path: '*'});
 
   this.route('results', function() {
+    this.route('district', {path: '/:race_id'});
   });
 });
 
