@@ -1,0 +1,15 @@
+<div class="results-header">
+  <div class="results-header__subhead">New York & New Jersey</div>
+
+  <h2 class="results-header__title">2018 Midterm Results</h2>
+
+  {{last-updated ny=ny nj=nj}}
+</div>
+
+<ul>
+  <li>{{link-to 'swing' 'results' (query-params filter='swing')}}</li>
+  <li>{{link-to 'new york' 'results' (query-params filter='ny')}}</li>
+  <li>{{link-to 'new jersey' 'results' (query-params filter='nj')}}</li>
+</ul>
+
+{{race-group group=model}}
