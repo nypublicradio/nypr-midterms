@@ -16,7 +16,7 @@ module('Integration | Component | race-detail', function(hooks) {
     assert.dom('.race-detail__subhead > .precincts-reporting').hasAnyText(`${((RACE.precinctsReporting/RACE.precinctsTotal) * 100).toFixed(2)}%`);
     assert.dom('.race-detail__subhead > .watch-precinct').exists();
 
-    assert.dom('.candidate-row').exists({count: 2});
+    assert.dom('.candidate').exists({count: 2});
 
     assert.dom('.race-detail__title').hasText("U.S. House - District 12 (NY)");
 
