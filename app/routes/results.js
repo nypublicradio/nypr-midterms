@@ -1,8 +1,11 @@
 import Route from '@ember/routing/route';
+import { inject } from '@ember/service';
 import fetch from 'fetch';
 import { hash } from 'rsvp';
 
 import config from '../config/environment';
+
+const RACE_POLLER = 'races';
 
 // AP raceID values
 const NY_TO_WATCH = [
@@ -15,6 +18,8 @@ const NJ_TO_WATCH = [
 ];
 
 export default Route.extend({
+  poll: inject(),
+
   getRaces() {
     return hash({
       nj: fetch(config.njResults).then(r => r.json()),
@@ -48,4 +53,17 @@ export default Route.extend({
     });
   },
 
+  actions: {
+    didTransition() {
+      this.poll.addPoll({
+        interval: 60 * 1000,
+        label: RACE_POLLER,
+        callback: () => this.refresh(),
+      });
+    },
+
+    willTransition() {
+      this.poll.stopPollByLabel(RACE_POLLER);
+    },
+  }
 });
