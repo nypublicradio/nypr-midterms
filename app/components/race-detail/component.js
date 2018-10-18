@@ -25,5 +25,13 @@ export default Component.extend({
     }
   }),
 
-  candidates: sort('race.candidates', (a, b) => a.ballotOrder - b.ballotOrder),
+  candidates: sort('race.candidates', (a, b) => {
+    if (a.winner) {
+      return -1;
+    }
+    if (b.winner) {
+      return 1;
+    }
+    return a.ballotOrder - b.ballotOrder;
+  }),
 });
