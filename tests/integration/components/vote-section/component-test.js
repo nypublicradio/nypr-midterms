@@ -10,6 +10,6 @@ module('Integration | Component | vote-section', function(hooks) {
     await render(hbs`{{vote-section}}`);
 
     assert.dom('.vote-section').exists();
-    assert.dom('.vote-section__title').hasText('Voter Tools');
+    assert.dom('.vote-section__title').hasText('Stay Informed');
   });
 });
