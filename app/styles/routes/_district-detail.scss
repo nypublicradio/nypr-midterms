@@ -1,0 +1,63 @@
+.district-header {
+  &__subhead {
+    @include subsubsection-title($color: $gray);
+  }
+
+  &__title {
+    @include page-title;
+    font-size: 14px;
+  }
+
+}
+
+.race-detail--single {
+  margin-bottom: 24px;
+  
+  .race-detail {
+    &__title {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    &__return {
+      margin-bottom: 16px;
+      font-size: 14px;
+      text-align: center;
+
+      a {
+        text-decoration: none;
+        color: $blue;
+        font-weight: 600;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          height: 12px;
+          margin-right: 4px;
+
+          path {
+            fill: rgba(black, 0.5);
+          }
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .race-detail__subhead {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .last-updated {
+    display: inline;
+    font-size: 12px;
+    color: rgba(black, 0.6);
+  }
+}

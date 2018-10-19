@@ -1,12 +1,21 @@
-{{#race-detail race=model as |race|}}
+<div class="district-header">
+  <div class="district-header__subhead">New York & New Jersey</div>
+
+  <h2 class="district-header__title">2018 Midterm Results</h2>
+</div>
+
+{{#race-detail race=model class="race-detail--single" as |race|}}
   {{race.title}}
-  <p>
-    {{link-to 'Back to All Races' 'results'}}
-  </p>
+
+  <div class="race-detail__return">
+    {{#link-to 'results'}}
+      {{nypr-svg icon="left-arrow"}} Back to All Races
+    {{/link-to}}
+  </div>
 
   {{#race.subhead as |subhead|}}
     {{subhead.precincts}}
-    &nbsp;•&nbsp;
+    &nbsp;<span class="dot">•</span>&nbsp;
     {{last-updated ny=ny nj=nj}}
   {{/race.subhead}}
 
