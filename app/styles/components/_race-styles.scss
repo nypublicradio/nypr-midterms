@@ -1,0 +1,51 @@
+.race-group {
+  &__title {
+    @include section-title;
+  }
+}
+
+.race-key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 48px;
+
+  &__label {
+    @include subsubsection-title($color: $gray);
+    margin-right: 16px;
+  }
+
+  &__incumbent,
+  &__winner {
+    @include section-text($color: $darkgray);
+    display: flex;
+    align-items: center;
+  }
+
+  &__incumbent {
+    margin-right: 16px;
+
+    &:before {
+      content: '';
+      display: block;
+      margin-right: 8px;
+      height: 0;
+      width: 0;
+
+      border: 10px solid $red;
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+    }
+  }
+
+  &__winner {
+    &:before {
+      content: '';
+      display: block;
+      margin-right: 8px;
+      width: 20px;
+      height: 20px;
+      background-color: $darkgray;
+    }
+  }
+}
