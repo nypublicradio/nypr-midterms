@@ -13,6 +13,7 @@
   &__label {
     @include subsubsection-title($color: $gray);
     margin-right: 16px;
+    line-height: 1.57;
   }
 
   &__incumbent,
@@ -46,6 +47,75 @@
       width: 20px;
       height: 20px;
       background-color: $darkgray;
+    }
+  }
+}
+
+.race-detail {
+  margin-bottom: 56px;
+}
+
+.race-detail__title {
+  @include subsection-title($font-style: normal);
+}
+
+.race-detail__subhead {
+  color: rgba(black, 0.6);
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.67;
+  margin-bottom: 16px;
+
+  .dot {
+    font-size: 14px;
+    vertical-align: middle;
+  }
+
+  a {
+    color: $blue;
+    text-decoration: none;
+  }
+}
+
+.race-table {
+  width: 100%;
+  border-spacing: 0 4px;
+
+  .candidate {
+    background-color: $lightgray;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.57;
+    color: $darkgray;
+
+    &.winner {
+      background-color: $darkgray;
+      color: white;
+    }
+
+    &.incumbent .candidate__name {
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 0;
+        width: 0;
+
+        border: 7.5px solid $red;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+      }
+    }
+
+    td {
+      padding: 8px;
+    }
+
+    &__count {
+      font-weight: normal;
     }
   }
 }
