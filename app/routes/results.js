@@ -63,7 +63,7 @@ export default Route.extend({
     },
 
     willTransition() {
-      this.poll.stopPollByLabel(RACE_POLLER);
+      this.poll.clearPollByLabel(RACE_POLLER);
     },
   }
 });
