@@ -3,5 +3,96 @@
 }
 
 .results {
-  @include wrapper($width: 787px);
+  @include wrapper($width: 787px, $padding: 41px 15px);
+
+  @include media('>=medium') {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+.results-header {
+  border-bottom: 1px solid $lightgray;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+
+  &__subhead {
+    @include subsubsection-title($color: $gray);
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    @include page-title;
+
+    &:after {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.results-filter {
+  border-bottom: 1px solid $lightgray;
+  margin-bottom: 40px;
+
+  &__title {
+    @include subsubsection-title($color: $gray);
+    margin-bottom: 8px;
+  }
+
+  &__controls {
+    max-width: 358px;
+    padding: 0;
+    margin: 0 auto 24px;
+
+    list-style: none;
+
+    display: flex;
+
+    li {
+      flex: 1;
+      margin: 0 4px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__button {
+    display: block;
+    border: 2px solid $warmgray;
+    border-radius: 13px;
+    padding: 8px;
+
+    text-align: center;
+    color: $blue;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 1.42;
+    font-weight: 600;
+
+    transition: background-color 125ms ease, color 125ms ease;
+
+    svg {
+      fill: $blue;
+      transition: fill 125ms ease;
+      height: 40px;
+      display: block;
+      margin: 0 auto 4px;
+    }
+
+    &.active,
+    &:hover {
+      color: white;
+      background-color: $blue;
+      border-color: $blue;
+
+      svg {
+        fill: white;
+      }
+    }
+  }
 }
