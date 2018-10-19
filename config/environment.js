@@ -49,7 +49,7 @@ module.exports = function(environment) {
     // for utm_source value
     siteSlug: 'midtermshub',
 
-    showNav: process.env.SHOW_NAV,
+    showNav: true,
   };
 
   if (environment === 'development') {
