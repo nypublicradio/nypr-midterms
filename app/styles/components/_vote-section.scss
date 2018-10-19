@@ -35,7 +35,7 @@
   justify-content: center;
 
   max-width: 800px;
-  margin: 0 auto 36px;
+  margin: 0 auto;
 
   @include media(">=medium") {
     max-width: none;
@@ -54,10 +54,6 @@
     }
   }
 
-  &__item:last-child {
-    flex-basis: 340px;
-    margin-bottom: 0;
-  }
 }
 
 .vote-tool {
