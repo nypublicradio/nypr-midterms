@@ -45,12 +45,12 @@
     flex-basis: 320px;
     margin-bottom: 50px;
 
-    @include media(">=medium") {
-      margin: 0 16px 24px;
+    @include media(">=small", "<medium") {
+      margin: 0 10px 48px;
     }
 
-    @include media(">=1140px") {
-      margin-bottom: 0;
+    @include media(">=medium") {
+      margin: 0 16px 48px;
     }
   }
 
