@@ -9,13 +9,47 @@ const RACE_POLLER = 'races';
 
 // AP raceID values
 const NY_TO_WATCH = [
-  "36581",
-  "36582",
+  "36581", // House District 1
+  "36582", // House District 2
+  // House District 11
+  // House District 18
+  // House District 19
+  // House District 21
+  // House District 22
+  // House District 24
+  // House District 27
+  // State Senate District 3
+  // State Senate District 4
+  // State Senate District 5
+  // State Senate District 6
+  // State Senate District 7
+  // State Senate District 8
+  // State Senate District 11
+  // State Senate District 22
+  // State Senate District 39
+  // State Senate District 40
+  // State Senate District 41
+  // State Senate District 42
+  // State Senate District 43
+  // State Senate District 50
+  // State Senate District 53
 ];
 
 const NJ_TO_WATCH = [
-
+  // House District 2
+  // House District 3
+  // House District 4
+  // House District 7
+  // House District 11
+  // NJ Senate
 ];
+
+const BALLOT_MEASURES = [
+  // NY Ballot Measure 1
+  // NY Ballot Measure 2
+  // NY Ballot Measure 3
+  // NJ Ballot Measure 1
+]
 
 export default Route.extend({
   poll: inject(),
