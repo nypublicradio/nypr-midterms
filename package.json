@@ -26,6 +26,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.2.0",
     "@fortawesome/free-regular-svg-icons": "^5.2.0",
     "@fortawesome/free-solid-svg-icons": "^5.2.0",
+    "@html-next/vertical-collection": "^1.0.0-beta.12",
     "@types/ember": "^2.8.32",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "broccoli-asset-rev": "^2.7.0",

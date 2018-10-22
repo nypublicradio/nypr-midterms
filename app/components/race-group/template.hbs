@@ -7,9 +7,16 @@
 {{race-key}}
 
 <div class="race-group__races">
-  {{#each group.races as |race i|}}
-    {{#liquid-bind race.totalVotes}}
+  {{#vertical-collection
+    group.races
+    tagName=''
+    key='raceID'
+    estimateHeight=50
+    staticHeight=false
+    bufferSize=1
+    renderAll=false
+    renderFromLast=false
+    as |race|}}
       {{race-detail race=race}}
-    {{/liquid-bind}}
-  {{/each}}
+  {{/vertical-collection}}
 </div>
