@@ -63,13 +63,28 @@ export default Route.extend({
 
   model() {
     return this.getRaces().then(({nj, ny}) => {
-      let nyToWatch = ny.races.filter(race => NY_TO_WATCH.includes(race.raceID));
-      let njToWatch = nj.races.filter(race => NJ_TO_WATCH.includes(race.raceID));
+      let nyToWatch = [];
+      let njToWatch = [];
+      let ballotMeasures = [];
+      let all = ny.races.concat(nj.races);
+
+      all.forEach((race) => {
+        let { raceID } = race;
+        if (NY_TO_WATCH.includes(raceID)) {
+          nyToWatch.push(race);
+        }
+        if (NJ_TO_WATCH.includes(raceID)) {
+          njToWatch.push(race);
+        }
+        if (BALLOT_MEASURES.includes(raceID)) {
+          ballotMeasures.push(race);
+        }
+      });
 
       // TODO: lift up metadata to top level
       let swing = {
         title: "Races to Watch (NY & NJ)",
-        races: nyToWatch.concat(njToWatch),
+        races: nyToWatch.concat(njToWatch).concat(ballotMeasures),
       };
 
       ny.title = "New York (All Races)";
