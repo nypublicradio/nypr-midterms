@@ -8,13 +8,22 @@ export default Component.extend({
 
   allClosed: and('ny.pollsClosed', 'nj.pollsClosed'),
 
-  mostRecent: computed('ny.lastUpdated', 'nj.lastUpdated', function() {
+  mostRecent: computed('ny.lastUpdated', 'nj.lastUpdated', 'electionDay', function() {
+    let now = moment();
     let ny = moment(this.ny.lastUpdated);
     let nj = moment(this.nj.lastUpdated);
+    let electionDay = moment(this.electionDay);
+    let time;
     if (ny.isAfter(nj)) {
-      return ny;
+      time = ny;
     } else {
-      return nj;
+      time = nj;
+    }
+
+    if (now.isAfter(electionDay)) {
+      return time.format('MMM. D, YYYY, h:mm a z');
+    } else {
+      return time.format('h:mm a z');
     }
   }),
 });
