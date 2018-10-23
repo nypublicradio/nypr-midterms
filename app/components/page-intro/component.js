@@ -1,5 +1,4 @@
 import Component from '@ember/component';
-import config from '../../config/environment';
 
 const LINKS = [{
   route: 'index',
@@ -25,8 +24,6 @@ const LINKS = [{
 
 export default Component.extend({
   tagName: '',
-
-  showNav: config.showNav,
 
   init() {
     this._super(...arguments);

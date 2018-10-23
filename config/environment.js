@@ -48,8 +48,6 @@ module.exports = function(environment) {
 
     // for utm_source value
     siteSlug: 'midtermshub',
-
-    showNav: true,
   };
 
   if (environment === 'development') {
