@@ -11,44 +11,44 @@ const RACE_POLLER = 'races';
 const NY_TO_WATCH = [
   "36581", // House District 1
   "36582", // House District 2
-  // House District 11
-  // House District 18
-  // House District 19
-  // House District 21
-  // House District 22
-  // House District 24
-  // House District 27
-  // State Senate District 3
-  // State Senate District 4
-  // State Senate District 5
-  // State Senate District 6
-  // State Senate District 7
-  // State Senate District 8
-  // State Senate District 11
-  // State Senate District 22
-  // State Senate District 39
-  // State Senate District 40
-  // State Senate District 41
-  // State Senate District 42
-  // State Senate District 43
-  // State Senate District 50
-  // State Senate District 53
+  "36591", // House District 11
+  "36598", // House District 18
+  "36599", // House District 19
+  "36601", // House District 21
+  "36602", // House District 22
+  "36604", // House District 24
+  "36607", // House District 27
+  "36614", // State Senate District 3
+  "36615", // State Senate District 4
+  "36616", // State Senate District 5
+  "36617", // State Senate District 6
+  "36618", // State Senate District 7
+  "36619", // State Senate District 8
+  "36622", // State Senate District 11
+  "36633", // State Senate District 22
+  "36650", // State Senate District 39
+  "36651", // State Senate District 40
+  "36652", // State Senate District 41
+  "36653", // State Senate District 42
+  "36654", // State Senate District 43
+  "36661", // State Senate District 50
+  "36664", // State Senate District 53
 ];
 
 const NJ_TO_WATCH = [
-  // House District 2
-  // House District 3
-  // House District 4
-  // House District 7
-  // House District 11
-  // NJ Senate
+  "31205", // House District 2
+  "31205", // House District 3
+  "31208", // House District 4
+  "31218", // House District 7
+  "31230", // House District 11
+  "31545", // NJ Senate
 ];
 
 const BALLOT_MEASURES = [
-  // NY Ballot Measure 1
-  // NY Ballot Measure 2
-  // NY Ballot Measure 3
-  // NJ Ballot Measure 1
+  "40291", // NY Ballot Measure 1
+  "40292", // NY Ballot Measure 2
+  "40290", // NY Ballot Measure 3
+  "31673", // NJ Ballot Measure 1
 ]
 
 export default Route.extend({
