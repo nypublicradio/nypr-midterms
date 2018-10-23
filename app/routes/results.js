@@ -63,28 +63,17 @@ export default Route.extend({
 
   model() {
     return this.getRaces().then(({nj, ny}) => {
-      let nyToWatch = [];
-      let njToWatch = [];
-      let ballotMeasures = [];
+      let swingRaces = [];
       let all = ny.races.concat(nj.races);
 
-      all.forEach((race) => {
-        let { raceID } = race;
-        if (NY_TO_WATCH.includes(raceID)) {
-          nyToWatch.push(race);
-        }
-        if (NJ_TO_WATCH.includes(raceID)) {
-          njToWatch.push(race);
-        }
-        if (BALLOT_MEASURES.includes(raceID)) {
-          ballotMeasures.push(race);
-        }
-      });
+      NY_TO_WATCH.forEach(raceID => swingRaces.push(all.find(r => r.raceID === raceID)));
+      NJ_TO_WATCH.forEach(raceID => swingRaces.push(all.find(r => r.raceID === raceID)));
+      BALLOT_MEASURES.forEach(raceID => swingRaces.push(all.find(r => r.raceID === raceID)));
 
       // TODO: lift up metadata to top level
       let swing = {
         title: "Races to Watch (NY & NJ)",
-        races: nyToWatch.concat(njToWatch).concat(ballotMeasures),
+        races: swingRaces,
       };
 
       ny.title = "New York (All Races)";
