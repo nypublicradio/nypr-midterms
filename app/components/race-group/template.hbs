@@ -17,6 +17,8 @@
     renderAll=false
     renderFromLast=false
     as |race|}}
+    {{#liquid-bind race.totalVotes}}
       {{race-detail race=race}}
+    {{/liquid-bind}}
   {{/vertical-collection}}
 </div>
