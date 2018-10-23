@@ -80,8 +80,8 @@ export default Route.extend({
       nj.title = "New Jersey (All Races)";
 
       // HACK: close the polls
-      // nj.pollsClosed = true;
-      // ny.pollsClosed = true;
+      nj.pollsClosed = true;
+      ny.pollsClosed = true;
 
       return {
         ny,
