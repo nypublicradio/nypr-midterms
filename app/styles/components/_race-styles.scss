@@ -2,6 +2,13 @@
   &__title {
     @include section-title;
   }
+
+  &__races {
+    > .liquid-container,
+    > .liquid-child {
+      overflow: visible;
+    }
+  }
 }
 
 .race-key {
