@@ -89,7 +89,9 @@ export default Route.extend({
 
   actions: {
     didTransition() {
-      this.timer = later(this, 'refresh', 60 * 1000);
+      if (typeof FastBoot === 'undefined') {
+        this.timer = later(this, 'refresh', 60 * 1000);
+      }
     },
 
     willTransition() {
