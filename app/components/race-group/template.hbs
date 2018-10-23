@@ -9,13 +9,9 @@
 <div class="race-group__races">
   {{#vertical-collection
     group.races
-    tagName=''
     key='raceID'
-    estimateHeight=50
-    staticHeight=false
-    bufferSize=1
-    renderAll=false
-    renderFromLast=false
+    estimateHeight=100
+    bufferSize=2
     as |race|}}
     {{#liquid-bind race.totalVotes}}
       {{race-detail race=race}}
