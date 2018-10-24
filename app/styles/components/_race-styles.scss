@@ -138,6 +138,10 @@
 
 .race-detail__title {
   @include subsection-title($font-style: normal);
+
+  @include media(">=medium") {
+    font-size: 20px;
+  }
 }
 
 .race-detail__subhead {
@@ -156,6 +160,14 @@
     color: $blue;
     text-decoration: none;
   }
+
+  @include media(">=medium") {
+    font-size: 14px;
+
+    .dot {
+      font-size: 16px;
+    }
+  }
 }
 
 .race-table {
@@ -168,6 +180,10 @@
     font-weight: 600;
     line-height: 1.57;
     color: $darkgray;
+
+    @include media(">=medium") {
+      font-size: 18px;
+    }
 
     &.winner {
       background-color: $darkgray;
@@ -193,6 +209,10 @@
 
     td {
       padding: 8px;
+
+      @include media(">=medium") {
+        padding: 12px 16px;
+      }
     }
 
     &__count {

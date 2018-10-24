@@ -24,6 +24,10 @@
   &__title {
     @include page-title;
 
+    @include media(">=medium") {
+      max-width: 800px;
+    }
+
     &:after {
       margin-bottom: 16px;
     }
