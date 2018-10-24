@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render, settled } from '@ember/test-helpers';
+import { render, waitFor } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import { RACE_GROUP } from '../../../fixtures';
 
@@ -11,7 +11,7 @@ module('Integration | Component | race-group', function(hooks) {
     this.set('group', RACE_GROUP);
 
     await render(hbs`{{race-group group=group}}`);
-    await settled();
+    await waitFor('.race-detail', {count: RACE_GROUP.races.length});
 
     assert.dom('.race-group').exists();
     assert.dom('.race-group__title').hasText(RACE_GROUP.title);
