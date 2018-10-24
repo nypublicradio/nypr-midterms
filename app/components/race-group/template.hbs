@@ -1,8 +1,12 @@
-<h3 class="race-group__title">
-  <span>
-    {{group.title}}
-  </span>
-</h3>
+<div class="race-title-wrapper">
+  <h3 class="race-group__title">
+    <span>
+      {{group.title}}
+    </span>
+  </h3>
+
+  {{last-updated ny=results.ny nj=results.nj electionDay=(array 2018 10 6)}}
+</div>
 
 {{race-key}}
 
@@ -17,4 +21,8 @@
       {{race-detail race=race}}
     {{/liquid-bind}}
   {{/vertical-collection}}
+</div>
+
+<div class="race-group__lower-left">
+  <button class="race-group__to-top" {{action 'toTop'}}>Back to Top</button>
 </div>

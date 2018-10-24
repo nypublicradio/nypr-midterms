@@ -20,6 +20,9 @@ const LINKS = [{
 }, {
   route: 'voter-guide',
   text: 'Voter Guide'
+}, {
+  route: 'results',
+  text: 'Results'
 }];
 
 export default Component.extend({
