@@ -1,25 +1,32 @@
-<div class="district-header">
-  <div class="district-header__subhead">New York & New Jersey</div>
+{{#fetch-results raceID=model as |results|}}
+  <div class="district-header">
+    <div class="district-header__subhead">New York & New Jersey</div>
 
-  <h2 class="district-header__title">2018 Midterm Results</h2>
-</div>
-
-{{#race-detail race=model class="race-detail--single" as |race|}}
-  {{race.title}}
-
-  <div class="race-detail__return">
-    {{#link-to 'results'}}
-      {{nypr-svg icon="left-arrow"}} Back to All Races
-    {{/link-to}}
+    <h2 class="district-header__title">2018 Midterm Results</h2>
   </div>
 
-  {{#race.subhead as |subhead|}}
-    {{subhead.precincts}}
-    &nbsp;<span class="dot">•</span>&nbsp;
-    {{last-updated ny=ny nj=nj electionDay=(array 2018 10 6)}}
-  {{/race.subhead}}
+  {{#if results.race}}
+    {{#race-detail race=results.race class="race-detail--single" as |race|}}
+      {{race.title}}
 
-  {{race.candidates}}
-{{/race-detail}}
+      <div class="race-detail__return">
+        {{#link-to 'results'}}
+          {{nypr-svg icon="left-arrow"}} Back to All Races
+        {{/link-to}}
+      </div>
 
-{{race-key}}
+      {{#race.subhead as |subhead|}}
+        {{subhead.precincts}}
+        &nbsp;<span class="dot">•</span>&nbsp;
+        {{last-updated ny=ny nj=nj electionDay=(array 2018 10 6)}}
+      {{/race.subhead}}
+
+      {{race.candidates}}
+    {{/race-detail}}
+
+    {{race-key}}
+  {{else}}
+    Loading...
+  {{/if}}
+
+{{/fetch-results}}

@@ -1,36 +1,38 @@
-<div class="results-header">
-  <div class="results-header__subhead">New York & New Jersey</div>
+{{#fetch-results as |results|}}
+  <div class="results-header">
+    <div class="results-header__subhead">New York & New Jersey</div>
 
-  <h2 class="results-header__title">2018 Midterm Results</h2>
+    <h2 class="results-header__title">2018 Midterm Results</h2>
 
-  {{last-updated ny=ny nj=nj electionDay=(array 2018 10 6)}}
-</div>
+    {{last-updated ny=results.ny nj=results.nj electionDay=(array 2018 10 6)}}
+  </div>
 
-<div class="results-filter">
-  <div class="results-filter__title">Filter By:</div>
-  <ul class="results-filter__controls">
-    <li>
-      {{#link-to 'results' (query-params filter='swing') class="results-filter__button"}}
-        {{nypr-svg icon='swing'}}
-        Races to Watch<br>
-        (NY + NJ)
-      {{/link-to}}
-    </li>
-    <li>
-      {{#link-to 'results' (query-params filter='ny') class="results-filter__button"}}
-        {{nypr-svg icon='ny'}}
-        New York<br>
-        (All Races)
-      {{/link-to}}
-    </li>
-    <li>
-      {{#link-to 'results' (query-params filter='nj') class="results-filter__button"}}
-        {{nypr-svg icon='nj'}}
-        New Jersey<br>
-        (All Races)
-      {{/link-to}}
-    </li>
-  </ul>
-</div>
+  <div class="results-filter">
+    <div class="results-filter__title">Filter By:</div>
+    <ul class="results-filter__controls">
+      <li>
+        {{#link-to 'results' (query-params filter='swing') class="results-filter__button"}}
+          {{nypr-svg icon='swing'}}
+          Races to Watch<br>
+          (NY + NJ)
+        {{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'results' (query-params filter='ny') class="results-filter__button"}}
+          {{nypr-svg icon='ny'}}
+          New York<br>
+          (All Races)
+        {{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'results' (query-params filter='nj') class="results-filter__button"}}
+          {{nypr-svg icon='nj'}}
+          New Jersey<br>
+          (All Races)
+        {{/link-to}}
+      </li>
+    </ul>
+  </div>
 
-{{race-group group=model}}
+  {{race-group group=(get results filter)}}
+{{/fetch-results}}
