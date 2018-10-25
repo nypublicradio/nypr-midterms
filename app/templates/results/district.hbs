@@ -17,8 +17,10 @@
 
       {{#race.subhead as |subhead|}}
         {{subhead.precincts}}
-        &nbsp;<span class="dot">•</span>&nbsp;
-        {{last-updated ny=ny nj=nj electionDay=(array 2018 10 6)}}
+        {{#if (and nj.pollsClosed ny.pollsClosed)}}
+          &nbsp;<span class="dot">•</span>&nbsp;
+        {{/if}}
+        {{last-updated ny=ny nj=nj electionDay=(array 2018 10 6) hideIfOpen=true}}
       {{/race.subhead}}
 
       {{race.candidates}}

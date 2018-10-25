@@ -99,9 +99,12 @@
 
   &__incumbent,
   &__winner {
-    @include section-text($color: $darkgray);
     display: flex;
     align-items: center;
+
+    color: $darkgray;
+    font-size: 14px;
+    line-height: 1.57;
   }
 
   &__incumbent {
@@ -138,9 +141,11 @@
 
 .race-detail__title {
   @include subsection-title($font-style: normal);
+  font-weight: 700;
 
   @include media(">=medium") {
     font-size: 20px;
+    font-weight: 600;
   }
 }
 
@@ -175,9 +180,9 @@
   border-spacing: 0 4px;
 
   .candidate {
-    background-color: $lightgray;
+    background-color: rgba($lightergray, 0.4);
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.57;
     color: $darkgray;
 
@@ -217,6 +222,12 @@
 
     &__count {
       font-weight: normal;
+      text-align: right;
+    }
+
+    &__percent {
+      text-align: right;
+      font-weight: 700;
     }
   }
 }

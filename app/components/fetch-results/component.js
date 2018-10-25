@@ -83,12 +83,12 @@ export default Component.extend({
 
       // TODO: lift up metadata to top level
       let swing = {
-        title: "Races to Watch (NY & NJ)",
+        title: "Races to Watch (NY&nbsp;&amp;&nbsp;NJ)",
         races: swingRaces,
       };
 
-      ny.title = "New York (All Races)";
-      nj.title = "New Jersey (All Races)";
+      ny.title = "New York (All&nbsp;Races)";
+      nj.title = "New Jersey (All&nbsp;Races)";
 
       // HACK: close the polls
       nj.pollsClosed = true;

@@ -52,6 +52,10 @@
 
     display: flex;
 
+    @include media(">=medium") {
+      max-width: 385px;
+    }
+
     li {
       flex: 1;
       margin: 0 4px;
@@ -67,7 +71,7 @@
 
   &__button {
     display: block;
-    border: 2px solid $warmgray;
+    border: 2px solid $lightergray;
     border-radius: 13px;
     padding: 8px;
 
@@ -79,6 +83,11 @@
     font-weight: 600;
 
     transition: background-color 125ms ease, color 125ms ease;
+
+    @include media(">=medium") {
+      font-size: 14px;
+      line-height: 1.36;
+    }
 
     svg {
       fill: $blue;
