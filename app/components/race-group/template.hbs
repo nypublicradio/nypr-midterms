@@ -19,6 +19,13 @@
 {{race-key}}
 
 <div class="race-group__races">
+  {{#unless group.races}}
+    <div class="race-group__loading">
+      {{animated-loading-icon
+        color='#1e66de'
+      }}
+    </div>
+  {{/unless}}
   {{#vertical-collection
     group.races
     key='raceID'
