@@ -22,7 +22,9 @@ export default Component.extend({
 
   actions: {
     toTop() {
-      animate([document.body], 'scroll', {offset: 0});
+      let title = document.getElementById('results-title');
+      let offsetTop = title ? title.offsetTop : 0;
+      animate([document.body], 'scroll', {offset: offsetTop - 125});
     }
   }
 });
