@@ -2,7 +2,6 @@ import Application from '@ember/application';
 
 import { initialize } from 'nypr-midterms/instance-initializers/detect-touch';
 import { module, test } from 'qunit';
-import { setupTest } from 'ember-qunit';
 import { run } from '@ember/runloop';
 
 module('Unit | Instance Initializer | detect-touch', function(hooks) {
