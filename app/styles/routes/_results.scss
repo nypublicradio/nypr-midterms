@@ -98,7 +98,7 @@
     }
 
     &.active,
-    &:hover {
+    .results-filter:not(.touch) &:hover {
       color: white;
       background-color: $blue;
       border-color: $blue;
