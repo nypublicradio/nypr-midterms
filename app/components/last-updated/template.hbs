@@ -1,21 +1,29 @@
-{{#if allClosed}}
-  <p class="last-updated__line">
-    Results as of {{mostRecent}}
-  </p>
-{{/if}}
+{{#if (has-block)}}
+{{else}}
+  {{!-- both closed, show whatever's most recent --}}
+  {{#if allClosed}}
+    <p class="last-updated__line">
+      Results as of {{mostRecent}}
+    </p>
+  {{/if}}
 
-{{#if (and (not hideIfOpen) (not nj.pollsClosed))}}
-  <p class="last-updated__line">
-    New Jersey polls close at 8 p.m.
-  </p>
-{{else if (and (not hideIfOpen) (not ny.pollsClosed))}}
-  <p class="last-updated__line">
-    Results as of {{moment-format ny.lastUpdated 'h:mm a z'}}
-  </p>
-{{/if}}
+  {{!-- jersey's open, show the jersey closing time --}}
+  {{#if (not nj.pollsClosed)}}
+    <p class="last-updated__line">
+      New Jersey polls close at 8 p.m. EST
+    </p>
 
-{{#if (and (not hideIfOpen) (not ny.pollsClosed))}}
-  <p class="last-updated__line">
-    New York polls close at 9 p.m.
-  </p>
+  {{!-- jersey's closed, but new york is still open, so the latest from jersey --}}
+  {{else if (not ny.pollsClosed)}}
+    <p class="last-updated__line">
+      New Jersey results as of {{moment-format nj.lastUpdated 'h:mm a z'}}
+    </p>
+  {{/if}}
+
+  {{!-- new york's open, show the closing time for new york --}}
+  {{#if (not ny.pollsClosed)}}
+    <p class="last-updated__line">
+      New York polls close at 9 p.m. EST
+    </p>
+  {{/if}}
 {{/if}}
