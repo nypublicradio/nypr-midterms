@@ -94,8 +94,8 @@ export default Component.extend({
       nj.title = "New Jersey (All&nbsp;Races)";
 
       // HACK: close the polls
-      nj.pollsClosed = true;
-      ny.pollsClosed = true;
+      // nj.pollsClosed = true;
+      // ny.pollsClosed = false;
 
       this.setProperties({
         nj,
