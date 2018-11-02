@@ -40,7 +40,7 @@ module.exports = function(environment) {
     nyResults: process.env.NY_RESULTS,
 
     moment: {
-      includeTimezone: 'all'
+      includeTimezone: 'subset'
     },
 
     // for platform events
