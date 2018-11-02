@@ -1,4 +1,9 @@
 {{#if (has-block)}}
+  {{yield (hash
+    nyMessage=(if ny.pollsClosed (concat "Results as of " nyTimeStamp) "New York polls close at 9 p.m. EST")
+    njMessage=(if nj.pollsClosed (concat "Results as of " njTimeStamp) "New Jersey polls close at 8 p.m. EST")
+    mostRecent=mostRecent
+  )}}
 {{else}}
   {{!-- both closed, show whatever's most recent --}}
   {{#if allClosed}}
