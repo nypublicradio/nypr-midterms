@@ -17,10 +17,14 @@
 
       {{#race.subhead as |subhead|}}
         {{subhead.precincts}}
-        {{#if (and nj.pollsClosed ny.pollsClosed)}}
-          &nbsp;<span class="dot">•</span>&nbsp;
-        {{/if}}
-        {{last-updated ny=ny nj=nj electionDay=(array 2018 10 6) hideIfOpen=true}}
+        &nbsp;<span class="dot">•</span>&nbsp;
+        {{#last-updated ny=results.ny nj=results.nj electionDay=(array 2018 10 6) as |updated|}}
+          {{#if (eq results.race.statePostal "NJ")}}
+            {{updated.njMessage}}
+          {{else}}
+            {{updated.nyMessage}}
+          {{/if}}
+        {{/last-updated}}
       {{/race.subhead}}
 
       {{race.candidates}}

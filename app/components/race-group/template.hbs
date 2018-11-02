@@ -10,7 +10,11 @@
       {{{group.title}}}
     </h3>
 
-    {{last-updated ny=ny nj=nj electionDay=(array 2018 10 6)}}
+    {{#last-updated ny=ny nj=nj electionDay=(array 2018 10 6) as |updated|}}
+      <p class="last-updated__line">
+        Results as of {{updated.mostRecent}}
+      </p>
+    {{/last-updated}}
   </div>
 </div>
 
