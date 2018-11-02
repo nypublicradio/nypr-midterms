@@ -1,29 +1,51 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
 import { and } from '@ember/object/computed';
-import moment from 'moment';
+import { inject } from '@ember/service';
+
+const POST_ELECTION_FORMAT = 'MMM. D, YYYY, h:mm a z';
+const ELECTION_DAY_FORMAT = 'h:mm a z';
 
 export default Component.extend({
+  moment: inject(),
+
   classNames: ['last-updated'],
 
   allClosed: and('ny.pollsClosed', 'nj.pollsClosed'),
 
-  mostRecent: computed('ny.lastUpdated', 'nj.lastUpdated', 'electionDay', function() {
-    let now = moment();
-    let ny = moment(this.ny.lastUpdated);
-    let nj = moment(this.nj.lastUpdated);
-    let electionDay = moment(this.electionDay);
-    let time;
-    if (ny.isAfter(nj)) {
-      time = ny;
-    } else {
-      time = nj;
-    }
+  isAfterElectionDay: computed('electionDay', function() {
+    let now = this.moment.moment();
+    let electionDay = this.moment.moment(this.electionDay);
+    return now.isAfter(electionDay);
+  }),
 
-    if (now.isAfter(electionDay)) {
-      return time.format('MMM. D, YYYY, h:mm a z');
+  getTimeStamp(timestamp) {
+    let time = this.moment.moment(timestamp);
+    if (this.isAfterElectionDay) {
+      return time.format(POST_ELECTION_FORMAT);
     } else {
-      return time.format('h:mm a z');
+      return time.format(ELECTION_DAY_FORMAT);
+    }
+  },
+
+  nyTimeStamp: computed('ny.lastUpdated', function() {
+    return this.getTimeStamp(this.ny.lastUpdated);
+  }),
+
+  njTimeStamp: computed('nj.lastUpdated', function() {
+    return this.getTimeStamp(this.nj.lastUpdated);
+  }),
+
+  mostRecent: computed('ny.lastUpdated', 'nj.lastUpdated', function() {
+    if (!this.ny || !this.nj) {
+      return;
+    }
+    let ny = this.moment.moment(this.ny.lastUpdated);
+    let nj = this.moment.moment(this.nj.lastUpdated);
+    if (ny.isAfter(nj)) {
+      return this.nyTimeStamp;
+    } else {
+      return this.njTimeStamp;
     }
   }),
 });
