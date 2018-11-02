@@ -1,3 +1,7 @@
 .last-updated {
   @include section-text($color: $darkgray);
+
+  &__line {
+    margin: 0;
+  }
 }
