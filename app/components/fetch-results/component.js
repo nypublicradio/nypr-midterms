@@ -59,6 +59,8 @@ export default Component.extend({
 
   didInsertElement() {
     this._super(...arguments);
+
+    // check votes in the machine once a minute for updated results
     this.poll.addPoll({
       interval: 60 * 1000,
       label: RACE_POLLER,
@@ -77,11 +79,12 @@ export default Component.extend({
       let swingRaces = [];
       let all = ny.races.concat(nj.races);
 
+      // use combined `all` races array and pull out the races editorial wants to watch
+      // filtering based on the arrays from above allow us to specify the order in the final `swingRaces` array
       NY_TO_WATCH.forEach(raceID => swingRaces.push(all.find(r => r.raceID === raceID)));
       NJ_TO_WATCH.forEach(raceID => swingRaces.push(all.find(r => r.raceID === raceID)));
       BALLOT_MEASURES.forEach(raceID => swingRaces.push(all.find(r => r.raceID === raceID)));
 
-      // TODO: lift up metadata to top level
       let swing = {
         title: "Races to Watch (NY&nbsp;&amp;&nbsp;NJ)",
         races: swingRaces,
@@ -100,6 +103,9 @@ export default Component.extend({
         swing,
       });
 
+      // on race detail views, `raceID` is passed in from the controller via query param
+      // so pull out the desired race and set it on the template
+      // transition to 404 if the given race isn't found
       if (this.raceID) {
         let race = all.find(race => race.raceID === this.raceID);
         if (race) {
