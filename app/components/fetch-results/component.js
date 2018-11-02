@@ -103,8 +103,8 @@ export default Component.extend({
         swing,
       });
 
-      // on race detail views, `raceID` is passed in from the controller via query param
-      // so pull out the desired race and set it on the template
+      // on race detail views, `raceID` is passed in from the results/district route via the model
+      // so we pull out the desired race and set it on the template
       // transition to 404 if the given race isn't found
       if (this.raceID) {
         let race = all.find(race => race.raceID === this.raceID);
