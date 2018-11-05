@@ -1,0 +1,34 @@
+{{#if (has-block)}}
+  {{yield (hash
+    nyMessage=(if ny.pollsClosed (concat "Results as of " nyTimeStamp) "New York polls close at 9 p.m. EST")
+    njMessage=(if nj.pollsClosed (concat "Results as of " njTimeStamp) "New Jersey polls close at 8 p.m. EST")
+    mostRecent=mostRecent
+  )}}
+{{else}}
+  {{!-- both closed, show whatever's most recent --}}
+  {{#if allClosed}}
+    <p class="last-updated__line">
+      Results as of {{mostRecent}}
+    </p>
+  {{/if}}
+
+  {{!-- jersey's open, show the jersey closing time --}}
+  {{#if (not nj.pollsClosed)}}
+    <p class="last-updated__line">
+      New Jersey polls close at 8 p.m. EST
+    </p>
+
+  {{!-- jersey's closed, but new york is still open, so the latest from jersey --}}
+  {{else if (not ny.pollsClosed)}}
+    <p class="last-updated__line">
+      New Jersey results as of {{moment-format nj.lastUpdated 'h:mm a z'}}
+    </p>
+  {{/if}}
+
+  {{!-- new york's open, show the closing time for new york --}}
+  {{#if (not ny.pollsClosed)}}
+    <p class="last-updated__line">
+      New York polls close at 9 p.m. EST
+    </p>
+  {{/if}}
+{{/if}}

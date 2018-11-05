@@ -1,0 +1,9 @@
+<td class="candidate__name">
+  {{candidate.first}} {{candidate.last}} {{if party (concat '(' party ')')}}
+</td>
+<td class="candidate__count">
+  {{delimit candidate.voteCount}}
+</td>
+<td class="candidate__percent">
+  {{percent}}%
+</td>

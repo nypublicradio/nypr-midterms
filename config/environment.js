@@ -23,7 +23,7 @@ module.exports = function(environment) {
     },
 
     fastboot: {
-      hostWhitelist: [/^localhost:\d+$/].concat(process.env.HOST_WHITELIST ? process.env.HOST_WHITELIST.split(',') : [])
+      hostWhitelist: [/^localhost:\d+$/, /^\d+\.\d+\.\d+\.\d+:\d+$/].concat(process.env.HOST_WHITELIST ? process.env.HOST_WHITELIST.split(',') : [])
     },
 
     gothamistAPI: process.env.GOTHAMIST_API,
@@ -36,8 +36,11 @@ module.exports = function(environment) {
     voterGuideIframe: "https://staging.project.wnyc.org/voter-guide-embed/?partner=wnyc",
     primaryResultsIframe: "https://staging.project.wnyc.org/ny-state-primary-2018-results/",
 
+    njResults: process.env.NJ_RESULTS,
+    nyResults: process.env.NY_RESULTS,
+
     moment: {
-      includeTimezone: 'all'
+      includeTimezone: 'subset'
     },
 
     // for platform events
@@ -45,8 +48,6 @@ module.exports = function(environment) {
 
     // for utm_source value
     siteSlug: 'midtermshub',
-
-    showNav: process.env.SHOW_NAV,
   };
 
   if (environment === 'development') {

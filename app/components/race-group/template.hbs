@@ -1,0 +1,45 @@
+<div class="race-title-wrapper">
+  <h3 class="race-group__title">
+    <span>
+      {{{group.title}}}
+    </span>
+  </h3>
+
+  <div class="race-title__sticky-header">
+    <h3 class="race-group__title">
+      {{{group.title}}}
+    </h3>
+
+    {{#last-updated ny=ny nj=nj electionDay=(array 2018 10 6) as |updated|}}
+      <p class="last-updated__line">
+        Results as of {{updated.mostRecent}}
+      </p>
+    {{/last-updated}}
+  </div>
+</div>
+
+{{race-key}}
+
+<div class="race-group__races">
+  {{#unless group.races}}
+    <div class="race-group__loading">
+      {{animated-loading-icon
+        color='#1e66de'
+      }}
+    </div>
+  {{/unless}}
+  {{#vertical-collection
+    group.races
+    key='raceID'
+    estimateHeight=100
+    bufferSize=2
+    as |race|}}
+    {{#liquid-bind race.totalVotes}}
+      {{race-detail race=race}}
+    {{/liquid-bind}}
+  {{/vertical-collection}}
+</div>
+
+<div class="race-group__lower-left">
+  <button class="race-group__to-top" {{action 'toTop'}}>Back to Top</button>
+</div>

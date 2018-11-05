@@ -1,5 +1,6 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-  classNames: ['intro-lockup'],
+  tagName: 'span',
+  classNames: ['precincts-reporting']
 });

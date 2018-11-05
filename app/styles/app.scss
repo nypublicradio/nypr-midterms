@@ -32,6 +32,8 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 @import "components/q-and-a";
 @import "components/nav-links";
 @import "components/load-more";
+@import "components/last-updated";
+@import "components/race-styles";
 
 // PAGE SECTIONS
 @import "components/page-intro";
@@ -50,6 +52,7 @@ $breakpoints: (small: $small, medium: $medium, large: $large);
 @import "routes/missing";
 @import "routes/results";
 @import "routes/voter-guide";
+@import "routes/district-detail";
 
 @import "election-countdown";
 @import "components/election-countdown";

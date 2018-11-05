@@ -1,0 +1,10 @@
+{{#vertical-collection candidates
+  tagName='tbody'
+  key='candidateID'
+  estimateHeight=37
+  staticHeight=true
+  bufferSize=5
+  renderAll=true
+  as |candidate|}}
+  {{race-detail/candidate candidate=candidate totalVotes=totalVotes}}
+{{/vertical-collection}}

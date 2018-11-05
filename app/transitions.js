@@ -4,4 +4,9 @@ export default function() {
     this.childOf('.nav-links'),
     this.use('navLinks'),
   );
+
+  this.transition(
+    this.childOf('.race-group__races'),
+    this.use('grow'),
+  )
 }

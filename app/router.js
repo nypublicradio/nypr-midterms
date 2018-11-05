@@ -21,6 +21,11 @@ Router.map(function() {
   this.route('primary-results');
 
   this.route('missing', {path: '*'});
+
+  this.route('results', function() {
+    this.route('index', {path: '/'});
+    this.route('district', {path: '/:race_id'});
+  });
 });
 
 export default Router;
