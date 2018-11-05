@@ -1737,18 +1737,6 @@ broccoli-builder@^0.18.8:
     rsvp "^3.0.17"
     silent-error "^1.0.1"
 
-broccoli-caching-writer@^2.2.0:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/broccoli-caching-writer/-/broccoli-caching-writer-2.3.1.tgz#b93cf58f9264f003075868db05774f4e7f25bd07"
-  integrity sha1-uTz1j5Jk8AMHWGjbBXdPTn8lvQc=
-  dependencies:
-    broccoli-kitchen-sink-helpers "^0.2.5"
-    broccoli-plugin "1.1.0"
-    debug "^2.1.1"
-    rimraf "^2.2.8"
-    rsvp "^3.0.17"
-    walk-sync "^0.2.5"
-
 broccoli-caching-writer@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/broccoli-caching-writer/-/broccoli-caching-writer-3.0.3.tgz#0bd2c96a9738d6a6ab590f07ba35c5157d7db476"
@@ -1919,7 +1907,7 @@ broccoli-funnel@^1.0.0, broccoli-funnel@^1.0.1, broccoli-funnel@^1.0.2, broccoli
     symlink-or-copy "^1.0.0"
     walk-sync "^0.3.1"
 
-broccoli-kitchen-sink-helpers@^0.2.5, broccoli-kitchen-sink-helpers@^0.2.6:
+broccoli-kitchen-sink-helpers@^0.2.6:
   version "0.2.9"
   resolved "https://registry.yarnpkg.com/broccoli-kitchen-sink-helpers/-/broccoli-kitchen-sink-helpers-0.2.9.tgz#a5e0986ed8d76fb5984b68c3f0450d3a96e36ecc"
   integrity sha1-peCYbtjXb7WYS2jD8EUNOpbjbsw=
@@ -2048,16 +2036,6 @@ broccoli-persistent-filter@^1.4.3:
     symlink-or-copy "^1.0.1"
     walk-sync "^0.3.1"
 
-broccoli-plugin@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/broccoli-plugin/-/broccoli-plugin-1.1.0.tgz#73e2cfa05f8ea1e3fc1420c40c3d9e7dc724bf02"
-  integrity sha1-c+LPoF+OoeP8FCDEDD2efcckvwI=
-  dependencies:
-    promise-map-series "^0.2.1"
-    quick-temp "^0.1.3"
-    rimraf "^2.3.4"
-    symlink-or-copy "^1.0.1"
-
 broccoli-plugin@^1.0.0, broccoli-plugin@^1.2.1, broccoli-plugin@^1.3.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/broccoli-plugin/-/broccoli-plugin-1.3.1.tgz#a26315732fb99ed2d9fb58f12a1e14e986b4fabd"
@@ -2144,17 +2122,6 @@ broccoli-source@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/broccoli-source/-/broccoli-source-1.1.0.tgz#54f0e82c8b73f46580cbbc4f578f0b32fca8f809"
   integrity sha1-VPDoLItz9GWAy7xPV48LMvyo+Ak=
-
-broccoli-sri-hash@^2.1.0:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/broccoli-sri-hash/-/broccoli-sri-hash-2.1.2.tgz#bc69905ed7a381ad325cc0d02ded071328ebf3f3"
-  integrity sha1-vGmQXtejga0yXMDQLe0HEyjr8/M=
-  dependencies:
-    broccoli-caching-writer "^2.2.0"
-    mkdirp "^0.5.1"
-    rsvp "^3.1.0"
-    sri-toolbox "^0.2.0"
-    symlink-or-copy "^1.0.1"
 
 broccoli-stew@^1.2.0, broccoli-stew@^1.4.2, broccoli-stew@^1.5.0:
   version "1.6.0"
@@ -3887,13 +3854,6 @@ ember-cli-shims@^1.2.0:
     ember-cli-version-checker "^2.0.0"
     ember-rfc176-data "^0.3.1"
     silent-error "^1.0.1"
-
-ember-cli-sri@^2.1.0:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/ember-cli-sri/-/ember-cli-sri-2.1.1.tgz#971620934a4b9183cf7923cc03e178b83aa907fd"
-  integrity sha1-lxYgk0pLkYPPeSPMA+F4uDqpB/0=
-  dependencies:
-    broccoli-sri-hash "^2.1.0"
 
 ember-cli-string-utils@^1.0.0, ember-cli-string-utils@^1.1.0:
   version "1.1.0"
@@ -8721,9 +8681,9 @@ nypr-audio-services@nypublicradio/nypr-audio-services#fastboot:
     nypr-ui nypublicradio/nypr-ui#fastboot
 
 nypr-countdown@^0.1.0:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/nypr-countdown/-/nypr-countdown-0.1.1.tgz#dedbcf4be4318e19862cf3921b88ba870e6f2492"
-  integrity sha512-LbrVvWKuVmhgTiQzy1iFHbJ5eEoQdg3V9yvuR3Zo+02cyAm6ju9djk5i0B/ixmwCWItrEKH6lzISuDQfyjO8qA==
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/nypr-countdown/-/nypr-countdown-0.1.2.tgz#4582f2f00abc914fa69a5b273122e54bf5ea7a43"
+  integrity sha512-BwxK3/zdRrlWTxbSK/IRy8Vt1I+xVRoN4okkmIQcpK9J3rY53A7In0AP7++bxhyxf8/GAFWJL7SYGBi/2j2ypQ==
   dependencies:
     ember-cli-babel "^6.6.0"
     ember-cli-htmlbars "^2.0.1"
@@ -8746,10 +8706,10 @@ nypr-django-for-ember@nypublicradio/nypr-django-for-ember#fastboot:
     ember-cli-htmlbars "^2.0.1"
     ember-wormhole "^0.5.2"
 
-nypr-election-countdown@^0.2.11:
-  version "0.2.11"
-  resolved "https://registry.yarnpkg.com/nypr-election-countdown/-/nypr-election-countdown-0.2.11.tgz#6ec1c78864fbc63f33e4ea6508fa58ec5e3749eb"
-  integrity sha512-MZLlPRmfiAMgBR5syZFeu/NqM3mCvGtl18QKeehE8gh7F6c3PzbwgJxAhL3TzoTXhK3OFsFraKY4r4LEiYMwJw==
+nypr-election-countdown@^0.2.12:
+  version "0.2.12"
+  resolved "https://registry.yarnpkg.com/nypr-election-countdown/-/nypr-election-countdown-0.2.12.tgz#102d384fc979de814275d582a3471092e65c3b85"
+  integrity sha512-4Kb1sgw9S2eQAmlLLRg6LUQa2R5dl+w7Bp4uw87iVoAvhPhfKZMAR2VMshMpihbfVDzGEEogteBs1wHbKY+oEQ==
   dependencies:
     "@fortawesome/ember-fontawesome" "^0.1.2"
     "@fortawesome/free-brands-svg-icons" "^5.2.0"
@@ -8765,6 +8725,7 @@ nypr-election-countdown@^0.2.11:
     moment-timezone "^0.5.20"
     nypr-countdown "^0.1.0"
     nypr-publisher-lib ">=0.4.2"
+    nypr-ui "^0.4.2"
 
 nypr-fastboot@nypublicradio/nypr-fastboot#content-type:
   version "0.3.0"
@@ -8827,6 +8788,25 @@ nypr-ui@>=0.4.0, nypr-ui@^0.4.0:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/nypr-ui/-/nypr-ui-0.4.1.tgz#d121ea922525c574a20e93d7794bccbfd0da74a1"
   integrity sha512-jVbSzVWzSki5pYxX4ZpuMnUhJQPabfFUlxR+eeK924AvE3MrPvyYotD7Z7oLljtX5muJKVZtrM2+wB0SHhlfTg==
+  dependencies:
+    ember-basic-dropdown "0.34.0"
+    ember-burger-menu "^3.1.0"
+    ember-cli-babel "^6.8.0"
+    ember-cli-htmlbars "^2.0.1"
+    ember-cli-htmlbars-inline-precompile "^1.0.0"
+    ember-cli-sass "^7.1.7"
+    ember-click-outside "0.1.11"
+    ember-composable-helpers "2.0.3"
+    ember-cookies "^0.3.0"
+    ember-holygrail-layout "^0.3.0"
+    ember-power-select "^1.9.2"
+    ivy-tabs "^3.3.0"
+    waypoints "^4.0.1"
+
+nypr-ui@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/nypr-ui/-/nypr-ui-0.4.2.tgz#2378126a14761bc625676d20a1e3f94f3a3885d6"
+  integrity sha512-N1YsPViHfnMWoEB+GceDR0i3yuhY2ccbpw37wDj9wMG818jkqEP/iI2jSeGT/JrMGFWuJWXWOZ7admhGxvsh+g==
   dependencies:
     ember-basic-dropdown "0.34.0"
     ember-burger-menu "^3.1.0"
@@ -10013,7 +9993,7 @@ route-recognizer@^0.3.3:
   resolved "https://registry.yarnpkg.com/route-recognizer/-/route-recognizer-0.3.4.tgz#39ab1ffbce1c59e6d2bdca416f0932611e4f3ca3"
   integrity sha512-2+MhsfPhvauN1O8KaXpXAOfR/fwe8dnUXVM+xw7yt40lJRfPVQxV6yryZm0cgRvAj5fMF/mdRZbL2ptwbs5i2g==
 
-rsvp@^3.0.14, rsvp@^3.0.16, rsvp@^3.0.17, rsvp@^3.0.18, rsvp@^3.0.21, rsvp@^3.0.6, rsvp@^3.1.0, rsvp@^3.2.1, rsvp@^3.3.3, rsvp@^3.5.0, rsvp@^3.6.0, rsvp@^3.6.1:
+rsvp@^3.0.14, rsvp@^3.0.16, rsvp@^3.0.17, rsvp@^3.0.18, rsvp@^3.0.21, rsvp@^3.0.6, rsvp@^3.2.1, rsvp@^3.3.3, rsvp@^3.5.0, rsvp@^3.6.0, rsvp@^3.6.1:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-3.6.2.tgz#2e96491599a96cde1b515d5674a8f7a91452926a"
   integrity sha512-OfWGQTb9vnwRjwtA2QwpG2ICclHC3pgXZO5xt8H2EfgDquO0qVdSb5T88L4qJVAEugbS56pAuV4XZM58UX8ulw==
@@ -10588,11 +10568,6 @@ sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
-
-sri-toolbox@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/sri-toolbox/-/sri-toolbox-0.2.0.tgz#a7fea5c3fde55e675cf1c8c06f3ebb5c2935835e"
-  integrity sha1-p/6lw/3lXmdc8cjAbz67XCk1g14=
 
 sshpk@^1.7.0:
   version "1.14.2"
@@ -11452,7 +11427,7 @@ walk-sync@^0.1.3:
   resolved "https://registry.yarnpkg.com/walk-sync/-/walk-sync-0.1.3.tgz#8a07261a00bda6cfb1be25e9f100fad57546f583"
   integrity sha1-igcmGgC9ps+xviXp8QD61XVG9YM=
 
-walk-sync@^0.2.5, walk-sync@^0.2.7:
+walk-sync@^0.2.7:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/walk-sync/-/walk-sync-0.2.7.tgz#b49be4ee6867657aeb736978b56a29d10fa39969"
   integrity sha1-tJvk7mhnZXrrc2l4tWop0Q+jmWk=
