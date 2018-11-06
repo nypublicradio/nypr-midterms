@@ -37,7 +37,7 @@ const NY_TO_WATCH = [
 
 const NJ_TO_WATCH = [
   "31205", // House District 2
-  "31205", // House District 3
+  "31216", // House District 3
   "31208", // House District 4
   "31218", // House District 7
   "31230", // House District 11
