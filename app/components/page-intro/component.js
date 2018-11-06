@@ -5,6 +5,9 @@ const LINKS = [{
   text: 'Main',
   hash: 'top',
 }, {
+  route: 'results',
+  text: 'Results'
+}, {
   route: 'hearken-hub',
   text: 'Ask a Reporter',
 }, {
