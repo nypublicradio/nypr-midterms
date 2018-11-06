@@ -111,6 +111,20 @@
     }
   }
 
+  &__new-badge {
+    background-color: #de1e3d;
+    color: white;
+    display: block;
+    float: left;
+    font-family: $font-opensans;
+    font-size: 10px;
+    font-weight: 700;
+    margin-right: 7px;
+    margin-top: 5px;
+    padding: 1px 4px;
+    text-transform: uppercase;
+  }
+
   &__footer {
     flex-basis: 100%;
     grid-area: footer;
