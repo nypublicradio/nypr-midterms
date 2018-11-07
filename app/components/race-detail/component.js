@@ -32,6 +32,6 @@ export default Component.extend({
     if (b.winner) {
       return 1;
     }
-    return a.ballotOrder - b.ballotOrder;
+    return b.voteCount - a.voteCount;
   }),
 });
