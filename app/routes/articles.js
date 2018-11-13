@@ -4,7 +4,7 @@ import { inject } from '@ember/service';
 const META_DESCRIPTION = "Essential local and national politics coverage from WNYC + Gothamist.";
 
 export default Route.extend({
-  titleToken: "Election News and Analysis",
+  titleToken: "News and Analysis",
   head: inject('head-data'),
 
   afterModel() {
