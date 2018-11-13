@@ -5,15 +5,6 @@ const LINKS = [{
   text: 'Main',
   hash: 'top',
 }, {
-  route: 'results',
-  text: 'Results'
-}, {
-  route: 'hearken-hub',
-  text: 'Ask a Reporter',
-}, {
-  route: 'opt-in',
-  text: 'Newsletter',
-}, {
   route: 'articles',
   text: 'News'
 }, {
@@ -21,8 +12,15 @@ const LINKS = [{
   hash: 'podcasts',
   text: 'Podcasts',
 }, {
-  route: 'voter-guide',
-  text: 'Voter Guide'
+  route: 'hearken-hub',
+  text: 'Ask a Reporter',
+}, {
+  route: 'opt-in',
+  text: 'Newsletter',
+}, {
+  route: 'index',
+  hash: 'tools',
+  text: 'Voter Tools',
 }];
 
 export default Component.extend({
