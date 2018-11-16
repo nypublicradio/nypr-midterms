@@ -2,7 +2,7 @@
   {{#section.tease}}
     <h1 class="vote-section__title" id="tools">
       <span>
-        Stay Informed
+        Voter Tools
       </span>
     </h1>
   {{/section.tease}}
@@ -10,26 +10,6 @@
   {{#section.body}}
 
     <div class="vote-tools">
-      <div class="vote-tools__item">
-      {{#media-object tagName='article' class="vote-tool" as |mo|}}
-        {{#mo.media class="vote-tool__thumb"}}
-          {{nypr-svg icon="election-guide"}}
-        {{/mo.media}}
-
-        {{#mo.body class="vote-tool__body"}}
-          <h1 class="vote-tool__title">2018 Midterm Elections Voter&nbsp;Guide</h1>
-
-          <p class="vote-tool__summary">
-            WNYC, Gotham Gazette, City Limits, and New Jersey Spotlight analyze key races in this year’s New York and New Jersey midterm elections.
-          </p>
-        {{/mo.body}}
-
-        <div class="vote-tool__footer">
-          {{#link-to 'voter-guide' class="vote-tool__link"}}Go to the Guide{{/link-to}}
-        </div>
-      {{/media-object}}
-      </div>
-
       <div class="vote-tools__item">
       {{#media-object tagName='article' class="vote-tool" as |mo|}}
         {{#mo.media class="vote-tool__thumb"}}
@@ -57,7 +37,7 @@
         {{/mo.media}}
 
         {{#mo.body class="vote-tool__body"}}
-          <h1 class="vote-tool__title"><span class="vote-tool__new-badge">New</span> 2018 Midterm Elections Results</h1>
+          <h1 class="vote-tool__title">2018 Midterm Elections Results</h1>
 
           <p class="vote-tool__summary">
             Complete New York &amp; New Jersey midterm elections results from WNYC and Gothamist.

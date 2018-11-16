@@ -77,6 +77,36 @@
     @include media('>=medium') {
       text-align: left;
     }
+
+    a {
+      color: #888;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__aotl-credit-blurb {
+    font-size: 14px;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.57;
+    margin-top: 0;
+    margin-bottom: 32px;
+
+    @include media('>=medium') {
+      text-align: left;
+    }
+
+    a {
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    a:hover {
+      color: rgba(0, 0, 0, 0.9);
+    }
   }
 
   &__logos {

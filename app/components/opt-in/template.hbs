@@ -1,24 +1,10 @@
 <h1 class="opt-in__header"><span>Get Updates</span></h1>
 
-{{#if (and emailSuccess (not phoneSuccess))}}
+{{#if emailSuccess}}
   <div class="opt-in__success-text" data-test-email-success>
     {{{COPY.EMAIL_SUCCESS}}}
   </div>
-{{/if}}
-
-{{#if (and phoneSuccess (not emailSuccess))}}
-  <div class="opt-in__success-text" data-test-phone-success>
-    {{{COPY.PHONE_SUCCESS}}}
-  </div>
-{{/if}}
-
-{{#if (and phoneSuccess emailSuccess)}}
-  <div class="opt-in__both-success" data-test-both-success>
-    {{{COPY.BOTH_SUCCESS}}}
-  </div>
-{{/if}}
-
-{{#if (not isFullFormSubmitted)}}
+{{else}}
   <form {{action 'submitForms' on='submit'}}>
     <div class="opt-in__formset opt-in__email-formset {{if (or emailSuccess phoneSuccess) 'half-submitted'}}">
       {{#if (not emailSuccess)}}
@@ -32,24 +18,6 @@
           value=changeset.email
           errors=(or changeset.error.email.validation emailResponseErrors)
           class=(concat "opt-in__email-input " (if submitEmail.isRunning 'is-loading'))
-          }}
-        </div>
-      {{/if}}
-    </div>
-
-    <div class="opt-in__formset opt-in__phone-formset {{if (or emailSuccess phoneSuccess) 'half-submitted'}}">
-      {{#if (not phoneSuccess)}}
-        {{{if (not emailSuccess) COPY.PHONE }}}
-        <div class="opt-in__phone-form opt-in__form">
-          {{fa-icon "mobile-alt" class="nypr-input-icon"}}
-          {{nypr-input
-          data-test-phone-input
-          type='tel'
-          fieldname='signupPhoneNumber'
-          placeholder='1234567890'
-          value=changeset.phone
-          errors=(or changeset.error.phone.validation phoneResponseErrors)
-          class=(concat "opt-in__phone-input " (if submitPhone.isRunning 'is-loading'))
           }}
         </div>
       {{/if}}
@@ -71,7 +39,7 @@
       {{#liquid-if isLoading use='crossFade'}}
         {{fa-icon icon='spinner' prefix='fas' spin=true}}
       {{else}}
-        {{signUpButtonText}}
+        Sign Up
       {{/liquid-if}}
     </button>
   </form>
