@@ -77,6 +77,15 @@
     @include media('>=medium') {
       text-align: left;
     }
+
+    a {
+      color: $lightblue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   }
 
   &__logos {
