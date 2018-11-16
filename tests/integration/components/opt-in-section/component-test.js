@@ -55,12 +55,8 @@ module('Integration | Component | opt-in-section', function(hooks) {
     await fillIn('[data-test-input=email]', EMAIL);
     await click('[data-test-submit]');
 
-    await fillIn('[data-test-input=sms]', PHONE);
-    await click('[data-test-submit]');
-
-    assert.ok(fetchStub.calledTwice, 'two POSTs');
+    assert.ok(fetchStub.calledOnce, 'two POSTs');
     assert.ok(fetchStub.calledWith(`${config.optInAPI}/mailchimp`, NEWSLETTER_PAYLOAD));
-    assert.ok(fetchStub.calledWith(`${config.optInAPI}/mobile-commons`, SMS_PAYLOAD));
   });
 
   test('error states', async function(assert) {
