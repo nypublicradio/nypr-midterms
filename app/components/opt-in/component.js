@@ -6,7 +6,7 @@ import lookupValidator from "ember-changeset-validations";
 import { and } from "@ember/object/computed";
 import { computed } from "@ember/object";
 import { set } from "@ember/object";
-import { all, task } from "ember-concurrency";
+import { task } from "ember-concurrency";
 import {
   validateFormat,
   validatePresence
@@ -22,7 +22,6 @@ const COPY = {
 };
 
 let newsletterEndpoint = `${config.optInAPI}/mailchimp`;
-let smsEndpoint = `${config.optInAPI}/mobile-commons`;
 let validations = {
   email: validateFormat({ type: "email", allowBlank: true }),
   legalChecked: validatePresence(true)
