@@ -18,7 +18,7 @@
         buttonText='Subscribe'
         validations=EMAIL_VALIDATIONS
         submit=(action submitEmail)
-        onSuccess=(action (mut step) SMS)}}
+        onSuccess=(action (mut step) DONE)}}
     {{else if (eq step SMS)}}
       <p class="opt-in-section__header">
         You're in! Thanks for subscribing to the <strong>Politics Brief.</strong>
