@@ -1,4 +1,4 @@
-# nypr-midterms
+# Decommissioned nypr-midterms
 
 This fastboot app is hosted at https://midterms.wnyc.org and serves as the landing page for all midterms-related content.
 
